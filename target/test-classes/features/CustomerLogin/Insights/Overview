@@ -1,0 +1,18 @@
+Feature: Machine Status Dashboard Verification
+  As a customer user
+  I want to view machine status counts on the dashboard
+  So that I can know the number of machines in each state
+
+  Background:
+    Given the user launches the APMS Customer App
+    And the user logs in with valid credentials
+    And the user navigates to the "Overview" dashboard screen
+
+  Scenario: Verify machine status counts on dashboard
+    Then the user should see the count for "Running" machines as 6
+    And the user should see the count for "Stopped" machines as 2
+    And the user should see the count for "Waiting" machines as 2
+    And the user should see the count for "Idle" machines as 0
+    And the user should see the count for "Maintenance" machines as 0
+    And the user should see the count for "Bypass" machines as 0
+    And the user should see the count for "Product Setup" machines as 0

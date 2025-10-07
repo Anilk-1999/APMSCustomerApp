@@ -1,0 +1,46 @@
+<extentreports>
+  <configuration>
+    <encoding>utf-8</encoding>
+    <protocol>https</protocol>
+
+    <!-- 👇 Theme Options: standard or dark -->
+    <theme>dark</theme>
+
+    <!-- 👇 Report Header Info -->
+    <documentTitle>APMS Mobile Automation Report</documentTitle>
+    <reportName>Appium + Cucumber Test Execution Summary</reportName>
+
+    <!-- 👇 Custom time format -->
+    <timeStampFormat>dd-MMM-yyyy HH:mm:ss</timeStampFormat>
+
+    <!-- 👇 Add your logo to the top of the report -->
+    <js>
+      <![CDATA[
+      document.querySelector('.brand-logo').src = 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png';
+      document.querySelector('.brand-logo').style.height = '45px';
+      document.querySelector('.brand-logo').style.marginTop = '10px';
+      document.querySelector('.brand-logo').style.marginLeft = '20px';
+      ]]>
+    </js>
+
+    <!-- 👇 Custom CSS Styling -->
+    <css>
+      <![CDATA[
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .test-name {
+        color: #00E676;
+      }
+      .node-name {
+        font-size: 14px;
+      }
+      .report-name {
+        color: #00BCD4;
+        font-size: 22px;
+        font-weight: 600;
+      }
+      ]]>
+    </css>
+  </configuration>
+</extentreports>
