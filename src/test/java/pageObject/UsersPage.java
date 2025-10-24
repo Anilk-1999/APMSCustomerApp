@@ -1,14 +1,15 @@
 package pageObject;
 
+import java.util.Arrays;
 import java.util.List;
-
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
+import java.time.Duration;
 import javax.management.relation.Role;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -19,10 +20,12 @@ public class UsersPage extends BasePage {
 
     public UsersPage(AndroidDriver driver) {
         super(driver);
+        // scroll=new ScrollUtils(driver);
     }
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='MI-U']/preceding-sibling::android.widget.Button")
+    // @AndroidFindBy(xpath = "//android.view.View[@content-desc='MI-U']/preceding-sibling::android.widget.Button")
+    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]")                     
     private WebElement profileIcon;
 
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Account Preferences\"]")
@@ -133,7 +136,7 @@ public class UsersPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Roles *\"]")
     private WebElement roledropDown;
 
-    @AndroidFindBy(accessibility = "Teams\nBy default, users are added to all teams if no team is selected.")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Teams\n" + "The user will be listed in the dropdowns of the selected teams\"]")
     private WebElement teamsInfo;
 
     @AndroidFindBy(xpath = "//android.view.View")
@@ -144,8 +147,23 @@ public class UsersPage extends BasePage {
     private WebElement submitButton;
 
 
+    //------------------------------Edit elements ------------------------------------
+
+    @AndroidFindBy(xpath = "android.view.View")
+    private List<WebElement> listRecords;
+
+
+
+
+
+
+
+
+//-------------------------------------Actions---------------------------------------
+
+
     public String getAccountPreferenceHeader() {
-        scroll=new ScrollUtils(driver);
+        // scroll=new ScrollUtils(driver);
         waitUtil=new WaitForElement(driver);
         waitUtil.waitForVisibility(accountPreferenceHeader);
         String getHeader = accountPreferenceHeader.getAttribute("content-desc");
@@ -296,56 +314,56 @@ public String getSectionHeaderText(String expectedHeader) {
         }
     }
 
-int startX;
- int startY;
- int endX;
- int endY;
+        int startX;
+        int startY;
+        int endX;
+        int endY;
 
-public void getScreenSize()
-{
-    Dimension size = driver.manage().window().getSize();
-    int screenWidth = size.width;
-    int screenHeight = size.height;
+        public void getScreenSize()
+        {
+            Dimension size = driver.manage().window().getSize();
+            int screenWidth = size.width;
+            int screenHeight = size.height;
 
-    startX = screenWidth / 2;              // Middle of the screen (X-axis)
-    startY = (int) (screenHeight * 0.8);   // Near bottom (80% height)
-    endX   = screenWidth / 2;              // Keep X same (vertical scroll)
-    endY   = (int) (screenHeight * 0.2);   // Near top (20% height)
+            startX = screenWidth / 2;              // Middle of the screen (X-axis)
+            startY = (int) (screenHeight * 0.8);   // Near bottom (80% height)
+            endX   = screenWidth / 2;              // Keep X same (vertical scroll)
+            endY   = (int) (screenHeight * 0.2);   // Near top (20% height)
 
-System.out.println("startx :-----"+startX);
-System.out.println("starty :-----"+startY);
-System.out.println("endx :-----"+endX);
-System.out.println("endy :-----"+endY);
+            System.out.println("startx :-----"+startX);
+            System.out.println("starty :-----"+startY);
+            System.out.println("endx :-----"+endX);
+            System.out.println("endy :-----"+endY);
 
-}
-
-
-    public void enterEmpCode(String code) {
-        if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
         }
-       waitUtil.waitForVisibility(empCode);
-        if (empCode.isEnabled()) {
-            empCode.click();
+
+
+        public void enterEmpCode(String code) {
             if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
-        }
-            empCode.clear();
-            empCode.sendKeys(code);
-        }
-    }
-
-
-    public void selectOptionInDropdown(String optionText) {
-        waitUtil.waitForVisibilities(dropdownOptions);
-            for (WebElement option : dropdownOptions) {
-                if (option.getAttribute("content-desc").equalsIgnoreCase(optionText)) {
-                    option.click();
-                    return;
-                }
+            ((AndroidDriver) driver).hideKeyboard();
             }
-            throw new RuntimeException("Dropdown option not found: " + optionText);
-    }
+        waitUtil.waitForVisibility(empCode);
+            if (empCode.isEnabled()) {
+                empCode.click();
+                if (((AndroidDriver) driver).isKeyboardShown()) {
+            ((AndroidDriver) driver).hideKeyboard();
+            }
+                empCode.clear();
+                empCode.sendKeys(code);
+            }
+        }
+
+
+        public void selectOptionInDropdown(String optionText) {
+            waitUtil.waitForVisibilities(dropdownOptions);
+                for (WebElement option : dropdownOptions) {
+                    if (option.getAttribute("content-desc").equalsIgnoreCase(optionText)) {
+                        option.click();
+                        return;
+                    }
+                }
+                throw new RuntimeException("Dropdown option not found: " + optionText);
+        }
 
     public void selectBloodGroup(String group) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
@@ -517,12 +535,11 @@ System.out.println("endy :-----"+endY);
         if (((AndroidDriver) driver).isKeyboardShown()) {
            ((AndroidDriver) driver).hideKeyboard();
         }
-        scroll.scrollUntilVisible(pinCode);
         waitUtil.waitForVisibility(teamsInfo);
         if(teamsInfo.isDisplayed()) {
             waitUtil.waitForVisibilities(teamsOptions);
             for (WebElement option : teamsOptions) {
-                System.out.println("get team options : ---------"+option);
+                System.out.println("get team options : " + option.getAttribute("content-desc"));
                 if (option.getAttribute("content-desc").equalsIgnoreCase(teamName)) {
                     waitUtil.waitForVisibility(option);
                     option.click();
@@ -544,9 +561,69 @@ System.out.println("endy :-----"+endY);
 
    }
 
+   public void clickOnsearchButton() {
+    waitUtil.waitForVisibility(searchButton);
+    if (searchButton.isEnabled()) {
+        searchButton.click();
+    }
+   }
+
+    public void clickOnSortButton() {
+        waitUtil.waitForVisibility(sortButton);
+        if (sortButton.isEnabled()) {
+            sortButton.click();
+        }
+    }
+    public void clickOnFilterButton() {
+        waitUtil.waitForVisibility(filterButton);
+        if (filterButton.isEnabled()) {
+            filterButton.click();
+        }
+    }
+
+
+
+    //---------------------------------------Edit actions------------------------------------
+
+    public void getListOfRecords(){
+        waitUtil.waitForVisibilities(listRecords);
+        for(WebElement record : listRecords){
+            System.out.println("get list of records :-------"+record.getAttribute("content-desc"));
+        }
+    }
+
+
+    public void swipeRightToLeft() {
+        // Get element location and size
+
+        for(WebElement record : listRecords){
+
+        System.out.println("get x axis value ----------"+record.getLocation().getX());
+        System.out.println("get y axis value ----------"+record.getLocation().getY());
+        System.out.println("get width value ----------"+record.getSize().getWidth() * 0.9);
+        System.out.println("get width value ----------"+record.getSize().getWidth() * 0.1);
+        System.out.println("get height value ----------"+record.getSize().getHeight() / 2);
+
+        int startX = (int) (record.getLocation().getX() + record.getSize().getWidth() * 0.9);
+        int endX   = (int) (record.getLocation().getX() + record.getSize().getWidth() * 0.1);
+        int yAxis  = record.getLocation().getY() + (record.getSize().getHeight() / 2);
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipe = new Sequence(finger, 1);
+
+        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, yAxis));
+        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), endX, yAxis));
+        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Arrays.asList(swipe));
+}
+
+
+
     
 
-
+    }
 
 
 }

@@ -17,6 +17,7 @@ public class BasePage {
     public BasePage(AndroidDriver driver) {
         this.driver = driver;
         this.waitUtil = new WaitForElement(driver);
+        scroll=new ScrollUtils(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(TIMEOUT)), this);
     }
 

@@ -12,6 +12,6 @@ Feature: Login Functionality
     Then Verify the "Login to Your Account" screen should be visible
     When the user double taps on the APMS AI footer if needed
     And the user enters email "anil.c3@apms.ai"
-    And the user enters password "Anil@123"
+    And the user enters password "1234"
     And the user clicks on Login
     Then Verify the user should be logged in successfully

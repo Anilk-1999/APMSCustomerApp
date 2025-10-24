@@ -1,6 +1,9 @@
 package utilities;
 
+import java.util.List;
 import java.util.Random;
+
+import org.openqa.selenium.WebElement;
 
 public class TestRandomDataGenerator {
     private static final Random random = new Random();
@@ -38,5 +41,19 @@ public class TestRandomDataGenerator {
         String[] roles = {"Admin", "Manager", "Super Admin", "Supervisor"};
         return roles[random.nextInt(roles.length)];
     }
+
+    public static String randomTeam() {
+        String[] teams = {"Maintenance", "Production Approval", "Quality Analyst"};
+        return teams[random.nextInt(teams.length)];
+    }
+
+    public void selectRandomOptionFromDropdown(List<WebElement> dropdownOptions) {
+        Random rand = new Random();  // Generate a random index
+        int randomIndex = rand.nextInt(dropdownOptions.size());
+        WebElement randomOption = dropdownOptions.get(randomIndex);// Get the random option
+        randomOption.click();// Click it
+        System.out.println("Randomly selected option: " + randomOption.getAttribute("text"));
+    }
+
 }
 

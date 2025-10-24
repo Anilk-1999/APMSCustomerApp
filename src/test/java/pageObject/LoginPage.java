@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(accessibility = "Login to your account")
     private WebElement loginToYourAccountText;
 
-    @AndroidFindBy(accessibility = "1.0.0(57) | \nMade in India | Beta")
+    @AndroidFindBy(accessibility = "1.0.0(57) | \nMade in India | Test")
     private WebElement apmsAiFooter;
 
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='EMAIL']")
@@ -48,9 +48,8 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Hide password']")
     private WebElement eyeIconVisible;
 
-    @AndroidFindBy(accessibility = "Active Machines\nUnit's Active Machine Status At A Glance.")
+    @AndroidFindBy(accessibility = "Active Machines\nUnit's Active Machine Status At A Glance")
     private WebElement dashBoardElement;
-
 
      //🔹 Dynamic elements (match only by static part "All", "Running", etc.)
     @AndroidFindBy(xpath = "//android.widget.ImageView[contains(@content-desc,'All')]")
@@ -59,8 +58,6 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.ImageView[contains(@content-desc,'Log Off')]")
     private WebElement logOff;
 
-
-    
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@content-desc,'Product Setup')]")
     private WebElement productSetup;
 

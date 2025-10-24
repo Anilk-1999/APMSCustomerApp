@@ -129,8 +129,8 @@ public void enter_all_the_following_user_details(io.cucumber.datatable.DataTable
     generatedUserData.put("Emergency Number", emergencyNumber);
     generatedUserData.put("Emp Code", empCode);
     generatedUserData.put("Blood Group", bloodGroup);
-    usersPage.selectDateOfBirth();
-    usersPage.selectDateOfJoining();
+    // usersPage.selectDateOfBirth();
+    // usersPage.selectDateOfJoining();
     generatedUserData.put("Address 1", address1);
     generatedUserData.put("Address 2", address2);
     generatedUserData.put("Pin Code", pinCode);
@@ -149,13 +149,12 @@ public void enter_all_the_following_user_details(io.cucumber.datatable.DataTable
     usersPage.enterAddress2(address2);
     usersPage.enterPinCode(pinCode);
     usersPage.selectRole(roles);
+    usersPage.teamSelection("Maintenance");
 
     // Log the generated data
     System.out.println("Generated User Data:");
     generatedUserData.forEach((k, v) -> System.out.println(k + ": " + v));
 }
-
-
 
 @When("I click on the submit button")
 public void i_click_on_the_submit_button() {
