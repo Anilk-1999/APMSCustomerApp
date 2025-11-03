@@ -1,0 +1,20 @@
+Feature: Validate downtime sessions
+
+  Scenario Outline: Verify total session count and duration match with summary cards
+  When the user clicks on the profile icon
+  Then verify that the "Account Preferences" screen is displayed
+  When the user clicks on the "Machines" feature
+  Then verify that the user is navigated to the machines list screen
+  When the user selects the machine "<machineName>" and clicks on it
+  Then verify that the user is navigated to the machine information "<machineName>" screen
+  When the user clicks on the "Downtime" section
+  Then verify that the user is navigated to the downtime summary screen "Machine > Downtime > Summary"
+  When the user fetches the sum of all status card durations
+  And the user fetches the sum of all session record durations
+  Then verify that the total duration sum of all status cards equals the total session duration sum
+
+  Examples:
+    | machineName     |
+    | Tube Mill 1     |
+    | Tube Mill 2     |
+    | Tube Mill 3     |

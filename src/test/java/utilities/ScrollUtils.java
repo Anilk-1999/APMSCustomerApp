@@ -109,5 +109,10 @@ public void scrollToBottom() {
     driver.perform(Collections.singletonList(swipe));
 }
 
+public void scrollUntilVisible(String string) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'scrollUntilVisible'");
+}
+
 
 }
