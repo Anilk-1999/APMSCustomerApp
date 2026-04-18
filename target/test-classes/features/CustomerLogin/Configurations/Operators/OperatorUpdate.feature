@@ -1,7 +1,7 @@
-Feature: Operator Creation
+Feature: Operator Update
   As an admin
-  I want to create a new operator in the system
-  So that the operator can access the application
+  I want to update operator details
+  So that operator information remains accurate
 
   Background:
     When click on profile icon
@@ -15,84 +15,83 @@ Feature: Operator Creation
   # ✅ NAVIGATION SCENARIOS
   # ==================================================
 
-  Scenario: Verify navigation to Add Operator screen
-    When click on add button
-    Then verify that the user should navigate to the "Add New Operator" screen
+  Scenario: Navigate to Edit Operator via search
+    When user searches operator "anil@example.com"
+    And user selects operator from search results
+    And user swipes record from right to left
+    And click on "Edit" option
+    Then verify that the user should navigate to the "Edit Operator" screen
+
+  Scenario: Navigate to Edit Operator via scrolling
+    When user scrolls and selects operator "anil@example.com"
+    And user swipes record from right to left
+    And click on "Edit" option
+    Then Edit Operator screen should be displayed
 
   # ==================================================
   # ✅ POSITIVE SCENARIOS
   # ==================================================
 
-  Scenario: Create operator with all valid details
-    When click on add button
-    And user enters all the following operator details:
-      | Field              | Value            |
-      | Operator Name      | anil kumar       |
-      | Email Id           | anil@example1.com|
-      | Phone Number       | 8765578188       |
-      | Emergency Number   | 9090908165       |
-      | Operator Code      | ANIL123          |
-      | Blood Group        | A+               |
-      | Address 1          | btm layout 1stage|
-      | Address 2          | btm layout 2stage|
-      | Pin Code           | 570026           |
-      | City               | Mysore           |
-      | State              | Karnataka        |
-      | Country            | India            |
+  Scenario: Update operator with valid data
+    When user opens edit screen for operator "anil@example.com"
+    And user edits Operator Name
+    And user updates Phone Number with valid unique number
+    And user selects Blood Group
     And I click on the submit button
-    Then operator should be created successfully
+    Then operator should be updated successfully
 
-  Scenario: Create operator with all fields filled
-    When user enters all valid details including optional fields
+  Scenario: Update operator with all fields
+    When user updates all fields including optional fields
     And I click on the submit button
-    Then operator should be created successfully
+    Then operator should be updated successfully
 
-  Scenario: Create operator without optional fields
-    When user fills only mandatory fields
+  Scenario: Update operator without optional fields
+    When user updates only mandatory fields
     And I click on the submit button
-    Then operator should be created successfully
+    Then operator should be updated successfully
 
-  Scenario: Create operator with valid email
-    When user enters valid unique email
+  Scenario: Update operator email with valid unique email
+    When user updates Email with valid unique value
     And I click on the submit button
-    Then operator should be created successfully
+    Then operator should be updated successfully
 
-  Scenario: Create operator with rating
-    When user selects star rating
-    Then rating should be captured successfully
+  Scenario: Update operator rating
+    When user changes star rating
+    Then updated rating should be saved successfully
 
-  Scenario: Create operator with valid DOB and DOJ
-    When user selects valid dates
+  Scenario: Update operator with valid DOB and DOJ
+    When user updates Date of Birth and Date of Joining
     And I click on the submit button
-    Then operator should be created successfully
+    Then operator should be updated successfully
+
+  Scenario: Verify pre-filled data in Edit screen
+    When user opens edit screen for operator "anil@example.com"
+    Then all fields should be pre-filled with existing operator data
 
   # ==================================================
   # ❌ NEGATIVE SCENARIOS
   # ==================================================
 
   Scenario: Submit without mandatory fields
-    When I click on the submit button without entering data
+    When user clears mandatory fields
+    And I click on the submit button
     Then error should be displayed below mandatory fields
 
   Scenario: Operator Name is mandatory
-    When user leaves Operator Name empty
+    When user clears Operator Name
     And I click on the submit button
     Then "Operator Name is required" should be displayed below field
 
   Scenario: Missing Phone Number
-    When user leaves Phone Number empty
+    When user clears Phone Number
     Then "Phone Number is required" should be displayed below field
 
   Scenario: Missing Blood Group
     When user does not select Blood Group
     Then "Blood Group is required" should be displayed below field
 
-  Scenario: Invalid Phone Number (less than 10 digits)
+  Scenario: Invalid Phone Number
     When user enters invalid phone number
-    Then "Phone number must be 10 digits" should be displayed below field
-
-  Scenario: Invalid Phone Number (more than 10 digits)
-    When user enters more than 10 digits
     Then "Phone number must be 10 digits" should be displayed below field
 
   Scenario: Duplicate Phone Number
@@ -120,7 +119,7 @@ Feature: Operator Creation
     Then "DOJ cannot be before DOB" should be displayed below DOJ field
 
   Scenario: Upload invalid image format
-    When user uploads unsupported image format
+    When user uploads unsupported image
     Then error message should be displayed
 
   # ==================================================
@@ -129,6 +128,7 @@ Feature: Operator Creation
 
   Scenario: Enter only spaces in mandatory fields
     When user enters spaces in fields
+    And I click on the submit button
     Then validation errors should be displayed
 
   Scenario: Enter maximum length values
@@ -139,43 +139,47 @@ Feature: Operator Creation
     When user enters special characters
     Then system should validate accordingly
 
-  Scenario: Rapid star rating selection
-    When user quickly selects multiple star ratings
-    Then correct rating should be captured
+  Scenario: Rapid rating change
+    When user quickly changes star rating
+    Then correct rating should be saved
 
-  Scenario: Network failure during submission
-    When user submits form without internet
+  Scenario: Network failure during update
+    When user submits update without internet
     Then error message should be displayed
 
-  Scenario: API failure during submission
-    When backend returns failure response
+  Scenario: API failure during update
+    When backend returns failure during update
     Then proper error message should be shown
 
   # ==================================================
   # 📱 UI VALIDATION SCENARIOS
   # ==================================================
 
-  Scenario: Verify Add Operator screen UI
+  Scenario: Verify Edit Operator screen UI
     Then all fields and Submit button should be visible
 
+  Scenario: Verify pre-filled data
+    Then all fields should display existing operator data
+
   Scenario: Verify image upload UI
-    Then image upload field should be visible and clickable
+    Then image field should be visible and clickable
 
   Scenario: Verify star rating UI
-    Then star rating component should be visible and interactive
+    Then rating component should be interactive
 
   Scenario: Verify date picker popup
-    When user clicks DOB or DOJ field
+    When user clicks DOB or DOJ
     Then date picker should be displayed
 
   Scenario: Verify scroll functionality
-    Then user should be able to scroll entire form
+    Then user should be able to scroll form
 
   Scenario: Verify keyboard behavior
     Then keyboard should open and close properly
 
-  Scenario: Verify Submit button behavior
-    Then Submit button should validate mandatory fields
+  Scenario: Verify swipe gesture for Edit
+    When user swipes record from right to left
+    Then Edit option should be visible
 
   # ==================================================
   # 🔎 FIELD-LEVEL VALIDATION SCENARIOS
