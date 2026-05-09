@@ -1,3 +1,4 @@
+@regression @view @p2
 Feature: Machine View Flow via Search for Newly Created Machine
 
   Background:
@@ -13,6 +14,7 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # 🔍 SEARCH & NAVIGATION FLOW
   # =========================================================
 
+  @smoke @p1
   Scenario: Search and open Machine View screen using detailed steps
     When User clicks on search icon
     And User taps on search input field
@@ -32,6 +34,7 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # 👁️ POSITIVE VIEW SCENARIOS
   # =========================================================
 
+  @regression @p1
   Scenario: Verify Machine View screen data accuracy
     When User opens Machine View screen for newly created machine
     Then system should display the following fields in read-only mode:
@@ -45,11 +48,13 @@ Feature: Machine View Flow via Search for Newly Created Machine
       | IoT Device Type |
     And all values should match saved machine data exactly
 
+  @regression @p1
   Scenario: Verify License Type display in view mode
     When User opens Machine View screen for newly created machine
     Then License Type should be displayed as read-only value
     And License Type value should match created machine data
 
+  @regression @p2
   Scenario: Verify dropdown fields in view mode
     When User opens Machine View screen for newly created machine
     Then Machine Brand should be displayed as non-editable
@@ -57,11 +62,13 @@ Feature: Machine View Flow via Search for Newly Created Machine
     And IoT Device Type should be displayed as non-editable
     And all dropdown values should be displayed correctly
 
+  @regression @p2
   Scenario: Verify Machine Code display format in view mode
     When User opens Machine View screen for newly created machine
     Then Machine Code should be visible in correct format
     And Machine Code should not be editable
 
+  @regression @p2
   Scenario: Verify all machine detail fields are visible in view mode
     When User opens Machine View screen for newly created machine
     Then all machine detail fields should be visible properly
@@ -71,30 +78,37 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # 🔍 SEARCH VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Search with exact Machine Name
     When User enters exact Machine Name in search field
     Then system should return the correct machine result
 
+  @regression @p2
   Scenario: Search with partial Machine Name
     When User enters partial Machine Name in search field
     Then system should return relevant matching results
 
+  @regression @p2
   Scenario: Search with uppercase and lowercase variation
     When User enters Machine Name in different letter case
     Then system should return correct result for case-insensitive search
 
+  @negative @regression @p2
   Scenario: Search with invalid machine name
     When User enters non-existing machine name in search field
     Then system should display "No results found"
 
+  @negative @regression @p3
   Scenario: Search with special characters
     When User enters "@@@###" in search field
     Then system should handle input safely without crash
 
+  @negative @regression @p3
   Scenario: Search with empty input
     When User leaves search field empty
     Then system should display default machine list or no filtered results based on application behavior
 
+  @regression @p2
   Scenario: Search after clearing search input
     When User searches for newly created Machine Name
     And User clears search input
@@ -104,21 +118,25 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # ❌ NEGATIVE SCENARIOS - VIEW MODE
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Verify no edit controls in view screen
     When User opens Machine View screen for newly created machine
-    Then Save button should not be visible
+    Then Save button should NOT be visible
     And editable input fields should not be enabled
     And machine details should remain read-only
 
+  @negative @p3
   Scenario: Unauthorized access to machine view
     When User without permission tries to access Machine View screen
     Then system should show "Access Denied" message
 
+  @negative @p3
   Scenario: View machine after deletion
     When machine is deleted from system
     And User searches the same machine name
     Then system should show "Machine not found"
 
+  @negative @p3
   Scenario: Open view screen for unavailable machine record
     When machine record is unavailable in list
     Then User should not be able to open Machine View screen
@@ -127,28 +145,34 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # ⚠️ EDGE CASE SCENARIOS
   # =========================================================
 
+  @sanity @p3
   Scenario: Rapid search input handling
     When User types rapidly in search field
     Then system should debounce search requests properly
     And application should remain stable
 
+  @sanity @p3
   Scenario: Large dataset search performance
     Given system contains large number of machine records
     When User searches machine name
     Then search results should load within acceptable response time
 
+  @negative @p3
   Scenario: Network failure during search
     When User searches machine without internet connection
     Then system should display network error message
 
+  @negative @p3
   Scenario: Session timeout during view access
     When session expires during navigation to Machine View screen
     Then User should be redirected to login screen
 
+  @regression @p2
   Scenario: Back navigation from view screen
     When User clicks back button from Machine View screen
     Then User should return to Machine List screen
 
+  @sanity @p3
   Scenario: Reopen same machine view multiple times
     When User opens and closes Machine View screen multiple times
     Then machine details should load correctly each time
@@ -157,34 +181,39 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # 📱 UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify Machine View UI layout
     When User opens Machine View screen for newly created machine
     Then all fields should be properly aligned
     And labels and values should be clearly visible
     And no input field should be editable
 
+  @regression @p3
   Scenario: Verify scroll behavior in view screen
     When User opens Machine View screen for newly created machine
     Then User should be able to scroll through entire machine details
 
+  @regression @p3
   Scenario: Verify data formatting in view screen
     When User opens Machine View screen for newly created machine
     Then codes, text values, and displayed details should be properly formatted
 
+  @regression @p3
   Scenario: Verify UI consistency with update screen structure
     When User opens Machine View screen for newly created machine
     Then view screen structure should match update screen layout in read-only mode
 
+  @regression @p2
   Scenario: Verify action menu UI from swipe
     When User searches for newly created Machine Name
     And User performs swipe right to left on the machine record
     Then action menu should be displayed properly
 
-
   # =========================================================
   # 🔁 SEARCH VARIATIONS COVERAGE
   # =========================================================
 
+  @regression @p3
   Scenario Outline: Validate machine search behavior
     When User enters "<searchInput>" in search field
     Then system should return "<expectedResult>"
@@ -201,6 +230,7 @@ Feature: Machine View Flow via Search for Newly Created Machine
   # 🔎 READ-ONLY FIELD VALIDATION
   # =========================================================
 
+  @regression @p3
   Scenario Outline: Validate read-only behavior of view fields
     When User opens Machine View screen for newly created machine
     Then "<fieldName>" should be displayed in read-only mode

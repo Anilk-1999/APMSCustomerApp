@@ -1,3 +1,4 @@
+@regression @view @p2
 Feature: View Product Group Details from Product Group List
 
   Background:
@@ -9,10 +10,11 @@ Feature: View Product Group Details from Product Group List
     Then verify user navigates to "Product Groups" list screen
     And User has already created a Product Group
 
-  # =========================================================
-  # 🔍 SEARCH + VIEW FLOW
-  # =========================================================
+  # ==================================================
+  # ✅ NAVIGATION SCENARIOS
+  # ==================================================
 
+  @smoke @p1
   Scenario: Search and open Product Group View popup
     When User clicks on search icon
     And User taps on search input field
@@ -30,10 +32,11 @@ Feature: View Product Group Details from Product Group List
     And Close "X" button should be visible
     And all fields should be displayed in read-only mode
 
-  # =========================================================
-  # 👁️ POSITIVE SCENARIOS
-  # =========================================================
+  # ==================================================
+  # ✅ POSITIVE SCENARIOS
+  # ==================================================
 
+  @regression @p1
   Scenario: Verify Product Group view data accuracy
     When User opens Product Group View popup
     Then system should display the following fields:
@@ -44,85 +47,100 @@ Feature: View Product Group Details from Product Group List
       | Description        |
     And all displayed values should match saved Product Group data
 
+  @regression @p2
   Scenario: Verify popup close functionality
     When User opens Product Group View popup
     And User clicks on "X" button
     Then popup should be closed
     And User should return to Product Groups list screen
 
+  @regression @p2
   Scenario: Verify Product Group Code format display
     When User opens Product Group View popup
     Then Product Group Code should be displayed correctly
     And Product Group Code should not be editable
 
+  @regression @p2
   Scenario: Verify Product Group Name display in view popup
     When User opens Product Group View popup
     Then Product Group Name should be displayed correctly
     And Product Group Name should not be editable
 
+  @regression @p2
   Scenario: Verify Description display in view popup
     When User opens Product Group View popup
     Then Description should be displayed correctly
     And Description should not be editable
 
-  # =========================================================
+  # ==================================================
   # ❌ NEGATIVE SCENARIOS
-  # =========================================================
+  # ==================================================
 
+  @negative @regression @p2
   Scenario: Verify fields are not editable
     When User opens Product Group View popup
     And User tries to edit Product Group Name
     Then Product Group Name field should not be editable
 
+  @negative @regression @p2
   Scenario: Verify no action buttons in view popup
     When User opens Product Group View popup
     Then Save button should not be visible
     And Edit button should not be visible
 
+  @negative @regression @p3
   Scenario: View deleted Product Group
     When Product Group is deleted from backend
     And User searches same Product Group
     Then system should display "Product Group not found"
 
+  @negative @regression @p3
   Scenario: Unauthorized access to view Product Group
     When User without permission tries to view Product Group
     Then system should display "Access Denied"
 
+  @negative @regression @p3
   Scenario: Verify user cannot modify data from keyboard input
     When User opens Product Group View popup
     And User tries to modify field values using keyboard input
     Then field values should remain unchanged
 
-  # =========================================================
+  # ==================================================
   # ⚠️ EDGE CASE SCENARIOS
-  # =========================================================
+  # ==================================================
 
+  @sanity @p3
   Scenario: Rapid click on Product Group record
     When User clicks multiple times quickly on Product Group record
     Then only one View Product Group popup should open
 
+  @sanity @p3
   Scenario: Long description handling in view popup
     When Product Group contains large Description
     And User opens Product Group View popup
     Then Description content should be displayed properly
     And User should be able to scroll if required
 
+  @sanity @p3
   Scenario: Network failure during view
     When User clicks Product Group record without internet connection
     Then system should display network error message
 
+  @sanity @p3
   Scenario: Session timeout during view
     When session expires while opening Product Group View popup
     Then User should be redirected to login screen
 
+  @sanity @p3
   Scenario: Reopen view popup multiple times
     When User opens and closes Product Group View popup multiple times
     Then Product Group details should load correctly each time
 
-  # =========================================================
+  # ==================================================
   # 📱 UI VALIDATION SCENARIOS
-  # =========================================================
+  # ==================================================
 
+  @regression @p2
   Scenario: Verify View Product Group popup UI
     When User opens Product Group View popup
     Then all fields should be properly aligned
@@ -130,28 +148,33 @@ Feature: View Product Group Details from Product Group List
     And values should be readable
     And "X" button should be correctly positioned
 
+  @regression @p2
   Scenario: Verify read-only UI behavior
     When User opens Product Group View popup
     Then all fields should appear disabled or read-only
     And no editable input cursor should be visible
 
+  @regression @p3
   Scenario: Verify scroll functionality in popup
     When User opens Product Group View popup
     Then User should be able to scroll popup content if required
 
+  @regression @p2
   Scenario: Verify UI consistency with Edit popup
     When User opens Product Group View popup
     Then View popup layout should match Edit popup structure
     And all fields should be disabled
 
+  @regression @p3
   Scenario: Verify popup overlay behavior
     When User opens Product Group View popup
     Then background screen should remain inaccessible until popup is closed
 
-  # =========================================================
-  # 🔁 SEARCH VARIATION COVERAGE
-  # =========================================================
+  # ==================================================
+  # 🔎 FIELD VALIDATION OUTLINES
+  # ==================================================
 
+  @regression @p3
   Scenario Outline: Validate Product Group search behavior
     When User enters "<searchInput>" in search field
     Then system should return "<expectedResult>"
@@ -164,10 +187,7 @@ Feature: View Product Group Details from Product Group List
       | invalid name     | no results found |
       | special chars    | safe handling    |
 
-  # =========================================================
-  # 🔍 READ-ONLY FIELD VALIDATION
-  # =========================================================
-
+  @regression @p3
   Scenario Outline: Validate read-only behavior of Product Group fields
     When User opens Product Group View popup
     Then "<fieldName>" should be displayed in read-only mode

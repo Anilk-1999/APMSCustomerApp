@@ -5,28 +5,22 @@ import java.util.List;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import java.time.Duration;
-import javax.management.relation.Role;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import utilities.ScrollUtils;
-import utilities.WaitForElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UsersPage extends BasePage {
 
     public UsersPage(AndroidDriver driver) {
         super(driver);
-        // scroll=new ScrollUtils(driver);
     }
 
-
-    // @AndroidFindBy(xpath = "//android.view.View[@content-desc='MI-U']/preceding-sibling::android.widget.Button")
-    @AndroidFindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]")                     
-    private WebElement profileIcon;
+    // profileIcon intentionally unused — clickOnProfileIcon() uses a direct driver.findElement
+    // so the deep-nested XPath doesn't crash UiAutomator2.
 
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Account Preferences\"]")
     private WebElement accountPreferenceHeader;
@@ -64,40 +58,30 @@ public class UsersPage extends BasePage {
     @AndroidFindBy(accessibility = "Filter")
     private WebElement filterButton;
 
-
-      // User Name
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='User Name *']")
     private WebElement userName;
 
-    // Email ID
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Email ID *']")
     private WebElement emailId;
 
-    // Phone No
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Phone No *']")
     private WebElement phoneNo;
 
-    // Emergency No
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Emergency No']")
     private WebElement emergencyNo;
 
-    // Emp Code
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Emp Code']")
     private WebElement empCode;
 
-    // Blood Group (button with content-desc)
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Blood Group *']")
     private WebElement bloodGroup;
-
 
     @AndroidFindBy(xpath = "//android.widget.Button")
     private List<WebElement> dropdownOptions;
 
-    // Date of Birth
     @AndroidFindBy(xpath = "//android.view.View[@hint='Date of Birth']")
     private WebElement dob;
 
-    // Date of Joining
     @AndroidFindBy(xpath = "//android.view.View[@hint='Date of Joining']")
     private WebElement doj;
 
@@ -119,148 +103,185 @@ public class UsersPage extends BasePage {
     @AndroidFindBy(accessibility = "OK")
     private WebElement okButton;
 
-
-    // Address Line 1
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Address Line I']")
     private WebElement address1;
 
-    // Address Line 2
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Address Line II']")
     private WebElement address2;
 
-    // Pin Code (assuming you have a field with hint 'Pin Code')
     @AndroidFindBy(xpath = "//android.widget.EditText[@hint='Pin Code']")
     private WebElement pinCode;
 
-    // Role (assuming it is a dropdown/button with content-desc 'Role')
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Roles *\"]")
     private WebElement roledropDown;
 
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Teams\n" + "The user will be listed in the dropdowns of the selected teams\"]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Teams\n" +
+            "The user will be listed in the dropdowns of the selected teams\"]")
     private WebElement teamsInfo;
 
     @AndroidFindBy(xpath = "//android.view.View")
     private List<WebElement> teamsOptions;
 
-    // Submit button
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Submit']")
     private WebElement submitButton;
-
-
-    //------------------------------Edit elements ------------------------------------
 
     @AndroidFindBy(xpath = "android.view.View")
     private List<WebElement> listRecords;
 
-
-
-
-
-
-
-
-//-------------------------------------Actions---------------------------------------
-
+    // ── Actions ───────────────────────────────────────────────────────────────
 
     public String getAccountPreferenceHeader() {
-        // scroll=new ScrollUtils(driver);
-        waitUtil=new WaitForElement(driver);
-        waitUtil.waitForVisibility(accountPreferenceHeader);
-        String getHeader = accountPreferenceHeader.getAttribute("content-desc");
+        WebElement header = new WebDriverWait(driver, Duration.ofSeconds(15)).until(d -> {
+            try {
+                WebElement el = d.findElement(AppiumBy.xpath(
+                        "//android.view.View[@content-desc='Account Preferences']"));
+                return el.isDisplayed() ? el : null;
+            } catch (Exception e) { return null; }
+        });
+        String getHeader = header.getAttribute("content-desc");
         System.out.println("Account Preference Header: " + getHeader);
         return getHeader;
-
     }
 
-    //clicks on the profile icon
     public void clickOnProfileIcon() {
-        waitUtil.waitForVisibility(profileIcon);
-        if (profileIcon.isDisplayed()) {
-            profileIcon.click();
+        // Use explicit wait so we only query the DOM once the element is actually present,
+        // avoiding UiAutomator2 crashes caused by DOM traversal during Flutter animations.
+        // 20 s — extra headroom for UiAutomator2 to restart after an instrumentation crash.
+        //
+        // XPath is tried FIRST because it scopes the search to the nav-bar area (View[1]),
+        // which always contains the profile icon. The instance(0) approach fails on a
+        // fully-loaded Dashboard because machine-card buttons appear before the nav-bar
+        // in the DOM tree, making instance(0) point to a machine button instead.
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement icon;
+        try {
+            icon = wait.until(d -> {
+                try {
+                    return d.findElement(By.xpath(
+                            "//android.widget.FrameLayout[@resource-id='android:id/content']" +
+                            "/android.widget.FrameLayout/android.widget.FrameLayout" +
+                            "/android.view.View/android.view.View/android.view.View" +
+                            "/android.view.View/android.view.View[1]/android.widget.Button[1]"));
+                } catch (Exception e) { return null; }
+            });
+        } catch (Exception e) {
+            // Fallback: instance(0) works when the Dashboard is freshly loaded (before machine
+            // card buttons appear ahead of the nav-bar in the DOM).
+            icon = wait.until(d -> {
+                try {
+                    return d.findElement(AppiumBy.androidUIAutomator(
+                            "new UiSelector().className(\"android.widget.Button\").instance(0)"));
+                } catch (Exception ex) { return null; }
+            });
         }
+        icon.click();
     }
 
-
-    //Clicks on the given header section if available
     public void clickOnSectionHeader(String expectedHeader) {
-        waitUtil.waitForVisibilities(sectionHeadersExplorer);
-        for (WebElement header : sectionHeadersExplorer) {
-            String headerText = header.getAttribute("content-desc");
-            if (headerText.equalsIgnoreCase(expectedHeader)) {
-                waitUtil.waitForVisibility(header);
-                header.click();
-                System.out.println("Clicked on section header: " + headerText);
-                return;
-            }
+        // Section headers have content-desc like "Configurations, Collapsed" or "Configurations, Expanded".
+        // Try UiScrollable first; fall back to direct find when content fits without scrolling.
+        WebElement header = findSectionHeader(expectedHeader);
+        waitForVisibility(header);
+        String descBefore = header.getAttribute("content-desc");
+        System.out.println("[UsersPage] Section header desc: " + descBefore);
+        // Only click if collapsed — clicking an already-expanded section would collapse it,
+        // causing subsequent clickOnFeature() calls to fail.
+        if (descBefore != null && descBefore.contains("Expanded")) {
+            System.out.println("[UsersPage] Section already expanded, skipping click: " + expectedHeader);
+            return;
         }
-        throw new RuntimeException("Section header not found: " + expectedHeader);
+        header.click();
+        System.out.println("[UsersPage] Clicked on section header: " + expectedHeader);
+        // Wait until content-desc changes — signals the section expand animation is done.
+        final String capturedDesc = descBefore;
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(d -> {
+                    try {
+                        WebElement el = findSectionHeader(expectedHeader);
+                        String desc = el.getAttribute("content-desc");
+                        return desc != null && !desc.equals(capturedDesc);
+                    } catch (Exception e) { return false; }
+                });
     }
 
-public String getSectionHeaderText(String expectedHeader) {
-    // First, check visible headers
-    waitUtil.waitForVisibilities(sectionHeadersExplorer);
-    for (WebElement header : sectionHeadersExplorer) {
-        if (header.isDisplayed() && header.getAttribute("content-desc").equalsIgnoreCase(expectedHeader)) {
-            return header.getAttribute("content-desc");
+    public String getSectionHeaderText(String expectedHeader) {
+        // Scroll to section header, strip ", Collapsed" / ", Expanded" suffix before returning.
+        WebElement header = findSectionHeader(expectedHeader);
+        waitForVisibility(header);
+        String desc = header.getAttribute("content-desc");
+        return desc.split(",")[0].trim();
+    }
+
+    private WebElement findSectionHeader(String expectedHeader) {
+        try {
+            return driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true))" +
+                    ".scrollIntoView(new UiSelector().descriptionStartsWith(\"" + expectedHeader + "\"))"));
+        } catch (Exception scrollEx) {
+            // No scrollable container — content fits on screen without scrolling.
+            System.out.println("[UsersPage] No scrollable container — trying direct find for: " + expectedHeader);
+            return driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().descriptionStartsWith(\"" + expectedHeader + "\")"));
         }
     }
-    // If not found, scroll and try again
-    // scrollToText(expectedHeader);
 
-    // Re-locate headers after scroll
-    waitUtil.waitForVisibilities(sectionHeadersExplorer);
-    for (WebElement header : sectionHeadersExplorer) {
-        if (header.isDisplayed() && header.getAttribute("content-desc").equalsIgnoreCase(expectedHeader)) {
-            return header.getAttribute("content-desc");
-        }
-    }
-    throw new RuntimeException("Section header not found: " + expectedHeader);
-}
-
-
-    //Clicks on the given feature if available
     public void clickOnFeature(String expectedFeature) {
-        waitUtil.waitForVisibilities(allFeatures);
-        for (WebElement feature : allFeatures) {
-            String featureText = feature.getAttribute("content-desc");
-            if (featureText.equalsIgnoreCase(expectedFeature)) {
-                waitUtil.waitForVisibility(feature);
-                feature.click();
-                System.out.println("Clicked on feature: " + featureText);
-                return;
+        // Scroll until the feature icon is visible, then click.
+        // Wait 2 s between attempts — the Configurations section may still be rendering
+        // after a back-navigation, and UiScrollable cannot find items not yet in the tree.
+        WebElement feature = null;
+        Exception lastEx = null;
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            try {
+                feature = driver.findElement(AppiumBy.androidUIAutomator(
+                        "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().description(\"" + expectedFeature + "\"))"));
+                break;
+            } catch (Exception e) {
+                lastEx = e;
+                if (attempt < 3) {
+                    try { Thread.sleep(2000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
+                }
             }
         }
-        throw new RuntimeException("Feature not found: " + expectedFeature);
+        if (feature == null) throw new RuntimeException("Feature not found after retry: " + expectedFeature, lastEx);
+        waitForVisibility(feature);
+        feature.click();
+        System.out.println("Clicked on feature: " + expectedFeature);
     }
 
-
-    // Get full header text
     public String getFullListHeaderText() {
         return listPageHeader.getAttribute("content-desc");
     }
 
-    // Get only the title part
     public String getListPageTitle() {
-        waitUtil.waitForVisibility(searchButton);
+        // Brief pause lets the Flutter screen-transition animation begin before polling.
+        // Without this, rapid findElement calls start before the screen is rendered,
+        // stressing UiAutomator2 instrumentation and occasionally causing crashes.
+        try { Thread.sleep(1500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+        // Poll at 1-second intervals (not the default 500 ms) to reduce load on UiAutomator2.
+        new WebDriverWait(driver, Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(1))
+                .until(d -> {
+                    try {
+                        return d.findElement(AppiumBy.accessibilityId("Search")).isDisplayed();
+                    } catch (Exception e) { return false; }
+                });
         String header = getFullListHeaderText();
-        String firstLine = header.split("\\r?\\n")[0]; // take only first line
+        String firstLine = header.split("\\r?\\n")[0];
         return firstLine.replaceAll("\\d", "").trim();
     }
 
-    // Get only the number part
     public int getTotalListCount() {
         String header = getFullListHeaderText();
-        String number = header.replaceAll("\\D+", ""); // keep only digits
-        if (number.isEmpty()) {
-            return 0;
-        }
+        String number = header.replaceAll("\\D+", "");
+        if (number.isEmpty()) return 0;
         return Integer.parseInt(number);
     }
 
-
     public String getPageHeaderText() {
-        System.out.println("get header text :-------"+addEditAndViewPageHeader.getAttribute("content-desc"));
-         waitUtil.waitForVisibility(addEditAndViewPageHeader);
+        System.out.println("get header text: " + addEditAndViewPageHeader.getAttribute("content-desc"));
+        waitForVisibility(addEditAndViewPageHeader);
         return addEditAndViewPageHeader.getAttribute("content-desc");
     }
 
@@ -268,18 +289,15 @@ public String getSectionHeaderText(String expectedHeader) {
         return popupAndBottomSheetHeader.getAttribute("content-desc");
     }
 
-    // Clicks on the Add button if the header matches
     public void clickOnAddButton() {
-            waitUtil.waitForVisibility(addButton);
-            if (addButton.isEnabled()) {
-                addButton.click();
-            }
+        waitForVisibility(addButton);
+        if (addButton.isEnabled()) {
+            addButton.click();
         }
-   
+    }
 
-     // Methods to fill the form
     public void enterUserName(String name) {
-        waitUtil.waitForVisibility(userName);
+        waitForVisibility(userName);
         if (userName.isEnabled()) {
             userName.click();
             userName.clear();
@@ -288,7 +306,7 @@ public String getSectionHeaderText(String expectedHeader) {
     }
 
     public void enterEmail(String email) {
-        waitUtil.waitForVisibility(emailId);
+        waitForVisibility(emailId);
         if (emailId.isEnabled()) {
             emailId.click();
             emailId.clear();
@@ -297,7 +315,7 @@ public String getSectionHeaderText(String expectedHeader) {
     }
 
     public void enterPhone(String phone) {
-        waitUtil.waitForVisibility(phoneNo);
+        waitForVisibility(phoneNo);
         if (phoneNo.isEnabled()) {
             phoneNo.click();
             phoneNo.clear();
@@ -306,7 +324,7 @@ public String getSectionHeaderText(String expectedHeader) {
     }
 
     public void enterEmergencyNo(String emergency) {
-        waitUtil.waitForVisibility(emergencyNo);
+        waitForVisibility(emergencyNo);
         if (emergencyNo.isEnabled()) {
             emergencyNo.click();
             emergencyNo.clear();
@@ -314,78 +332,66 @@ public String getSectionHeaderText(String expectedHeader) {
         }
     }
 
-        int startX;
-        int startY;
-        int endX;
-        int endY;
+    int startX;
+    int startY;
+    int endX;
+    int endY;
 
-        public void getScreenSize()
-        {
-            Dimension size = driver.manage().window().getSize();
-            int screenWidth = size.width;
-            int screenHeight = size.height;
+    public void getScreenSize() {
+        Dimension size = driver.manage().window().getSize();
+        int screenWidth  = size.width;
+        int screenHeight = size.height;
+        startX = screenWidth / 2;
+        startY = (int) (screenHeight * 0.8);
+        endX   = screenWidth / 2;
+        endY   = (int) (screenHeight * 0.2);
+        System.out.println("startx: " + startX + " starty: " + startY + " endx: " + endX + " endy: " + endY);
+    }
 
-            startX = screenWidth / 2;              // Middle of the screen (X-axis)
-            startY = (int) (screenHeight * 0.8);   // Near bottom (80% height)
-            endX   = screenWidth / 2;              // Keep X same (vertical scroll)
-            endY   = (int) (screenHeight * 0.2);   // Near top (20% height)
-
-            System.out.println("startx :-----"+startX);
-            System.out.println("starty :-----"+startY);
-            System.out.println("endx :-----"+endX);
-            System.out.println("endy :-----"+endY);
-
+    public void enterEmpCode(String code) {
+        if (((AndroidDriver) driver).isKeyboardShown()) {
+            ((AndroidDriver) driver).hideKeyboard();
         }
-
-
-        public void enterEmpCode(String code) {
+        waitForVisibility(empCode);
+        if (empCode.isEnabled()) {
+            empCode.click();
             if (((AndroidDriver) driver).isKeyboardShown()) {
-            ((AndroidDriver) driver).hideKeyboard();
+                ((AndroidDriver) driver).hideKeyboard();
             }
-        waitUtil.waitForVisibility(empCode);
-            if (empCode.isEnabled()) {
-                empCode.click();
-                if (((AndroidDriver) driver).isKeyboardShown()) {
-            ((AndroidDriver) driver).hideKeyboard();
-            }
-                empCode.clear();
-                empCode.sendKeys(code);
+            empCode.clear();
+            empCode.sendKeys(code);
+        }
+    }
+
+    public void selectOptionInDropdown(String optionText) {
+        waitForVisibilities(dropdownOptions);
+        for (WebElement option : dropdownOptions) {
+            if (option.getAttribute("content-desc").equalsIgnoreCase(optionText)) {
+                option.click();
+                return;
             }
         }
-
-
-        public void selectOptionInDropdown(String optionText) {
-            waitUtil.waitForVisibilities(dropdownOptions);
-                for (WebElement option : dropdownOptions) {
-                    if (option.getAttribute("content-desc").equalsIgnoreCase(optionText)) {
-                        option.click();
-                        return;
-                    }
-                }
-                throw new RuntimeException("Dropdown option not found: " + optionText);
-        }
+        throw new RuntimeException("Dropdown option not found: " + optionText);
+    }
 
     public void selectBloodGroup(String group) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        waitUtil.waitForVisibility(bloodGroup);
+        waitForVisibility(bloodGroup);
         if (bloodGroup.isEnabled()) {
             bloodGroup.click();
             selectOptionInDropdown(group);
         }
-    
     }
 
-
-    public void selectDate(String month, String year, String date)
-    {
-        waitUtil.waitForVisibility(yearDropdownButton);
+    public void selectDate(String month, String year, String date) {
+        waitForVisibility(yearDropdownButton);
         String selectedMonthYear = yearDropdownButton.getAttribute("content-desc");
         System.out.println("Selected Month/Year: " + selectedMonthYear);
         if (!selectedMonthYear.equals(month + " " + year)) {
             yearDropdownButton.click();
-            waitUtil.waitForVisibilities(datesAndYearList);
+            waitForVisibilities(datesAndYearList);
             for (WebElement yearElement : datesAndYearList) {
                 if (yearElement.getAttribute("content-desc").equals(year)) {
                     yearElement.click();
@@ -393,12 +399,10 @@ public String getSectionHeaderText(String expectedHeader) {
                 }
             }
         }
-        if(!selectedMonthYear.startsWith(month)) {
+        if (!selectedMonthYear.startsWith(month)) {
             while (true) {
                 selectedMonthYear = yearDropdownButton.getAttribute("content-desc");
-                if (selectedMonthYear.startsWith(month)) {
-                    break;
-                }
+                if (selectedMonthYear.startsWith(month)) break;
                 nextMonthButton.click();
             }
         }
@@ -410,9 +414,8 @@ public String getSectionHeaderText(String expectedHeader) {
         }
     }
 
-
     public void enterDOB(String month, String year, String date) {
-        waitUtil.waitForVisibility(dob);
+        waitForVisibility(dob);
         if (dob.isEnabled()) {
             dob.click();
             selectDate(month, year, date);
@@ -421,7 +424,7 @@ public String getSectionHeaderText(String expectedHeader) {
     }
 
     public void enterDOJ(String month, String year, String date) {
-        waitUtil.waitForVisibility(doj);
+        waitForVisibility(doj);
         if (doj.isEnabled()) {
             doj.click();
             selectDate(month, year, date);
@@ -431,58 +434,55 @@ public String getSectionHeaderText(String expectedHeader) {
 
     public void clickOnDOBButton() {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        waitUtil.waitForVisibility(dob);
+        waitForVisibility(dob);
         if (dob.isEnabled()) {
             dob.click();
         }
     }
 
     public void clickOnDOJButton() {
-        waitUtil.waitForVisibility(doj);
+        waitForVisibility(doj);
         if (doj.isEnabled()) {
             doj.click();
         }
     }
 
     public void clickOnCancelButton() {
-        waitUtil.waitForVisibility(cancelButton);
+        waitForVisibility(cancelButton);
         if (cancelButton.isEnabled()) {
             cancelButton.click();
         }
     }
 
     public void clickOnOkButton() {
-        waitUtil.waitForVisibility(okButton);
+        waitForVisibility(okButton);
         if (okButton.isEnabled()) {
             okButton.click();
         }
     }
 
-
-    public void selectDateOfBirth()
-    {
+    public void selectDateOfBirth() {
         clickOnDOBButton();
         clickOnOkButton();
     }
 
-    public void selectDateOfJoining()
-    {
+    public void selectDateOfJoining() {
         clickOnDOJButton();
         clickOnOkButton();
     }
 
     public void enterAddress1(String addr1) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        waitUtil.waitForVisibility(address1);
+        waitForVisibility(address1);
         if (address1.isEnabled()) {
             address1.click();
             if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
-        }
+                ((AndroidDriver) driver).hideKeyboard();
+            }
             address1.clear();
             address1.sendKeys(addr1);
         }
@@ -490,15 +490,15 @@ public String getSectionHeaderText(String expectedHeader) {
 
     public void enterAddress2(String addr2) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        scroll.scrollUntilVisible(address2);
-        waitUtil.waitForVisibility(address2);
+        scrollUntilVisible(address2);
+        waitForVisibility(address2);
         if (address2.isEnabled()) {
             address2.click();
             if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
-        }
+                ((AndroidDriver) driver).hideKeyboard();
+            }
             address2.clear();
             address2.sendKeys(addr2);
         }
@@ -506,42 +506,41 @@ public String getSectionHeaderText(String expectedHeader) {
 
     public void enterPinCode(String pin) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        scroll.scrollUntilVisible(pinCode);
-        waitUtil.waitForVisibility(pinCode);
+        scrollUntilVisible(pinCode);
+        waitForVisibility(pinCode);
         if (pinCode.isEnabled()) {
             pinCode.click();
             if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
-        }
+                ((AndroidDriver) driver).hideKeyboard();
+            }
             pinCode.clear();
             pinCode.sendKeys(pin);
         }
     }
 
     public void selectRole(String roleName) {
-        scroll.scrollUntilVisible(roledropDown);
-        waitUtil.waitForVisibility(roledropDown);
+        scrollUntilVisible(roledropDown);
+        waitForVisibility(roledropDown);
         if (roledropDown.isEnabled()) {
             roledropDown.click();
-            System.out.println("role name :-------" + roleName);
+            System.out.println("role name: " + roleName);
             selectOptionInDropdown(roleName);
         }
     }
 
-    public void teamSelection(String teamName)
-    {
+    public void teamSelection(String teamName) {
         if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            ((AndroidDriver) driver).hideKeyboard();
         }
-        waitUtil.waitForVisibility(teamsInfo);
-        if(teamsInfo.isDisplayed()) {
-            waitUtil.waitForVisibilities(teamsOptions);
+        waitForVisibility(teamsInfo);
+        if (teamsInfo.isDisplayed()) {
+            waitForVisibilities(teamsOptions);
             for (WebElement option : teamsOptions) {
-                System.out.println("get team options : " + option.getAttribute("content-desc"));
+                System.out.println("get team options: " + option.getAttribute("content-desc"));
                 if (option.getAttribute("content-desc").equalsIgnoreCase(teamName)) {
-                    waitUtil.waitForVisibility(option);
+                    waitForVisibility(option);
                     option.click();
                     return;
                 }
@@ -550,80 +549,57 @@ public String getSectionHeaderText(String expectedHeader) {
     }
 
     public void clickOnSubmitButton() {
-        waitUtil.waitForVisibility(submitButton);
+        waitForVisibility(submitButton);
         if (submitButton.isEnabled()) {
             submitButton.click();
         }
     }
 
-
     public void getConfirmationMsg() throws InterruptedException {
-
-   }
-
-   public void clickOnsearchButton() {
-    waitUtil.waitForVisibility(searchButton);
-    if (searchButton.isEnabled()) {
-        searchButton.click();
+        // confirmation is handled by the step definition assertion
     }
-   }
+
+    public void clickOnsearchButton() {
+        waitForVisibility(searchButton);
+        if (searchButton.isEnabled()) {
+            searchButton.click();
+        }
+    }
 
     public void clickOnSortButton() {
-        waitUtil.waitForVisibility(sortButton);
+        waitForVisibility(sortButton);
         if (sortButton.isEnabled()) {
             sortButton.click();
         }
     }
+
     public void clickOnFilterButton() {
-        waitUtil.waitForVisibility(filterButton);
+        waitForVisibility(filterButton);
         if (filterButton.isEnabled()) {
             filterButton.click();
         }
     }
 
-
-
-    //---------------------------------------Edit actions------------------------------------
-
-    public void getListOfRecords(){
-        waitUtil.waitForVisibilities(listRecords);
-        for(WebElement record : listRecords){
-            System.out.println("get list of records :-------"+record.getAttribute("content-desc"));
+    public void getListOfRecords() {
+        waitForVisibilities(listRecords);
+        for (WebElement listItem : listRecords) {
+            System.out.println("get list of records: " + listItem.getAttribute("content-desc"));
         }
     }
 
-
     public void swipeRightToLeft() {
-        // Get element location and size
+        for (WebElement listItem : listRecords) {
+            int swipeStartX = (int) (listItem.getLocation().getX() + listItem.getSize().getWidth() * 0.9);
+            int swipeEndX   = (int) (listItem.getLocation().getX() + listItem.getSize().getWidth() * 0.1);
+            int yAxis       = listItem.getLocation().getY() + (listItem.getSize().getHeight() / 2);
 
-        for(WebElement record : listRecords){
-
-        System.out.println("get x axis value ----------"+record.getLocation().getX());
-        System.out.println("get y axis value ----------"+record.getLocation().getY());
-        System.out.println("get width value ----------"+record.getSize().getWidth() * 0.9);
-        System.out.println("get width value ----------"+record.getSize().getWidth() * 0.1);
-        System.out.println("get height value ----------"+record.getSize().getHeight() / 2);
-
-        int startX = (int) (record.getLocation().getX() + record.getSize().getWidth() * 0.9);
-        int endX   = (int) (record.getLocation().getX() + record.getSize().getWidth() * 0.1);
-        int yAxis  = record.getLocation().getY() + (record.getSize().getHeight() / 2);
-
-        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        Sequence swipe = new Sequence(finger, 1);
-
-        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, yAxis));
-        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), endX, yAxis));
-        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-
-        driver.perform(Arrays.asList(swipe));
-}
-
-
-
-    
-
+            PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+            Sequence swipe = new Sequence(finger, 1);
+            swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), swipeStartX, yAxis));
+            swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+            swipe.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), swipeEndX, yAxis));
+            swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+            driver.perform(Arrays.asList(swipe));
+        }
     }
-
-
 }

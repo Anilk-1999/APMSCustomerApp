@@ -1,3 +1,4 @@
+@regression @smoke @update @p1
 Feature: Update Activity Group via Swipe Action with Checklist and Status Management
 
   Background:
@@ -13,6 +14,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 🔍 SEARCH + SWIPE + EDIT FLOW
   # =========================================================
 
+  @smoke @p1
   Scenario: Search and open Edit Activity Group popup
     When User clicks on search icon
     And User taps on search input field
@@ -40,6 +42,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 🧪 POSITIVE SCENARIOS (UPDATE)
   # =========================================================
 
+  @smoke @regression @p1
   Scenario: Update Activity Group with all fields
     When User opens Edit Activity Group popup
     And User updates Form Name with valid value
@@ -50,18 +53,21 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     Then Activity Group should be updated successfully
     And updated Activity Group should be reflected in list
 
+  @regression @p2
   Scenario: Update only Form Name
     When User opens Edit Activity Group popup
     And User updates Form Name
     And User clicks Save button
     Then Activity Group should be updated successfully
 
+  @regression @p2
   Scenario: Update only Description
     When User opens Edit Activity Group popup
     And User updates Form Description
     And User clicks Save button
     Then Activity Group should be updated successfully
 
+  @regression @p2
   Scenario: Update only checklist
     When User opens Edit Activity Group popup
     And User adds activities
@@ -69,6 +75,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     And User clicks Save button
     Then Activity Group should be updated successfully
 
+  @regression @p2
   Scenario: Update Form Name with trimmed value
     When User opens Edit Activity Group popup
     And User enters Form Name with leading and trailing spaces
@@ -79,6 +86,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 🔁 CHECKLIST ADD FLOW
   # =========================================================
 
+  @regression @p2
   Scenario: Add activities in edit popup
     When User opens Edit Activity Group popup
     And User clicks "+" button in Activity Checklist
@@ -87,6 +95,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     And User clicks Submit button
     Then selected activities should be added to checklist
 
+  @regression @p2
   Scenario: Add activities without selection
     When User opens Edit Activity Group popup
     And User opens Activity Checklist bottom sheet
@@ -97,22 +106,26 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 🗑️ CHECKLIST DELETE FLOW
   # =========================================================
 
+  @regression @p2
   Scenario: Delete single activity
     When User opens Edit Activity Group popup
     And User clicks delete icon on one activity
     Then that activity should be removed
     And remaining activities should be visible
 
+  @regression @p2
   Scenario: Delete multiple activities
     When User opens Edit Activity Group popup
     And User deletes multiple activities
     Then all selected activities should be removed correctly
 
+  @regression @p2
   Scenario: Delete all activities
     When User opens Edit Activity Group popup
     And User deletes all activities
     Then checklist should become empty
 
+  @regression @p2
   Scenario: Delete and re-add activities
     When User opens Edit Activity Group popup
     And User deletes activity
@@ -123,6 +136,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 🔁 STATUS FLOW
   # =========================================================
 
+  @regression @p1
   Scenario: Change status from Active to Inactive
     When User opens Edit Activity Group popup
     And current status is Active
@@ -132,6 +146,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     When User clicks "Yes, Change"
     Then status should be changed to Inactive
 
+  @regression @p1
   Scenario: Change status from Inactive to Active
     When User opens Edit Activity Group popup
     And current status is Inactive
@@ -139,6 +154,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     And User confirms change
     Then status should be changed to Active
 
+  @negative @regression @p2
   Scenario: Cancel status change
     When User opens Edit Activity Group popup
     And User clicks Status button
@@ -149,24 +165,28 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # ❌ NEGATIVE SCENARIOS
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Update without Form Name
     When User opens Edit Activity Group popup
     And User clears Form Name
     And User clicks Save button
     Then "Form Name is required" error should be displayed
 
+  @negative @regression @p2
   Scenario: Duplicate Form Name
     When User opens Edit Activity Group popup
     And User enters existing Form Name
     And User clicks Save button
     Then duplicate validation error should be displayed
 
+  @negative @regression @p2
   Scenario: Invalid Form Name input
     When User opens Edit Activity Group popup
     And User enters invalid characters or spaces
     And User clicks Save button
     Then validation error should be displayed
 
+  @negative @regression @p3
   Scenario: Save without changes
     When User opens Edit Activity Group popup
     And User clicks Save without making changes
@@ -176,31 +196,38 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # ⚠️ EDGE CASE SCENARIOS
   # =========================================================
 
+  @sanity @p3
   Scenario: Rapid Save clicks
     When User opens Edit Activity Group popup
     And User clicks Save button multiple times
     Then system should prevent duplicate update
 
+  @sanity @p3
   Scenario: Rapid delete clicks
     When User clicks delete multiple times quickly
     Then activity should be removed only once
 
+  @sanity @p3
   Scenario: Rapid "+" clicks
     When User clicks "+" multiple times
     Then only one bottom sheet should open
 
+  @sanity @p3
   Scenario: Large checklist handling
     When checklist contains many activities
     Then system should support scrolling and proper UI rendering
 
+  @negative @p3
   Scenario: Network failure during update
     When User clicks Save without internet
     Then error message should be displayed
 
+  @negative @p3
   Scenario: Session timeout during update
     When session expires during editing
     Then User should be redirected to login screen
 
+  @regression @p2
   Scenario: Close popup without saving
     When User modifies data and clicks "X"
     Then changes should not be saved
@@ -209,6 +236,7 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
   # 📱 UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify Edit popup UI
     When User opens Edit Activity Group popup
     Then all fields should be aligned properly
@@ -217,12 +245,14 @@ Feature: Update Activity Group via Swipe Action with Checklist and Status Manage
     And delete icons should be visible for each activity
     And Save button should be visible
 
+  @regression @p2
   Scenario: Verify bottom sheet UI
     When User clicks "+"
     Then activity list should be displayed
     And multi-selection should be enabled
     And Submit button should be visible
 
+  @regression @p2
   Scenario: Verify Close (X) button
     When User clicks "X"
     Then popup should be closed

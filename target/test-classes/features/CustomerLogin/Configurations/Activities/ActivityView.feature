@@ -1,3 +1,4 @@
+@regression @view @p2
 Feature: View Activity Details from Activities List
 
   Background:
@@ -13,6 +14,7 @@ Feature: View Activity Details from Activities List
   # 🔍 SEARCH + VIEW FLOW
   # =========================================================
 
+  @smoke @p1
   Scenario: Search and open View Activity popup
     When User clicks on search icon
     And User taps on search input field
@@ -39,6 +41,7 @@ Feature: View Activity Details from Activities List
   # 🔁 STATUS CHANGE FROM VIEW POPUP
   # =========================================================
 
+  @regression @p1
   Scenario: Change status from View popup
     When User opens View Activity popup
     And User clicks on Status button
@@ -48,6 +51,7 @@ Feature: View Activity Details from Activities List
     Then status should be updated successfully
     And updated status should be reflected in UI
 
+  @negative @regression @p2
   Scenario: Cancel status change from View popup
     When User opens View Activity popup
     And User clicks on Status button
@@ -58,15 +62,18 @@ Feature: View Activity Details from Activities List
   # 👁️ POSITIVE SCENARIOS
   # =========================================================
 
+  @regression @p1
   Scenario: Verify Activity view data accuracy
     When User opens View Activity popup
     Then all displayed values should match backend stored data
 
+  @regression @p2
   Scenario: Verify popup close functionality
     When User clicks on "X" button
     Then popup should be closed
     And User should return to Activities list screen
 
+  @regression @p2
   Scenario: Verify toggle display state
     When User opens View Activity popup
     Then toggle should correctly reflect ON/OFF state
@@ -75,19 +82,23 @@ Feature: View Activity Details from Activities List
   # ❌ NEGATIVE SCENARIOS
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Verify fields are not editable
     When User tries to edit Activity Name, Description or toggle
     Then fields should not allow modification
 
+  @negative @regression @p1
   Scenario: Verify no Save/Edit button in view popup
     Then Save button should NOT be visible
     And Edit option should NOT be available
 
+  @negative @p3
   Scenario: View deleted Activity
     When Activity is deleted from backend
     And User searches same Activity
     Then system should display "Record not found"
 
+  @negative @p3
   Scenario: Unauthorized access to view
     When User without permission tries to view Activity
     Then system should show "Access Denied"
@@ -96,18 +107,22 @@ Feature: View Activity Details from Activities List
   # ⚠️ EDGE CASE SCENARIOS
   # =========================================================
 
+  @sanity @p3
   Scenario: Rapid click on record
     When User clicks Activity record multiple times quickly
     Then only one popup should open
 
+  @sanity @p3
   Scenario: Rapid status toggle clicks
     When User clicks Status button multiple times quickly
     Then only one confirmation popup should appear
 
+  @negative @p3
   Scenario: Network failure during view
     When User opens Activity without internet connection
     Then system should display error message
 
+  @negative @p3
   Scenario: Session timeout during view
     When session expires while opening Activity
     Then User should be redirected to login screen
@@ -116,6 +131,7 @@ Feature: View Activity Details from Activities List
   # 📱 UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify View Activity popup UI
     When User opens View Activity popup
     Then all fields should be properly aligned
@@ -123,6 +139,7 @@ Feature: View Activity Details from Activities List
     And values should be readable
     And "X" button should be correctly positioned
 
+  @regression @p1
   Scenario: Verify read-only UI behavior
     When User opens View Activity popup
     Then all fields except Status should be disabled
@@ -133,6 +150,7 @@ Feature: View Activity Details from Activities List
   # 🔁 SEARCH VARIATION COVERAGE
   # =========================================================
 
+  @regression @p3
   Scenario Outline: Validate search behavior
     When User enters "<input>" in search field
     Then system should return "<result>"

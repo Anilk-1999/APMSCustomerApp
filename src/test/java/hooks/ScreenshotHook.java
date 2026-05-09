@@ -13,8 +13,14 @@ public class ScreenshotHook {
     @After
     public void attachScreenshot(Scenario scenario) {
         if (scenario.isFailed()) {
-            final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", scenario.getName());
+            try {
+                final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", scenario.getName());
+            } catch (Exception e) {
+                // UiAutomator2 instrumentation may have crashed — skip screenshot
+                // so the failure does NOT propagate and kill subsequent scenarios.
+                System.out.println("[ScreenshotHook] Screenshot skipped (driver unavailable): " + e.getMessage());
+            }
         }
     }
 }

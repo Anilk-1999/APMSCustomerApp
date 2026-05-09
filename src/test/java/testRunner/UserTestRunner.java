@@ -6,12 +6,18 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = {"src/test/resources/features/CustomerLogin/01_Login.feature","src/test/resources/features/CustomerLogin/Configurations/Users/02_UserCreation.feature"},
-    glue = {"StepDefinitions", "hooks"},
-    plugin = {"pretty", "html:target/cucumber-reports.html"},
+    features = {
+        "src/test/resources/features/CustomerLogin/01_Login.feature",
+        "src/test/resources/features/CustomerLogin/Configurations/Users"
+    },
+    glue = {"StepDefinitions.common", "StepDefinitions.configurations.login", "StepDefinitions.configurations.users", "hooks"},
+    plugin = {
+        "pretty",
+        "html:target/cucumber-reports/users.html",
+        "json:target/cucumber-reports/users.json",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+    },
     monochrome = true
 )
-
 public class UserTestRunner {
-
 }

@@ -50,7 +50,7 @@ font-weight: 600;
 <a href="#"><span class="badge badge-primary">Appium + Cucumber Test Execution Summary</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">12-Oct-2025 14:00:04</span></a>
+<a href="#"><span class="badge badge-primary">09-May-2026 18:40:36</span></a>
 </li>
 </ul>
 </div>
@@ -62,9 +62,9 @@ font-weight: 600;
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -86,33 +86,39 @@ font-weight: 600;
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@update</a><a class="dropdown-item" href="#">@negative</a><a class="dropdown-item" href="#">@smoke</a><a class="dropdown-item" href="#">@p2</a><a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@p1</a><a class="dropdown-item" href="#">@sanity</a><a class="dropdown-item" href="#">@p3</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Login Functionality</p>
             <p class="text-sm">
-              <span>2:00:13 pm</span> / <span>00:00:33:490</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>6:40:45 pm</span> / <span>00:01:04:774</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Login Functionality</h5>
-<span class='badge badge-success'>10.12.2025 2:00:13 pm</span>
-<span class='badge badge-danger'>10.12.2025 2:00:47 pm</span>
-<span class='badge badge-default'>00:00:33:490</span>
+<h5 class="test-status text-pass">Login Functionality</h5>
+<span class='badge badge-success'>05.09.2026 6:40:45 pm</span>
+<span class='badge badge-danger'>05.09.2026 6:41:50 pm</span>
+<span class='badge badge-default'>00:01:04:774</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -125,97 +131,90 @@ font-weight: 600;
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify user is able to login successfully</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify onboarding screens and navigate to login</div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_app_is_launched()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_app_is_launched()">
                 <span>Given the app is launched</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.verify_the_screen_is_displayed(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.verify_the_screen_is_displayed(java.lang.String)">
                 <span>And Verify the "Digitization" screen is displayed</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_clicks_on_next()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next()">
                 <span>When the user clicks on Next</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.verify_the_screen_should_be_displayed(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_displayed(java.lang.String)">
                 <span>Then Verify the "World of Machines" screen should be displayed</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_clicks_on_next_again()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next_again()">
                 <span>When the user clicks on Next again</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.verify_the_screen_should_displayed(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_displayed(java.lang.String)">
                 <span>Then Verify the "Accelerating Growth" screen should displayed</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_clicks_on_finish()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_finish()">
                 <span>When the user clicks on Finish</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.verify_the_screen_should_be_visible(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_visible(java.lang.String)">
                 <span>Then Verify the "Login to Your Account" screen should be visible</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_double_taps_on_the_apms_ai_footer_if_needed()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_double_taps_on_the_apms_ai_footer_if_needed()">
                 <span>When the user double taps on the APMS AI footer if needed</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_enters_email(java.lang.String)">
-                <span>And the user enters email "anil.c3@apms.ai"</span>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Verify user is able to login successfully</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_is_on_the_login_screen()">
+                <span>Given the user is on the login screen</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_enters_password(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_enters_email(java.lang.String)">
+                <span>When the user enters email "anilkumar.m@apms.ai"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_enters_password(java.lang.String)">
                 <span>And the user enters password "1234"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.LoginTest.the_user_clicks_on_login()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_login()">
                 <span>And the user clicks on Login</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="StepDefinitions.LoginTest.verify_the_user_should_be_logged_in_successfully()">
+              <div class="step pass-bg" title="StepDefinitions.configurations.login.LoginSteps.verify_the_user_should_be_logged_in_successfully()">
                 <span>Then Verify the user should be logged in successfully</span>
       <div>
-        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at StepDefinitions.LoginTest.verify_the_user_should_be_logged_in_successfully(LoginTest.java:88)
-	at ✽.Verify the user should be logged in successfully(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/01_Login.feature:17)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>hooks.ScreenshotHook.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>Verify user is able to login successfully
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../screenshots/embedded1.png' src="../screenshots/embedded1.png">
-    
-    </div></div>
-</div>
-      <div>
       </div>
               </div>
           </div>
@@ -224,340 +223,1570 @@ font-weight: 600;
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="17"
+        <li class="test-item"  status="pass" test-id="22"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Operator Creation</p>
+            <p class="name">Update Activity via Swipe Action from Activities List</p>
             <p class="text-sm">
-              <span>2:00:47 pm</span> / <span>00:00:05:151</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>6:41:50 pm</span> / <span>00:11:16:693</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Operator Creation</h5>
-<span class='badge badge-success'>10.12.2025 2:00:47 pm</span>
-<span class='badge badge-danger'>10.12.2025 2:00:52 pm</span>
-<span class='badge badge-default'>00:00:05:151</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<h5 class="test-status text-pass">Update Activity via Swipe Action from Activities List</h5>
+<span class='badge badge-success'>05.09.2026 6:41:50 pm</span>
+<span class='badge badge-danger'>05.09.2026 6:53:07 pm</span>
+<span class='badge badge-default'>00:11:16:693</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<div class="m-t-10 m-l-5"> As an admin
-I want to create a new operator in the system
-So that the user can access the application</div>
+<div class="m-t-10 m-l-5"></div>
 </div>
 </div>
 <div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="18"><span class="badge log fail-bg mr-2">Fail</span>Create a new operator with valid details</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Search and open Edit Activity popup</div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="StepDefinitions.UsersTest.click_on_profile_icon()">
-                <span>When click on profile icon</span>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinitions.UsersTest.verify_that_the_screen_is_displayed(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
                 <span>Then verify that the "Account Preferences" screen is displayed</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="StepDefinitions.UsersTest.click_on_feature(java.lang.String)">
-                <span>When click on "Configurations" feature</span>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
       <div>
-        <textarea disabled class="code-block">java.lang.RuntimeException: Feature not found: Configurations
-	at pageObject.UsersPage.clickOnFeature(UsersPage.java:232)
-	at StepDefinitions.UsersTest.click_on_feature(UsersTest.java:46)
-	at ✽.click on "Configurations" feature(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/03_OperatorCreation.feature:10)
-</textarea>
-      
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_the_section_displayed(java.lang.String)">
-                <span>And verify the "User" section displayed</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.click_on_feature(java.lang.String)">
-                <span>When click on "Operators" feature</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_that_the_user_navigate_to_the_list_screen(java.lang.String)">
-                <span>Then verify that the user navigate to the "Operators" list screen</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.click_on_add_button()">
-                <span>When click on add button</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_that_the_user_should_navigate_to_the_screen(java.lang.String)">
-                <span>Then verify that the user should navigate to the "Add New Operator" screen</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()">
+                <span>When User clicks on search icon</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.OperatorTest.enter_all_the_following_operator_details(io.cucumber.datatable.DataTable)">
-                <span>When enter all the following operator details:</span>
-      <div><table class='markup-table table '><tr><td>Field</td><td>Value</td></tr><tr><td>Operator Name</td><td>anil kumar</td></tr><tr><td>Email Id</td><td>anil@example1.com</td></tr><tr><td>Phone Number</td><td>8765578188</td></tr><tr><td>Emergency Number</td><td>9090908165</td></tr><tr><td>Operator Code</td><td>ANIL123</td></tr><tr><td>Blood Group</td><td>A+</td></tr><tr><td>Address 1</td><td>btm layout 1stage</td></tr><tr><td>Address 2</td><td>btm layout 2stage</td></tr><tr><td>Pin Code</td><td>570026</td></tr><tr><td>City</td><td>Mysore</td></tr><tr><td>State</td><td>Karnataka</td></tr><tr><td>Country</td><td>India</td></tr></table>
-      </div>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()">
+                <span>And User taps on search input field</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.i_click_on_the_submit_button()">
-                <span>And I click on the submit button</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()">
+                <span>And User clears existing text in search field</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.i_should_see_a_confirmation_message(java.lang.String)">
-                <span>Then I should see a confirmation message "Operator created successfully"</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userEntersNewlyCreatedActivityName()">
+                <span>And User enters newly created Activity Name</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.OperatorTest.the_operator_should_be_created_successfully()">
-                <span>And the operator should be created successfully</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()">
+                <span>And User waits for search results to load</span>
+      <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>hooks.ScreenshotHook.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>Create a new operator with valid details
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../screenshots/embedded2.png' src="../screenshots/embedded2.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.systemShouldDisplayMatchingActivityResults()">
+                <span>Then system should display matching Activity results</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userVerifiesActivityAppearsInList()">
+                <span>And User verifies Activity appears in list</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userSwipesActivityRecordFromRightToLeft()">
+                <span>When User swipes Activity record from right to left</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()">
+                <span>Then Edit option should be visible</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()">
+                <span>When User clicks on Edit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)">
+                <span>Then "Edit Activity" popup should be displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityIdShouldBeVisibleAndNonEditable()">
+                <span>And Activity ID should be visible and non-editable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusShouldBeVisibleAndClickable()">
+                <span>And Status should be visible and clickable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityNameFieldShouldBePreFilledAndEditable()">
+                <span>And Activity Name field should be pre-filled and editable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.descriptionFieldShouldBePreFilledAndEditable()">
+                <span>And Description field should be pre-filled and editable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.toggleShouldBeVisibleAndEditable(java.lang.String)">
+                <span>And "Is Function Applicable" toggle should be visible and editable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.saveButtonShouldBeVisible()">
+                <span>And Save button should be visible</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.closeButtonShouldBeVisible(java.lang.String)">
+                <span>And Close "X" button should be visible</span>
       <div>
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="32"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">User Creation</p>
-            <p class="text-sm">
-              <span>2:00:52 pm</span> / <span>00:00:21:633</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">User Creation</h5>
-<span class='badge badge-success'>10.12.2025 2:00:52 pm</span>
-<span class='badge badge-danger'>10.12.2025 2:01:14 pm</span>
-<span class='badge badge-default'>00:00:21:633</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"> As an admin
-I want to create a new user in the system
-So that the user can access the application</div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="33"><span class="badge log fail-bg mr-2">Fail</span>Create a new user with valid details</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="51"><span class="badge log pass-bg mr-2">Pass</span>Change status from Active to Inactive</div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
-              <div class="step fail-bg" title="StepDefinitions.UsersTest.click_on_profile_icon()">
-                <span>When click on profile icon</span>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.xpath: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]}) (tried for 15 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at utilities.WaitForElement.waitForVisibility(WaitForElement.java:21)
-	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:176)
-	at StepDefinitions.UsersTest.click_on_profile_icon(UsersTest.java:29)
-	at ✽.click on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/02_UserCreation.feature:7)
-Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.xpath: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$5L4EIjpG.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at utilities.WaitForElement.waitForVisibility(WaitForElement.java:21)
-	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:176)
-	at StepDefinitions.UsersTest.click_on_profile_icon(UsersTest.java:29)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:147)
-	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:162)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:145)
-	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:520)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@245253d8 (tried for 15 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	... 60 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[1]})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
-Driver info: driver.version: RemoteWebDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 62 more
-</textarea>
-      
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_that_the_screen_is_displayed(java.lang.String)">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
                 <span>Then verify that the "Account Preferences" screen is displayed</span>
-      <div>Step skipped
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.click_on_section(java.lang.String)">
-                <span>When click on "configurations" section</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_the_section_displayed(java.lang.String)">
-                <span>Then verify the "User" section displayed</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.click_on_feature(java.lang.String)">
-                <span>When click on "Users" feature</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_that_the_user_navigate_to_the_list_screen(java.lang.String)">
-                <span>Then verify that the user navigate to the "Users" list screen</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.click_on_add_button()">
-                <span>When click on add button</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.verify_that_the_user_should_navigate_to_the_screen(java.lang.String)">
-                <span>Then verify that the user should navigate to the "Add New User" screen</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.enter_all_the_following_user_details(io.cucumber.datatable.DataTable)">
-                <span>When enter all the following user details:</span>
-      <div><table class='markup-table table '><tr><td>Field</td><td>Value</td></tr><tr><td>User Name</td><td>anil kumar</td></tr><tr><td>Email Id</td><td>anil@example1.com</td></tr><tr><td>Phone Number</td><td>8765578188</td></tr><tr><td>Emergency Number</td><td>9090908165</td></tr><tr><td>Emp Code</td><td>ANIL123</td></tr><tr><td>Blood Group</td><td>A+</td></tr><tr><td>Address 1</td><td>btm layout 1stage</td></tr><tr><td>Address 2</td><td>btm layout 2stage</td></tr><tr><td>Pin Code</td><td>570026</td></tr><tr><td>Roles</td><td>Admin</td></tr></table>
-      </div>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.currentActivityStatusIsActive()">
+                <span>And current Activity status is Active</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.i_click_on_the_submit_button()">
-                <span>And I click on the submit button</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnStatusButton()">
+                <span>And User clicks on Status button</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.i_should_see_a_confirmation_message(java.lang.String)">
-                <span>Then I should see a confirmation message "User created successfully"</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusConfirmationPopupShouldBeDisplayed()">
+                <span>Then Status confirmation popup should be displayed</span>
+      <div>
       </div>
               </div>
-              <div class="step skip-bg" title="StepDefinitions.UsersTest.the_user_should_be_created_successfully()">
-                <span>And the user should be created successfully</span>
-      <div>Step skipped
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.namedButtonShouldBeVisible(java.lang.String)">
+                <span>And "Yes, Change" button should be visible</span>
+      <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>hooks.ScreenshotHook.attachScreenshot(io.cucumber.java.Scenario)</span>
-      <div>Create a new user with valid details
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../screenshots/embedded3.png' src="../screenshots/embedded3.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnButton(java.lang.String)">
+                <span>When User clicks on "Yes, Change" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusShouldBeChangedToInactive()">
+                <span>Then status should be changed to Inactive</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.updatedStatusShouldBeReflectedInEditPopup()">
+                <span>And updated status should be reflected in Edit popup</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="69"><span class="badge log pass-bg mr-2">Pass</span>Change status from Inactive to Active</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.currentActivityStatusIsInactive()">
+                <span>And current Activity status is Inactive</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnStatusButton()">
+                <span>And User clicks on Status button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusConfirmationPopupShouldBeDisplayed()">
+                <span>Then Status confirmation popup should be displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnButton(java.lang.String)">
+                <span>When User clicks on "Yes, Change" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusShouldBeChangedToActive()">
+                <span>Then status should be changed to Active</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="85"><span class="badge log pass-bg mr-2">Pass</span>Cancel status change</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnStatusButton()">
+                <span>And User clicks on Status button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userClosesConfirmationPopupWithoutConfirmation()">
+                <span>And User closes confirmation popup without confirmation</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.statusShouldRemainUnchanged()">
+                <span>Then status should remain unchanged</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="99"><span class="badge log pass-bg mr-2">Pass</span>Enable Is Function Applicable toggle</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userTurnsOnTheToggle()">
+                <span>And User turns ON the toggle</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.toggleStateShouldBeOn()">
+                <span>Then toggle state should be ON</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="112"><span class="badge log pass-bg mr-2">Pass</span>Disable Is Function Applicable toggle</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userTurnsOffTheToggle()">
+                <span>And User turns OFF the toggle</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.toggleStateShouldBeOff()">
+                <span>Then toggle state should be OFF</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="125"><span class="badge log pass-bg mr-2">Pass</span>Rapid toggle switching</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userTogglesMultipleTimesQuickly()">
+                <span>And User toggles multiple times quickly</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.finalToggleStateShouldBeMaintainedCorrectly()">
+                <span>Then final toggle state should be maintained correctly</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="138"><span class="badge log pass-bg mr-2">Pass</span>Update Activity with all editable fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userUpdatesActivityName()">
+                <span>And User updates Activity Name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userUpdatesDescription()">
+                <span>And User updates Description</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userUpdatesToggleState()">
+                <span>And User updates toggle state</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.updatedActivityShouldBeReflectedInActivitiesListScreen()">
+                <span>And updated Activity should be reflected in Activities list screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="155"><span class="badge log pass-bg mr-2">Pass</span>Update only Description</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userUpdatesDescription()">
+                <span>And User updates Description</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="169"><span class="badge log pass-bg mr-2">Pass</span>Update only toggle state</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userChangesToggle(java.lang.String)">
+                <span>And User changes "Is Function Applicable" toggle</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="183"><span class="badge log pass-bg mr-2">Pass</span>Update with status change</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userChangesStatus()">
+                <span>And User changes Status</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="197"><span class="badge log pass-bg mr-2">Pass</span>Update Activity Name with trimmed value</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userEntersActivityNameWithLeadingAndTrailingSpaces()">
+                <span>And User enters Activity Name with leading and trailing spaces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.systemShouldTrimSpacesAndUpdateActivitySuccessfully()">
+                <span>Then system should trim spaces and update Activity successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="211"><span class="badge log pass-bg mr-2">Pass</span>Update without Activity Name</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userClearsActivityNameField()">
+                <span>And User clears Activity Name field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.errorShouldBeDisplayed(java.lang.String)">
+                <span>Then "This field is required" should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="225"><span class="badge log pass-bg mr-2">Pass</span>Invalid Activity Name input</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userEntersInvalidActivityName()">
+                <span>And User enters invalid Activity Name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="239"><span class="badge log pass-bg mr-2">Pass</span>Duplicate Activity Name</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userEntersExistingActivityName()">
+                <span>And User enters existing Activity Name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksSaveButton()">
+                <span>And User clicks Save button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="253"><span class="badge log pass-bg mr-2">Pass</span>Save without changes</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userClicksSaveButtonWithoutModification()">
+                <span>And User clicks Save button without modification</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityShouldBeUpdatedSuccessfully()">
+                <span>Then Activity should be updated successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="266"><span class="badge log pass-bg mr-2">Pass</span>Rapid swipe action</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userSwipesActivityRecordMultipleTimesQuickly()">
+                <span>When User swipes Activity record multiple times quickly</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.onlyOneEditOptionShouldBeDisplayed()">
+                <span>Then only one Edit option should be displayed</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="278"><span class="badge log pass-bg mr-2">Pass</span>Rapid Save clicks</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userClicksSaveButtonMultipleTimesQuickly()">
+                <span>And User clicks Save button multiple times quickly</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.systemShouldPreventDuplicateUpdates()">
+                <span>Then system should prevent duplicate updates</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="291"><span class="badge log pass-bg mr-2">Pass</span>Close popup without saving changes</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userModifiesActivityDetails()">
+                <span>And User modifies Activity details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userClicksCloseButton(java.lang.String)">
+                <span>And User clicks Close "X" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.popupShouldBeClosedWithoutSavingChanges()">
+                <span>Then popup should be closed without saving changes</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="305"><span class="badge log pass-bg mr-2">Pass</span>Verify Edit Activity popup UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityIdShouldBeVisible()">
+                <span>Then Activity ID should be visible</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.statusShouldBeVisible()">
+                <span>And Status should be visible</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.activityNameAndDescriptionShouldBeEditable()">
+                <span>And Activity Name and Description should be editable</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.toggleShouldBeVisibleAndFunctional()">
+                <span>And toggle should be visible and functional</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.saveButtonShouldBeVisible()">
+                <span>And Save button should be visible</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.closeButtonShouldBeVisible(java.lang.String)">
+                <span>And Close "X" button should be visible</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="322"><span class="badge log pass-bg mr-2">Pass</span>Verify status popup UI</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnStatusButton()">
+                <span>And User clicks on Status button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.confirmationPopupShouldDisplayCorrectMessage()">
+                <span>Then confirmation popup should display correct message</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.namedButtonShouldBeVisible(java.lang.String)">
+                <span>And "Yes, Change" button should be visible</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="336"><span class="badge log pass-bg mr-2">Pass</span>Verify Close (X) button functionality</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()">
+                <span>When User clicks on profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)">
+                <span>Then verify that the "Account Preferences" screen is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)">
+                <span>When User clicks on "Configurations" section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)">
+                <span>Then verify the "Maintenance" section is displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)">
+                <span>When User clicks on "Activities" feature</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)">
+                <span>Then verify user navigates to "Activities" list screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userHasAlreadyCreatedAnActivity()">
+                <span>And User has already created an Activity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.userOpensEditActivityPopup()">
+                <span>When User opens Edit Activity popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.common.CommonFormSteps.userClicksOnButton(java.lang.String)">
+                <span>And User clicks on "X" button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.configurations.activities.ActivitySteps.popupShouldBeClosedSuccessfully()">
+                <span>Then popup should be closed successfully</span>
       <div>
       </div>
               </div>
@@ -576,26 +1805,26 @@ Driver info: driver.version: RemoteWebDriver
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">8</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log pass-bg'>22</span>
 </span>
-<p class="name">java.lang.RuntimeException</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@update</p>
+<p class="duration text-sm">22 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>java.lang.RuntimeException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>@update</h4>
+<span status="pass" class='badge log pass-bg'>22 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -606,13 +1835,223 @@ Driver info: driver.version: RemoteWebDriver
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:00:49 pm</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:41:50 pm</td>
 <td>
-<a href="#" class="linked" test-id='17' id='21'>When click on "Configurations" feature</a>
+<a href="#" class="linked" test-id='22' id='23'>Search and open Edit Activity popup</a>
 <div class="">
-<span class="badge badge-default">Operator Creation.Create a new operator with valid details.When click on "Configurations" feature</span>
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Search and open Edit Activity popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='51'>Change status from Active to Inactive</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Active to Inactive</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='69'>Change status from Inactive to Active</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Inactive to Active</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='99'>Enable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Enable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='112'>Disable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Disable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='138'>Update Activity with all editable fields</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity with all editable fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='155'>Update only Description</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only Description</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='169'>Update only toggle state</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only toggle state</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='183'>Update with status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update with status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:47:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='197'>Update Activity Name with trimmed value</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity Name with trimmed value</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='211'>Update without Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update without Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='225'>Invalid Activity Name input</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Invalid Activity Name input</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='291'>Close popup without saving changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Close popup without saving changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='305'>Verify Edit Activity popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Edit Activity popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='322'>Verify status popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify status popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='336'>Verify Close (X) button functionality</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Close (X) button functionality</span>
 </div>
 </td>
 </tr>
@@ -623,15 +2062,15 @@ Driver info: driver.version: RemoteWebDriver
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log pass-bg'>4</span>
 </span>
-<p class="name">org.openqa.selenium.TimeoutException</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@negative</p>
+<p class="duration text-sm">4 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.TimeoutException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>@negative</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -642,13 +2081,43 @@ Driver info: driver.version: RemoteWebDriver
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:00:52 pm</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
 <td>
-<a href="#" class="linked" test-id='32' id='34'>When click on profile icon</a>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
 <div class="">
-<span class="badge badge-default">User Creation.Create a new user with valid details.When click on profile icon</span>
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='211'>Update without Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update without Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
 </div>
 </td>
 </tr>
@@ -659,15 +2128,15 @@ Driver info: driver.version: RemoteWebDriver
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log pass-bg'>22</span>
 </span>
-<p class="name">java.lang.AssertionError</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@smoke</p>
+<p class="duration text-sm">22 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>java.lang.AssertionError</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>@smoke</h4>
+<span status="pass" class='badge log pass-bg'>22 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -678,13 +2147,993 @@ Driver info: driver.version: RemoteWebDriver
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:00:25 pm</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:41:50 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='15'>Then Verify the user should be logged in successfully</a>
+<a href="#" class="linked" test-id='22' id='23'>Search and open Edit Activity popup</a>
 <div class="">
-<span class="badge badge-default">Login Functionality.Verify user is able to login successfully.Then Verify the user should be logged in successfully</span>
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Search and open Edit Activity popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='51'>Change status from Active to Inactive</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Active to Inactive</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='69'>Change status from Inactive to Active</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Inactive to Active</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='99'>Enable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Enable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='112'>Disable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Disable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='138'>Update Activity with all editable fields</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity with all editable fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='155'>Update only Description</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only Description</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='169'>Update only toggle state</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only toggle state</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='183'>Update with status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update with status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:47:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='197'>Update Activity Name with trimmed value</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity Name with trimmed value</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='211'>Update without Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update without Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='225'>Invalid Activity Name input</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Invalid Activity Name input</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='291'>Close popup without saving changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Close popup without saving changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='305'>Verify Edit Activity popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Edit Activity popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='322'>Verify status popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify status popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='336'>Verify Close (X) button functionality</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Close (X) button functionality</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>12</span>
+</span>
+<p class="name">@p2</p>
+<p class="duration text-sm">12 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p2</h4>
+<span status="pass" class='badge log pass-bg'>12 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='99'>Enable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Enable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='112'>Disable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Disable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='155'>Update only Description</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only Description</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='169'>Update only toggle state</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only toggle state</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='183'>Update with status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update with status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='225'>Invalid Activity Name input</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Invalid Activity Name input</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='291'>Close popup without saving changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Close popup without saving changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='305'>Verify Edit Activity popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Edit Activity popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='322'>Verify status popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify status popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='336'>Verify Close (X) button functionality</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Close (X) button functionality</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>22</span>
+</span>
+<p class="name">@regression</p>
+<p class="duration text-sm">22 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@regression</h4>
+<span status="pass" class='badge log pass-bg'>22 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:41:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='23'>Search and open Edit Activity popup</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Search and open Edit Activity popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='51'>Change status from Active to Inactive</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Active to Inactive</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='69'>Change status from Inactive to Active</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Inactive to Active</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='99'>Enable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Enable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='112'>Disable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Disable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='138'>Update Activity with all editable fields</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity with all editable fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='155'>Update only Description</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only Description</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='169'>Update only toggle state</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only toggle state</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='183'>Update with status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update with status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:47:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='197'>Update Activity Name with trimmed value</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity Name with trimmed value</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='211'>Update without Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update without Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='225'>Invalid Activity Name input</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Invalid Activity Name input</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='291'>Close popup without saving changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Close popup without saving changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='305'>Verify Edit Activity popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Edit Activity popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='322'>Verify status popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify status popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='336'>Verify Close (X) button functionality</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Close (X) button functionality</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>22</span>
+</span>
+<p class="name">@p1</p>
+<p class="duration text-sm">22 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p1</h4>
+<span status="pass" class='badge log pass-bg'>22 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:41:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='23'>Search and open Edit Activity popup</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Search and open Edit Activity popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:42:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='51'>Change status from Active to Inactive</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Active to Inactive</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='69'>Change status from Inactive to Active</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Change status from Inactive to Active</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:43:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='85'>Cancel status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Cancel status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='99'>Enable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Enable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='112'>Disable Is Function Applicable toggle</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Disable Is Function Applicable toggle</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='138'>Update Activity with all editable fields</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity with all editable fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:45:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='155'>Update only Description</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only Description</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='169'>Update only toggle state</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update only toggle state</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='183'>Update with status change</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update with status change</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:47:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='197'>Update Activity Name with trimmed value</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity Name with trimmed value</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='211'>Update without Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update without Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:48:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='225'>Invalid Activity Name input</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Invalid Activity Name input</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='239'>Duplicate Activity Name</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Duplicate Activity Name</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='291'>Close popup without saving changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Close popup without saving changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='305'>Verify Edit Activity popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Edit Activity popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='322'>Verify status popup UI</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify status popup UI</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:52:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='336'>Verify Close (X) button functionality</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Verify Close (X) button functionality</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@sanity</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@sanity</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">@p3</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@p3</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='125'>Rapid toggle switching</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid toggle switching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:47:34 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='197'>Update Activity Name with trimmed value</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Update Activity Name with trimmed value</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:49:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='253'>Save without changes</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Save without changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='266'>Rapid swipe action</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid swipe action</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='278'>Rapid Save clicks</a>
+<div class="">
+<span class="badge badge-default">Update Activity via Swipe Action from Activities List.Rapid Save clicks</span>
 </div>
 </td>
 </tr>
@@ -705,25 +3154,25 @@ Driver info: driver.version: RemoteWebDriver
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>12-Oct-2025 14:00:04</h3>
+<h3>09-May-2026 18:40:36</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>12-Oct-2025 14:01:14</h3>
+<h3>09-May-2026 18:53:07</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>0</h3>
+<h3>2</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>3</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -739,12 +3188,12 @@ Driver info: driver.version: RemoteWebDriver
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> features passed
+<div><small data-tooltip='100%'>
+<b>2</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>3</b> features failed,
+<small data-tooltip='0%'><b>0</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -762,9 +3211,9 @@ Driver info: driver.version: RemoteWebDriver
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>24</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='100%'><b>3</b> scenarios failed,
+<small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -782,10 +3231,10 @@ Driver info: driver.version: RemoteWebDriver
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='42%'><b>17</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>274</b> steps passed</small></div>
 <div>
-<small data-tooltip='7%'><b>3</b> steps failed,
-<b>20</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -801,10 +3250,83 @@ Driver info: driver.version: RemoteWebDriver
 </div></div>
 <script>
 var timeline = {
-"Login Functionality":33.49,"Operator Creation":5.151,"User Creation":21.633
+"Login Functionality":64.774,"Update Activity via Swipe Action from Activities List":676.693
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@update</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@negative</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@smoke</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p2</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@regression</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p1</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@sanity</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@p3</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 <div class="col-lg-6 col-md-12 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -844,21 +3366,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 3,
+passParent: 2,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 0,
-failChild: 3,
+passChild: 24,
+failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 17,
-failGrandChild: 3,
+passGrandChild: 274,
+failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 20,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };

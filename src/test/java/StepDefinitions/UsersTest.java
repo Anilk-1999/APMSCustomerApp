@@ -1,4 +1,4 @@
-package StepDefinitions;
+package StepDefinitions.configurations.users;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,10 +29,6 @@ public class UsersTest {
         usersPage.clickOnProfileIcon();
     }
 
-@Then("verify that the {string} screen is displayed")
-public void verify_that_the_screen_is_displayed(String accountPreferenceHeaderName) throws InterruptedException {
-    Assert.assertEquals(usersPage.getAccountPreferenceHeader(), accountPreferenceHeaderName);
-}
 @When("click on {string} section")
 public void click_on_section(String configurationExplorer) {
     usersPage.clickOnSectionHeader(configurationExplorer);

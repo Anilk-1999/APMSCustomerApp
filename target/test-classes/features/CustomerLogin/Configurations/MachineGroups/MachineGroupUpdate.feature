@@ -1,3 +1,4 @@
+@regression @smoke @update @p1
 Feature: Update Machine Group via Swipe Action from Machine Group List
 
   Background:
@@ -13,6 +14,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # 🔍 SEARCH + SWIPE FLOW
   # =========================================================
 
+  @smoke @p1
   Scenario: Search and open Edit Machine Group popup using swipe action
     When User clicks on search icon
     And User taps on search input field
@@ -35,6 +37,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # 🧪 POSITIVE SCENARIOS
   # =========================================================
 
+  @smoke @regression @p1
   Scenario: Update Machine Group with valid data
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -50,6 +53,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     Then Machine Group should be updated successfully
     And updated data should be reflected in Machine Groups list screen
 
+  @regression @p2
   Scenario: Update Machine Group without changing machines
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -58,6 +62,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then Machine Group should be updated successfully
 
+  @regression @p2
   Scenario: Update Machine Group by modifying machine selection
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -69,6 +74,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then machine mapping should be updated successfully
 
+  @regression @p2
   Scenario: Update Machine Group description only
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -81,6 +87,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # ❌ NEGATIVE SCENARIOS
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Update Machine Group without Group Name
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -89,6 +96,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then "Machine Group Name is required" should be displayed
 
+  @negative @regression @p1
   Scenario: Update Machine Group without machines
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -97,6 +105,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then "At least one machine must be selected" should be displayed
 
+  @negative @regression @p2
   Scenario: Duplicate Machine Group Name during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -105,6 +114,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then "Machine Group already exists" should be displayed
 
+  @negative @regression @p3
   Scenario: Submit without any changes
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -112,6 +122,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button without making changes
     Then system should display "No changes detected"
 
+  @negative @regression @p2
   Scenario: Update Machine Group with only spaces in Group Name
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -120,6 +131,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button in Edit Machine Group popup
     Then "Machine Group Name is required" should be displayed
 
+  @negative @regression @p2
   Scenario: Update Machine Group with special characters only in Group Name
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -132,11 +144,13 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # ⚠️ EDGE CASE SCENARIOS
   # =========================================================
 
+  @sanity @p3
   Scenario: Rapid swipe action multiple times
     When User searches for newly created Machine Group Name
     And User performs swipe action multiple times quickly on machine group record
     Then system should display only one Edit option
 
+  @sanity @p3
   Scenario: Rapid multiple submit clicks
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -145,6 +159,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button multiple times quickly
     Then system should prevent duplicate update requests
 
+  @sanity @p3
   Scenario: Large machine list handling in bottom sheet
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -152,6 +167,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User opens machine selection bottom sheet
     Then system should handle large machine list with scroll support
 
+  @negative @p3
   Scenario: Network failure during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -159,6 +175,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User clicks Submit button without internet connection
     Then system should display network error message
 
+  @negative @p3
   Scenario: Session timeout during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -166,6 +183,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And session expires while editing Machine Group
     Then User should be redirected to login screen
 
+  @regression @p2
   Scenario: Reopen edit popup after cancel
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -178,6 +196,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # 📱 UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify Edit Machine Group popup UI
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -189,6 +208,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And Add Machine "+" icon should be visible
     And Submit button should be visible
 
+  @regression @p2
   Scenario: Verify non-editable fields
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -196,12 +216,14 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     Then Machine Group ID should not be editable
     And Status field should not be editable
 
+  @regression @p2
   Scenario: Verify selected machines display
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
     And User clicks on Edit button
     Then selected machines should be displayed in popup
 
+  @regression @p2
   Scenario: Verify machine selection bottom sheet UI
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -210,6 +232,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     Then machine selection bottom sheet should appear
     And machines should have selectable checkboxes
 
+  @regression @p2
   Scenario: Verify popup close behavior
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -221,6 +244,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # 🔍 FIELD VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p3
   Scenario Outline: Validate Machine Group Name field during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -232,7 +256,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
       | input | error                                |
       |       | Machine Group Name is required       |
 
-
+  @regression @p3
   Scenario: Validate maximum character limit for Machine Group Name during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -240,6 +264,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     And User enters value greater than allowed limit in Machine Group Name field
     Then system should restrict additional characters or display validation error
 
+  @regression @p3
   Scenario: Validate Description field during update
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -251,6 +276,7 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
   # 🔁 MACHINE SELECTION SCENARIOS
   # =========================================================
 
+  @regression @p3
   Scenario Outline: Validate machine selection update behavior
     When User searches for newly created Machine Group Name
     And User swipes machine group record from right to left
@@ -260,8 +286,8 @@ Feature: Update Machine Group via Swipe Action from Machine Group List
     Then system should handle machine selection correctly
 
     Examples:
-      | action          |
-      | add machines    |
-      | remove machines |
-      | replace machines|
-      | no selection    |
+      | action           |
+      | add machines     |
+      | remove machines  |
+      | replace machines |
+      | no selection     |

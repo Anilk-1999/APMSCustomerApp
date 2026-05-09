@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.collections4.Get;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -122,9 +120,6 @@ public class MachineDowntimePage extends BasePage{
                 }
             }
             if (found) break;
-
-            // Scroll if not found yet
-            // scrollDown();
         }
 
         if (!found) {
@@ -241,7 +236,7 @@ public class MachineDowntimePage extends BasePage{
 
     /** Get durations for a specific status */
     public int getTotalDurationForStatus(String status) {
-        scroll.scrollUntilVisible("//android.widget.TextView[@text='" + status + "']");
+        scrollToText(status);
         List<WebElement> sessionElements = driver.findElements(
                 By.xpath("//android.widget.TextView[@text='" + status + "']/following-sibling::android.widget.TextView[contains(@text,'min')]")
         );
@@ -285,10 +280,6 @@ public class MachineDowntimePage extends BasePage{
 
 
 
-    /** Validate session status sequence bottom to top */
-     /**
-     * ✅ Get all visible session statuses (bottom-to-top order)
-     */
     public List<String> getAllSessionStatuses() {
         List<String> statuses = new ArrayList<>();
         for (WebElement status : allSessionStatuses) {
@@ -379,46 +370,6 @@ public class MachineDowntimePage extends BasePage{
 
 
 
-    /** Validate session status sequence bottom to top */
-    // public boolean verifySessionStatusSequence() {
-    //     List<String> statuses = new ArrayList<>();
-    //     for (WebElement status : allSessionStatuses) {
-    //         statuses.add(status.getText().trim());
-    //     }
-
-    //     // Since bottom session is oldest, reverse list for bottom-to-top check
-    //     for (int i = statuses.size() - 1; i > 0; i--) {
-    //         String current = statuses.get(i);
-    //         String next = statuses.get(i - 1);
-    //         if (!isValidNextStatus(current, next)) {
-    //             System.out.println("Invalid transition from " + current + " → " + next);
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
-
-    /** Condition mapping for allowed transitions */
-    // private boolean isValidNextStatus(String current, String next) {
-    //     switch (current) {
-    //         case "Running":
-    //             return next.matches("Stopped|Data Loss|By Pass");
-    //         case "Stopped":
-    //             return next.matches("Waiting|Product Setup|Data Loss|By Pass");
-    //         case "Product Setup":
-    //             return next.matches("Waiting|Data Loss|By Pass");
-    //         case "Waiting":
-    //             return next.matches("Idle|Running|Stopped|Product Setup|Data Loss|By Pass");
-    //         case "Idle":
-    //             return next.matches("Waiting|Product Setup|Maintenance|By Pass|Data Loss|Log Off");
-    //         case "By Pass":
-    //             return true; // It should repeat the previous status dynamically
-    //         case "Log Off":
-    //             return next.equals("Idle");
-    //         default:
-    //             return true;
-    //     }
-    // }
 
 
 

@@ -1,3 +1,4 @@
+@regression @smoke @create @p1
 Feature: Create Activity Group (Form) with Activity Checklist Management
 
   Background:
@@ -12,6 +13,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # 🔁 NAVIGATION FLOW
   # =========================================================
 
+  @smoke @p1
   Scenario: Navigate to Activity Groups list screen
     Then Activity Groups list should be displayed
     And Add "+" button should be visible
@@ -20,6 +22,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # ➕ OPEN ADD ACTIVITY GROUP POPUP
   # =========================================================
 
+  @smoke @p1
   Scenario: Open Add New Activity Group popup
     When User clicks on "+ Add" button in Activity Groups list screen
     Then "Add New Activity Group" popup should be displayed
@@ -33,6 +36,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # 🧪 POSITIVE SCENARIOS
   # =========================================================
 
+  @smoke @regression @p1
   Scenario: Create Activity Group with add, delete and re-add flow
     When User clicks on "+ Add" button in Activity Groups list screen
     And User enters valid Form Name
@@ -61,6 +65,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
     Then Activity Group should be created successfully
     And Activity Group should be visible in list
 
+  @regression @p1
   Scenario: Create Activity Group without selecting activities
     When User clicks on "+ Add" button
     And User enters valid Form Name
@@ -70,12 +75,14 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
     When User clicks Submit button in popup
     Then Activity Group should be created successfully
 
+  @regression @p1
   Scenario: Create Activity Group with mandatory fields only
     When User clicks on "+ Add" button
     And User enters valid Form Name
     And User clicks Submit button
     Then Activity Group should be created successfully
 
+  @regression @p2
   Scenario: Create Activity Group with trimmed Form Name
     When User clicks on "+ Add" button
     And User enters Form Name with leading and trailing spaces
@@ -86,24 +93,28 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # ❌ NEGATIVE SCENARIOS
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Create Activity Group without Form Name
     When User clicks on "+ Add" button
     And User leaves Form Name empty
     And User clicks Submit button
     Then "Form Name is required" should be displayed
 
+  @negative @regression @p2
   Scenario: Invalid Form Name input
     When User clicks on "+ Add" button
     And User enters only spaces or special characters
     And User clicks Submit button
     Then validation error should be displayed
 
+  @negative @regression @p2
   Scenario: Duplicate Form Name
     When User clicks on "+ Add" button
     And User enters existing Form Name
     And User clicks Submit button
     Then duplicate validation error should be displayed
 
+  @regression @p3
   Scenario: Skip Activity Checklist interaction
     When User clicks on "+ Add" button
     And User enters Form Name
@@ -115,6 +126,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # ⚠️ EDGE CASE SCENARIOS
   # =========================================================
 
+  @sanity @p2
   Scenario: Delete all activities before submit
     When User adds multiple activities
     And User deletes all activities
@@ -122,26 +134,32 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
     When User clicks Submit button
     Then Activity Group should be created successfully
 
+  @sanity @p3
   Scenario: Rapid "+" clicks
     When User clicks "+" multiple times quickly
     Then only one bottom sheet should be displayed
 
+  @sanity @p3
   Scenario: Rapid delete clicks
     When User clicks delete icon multiple times
     Then activity should be removed only once
 
+  @sanity @p3
   Scenario: Rapid submit clicks
     When User clicks Submit button multiple times
     Then system should prevent duplicate creation
 
+  @negative @p3
   Scenario: Network failure during creation
     When User clicks Submit button without internet connection
     Then system should display error message
 
+  @negative @p3
   Scenario: Session timeout during creation
     When session expires during creation
     Then User should be redirected to login screen
 
+  @regression @p2
   Scenario: Close popup without saving
     When User enters data and closes popup
     Then data should not be saved
@@ -150,6 +168,7 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
   # 📱 UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify Add Activity Group popup UI
     When User opens Add Activity Group popup
     Then all fields should be properly aligned
@@ -157,15 +176,18 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
     And "+" button should be visible
     And Submit button should be enabled based on validation
 
+  @regression @p2
   Scenario: Verify checklist UI behavior
     When activities are selected
     Then they should be displayed in checklist
     And each item should have delete icon
 
+  @regression @p2
   Scenario: Verify empty checklist state
     When no activities are selected
     Then checklist should display empty state
 
+  @regression @p2
   Scenario: Verify Close (X) button
     When User clicks "X"
     Then popup should be closed

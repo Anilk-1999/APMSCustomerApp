@@ -16,11 +16,11 @@ public class BaseClass {
             options.setPlatformName("Android");
             options.setPlatformVersion("12.0"); 
             options.setAutomationName("UiAutomator2");
-            options.setApp("C:\\Users\\ApkFiles\\APMS_Customer_19Sep25_v55.apk");
-            options.setAppPackage("com.example.apms_mobile");
-            options.setAppActivity("com.example.apms_mobile.MainActivity");
+            options.setApp("C:\\Users\\Anil Kumar M\\ApkFiles\\ApmsCustomer.apk");
+            options.setAppPackage("com.apms.ai");
+            options.setAppActivity("com.apms.ai.MainActivity");
             options.setCapability("adbExecTimeout", 60000);
-            // options.setNoReset(true);
+            options.setNoReset(false);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             System.out.println("✅ Driver initialized successfully");

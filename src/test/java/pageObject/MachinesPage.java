@@ -2,14 +2,9 @@ package pageObject;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import utilities.ScrollUtils;
-import utilities.WaitForElement;
 
 public class MachinesPage extends BasePage {
-
 
     private UsersPage usersPage;
 
@@ -64,46 +59,46 @@ public class MachinesPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='HMI Login Type']/following-sibling::android.widget.Spinner")
     private WebElement dropdownHmiLoginType;
 
-
     // ---------- Actions ----------
+
     public void enterMachineName(String name) {
-        waitUtil.waitForVisibility(machineName);
+        waitForVisibility(machineName);
         if (machineName.isEnabled()) {
             machineName.click();
-        if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            if (((AndroidDriver) driver).isKeyboardShown()) {
+                ((AndroidDriver) driver).hideKeyboard();
+            }
+            machineName.clear();
+            machineName.sendKeys(name);
         }
-        machineName.clear();
-        machineName.sendKeys(name);
-     }
     }
 
     public void enterLocation(String loc) {
-        waitUtil.waitForVisibility(location);
+        waitForVisibility(location);
         if (location.isEnabled()) {
             location.click();
-        if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            if (((AndroidDriver) driver).isKeyboardShown()) {
+                ((AndroidDriver) driver).hideKeyboard();
+            }
+            location.clear();
+            location.sendKeys(loc);
         }
-        location.clear();
-        location.sendKeys(loc);
-      }
     }
 
     public void enterMachineCode(String code) {
-        waitUtil.waitForVisibility(machineCode);
+        waitForVisibility(machineCode);
         if (machineCode.isEnabled()) {
             machineCode.click();
-        if (((AndroidDriver) driver).isKeyboardShown()) {
-           ((AndroidDriver) driver).hideKeyboard();
+            if (((AndroidDriver) driver).isKeyboardShown()) {
+                ((AndroidDriver) driver).hideKeyboard();
+            }
+            machineCode.clear();
+            machineCode.sendKeys(code);
         }
-        machineCode.clear();
-        machineCode.sendKeys(code);
-      }
     }
 
     public void selectMachineBrand(String mcBrand) {
-        waitUtil.waitForVisibility(machineBrandDropdown);
+        waitForVisibility(machineBrandDropdown);
         if (machineBrandDropdown.isEnabled()) {
             machineBrandDropdown.click();
             usersPage.selectOptionInDropdown(mcBrand);
@@ -111,20 +106,20 @@ public class MachinesPage extends BasePage {
     }
 
     public void selectMachineType(String mcType) {
-        waitUtil.waitForVisibility(machineTypeDropdown);
+        waitForVisibility(machineTypeDropdown);
         if (machineTypeDropdown.isEnabled()) {
             String isChecked = machineTypeDropdown.getAttribute("checked");
-        if (isChecked == null || isChecked.equalsIgnoreCase("false")) {
-            machineTypeDropdown.click();
-        } else {
-            System.out.println("ℹ️ " + " toggle already enabled.");
+            if (isChecked == null || isChecked.equalsIgnoreCase("false")) {
+                machineTypeDropdown.click();
+            } else {
+                System.out.println("toggle already enabled.");
+            }
         }
-    }
-            usersPage.selectOptionInDropdown(mcType);
+        usersPage.selectOptionInDropdown(mcType);
     }
 
     public void selectIoTDeviceType(String iotDeviceType) {
-        waitUtil.waitForVisibility(iotDeviceTypeDropdown);
+        waitForVisibility(iotDeviceTypeDropdown);
         if (iotDeviceTypeDropdown.isEnabled()) {
             iotDeviceTypeDropdown.click();
             usersPage.selectOptionInDropdown(iotDeviceType);
@@ -132,32 +127,30 @@ public class MachinesPage extends BasePage {
     }
 
     public void clickAddShift() {
-        scroll.scrollUntilVisible(addShift);
-        waitUtil.waitForVisibility(addShift);
+        scrollUntilVisible(addShift);
+        waitForVisibility(addShift);
         if (addShift.isEnabled()) {
             addShift.click();
         }
     }
 
     public void toggleEnableAsProductionMachine() {
-        scroll.scrollUntilVisible(enableProductionMachineToggle);
-        waitUtil.waitForVisibility(enableProductionMachineToggle);
+        scrollUntilVisible(enableProductionMachineToggle);
+        waitForVisibility(enableProductionMachineToggle);
         if (enableProductionMachineToggle.isEnabled()) {
             enableProductionMachineToggle.click();
         }
     }
 
     public void toggleEnableProductionPlan() {
-        scroll.scrollUntilVisible(enableProductionPlanToggle);
-        waitUtil.waitForVisibility(enableProductionPlanToggle);
+        scrollUntilVisible(enableProductionPlanToggle);
+        waitForVisibility(enableProductionPlanToggle);
         enableProductionPlanToggle.click();
     }
 
-    /** Generic method to handle toggle */
     public void setToggle(WebElement toggleElement, boolean shouldEnable) {
         String status = toggleElement.getAttribute("checked");
         boolean isEnabled = Boolean.parseBoolean(status);
-
         if (isEnabled != shouldEnable) {
             toggleElement.click();
             System.out.println("Toggle changed to: " + shouldEnable);
@@ -166,38 +159,31 @@ public class MachinesPage extends BasePage {
         }
     }
 
-    /** Set Enable Maintenance */
     public void setEnableMaintenance(boolean shouldEnable) {
         setToggle(toggleEnableMaintenance, shouldEnable);
     }
 
-    /** Set Enable Authorization Feature */
     public void setEnableAuthorizationFeature(boolean shouldEnable) {
         setToggle(toggleEnableAuthorizationFeature, shouldEnable);
     }
 
-    /** Set Downtime Days */
     public void setDowntimeDays(String days) {
         inputDowntimeDays.clear();
         inputDowntimeDays.sendKeys(days);
     }
 
-    /** Set Timeout Duration */
     public void setTimeoutDuration(String duration) {
         inputTimeoutDuration.clear();
         inputTimeoutDuration.sendKeys(duration);
     }
 
-    /** Set Idle Timeout Duration */
     public void setIdleTimeoutDuration(String duration) {
         inputIdleTimeoutDuration.clear();
         inputIdleTimeoutDuration.sendKeys(duration);
     }
 
-    /** Select HMI Login Type (example: “No Login”, “PIN”, “Password”) */
     public void selectHmiLoginType(String loginType) {
         dropdownHmiLoginType.click();
         usersPage.selectOptionInDropdown(loginType);
     }
-
 }

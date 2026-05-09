@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "src/test/resources/features/CustomerLogin/01_Login.feature",
-    glue = {"StepDefinitions", "hooks"},
+    glue = {"StepDefinitions.configurations.login", "hooks"},
     plugin = {
         "pretty",
         "html:target/cucumber-reports.html",

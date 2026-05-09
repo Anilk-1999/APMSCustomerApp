@@ -1,78 +1,98 @@
-Feature: Delete Operator
-  As an admin
-  I want to delete an operator
-  So that inactive operators are removed from system
+@regression @delete @p1
+Feature: Delete Operator for Newly Created Operator
 
   Background:
-    When click on profile icon
+    When User clicks on profile icon
     Then verify that the "Account Preferences" screen is displayed
-    When click on "configurations" section
-    Then verify the "User" section displayed
-    When click on "Operators" feature
-    Then verify that the user navigate to the "Operators" list screen
+    When User clicks on "Configurations" section
+    Then verify the "Users" section is displayed
+    When User clicks on "Operators" feature
+    Then verify user navigates to "Operators" list screen
+    And User has created an operator with all mandatory fields
 
   # ==================================================
   # ✅ NAVIGATION SCENARIOS
   # ==================================================
 
-  Scenario: Locate operator via search
-    When user searches operator "anil@example.com"
+  @smoke @p1
+  Scenario: Locate newly created operator via search
+    When User searches for newly created operator
     Then operator record should be displayed in list
 
+  @smoke @p1
   Scenario: Reveal delete option via swipe
-    When user swipes operator record from right to left
-    Then Delete option with icon should be visible
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    Then delete icon should be clearly visible after swipe
 
   # ==================================================
   # ✅ POSITIVE SCENARIOS
   # ==================================================
 
+  @smoke @regression @p1
   Scenario: Delete operator successfully
-    When user searches operator "anil@example.com"
-    And user swipes record from right to left
-    And user clicks on Delete option
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
     And user confirms deletion
     Then operator should be deleted successfully
 
-  Scenario: Verify operator is removed from list
-    When user deletes operator "anil@example.com"
-    And user searches operator "anil@example.com"
+  @regression @p1
+  Scenario: Verify operator removed from list after deletion
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
+    Then operator should be deleted successfully
+    When User searches for newly created operator
     Then no results should be displayed
 
+  @regression @p2
   Scenario: Verify list updates after deletion
-    When operator is deleted
-    Then operator should not appear in list without refresh
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
+    Then operator should not appear in list
 
-  Scenario: Verify deletion persistence
-    When user deletes operator
-    And relaunches or refreshes list
+  @regression @p2
+  Scenario: Verify deletion persistence after relaunch
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
     Then deleted operator should not be present
 
   # ==================================================
   # ❌ NEGATIVE SCENARIOS
   # ==================================================
 
+  @negative @regression @p1
   Scenario: Cancel delete action
-    When user clicks Delete option
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
     And user cancels confirmation
     Then operator should not be deleted
 
-  Scenario: Delete without confirmation (if popup required)
-    When user clicks Delete option
+  @negative @regression @p1
+  Scenario: Confirm delete popup is shown before deletion
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
     Then confirmation popup should be displayed
 
+  @negative @p3
   Scenario: Network failure during delete
-    When user deletes operator without internet
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
     Then error message should be displayed
-    And operator should not be deleted
 
+  @negative @p3
   Scenario: API failure during delete
-    When backend returns failure response during deletion
-    Then proper error message should be shown
-    And operator should not be deleted
-
-  Scenario: Try deleting already deleted operator
-    When operator is already deleted
+    When operator is deleted
     And user performs delete action again
     Then appropriate error should be handled
 
@@ -80,56 +100,58 @@ Feature: Delete Operator
   # ⚠️ EDGE CASE SCENARIOS
   # ==================================================
 
+  @sanity @p3
   Scenario: Rapid multiple delete actions
-    When user repeatedly clicks delete quickly
-    Then system should handle gracefully
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    Then confirmation popup should be displayed
 
-  Scenario: Delete operator from large list
-    When list contains many operators
-    Then delete action should still work correctly
-
-  Scenario: Swipe sensitivity check
-    When user performs partial swipe
-    Then delete option should not trigger incorrectly
-
+  @sanity @p3
   Scenario: Delete last operator in list
-    When only one operator exists
-    And user deletes it
-    Then empty state message should be displayed
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
+    Then operator should be deleted successfully
+
+  @sanity @p3
+  Scenario: Partial swipe sensitivity
+    When User searches for newly created operator
+    And user performs partial swipe
+    Then delete option should not trigger incorrectly
 
   # ==================================================
   # 📱 UI VALIDATION SCENARIOS
   # ==================================================
 
-  Scenario: Verify delete icon UI
-    Then delete icon should be clearly visible after swipe
-
+  @regression @p2
   Scenario: Verify confirmation popup UI
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
     Then confirmation dialog should contain:
       | Delete Message |
       | Confirm Button |
       | Cancel Button  |
 
+  @regression @p2
   Scenario: Verify UI update after deletion
-    When operator is deleted
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
     Then list UI should update immediately
-
-  Scenario: Verify empty state UI
-    When no operators exist
-    Then empty message should be displayed
-
-  Scenario: Verify swipe animation
-    When user swipes record
-    Then smooth animation should be observed
 
   # ==================================================
   # 🔎 VALIDATION SCENARIOS
   # ==================================================
 
-  Scenario: Verify operator removal
-    When operator is deleted
+  @regression @p2
+  Scenario: Verify operator not found after deletion
+    When User searches for newly created operator
+    And User swipes operator record right to left
+    And User clicks on "Delete" option
+    And user confirms deletion
     Then operator should not exist in list
-
-  Scenario: Verify search result after deletion
-    When user searches operator "anil@example.com"
-    Then no matching records should be found
+    And no matching records should be found
