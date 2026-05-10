@@ -1,0 +1,1012 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.HolidaysTestRunner
+-------------------------------------------------------------------------------
+Tests run: 72, Failures: 0, Errors: 72, Skipped: 0, Time elapsed: 4699 s <<< FAILURE! -- in testRunner.HolidaysTestRunner
+Create Holiday via Configuration Module.Navigate to Holidays list screen -- Time elapsed: 69.12 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$744/0x0000018e6544afa0@23468512 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.getAccountPreferenceHeader(UsersPage.java:134)
+	at StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(CommonNavigationSteps.java:79)
+	at ✽.verify that the "Account Preferences" screen is displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:6)
+
+Create Holiday via Configuration Module.Open Add New Holiday popup -- Time elapsed: 65.08 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with mandatory fields only -- Time elapsed: 65.43 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with National Holiday enabled -- Time elapsed: 65.39 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with trimmed Holiday Name -- Time elapsed: 65.36 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday without Holiday Name -- Time elapsed: 64.82 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday without Holiday Date -- Time elapsed: 64.82 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with duplicate Holiday Date -- Time elapsed: 64.58 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with only spaces in Holiday Name -- Time elapsed: 65.10 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Create Holiday with invalid characters -- Time elapsed: 65.24 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Close date popup without selecting date -- Time elapsed: 65.36 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Rapid multiple Submit clicks -- Time elapsed: 65.28 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Rapid toggle clicks -- Time elapsed: 64.79 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Rapid date field clicks -- Time elapsed: 65.36 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Network failure during creation -- Time elapsed: 65.41 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Session timeout during creation -- Time elapsed: 65.48 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Close popup without saving -- Time elapsed: 65.52 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Reopen popup after close -- Time elapsed: 65.49 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Verify Add Holiday popup UI -- Time elapsed: 65.35 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Verify Date Picker UI -- Time elapsed: 64.86 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Verify Holiday Date format -- Time elapsed: 64.87 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Verify Close button functionality -- Time elapsed: 65.49 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Validate Holiday Name field -- Time elapsed: 65.40 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Create Holiday via Configuration Module.Validate Holiday Date uniqueness -- Time elapsed: 65.52 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayCreation.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Search and open Edit Holiday popup -- Time elapsed: 65.73 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday with all editable fields -- Time elapsed: 65.04 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday Name only -- Time elapsed: 65.03 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday Date only -- Time elapsed: 65.02 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update National Holiday toggle only -- Time elapsed: 64.52 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday with trimmed Holiday Name -- Time elapsed: 64.64 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday Date using date picker -- Time elapsed: 65.44 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Close date picker without changing date -- Time elapsed: 64.81 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday without Holiday Name -- Time elapsed: 65.21 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday without Holiday Date -- Time elapsed: 64.94 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday with duplicate Holiday Date -- Time elapsed: 65.42 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday with only spaces in Holiday Name -- Time elapsed: 64.98 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Update Holiday with invalid Holiday Name -- Time elapsed: 64.92 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Save without changes -- Time elapsed: 65.39 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Rapid multiple Save clicks -- Time elapsed: 64.11 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Rapid toggle clicks -- Time elapsed: 65.20 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Rapid date field clicks -- Time elapsed: 64.36 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Network failure during update -- Time elapsed: 65.22 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Session timeout during update -- Time elapsed: 65.40 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Close popup without saving changes -- Time elapsed: 64.52 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Reopen popup after close without save -- Time elapsed: 64.64 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Verify Edit Holiday popup UI -- Time elapsed: 63.68 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Verify Holiday Date picker UI from edit popup -- Time elapsed: 64.68 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Verify pre-filled data accuracy -- Time elapsed: 64.55 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Verify Close button functionality -- Time elapsed: 64.93 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Validate Holiday Name field during update -- Time elapsed: 65.41 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+Update Holiday via Swipe Action from Holidays List.Validate Holiday Date uniqueness during update -- Time elapsed: 65.10 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayUpdate.feature:5)
+
+View Holiday Details from Holidays List.Search and open View Holiday popup -- Time elapsed: 65.35 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify fields are non-editable in view popup -- Time elapsed: 65.19 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify no Save/Edit buttons -- Time elapsed: 65.11 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify Holiday data accuracy -- Time elapsed: 64.96 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify popup close functionality -- Time elapsed: 65.23 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify Holiday Date display format -- Time elapsed: 64.98 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Attempt to edit fields -- Time elapsed: 65.35 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.View deleted Holiday -- Time elapsed: 65.28 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Unauthorized access -- Time elapsed: 65.38 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Rapid click on record -- Time elapsed: 64.96 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Network failure during view -- Time elapsed: 64.64 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Session timeout during view -- Time elapsed: 65.33 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Reopen popup multiple times -- Time elapsed: 64.43 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify View Holiday popup UI -- Time elapsed: 65.68 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify read-only UI behavior -- Time elapsed: 67.11 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Verify National Holiday toggle display -- Time elapsed: 65.01 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Validate Holiday search behavior #1 -- Time elapsed: 64.43 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Validate Holiday search behavior #2 -- Time elapsed: 65.20 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Validate Holiday search behavior #3 -- Time elapsed: 64.60 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Validate Holiday search behavior #4 -- Time elapsed: 65.11 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
+View Holiday Details from Holidays List.Validate Holiday search behavior #5 -- Time elapsed: 64.63 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$742/0x0000018e6544a130@3513d214 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 636918bd-13d8-48e9-b8b6-4909cccf3e9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:170)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:71)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Holidays/HolidayView.feature:5)
+
