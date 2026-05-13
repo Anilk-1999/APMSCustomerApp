@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -76,5 +77,76 @@ public class WaitHelper {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    // ── explicit wait — clean named aliases (300 ms poll for faster detection) ─
+
+    public WebElement waitForVisible(WebElement element) {
+        return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public WebElement waitForVisible(WebElement element, int seconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public WebElement waitForClickable(WebElement element) {
+        return new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public WebElement waitForClickable(WebElement element, int seconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    // ── by-locator presence (element may not exist in DOM yet) ───────────────
+
+    public WebElement waitForPresence(By locator, int seconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public WebElement waitForPresence(By locator) {
+        return waitForPresence(locator, DEFAULT_TIMEOUT);
+    }
+
+    // ── disappear (loading spinner, popup dismiss, etc.) ─────────────────────
+
+    public void waitForDisappear(WebElement element, int seconds) {
+        new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                .pollingEvery(Duration.ofMillis(300))
+                .until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public void waitForDisappear(WebElement element) {
+        waitForDisappear(element, DEFAULT_TIMEOUT);
+    }
+
+    // ── zero-wait fast check (optional / conditional elements) ───────────────
+
+    public boolean isDisplayedFast(WebElement element) {
+        try { return element.isDisplayed(); }
+        catch (Exception e) { return false; }
+    }
+
+    // ── combined wait + action ────────────────────────────────────────────────
+
+    public void clickWhenReady(WebElement element) {
+        waitForClickable(element).click();
+    }
+
+    public void clickWhenReady(WebElement element, int seconds) {
+        waitForClickable(element, seconds).click();
+    }
+
+    public void sendKeysWhenReady(WebElement element, String text) {
+        waitForVisible(element).sendKeys(text);
     }
 }

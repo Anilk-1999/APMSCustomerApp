@@ -2,35 +2,62 @@ package pageObject;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import java.util.List;
-import utilities.ActionHelper;
-import utilities.SwipeHelper;
-import utilities.WaitHelper;
+import utilities.*;
 
 import java.time.Duration;
+import java.util.List;
 
 /**
  * Abstract base for all Page Objects.
  *
- * Provides protected convenience wrappers so subclasses never interact
- * with drivers, waits or swipe helpers directly — all logic stays here.
+ * Provides protected convenience wrappers so page classes never interact with
+ * the driver, wait strategy, or swipe helper directly — all infrastructure
+ * lives here.
+ *
+ * WAIT STRATEGY (enterprise rule — global implicit wait = 0):
+ *  - Use elementUtils.isPresent()        for instant absence/presence checks
+ *  - Use elementUtils.waitForPresence()  for polling until an element appears
+ *  - Use elementUtils.waitForAbsence()   for polling until an element disappears
+ *  - Use flutterUtils.waitForFab()       for post-action list-screen detection
+ *  - PageFactory fields (via AppiumFieldDecorator 5 s) are still used for
+ *    elements that are GUARANTEED present when the method is called (e.g. form
+ *    fields inside an open popup). For optional/conditional elements use
+ *    elementUtils.firstOrNull() instead of touching the PageFactory proxy.
  */
 public abstract class BasePage {
 
-    protected final AndroidDriver driver;
-    protected final WaitHelper    waitHelper;
-    protected final SwipeHelper   swipeHelper;
-    protected final ActionHelper  actionHelper;
+    protected final AndroidDriver  driver;
+    protected final WaitHelper     waitHelper;
+    protected final SwipeHelper    swipeHelper;
+    protected final ActionHelper   actionHelper;
+    protected final ElementUtils   elementUtils;
+    protected final SearchUtils    searchUtils;
+    protected final PopupUtils     popupUtils;
+    protected final FlutterUtils   flutterUtils;
+    protected final KeyboardUtils  keyboardUtils;
+    protected final RetryUtils     retryUtils;
 
     protected BasePage(AndroidDriver driver) {
-        this.driver      = driver;
-        this.waitHelper  = new WaitHelper(driver);
-        this.swipeHelper = new SwipeHelper(driver);
+        this.driver       = driver;
+        this.waitHelper   = new WaitHelper(driver);
+        this.swipeHelper  = new SwipeHelper(driver);
         this.actionHelper = new ActionHelper(driver);
+        this.elementUtils = new ElementUtils(driver);
+        this.searchUtils  = new SearchUtils(driver);
+        this.popupUtils   = new PopupUtils(driver);
+        this.flutterUtils = new FlutterUtils(driver);
+        this.keyboardUtils = new KeyboardUtils(driver);
+        this.retryUtils   = new RetryUtils(driver);
+
+        // AppiumFieldDecorator 5 s: PageFactory proxies wait up to 5 s when an element is
+        // absent. Use ONLY for elements that are expected to be present (form fields, buttons
+        // inside a confirmed-open popup). For presence checks on optional elements, use
+        // elementUtils.firstOrNull() or elementUtils.isPresent() instead.
         PageFactory.initElements(
-                new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
+                new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
     }
 
     // ── Tap / Click ───────────────────────────────────────────────────────────
@@ -77,7 +104,7 @@ public abstract class BasePage {
         return actionHelper.isToggleOn(toggle);
     }
 
-    // ── State checks ──────────────────────────────────────────────────────────
+    // ── State checks (PageFactory proxy — use for guaranteed-present elements) ─
 
     protected boolean isDisplayed(WebElement element) {
         return actionHelper.isDisplayed(element);
@@ -85,6 +112,23 @@ public abstract class BasePage {
 
     protected boolean isEnabled(WebElement element) {
         return actionHelper.isEnabled(element);
+    }
+
+    // ── Zero-wait presence check (use for optional / conditional elements) ─────
+
+    /** Instant true/false — never blocks. Replaces isDisplayed() for optional elements. */
+    protected boolean isPresent(By locator) {
+        return elementUtils.isPresent(locator);
+    }
+
+    /** First matching element or null — never blocks. */
+    protected WebElement firstOrNull(By locator) {
+        return elementUtils.firstOrNull(locator);
+    }
+
+    /** Polls until element appears, returns element or null. */
+    protected WebElement waitForFirst(By locator, int timeoutSecs) {
+        return elementUtils.waitForFirst(locator, timeoutSecs);
     }
 
     // ── Scroll / Swipe ────────────────────────────────────────────────────────
@@ -117,7 +161,7 @@ public abstract class BasePage {
         swipeHelper.longPress(element);
     }
 
-    // ── Wait ──────────────────────────────────────────────────────────────────
+    // ── Wait (WaitHelper — kept for backward compatibility with existing pages) ─
 
     protected void waitForVisibility(WebElement element) {
         waitHelper.waitForVisibility(element);
@@ -135,7 +179,55 @@ public abstract class BasePage {
         waitHelper.waitForClickability(element);
     }
 
+    protected WebElement waitForVisible(WebElement element) {
+        return waitHelper.waitForVisible(element);
+    }
+
+    protected WebElement waitForVisible(WebElement element, int seconds) {
+        return waitHelper.waitForVisible(element, seconds);
+    }
+
+    protected WebElement waitForClickable(WebElement element) {
+        return waitHelper.waitForClickable(element);
+    }
+
+    protected WebElement waitForClickable(WebElement element, int seconds) {
+        return waitHelper.waitForClickable(element, seconds);
+    }
+
+    protected WebElement waitForPresence(By locator) {
+        return waitHelper.waitForPresence(locator);
+    }
+
+    protected WebElement waitForPresence(By locator, int seconds) {
+        return waitHelper.waitForPresence(locator, seconds);
+    }
+
+    protected void waitForDisappear(WebElement element) {
+        waitHelper.waitForDisappear(element);
+    }
+
+    protected void waitForDisappear(WebElement element, int seconds) {
+        waitHelper.waitForDisappear(element, seconds);
+    }
+
+    protected boolean isDisplayedFast(WebElement element) {
+        return waitHelper.isDisplayedFast(element);
+    }
+
+    protected void clickWhenReady(WebElement element) {
+        waitHelper.clickWhenReady(element);
+    }
+
+    protected void clickWhenReady(WebElement element, int seconds) {
+        waitHelper.clickWhenReady(element, seconds);
+    }
+
+    protected void sendKeysWhenReady(WebElement element, String text) {
+        waitHelper.sendKeysWhenReady(element, text);
+    }
+
     protected void hideKeyboard() {
-        try { driver.hideKeyboard(); } catch (Exception e) { /* keyboard not shown — safe to ignore */ }
+        keyboardUtils.hideKeyboardSafely();
     }
 }

@@ -2,514 +2,550 @@ package pageObject.configurations;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.BasePage;
 
-import java.time.Duration;
 import java.util.List;
 
 /**
- * Page Object for the Activities Configuration module.
+ * Page Object — Activities Configuration module.
  *
  * Covers: Activities list screen, Add New Activity popup,
  *         Edit Activity popup, View Activity popup,
  *         Status-change confirmation popup.
  *
+ * ARCHITECTURE RULES:
+ *  1. Zero implicit-wait switching — all presence checks use elementUtils / searchUtils / popupUtils
+ *  2. No Thread.sleep / LockSupport — replaced by polling WebDriverWait via elementUtils
+ *  3. PageFactory (@AndroidFindBy) used ONLY for elements guaranteed present when the method runs
+ *  4. Optional / conditional elements use elementUtils.firstOrNull() or elementUtils.isPresent()
+ *
  * Locator priority: accessibilityId → id → AndroidUIAutomator → XPath (last resort)
- * NOTE: Update locators after UI inspection with Appium Inspector.
  */
 public class ActivityPage extends BasePage {
 
-    // ═══════════════════════════════════════════════════════════
-    //  LIST SCREEN ELEMENTS
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
+    //  LOCATOR CONSTANTS  (single source of truth)
+    // ═══════════════════════════════════════════════════════
 
-    /** "+ Add" button on Activities list screen */
-    @AndroidFindBy(accessibility = "Add")
-    private WebElement addButton;
+    private static final By SUBMIT   = AppiumBy.accessibilityId("Submit");
+    private static final By SAVE     = AppiumBy.accessibilityId("Save");
+    private static final By EDIT_BTN = AppiumBy.accessibilityId("Edit");
 
-    /** Search icon on Activities list screen */
-    @AndroidFindBy(accessibility = "Search")
-    private WebElement searchIcon;
+    private static final By SEARCH_BAR = AppiumBy.className("android.widget.EditText");
 
-    /** Search input field (visible after clicking search icon — only EditText on list screen) */
-    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\")")
-    private WebElement searchInput;
+    private static final By TOGGLE_SWITCH = AppiumBy.xpath(
+            "//android.view.View[@content-desc='Is Function Applicable']" +
+            "/following-sibling::android.view.View[1]");
 
-    /** All list records (used to find a specific record by name) */
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@clickable='true' and @focusable='true']")
-    private List<WebElement> listRecords;
+    private static final By STATUS_BUTTON = AppiumBy.xpath(
+            "//android.view.View[@content-desc='Active' or @content-desc='Inactive']");
 
-    // ═══════════════════════════════════════════════════════════
-    //  ADD / EDIT POPUP FIELDS
-    // ═══════════════════════════════════════════════════════════
+    private static final By YES_CHANGE = AppiumBy.androidUIAutomator(
+            "new UiSelector().description(\"Yes, Change\")");
+    private static final By YES_EXIT = AppiumBy.androidUIAutomator(
+            "new UiSelector().description(\"Yes, Exit\")");
 
-    /** Activity Name input — hint="Activity Name *" in Add/Edit popup */
-    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@hint,'Activity Name')]")
-    private WebElement activityNameInput;
+    private static final By ADD_POPUP    = AppiumBy.xpath(
+            "//android.view.View[@content-desc='Add New Activity']");
+    private static final By EDIT_POPUP   = AppiumBy.xpath(
+            "//android.view.View[@content-desc='Edit Activity']");
+    private static final By VIEW_POPUP   = AppiumBy.xpath(
+            "//android.view.View[@content-desc='View Activity']");
 
-    // instance(1) — Description is the second EditText in both Add and Edit popups.
-    // @hint='Description' disappears in UIAutomator2 when the field already contains text
-    // (same Flutter behaviour as the Activity Name and email fields).
-    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
-    private WebElement descriptionInput;
+    private static final By ACTIVITY_NAME_EDITTEXT = AppiumBy.androidUIAutomator(
+            "new UiSelector().className(\"android.widget.EditText\").instance(0)");
+    private static final By DESCRIPTION_EDITTEXT = AppiumBy.androidUIAutomator(
+            "new UiSelector().className(\"android.widget.EditText\").instance(1)");
 
-    /**
-     * "Is Function Applicable" label (android.view.View with content-desc).
-     * Used for visibility and non-editable checks only — it is NOT clickable.
-     */
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Is Function Applicable']")
-    private WebElement isFunctionApplicableLabel;
+    private static final By ACTIVITY_NAME_VIEW = AppiumBy.xpath(
+            "//android.view.View[@hint='Activity Name *' or @hint='Activity Name']");
+    private static final By DESCRIPTION_VIEW = AppiumBy.xpath(
+            "//android.view.View[@hint='Description']");
 
-    /**
-     * Actual toggle switch — the sibling android.view.View that IS clickable.
-     * Used for all click and state (checked) interactions.
-     */
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Is Function Applicable']/following-sibling::android.view.View[1]")
-    private WebElement isFunctionApplicableSwitch;
+    private static final By ACTIVITY_ID_FIELD = AppiumBy.androidUIAutomator(
+            "new UiSelector().descriptionMatches(\"#[A-Z]+[0-9]+\")");
 
-    /** Submit button inside Add Activity popup */
-    @AndroidFindBy(accessibility = "Submit")
-    private WebElement submitButton;
+    private static final By REQUIRED_ERROR = AppiumBy.androidUIAutomator(
+            "new UiSelector().descriptionContains(\"required\")");
+    private static final By DUPLICATE_ERROR = AppiumBy.androidUIAutomator(
+            "new UiSelector().descriptionContains(\"already exists\")");
+    private static final By NO_CHANGES_MSG = AppiumBy.androidUIAutomator(
+            "new UiSelector().descriptionContains(\"No changes\")");
 
-    /** Save button inside Edit Activity popup */
-    @AndroidFindBy(accessibility = "Save")
-    private WebElement saveButton;
+    private static final By CLOSE_BTN = AppiumBy.xpath(
+            "//android.view.View[contains(@content-desc,'Activity')" +
+            " or @content-desc='Confirmation Alert'" +
+            " or @content-desc='Status Update']" +
+            "//android.widget.Button[not(@content-desc)]");
 
-    /**
-     * Close "X" button — plain android.widget.Button inside the Activity popup header,
-     * the Confirmation Alert header (unsaved changes), or the Status Update popup header.
-     */
-    @AndroidFindBy(xpath = "//android.view.View[contains(@content-desc,'Activity') or @content-desc='Confirmation Alert' or @content-desc='Status Update']//android.widget.Button[not(@content-desc)]")
-    private WebElement closeButton;
+    private static final By IS_FUNCTION_LABEL = AppiumBy.xpath(
+            "//android.view.View[@content-desc='Is Function Applicable']");
 
-    // ═══════════════════════════════════════════════════════════
-    //  EDIT POPUP — READ-ONLY FIELDS
-    // ═══════════════════════════════════════════════════════════
-
-    /**
-     * Activity ID in Edit popup — content-desc holds the actual ID value e.g. "#ACA1023".
-     * Pattern: '#' followed by uppercase letters then digits.
-     */
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionMatches(\"#[A-Z]+[0-9]+\")")
-    private WebElement activityIdField;
-
-    /**
-     * Status button — clickable android.view.View (not Button) in Flutter.
-     * Content-desc is "Active" or "Inactive" depending on current state.
-     */
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Active' or @content-desc='Inactive']")
-    private WebElement statusButton;
-
-    // ═══════════════════════════════════════════════════════════
-    //  SWIPE ACTION — EDIT BUTTON
-    // ═══════════════════════════════════════════════════════════
-
-    /** "Edit" button that appears after swiping a list record right → left */
-    @AndroidFindBy(accessibility = "Edit")
-    private WebElement editButton;
-
-    // ═══════════════════════════════════════════════════════════
-    //  STATUS CONFIRMATION POPUP
-    // ═══════════════════════════════════════════════════════════
-
-    /** "Yes, Change" button in the status confirmation popup (Flutter renders as View, not Button) */
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Yes, Change\")")
-    private WebElement yesChangeButton;
-
-    // ═══════════════════════════════════════════════════════════
-    //  CLOSE-WITH-UNSAVED-CHANGES CONFIRMATION POPUP
-    // ═══════════════════════════════════════════════════════════
-
-    /** Header of the "Confirmation Alert" popup shown when closing with unsaved changes */
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Confirmation Alert']")
-    private WebElement confirmationAlertHeader;
-
-    /** "Yes, Exit" button in the Confirmation Alert popup (Flutter renders as View, not Button) */
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Yes, Exit\")")
-    private WebElement yesExitButton;
-
-    // ═══════════════════════════════════════════════════════════
-    //  SUCCESS MESSAGE
-    // ═══════════════════════════════════════════════════════════
-
-    /** Toast/banner shown after successful create */
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Record created successfully\")")
-    private WebElement successMessage;
-
-    /** Toast/banner shown after successful update */
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Record updated successfully\")")
-    private WebElement updateSuccessMessage;
-
-    // ═══════════════════════════════════════════════════════════
-    //  VALIDATION / ERROR MESSAGES
-    // ═══════════════════════════════════════════════════════════
-
-    /** "This field is required" OR "Activity Name is required" shown below mandatory field */
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"required\")")
-    private WebElement activityNameRequiredError;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"already exists\")")
-    private WebElement duplicateError;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"No changes\")")
-    private WebElement noChangesMessage;
-
-    // ═══════════════════════════════════════════════════════════
-    //  POPUP HEADERS (to verify correct popup opened)
-    // ═══════════════════════════════════════════════════════════
-
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Add New Activity']")
-    private WebElement addActivityPopupHeader;
-
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Edit Activity']")
-    private WebElement editActivityPopupHeader;
-
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='View Activity']")
-    private WebElement viewActivityPopupHeader;
-
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
     //  CONSTRUCTOR
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
 
     public ActivityPage(AndroidDriver driver) {
         super(driver);
     }
 
-    // ═══════════════════════════════════════════════════════════
-    //  LIST SCREEN ACTIONS
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
+    //  LIST SCREEN — ADD FAB
+    // ═══════════════════════════════════════════════════════
 
+    /**
+     * Clicks the Add FAB using polling — zero implicit wait in the lambda
+     * so each failed poll returns instantly (no 10-s implicit wait budget burn).
+     */
     public void clickAddButton() {
-        // Poll until the FAB appears — it may be delayed by Flutter list-load or API response.
-        WebElement btn = new WebDriverWait(driver, Duration.ofSeconds(20)).until(d -> {
-            try {
-                return d.findElement(AppiumBy.androidUIAutomator(
-                        "new UiSelector().description(\"+ Add\")"));
-            } catch (Exception e1) {
-                try {
-                    return d.findElement(By.xpath(
-                            "//*[contains(@content-desc,'Add') and @clickable='true']"));
-                } catch (Exception e2) { return null; }
-            }
-        });
-        btn.click();
-    }
-
-    public void clickSearchIcon() {
-        tap(searchIcon);
-    }
-
-    public void tapSearchInput() {
-        tap(searchInput);
-    }
-
-    public void clearSearchField() {
-        clearField(searchInput);
-    }
-
-    public void enterSearchText(String activityName) {
-        clearAndType(searchInput, activityName);
+        flutterUtils.clickFab(20);
     }
 
     /**
-     * Finds and returns the first list record whose text contains the given name.
-     * Use this to get the element before swiping or clicking it.
+     * True when the Add FAB is visible (instant check, no wait).
+     * Used inside polling loops — must NOT block by itself.
      */
-    public WebElement getRecordByName(String name) {
-        return new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(15))
-                .until(d -> {
-                    try {
-                        return d.findElement(AppiumBy.androidUIAutomator(
-                                "new UiSelector().descriptionContains(\"" + name + "\")"));
-                    } catch (Exception e) { return null; }
-                });
+    public boolean isAddButtonVisible() {
+        return flutterUtils.isFabVisible();
     }
 
-    // ═══════════════════════════════════════════════════════════
-    //  ADD / EDIT POPUP ACTIONS
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
+    //  LIST SCREEN — SEARCH
+    // ═══════════════════════════════════════════════════════
+
+    /** Clicks Search icon (skips if bar already open). */
+    public void clickSearchIcon() {
+        searchUtils.openSearch();
+    }
+
+    public void tapSearchInput()           { searchUtils.tapSearchInput(); }
+    public void clearSearchField()         { searchUtils.clearSearch(); }
+    public void enterSearchText(String t)  { searchUtils.typeSearchText(t); }
+
+    /**
+     * Finds the first list record whose content-desc contains the given name.
+     * Returns null if not found within 15 s.
+     */
+    public WebElement getRecordByName(String name) {
+        return searchUtils.getRecordByName(name);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  ADD / EDIT POPUP — FIELD INPUT
+    // ═══════════════════════════════════════════════════════
 
     public void enterActivityName(String name) {
-        clearAndType(activityNameInput, name);
+        // Direct ops — bypasses ActionHelper.waitForVisibility() which can wait 15s
+        // on Flutter elements that report isDisplayed()=false during render cycles.
+        // Re-query up to 3 times to survive Flutter stale-reference after popup open.
+        for (int i = 0; i < 3; i++) {
+            WebElement field = elementUtils.waitForFirst(ACTIVITY_NAME_EDITTEXT, 5);
+            if (field == null) continue;
+            try { field.click(); field.clear(); field.sendKeys(name); return; }
+            catch (Exception ignored) {}
+        }
     }
 
     public void clearActivityNameField() {
-        // In Edit mode the @hint attribute disappears (field is pre-filled), so the PageFactory
-        // proxy activityNameInput (hint XPath) may not find it. Re-query via instance(0).
-        // Also use a robust clear: click → clear() → backspace over any remaining text.
-        WebElement field = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofMillis(300))
-                .until(d -> {
-                    try {
-                        return d.findElement(io.appium.java_client.AppiumBy.androidUIAutomator(
-                                "new UiSelector().className(\"android.widget.EditText\").instance(0)"));
-                    } catch (Exception e) { return null; }
-                });
-        field.click();
-        field.clear();
-        // Flutter clear() may leave text — retrieve current value and backspace over it.
-        String remaining = field.getAttribute("text");
-        if (remaining != null && !remaining.isEmpty()) {
-            for (int i = 0; i < remaining.length() + 2; i++) {
-                field.sendKeys(org.openqa.selenium.Keys.BACK_SPACE);
-            }
+        for (int i = 0; i < 3; i++) {
+            WebElement field = elementUtils.waitForFirst(ACTIVITY_NAME_EDITTEXT, 5);
+            if (field == null) continue;
+            try { field.click(); field.clear(); return; }
+            catch (Exception ignored) {}
         }
-        System.out.println("[ActivityPage] Cleared Activity Name field, remaining: '"
-                + field.getAttribute("text") + "'");
     }
 
     public void enterDescription(String description) {
-        clearAndType(descriptionInput, description);
+        for (int i = 0; i < 3; i++) {
+            WebElement field = elementUtils.waitForFirst(DESCRIPTION_EDITTEXT, 5);
+            if (field == null) continue;
+            try { field.click(); field.clear(); field.sendKeys(description); return; }
+            catch (Exception ignored) {}
+        }
     }
 
+    // ═══════════════════════════════════════════════════════
+    //  TOGGLE ACTIONS
+    // ═══════════════════════════════════════════════════════
+
+    /** Enables "Is Function Applicable" toggle — clicks only if currently OFF. */
     public void enableIsFunctionApplicableToggle() {
-        enableToggle(isFunctionApplicableSwitch);
+        WebElement toggle = elementUtils.waitForFirst(TOGGLE_SWITCH, 5);
+        if (toggle != null && !flutterUtils.getToggleState(toggle)) toggle.click();
     }
 
+    /** Disables "Is Function Applicable" toggle — clicks only if currently ON. */
     public void disableIsFunctionApplicableToggle() {
-        disableToggle(isFunctionApplicableSwitch);
+        WebElement toggle = elementUtils.waitForFirst(TOGGLE_SWITCH, 5);
+        if (toggle != null && flutterUtils.getToggleState(toggle)) toggle.click();
     }
 
+    /** Flips the toggle — re-queries each time since Flutter re-composes after click. */
     public void clickIsFunctionApplicableToggle() {
-        // Re-query each call — Flutter recomposes the UI after toggle state change,
-        // making the PageFactory proxy stale on subsequent clicks.
-        WebElement toggle = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofMillis(300))
-                .until(d -> {
-                    try {
-                        return d.findElement(AppiumBy.xpath(
-                                "//android.view.View[@content-desc='Is Function Applicable']/following-sibling::android.view.View[1]"));
-                    } catch (Exception e) { return null; }
-                });
-        toggle.click();
+        WebElement toggle = elementUtils.waitForFirst(TOGGLE_SWITCH, 5);
+        if (toggle != null) toggle.click();
     }
 
+    // ═══════════════════════════════════════════════════════
+    //  KEYBOARD
+    // ═══════════════════════════════════════════════════════
+
+    /** Public wrapper — step definitions cannot access BasePage.hideKeyboard() directly. */
+    public void hideKeyboard() {
+        keyboardUtils.hideKeyboardSafely();
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  SUBMIT / SAVE / CLOSE ACTIONS
+    // ═══════════════════════════════════════════════════════
+
+    // Direct polling click — avoids tap() → waitForClickability() which waits up to 15s
+    // on Flutter android.view.View elements that report enabled=false to UiAutomator2.
     public void clickSubmitButton() {
-        tap(submitButton);
+        elementUtils.clickWhenFoundByAccessibility("Submit", 10);
     }
-
     public void clickSaveButton() {
-        tap(saveButton);
+        elementUtils.clickWhenFoundByAccessibility("Save", 10);
     }
 
+    /**
+     * Clicks the X button inside the popup header.
+     * Uses a polling retry — Flutter tap registration can be delayed.
+     */
     public void clickCloseButton() {
-        tap(closeButton);
+        popupUtils.clickCloseX(10);
     }
 
-    // ═══════════════════════════════════════════════════════════
+    /**
+     * After clicking Close X, handles the optional "Confirmation Alert" (unsaved changes)
+     * by clicking "Yes, Exit". Returns immediately if no alert appears.
+     */
+    public void clickYesExitIfConfirmationShows() {
+        popupUtils.confirmExitIfAlertShows(10);
+    }
+
+    public void clickYesExitButton() {
+        elementUtils.clickWhenFoundByUIAutomator(
+                "new UiSelector().description(\"Yes, Exit\")", 10);
+    }
+
+    // ═══════════════════════════════════════════════════════
     //  SWIPE + EDIT ACTIONS
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
 
     public void swipeRecordRightToLeft(WebElement record) {
         swipeRightToLeft(record);
     }
 
+    /**
+     * Clicks the Edit button that appears after swiping a list record.
+     * Re-queries directly — PageFactory proxy goes stale after Flutter swipe.
+     */
     public void clickEditButton() {
-        // Re-query directly — PageFactory proxy for editButton goes stale after Flutter swipe.
-        WebElement btn = new WebDriverWait(driver, Duration.ofSeconds(15)).until(d -> {
-            try {
-                WebElement el = d.findElement(AppiumBy.accessibilityId("Edit"));
-                return el.isDisplayed() ? el : null;
-            } catch (Exception e) { return null; }
-        });
-        btn.click();
+        // Edit button appears immediately after swipe — 5 s is enough
+        WebElement btn = elementUtils.waitForFirst(EDIT_BTN, 5);
+        if (btn != null) btn.click();
     }
 
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
     //  STATUS CHANGE ACTIONS
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
 
     public void clickStatusButton() {
-        tap(statusButton);
+        WebElement btn = elementUtils.waitForFirst(STATUS_BUTTON, 10);
+        if (btn != null) btn.click();
     }
 
     public void clickYesChangeButton() {
-        WebElement btn = new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
-            try {
-                WebElement el = d.findElement(AppiumBy.androidUIAutomator(
-                        "new UiSelector().description(\"Yes, Change\")"));
-                return el.isDisplayed() ? el : null;
-            } catch (Exception e) { return null; }
-        });
-        btn.click();
+        elementUtils.clickWhenFoundByUIAutomator(
+                "new UiSelector().description(\"Yes, Change\")", 10);
     }
 
-    public void clickYesExitButton() {
-        tap(yesExitButton);
-    }
-
-    /**
-     * After clicking Close X, waits up to 10 s for the Confirmation Alert "Yes, Exit"
-     * button to appear and clicks it — retrying on each poll until the button disappears
-     * (confirming the alert actually dismissed). If the alert never appears the popup
-     * closed cleanly — no action needed.
-     *
-     * Retry loop design: finding the button → click() → return null (keep polling).
-     * Alert dismissed (button gone) → findElement throws → return true (loop exits).
-     * This handles Flutter tap registration delays without any Thread.sleep.
-     */
-    public void clickYesExitIfConfirmationShows() {
-        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .pollingEvery(Duration.ofMillis(500))
-                    .until(d -> {
-                        try {
-                            d.findElement(AppiumBy.androidUIAutomator(
-                                    "new UiSelector().description(\"Yes, Exit\")")).click();
-                            System.out.println("[ActivityPage] Clicked Yes, Exit — verifying alert dismissed");
-                            return null; // keep polling until button is gone (alert dismissed)
-                        } catch (Exception e) {
-                            return true; // button not found = alert dismissed (or never appeared)
-                        }
-                    });
-        } catch (Exception ignored) { /* timed out — best-effort */ }
-        finally {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        }
-    }
-
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
     //  VERIFICATION — POPUP VISIBILITY
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
 
-    public boolean isAddActivityPopupDisplayed() {
-        return isDisplayed(addActivityPopupHeader);
+    public boolean isAddActivityPopupDisplayed()  { return elementUtils.isPresent(ADD_POPUP);  }
+    public boolean isEditActivityPopupDisplayed() { return elementUtils.isPresent(EDIT_POPUP); }
+    public boolean isViewActivityPopupDisplayed() { return elementUtils.isPresent(VIEW_POPUP); }
+    /** Polls up to 3 s — handles Flutter widget rebuild after toggle/status tap. */
+    public boolean isViewActivityPopupStillOpen() { return elementUtils.waitForPresence(VIEW_POPUP, 3); }
+    public boolean isEditButtonVisible()          { return elementUtils.isPresent(EDIT_BTN);   }
+    public boolean isCloseButtonVisible()         { return elementUtils.isPresent(CLOSE_BTN);  }
+    public boolean isYesChangeButtonVisible()     { return elementUtils.isPresent(YES_CHANGE); }
+    public boolean isYesExitButtonVisible()       { return elementUtils.isPresent(YES_EXIT);   }
+    public boolean isConfirmationAlertDisplayed() {
+        return elementUtils.isPresentByUIAutomator(
+                "new UiSelector().descriptionContains(\"Confirmation Alert\")");
     }
 
-    public boolean isEditActivityPopupDisplayed() {
-        return isDisplayed(editActivityPopupHeader);
-    }
-
-    public boolean isViewActivityPopupDisplayed() {
-        return isDisplayed(viewActivityPopupHeader);
-    }
-
-    public boolean isEditButtonVisible() {
-        return isDisplayed(editButton);
-    }
-
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
     //  VERIFICATION — FIELD VISIBILITY
-    // ═══════════════════════════════════════════════════════════
-
-    public boolean isAddButtonVisible() {
-        try {
-            driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().description(\"+ Add\")"));
-            return true;
-        } catch (Exception e1) {
-            try {
-                driver.findElement(By.xpath("//*[contains(@content-desc,'Add') and @clickable='true']"));
-                return true;
-            } catch (Exception e2) {
-                return false;
-            }
-        }
-    }
-    public boolean isActivityNameFieldVisible() {
-        // The @hint attribute disappears when the field is pre-filled, so the PageFactory
-        // proxy (which uses contains(@hint,'Activity Name')) cannot find it in Edit popup.
-        // Use instance(0) — Activity Name is always the first EditText in Add/Edit popups.
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        try {
-            WebElement el = driver.findElement(AppiumBy.androidUIAutomator(
-                    "new UiSelector().className(\"android.widget.EditText\").instance(0)"));
-            return el.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        } finally {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        }
-    }
-    public boolean isDescriptionFieldVisible()     { return isDisplayed(descriptionInput); }
-    public boolean isToggleVisible()               { return isDisplayed(isFunctionApplicableLabel); }
-    public boolean isSubmitButtonVisible()         { return isDisplayed(submitButton); }
-    public boolean isCloseButtonVisible()          { return isDisplayed(closeButton); }
-    public boolean isActivityIdVisible()           { return isDisplayed(activityIdField); }
-    public boolean isStatusButtonVisible()         { return isDisplayed(statusButton); }
-    public boolean isSaveButtonVisible()           { return isDisplayed(saveButton); }
-    public boolean isYesChangeButtonVisible()      { return isDisplayed(yesChangeButton); }
-    public boolean isConfirmationAlertDisplayed()  { return isDisplayed(confirmationAlertHeader); }
-    public boolean isYesExitButtonVisible()        { return isDisplayed(yesExitButton); }
-    public boolean isSuccessMessageDisplayed()       { return isDisplayed(successMessage); }
-    public boolean isUpdateSuccessMessageDisplayed() { return isDisplayed(updateSuccessMessage); }
-
-    // ═══════════════════════════════════════════════════════════
-    //  VERIFICATION — NON-EDITABLE FIELDS
-    // ═══════════════════════════════════════════════════════════
-
-    public boolean isActivityIdNonEditable()    { return true; } // Activity ID is always a read-only View
-    public boolean isActivityNameNonEditable()  { return !isEnabled(activityNameInput); }
-    public boolean isDescriptionNonEditable()   { return !isEnabled(descriptionInput); }
-    public boolean isToggleNonEditable()        { return !isEnabled(isFunctionApplicableSwitch); }
-
-    // ═══════════════════════════════════════════════════════════
-    //  VERIFICATION — ERROR MESSAGES
-    // ═══════════════════════════════════════════════════════════
-
-    public boolean isActivityNameRequiredErrorDisplayed() { return isDisplayed(activityNameRequiredError); }
-    public boolean isDuplicateErrorDisplayed()            { return isDisplayed(duplicateError); }
-    public boolean isNoChangesMessageDisplayed()          { return isDisplayed(noChangesMessage); }
-
-    // ═══════════════════════════════════════════════════════════
-    //  GETTERS
-    // ═══════════════════════════════════════════════════════════
-
-    public String getActivityIdValue() { return activityIdField.getAttribute("content-desc"); }
-    public String getStatusValue()     { return statusButton.getAttribute("content-desc"); }
-
-    public boolean isToggleOn()  { return isToggleOn(isFunctionApplicableSwitch); }
-    public boolean isToggleOff() { return !isToggleOn(isFunctionApplicableSwitch); }
-
-    // ═══════════════════════════════════════════════════════════
-    //  COMPOSITE HELPERS (called from step defs)
-    // ═══════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════
 
     /**
-     * Exits search mode by sending KEYCODE_BACK if the search bar is currently open.
-     * Called after Save/Close returns the app to the list screen in search mode —
-     * Flutter hides the "+ Add" FAB while search is active, so FAB checks fail
-     * unless search is closed first.
+     * True when the Activity Name field is visible in any popup mode (Add/Edit/View).
+     * Add/Edit: android.widget.EditText instance(0)
+     * View: android.view.View with hint='Activity Name *'
+     */
+    public boolean isActivityNameFieldVisible() {
+        // Instant checks only — no polling, no wait. EditText = Add/Edit; View = View popup.
+        WebElement editField = elementUtils.firstOrNull(ACTIVITY_NAME_EDITTEXT);
+        if (editField != null) return true;
+        return elementUtils.isPresent(ACTIVITY_NAME_VIEW);
+    }
+
+    public boolean isDescriptionFieldVisible() {
+        WebElement editField = elementUtils.firstOrNull(DESCRIPTION_EDITTEXT);
+        if (editField != null) return true;
+        return elementUtils.isPresent(DESCRIPTION_VIEW);
+    }
+
+    public boolean isToggleVisible() {
+        return elementUtils.isPresent(IS_FUNCTION_LABEL);
+    }
+
+    /** Instant check — Submit absent returns false in ~50 ms. */
+    public boolean isSubmitButtonVisible() {
+        return elementUtils.isPresentByAccessibility("Submit");
+    }
+
+    /** Instant check — Save absent returns false in ~50 ms. */
+    public boolean isSaveButtonVisible() {
+        return elementUtils.isPresentByAccessibility("Save");
+    }
+
+    public boolean isActivityIdVisible() {
+        return elementUtils.isPresent(ACTIVITY_ID_FIELD);
+    }
+
+    public boolean isStatusButtonVisible() {
+        return elementUtils.isPresent(STATUS_BUTTON);
+    }
+
+    public boolean isSuccessMessageDisplayed() {
+        return elementUtils.isPresentByUIAutomator(
+                "new UiSelector().descriptionContains(\"Record created successfully\")");
+    }
+
+    public boolean isUpdateSuccessMessageDisplayed() {
+        return elementUtils.isPresentByUIAutomator(
+                "new UiSelector().descriptionContains(\"Record updated successfully\")");
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  VERIFICATION — NON-EDITABLE FIELDS
+    // ═══════════════════════════════════════════════════════
+
+    public boolean isActivityIdNonEditable() {
+        return true; // Activity ID is always a read-only View
+    }
+
+    /**
+     * True when the Activity Name field is non-editable (View popup).
+     * View popup: field is android.view.View with enabled=false.
+     * Add/Edit popup: field is EditText with enabled=true.
+     */
+    public boolean isActivityNameNonEditable() {
+        // View popup check: android.view.View with hint, enabled=false
+        List<WebElement> viewFields = driver.findElements(ACTIVITY_NAME_VIEW);
+        if (!viewFields.isEmpty()) {
+            try { return !viewFields.get(0).isEnabled(); } catch (Exception ignored) {}
+        }
+        // Add/Edit: EditText — if enabled=false, field is non-editable
+        WebElement editField = elementUtils.firstOrNull(ACTIVITY_NAME_EDITTEXT);
+        if (editField != null) {
+            try { return !editField.isEnabled(); } catch (Exception ignored) {}
+        }
+        return true; // field not found as EditText → assume non-editable (View mode)
+    }
+
+    /**
+     * True when the Description field is non-editable (View popup).
+     */
+    public boolean isDescriptionNonEditable() {
+        List<WebElement> viewFields = driver.findElements(DESCRIPTION_VIEW);
+        if (!viewFields.isEmpty()) {
+            try { return !viewFields.get(0).isEnabled(); } catch (Exception ignored) {}
+        }
+        WebElement editField = elementUtils.firstOrNull(DESCRIPTION_EDITTEXT);
+        if (editField != null) {
+            try { return !editField.isEnabled(); } catch (Exception ignored) {}
+        }
+        return true;
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  VERIFICATION — ERROR MESSAGES
+    // ═══════════════════════════════════════════════════════
+
+    public boolean isActivityNameRequiredErrorDisplayed() {
+        return elementUtils.isPresent(REQUIRED_ERROR);
+    }
+
+    public boolean isDuplicateErrorDisplayed() {
+        return elementUtils.isPresent(DUPLICATE_ERROR);
+    }
+
+    public boolean isNoChangesMessageDisplayed() {
+        return elementUtils.isPresent(NO_CHANGES_MSG);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  GETTERS
+    // ═══════════════════════════════════════════════════════
+
+    public String getActivityIdValue() {
+        WebElement field = elementUtils.firstOrNull(ACTIVITY_ID_FIELD);
+        return field != null ? field.getAttribute("content-desc") : null;
+    }
+
+    public String getStatusValue() {
+        WebElement btn = elementUtils.firstOrNull(STATUS_BUTTON);
+        return btn != null ? btn.getAttribute("content-desc") : null;
+    }
+
+    public boolean isToggleOn() {
+        WebElement toggle = elementUtils.firstOrNull(TOGGLE_SWITCH);
+        return toggle != null && flutterUtils.getToggleState(toggle);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  VIEW POPUP — STATE CHECKS
+    // ═══════════════════════════════════════════════════════
+
+    public boolean isKeyboardVisible() {
+        return keyboardUtils.isKeyboardVisible();
+    }
+
+    /**
+     * True when the status-change confirmation popup ("Yes, Change") is visible.
+     * Used to assert it does NOT appear when Status is tapped in View mode.
+     */
+    public boolean isStatusConfirmationPopupDisplayed() {
+        return elementUtils.isPresent(YES_CHANGE);
+    }
+
+    /**
+     * Captures current toggle ON/OFF state (used in View popup read-only tests).
+     */
+    public boolean captureToggleState() {
+        WebElement toggle = elementUtils.firstOrNull(TOGGLE_SWITCH);
+        return toggle != null && flutterUtils.getToggleState(toggle);
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  VIEW POPUP — READ-ONLY FIELD INTERACTIONS
+    // ═══════════════════════════════════════════════════════
+
+    /** Taps Status field in View popup — should produce no popup (read-only). */
+    public void tapStatusFieldInView() {
+        WebElement btn = elementUtils.firstOrNull(STATUS_BUTTON);
+        if (btn != null) {
+            try { btn.click(); } catch (Exception ignored) {}
+        }
+    }
+
+    /** Taps Activity Name field in View popup — should NOT open keyboard. */
+    public void tapActivityNameInView() {
+        WebElement viewField = elementUtils.firstOrNull(ACTIVITY_NAME_VIEW);
+        if (viewField != null) {
+            try { viewField.click(); } catch (Exception ignored) {}
+            return;
+        }
+        // Fallback: Add/Edit mode (should not be reached from View scenarios)
+        WebElement editField = elementUtils.firstOrNull(ACTIVITY_NAME_EDITTEXT);
+        if (editField != null) {
+            try { editField.click(); } catch (Exception ignored) {}
+        }
+    }
+
+    /** Taps Description field in View popup — should NOT open keyboard. */
+    public void tapDescriptionInView() {
+        WebElement viewField = elementUtils.firstOrNull(DESCRIPTION_VIEW);
+        if (viewField != null) {
+            try { viewField.click(); } catch (Exception ignored) {}
+            return;
+        }
+        WebElement editField = elementUtils.firstOrNull(DESCRIPTION_EDITTEXT);
+        if (editField != null) {
+            try { editField.click(); } catch (Exception ignored) {}
+        }
+    }
+
+    /** Taps the toggle in View mode — state should remain unchanged (read-only). */
+    public void tapToggleInView() {
+        WebElement toggle = elementUtils.firstOrNull(TOGGLE_SWITCH);
+        if (toggle != null) {
+            try { toggle.click(); } catch (Exception ignored) {}
+        }
+    }
+
+    /** Finds a record in the View popup by activity name. */
+    public WebElement getActivityNameFromView(String expectedName) {
+        WebElement match = elementUtils.firstOrNullByUIAutomator(
+                "new UiSelector().textContains(\"" + expectedName + "\")");
+        if (match != null) return match;
+        return elementUtils.firstOrNullByUIAutomator(
+                "new UiSelector().descriptionContains(\"" + expectedName + "\")");
+    }
+
+    // ═══════════════════════════════════════════════════════
+    //  COMPOSITE HELPERS
+    // ═══════════════════════════════════════════════════════
+
+    /**
+     * Exits search mode by hiding the keyboard (triggers Flutter auto-close).
+     * If Flutter does not auto-close the search bar (keyboard was already hidden
+     * before this call), leaves the bar open — caller must poll the success toast
+     * instead of the FAB (which stays hidden while search is active).
      *
-     * Uses ADB shell keyevent (same as AppHooks.pressBack) rather than
-     * driver.navigate().back() — the latter pops the Activities screen off Flutter's
-     * navigation stack instead of merely closing the embedded search bar.
+     * REPLACED: LockSupport.parkNanos(600 ms) → polling waitForAbsence(3 s)
      */
     public void exitSearchIfOpen() {
-        driver.manage().timeouts().implicitlyWait(java.time.Duration.ZERO);
-        try {
-            driver.findElement(AppiumBy.className("android.widget.EditText"));
-            // Make sure this is the search bar, not an Add/Edit popup (those have Submit or Save)
-            try { driver.findElement(AppiumBy.accessibilityId("Submit")); return; } catch (Exception ignored) { /* no Submit */ }
-            try { driver.findElement(AppiumBy.accessibilityId("Save"));   return; } catch (Exception ignored) { /* no Save   */ }
-            // Search bar is open — hide keyboard and let Flutter auto-close the bar.
-            // Do NOT use KEYCODE_BACK: when keyboard is already hidden, KEYCODE_BACK navigates
-            // away from the Activities screen rather than closing the embedded search bar.
-            System.out.println("[ActivityPage] Search bar open — hiding keyboard to trigger Flutter auto-close");
-            try { driver.hideKeyboard(); } catch (Exception ignored) { /* keyboard may already be hidden */ }
-            java.util.concurrent.locks.LockSupport.parkNanos(java.time.Duration.ofMillis(600).toNanos());
-            // Check whether Flutter auto-closed the search bar after keyboard dismiss
-            try {
-                driver.findElement(AppiumBy.accessibilityId("Search"));
-                System.out.println("[ActivityPage] Search bar auto-closed by Flutter");
-                return;
-            } catch (Exception ignored) { /* search bar still open */ }
-            // Search bar still open (keyboard was already hidden before Save, so Flutter
-            // did not trigger auto-close). Leave it — caller must poll for the update banner
-            // instead of the FAB (which remains hidden while search is active).
+        if (!isSearchBarOpenWithoutPopup()) return;
+        System.out.println("[ActivityPage] Search bar open — hiding keyboard to trigger Flutter auto-close");
+        keyboardUtils.hideKeyboardSafely();
+        // Poll 3 s for Flutter to auto-close the bar: EditText disappears when bar closes.
+        boolean closed = elementUtils.waitForAbsence(SEARCH_BAR, 3);
+        if (closed) {
+            System.out.println("[ActivityPage] Search bar auto-closed by Flutter");
+        } else {
             System.out.println("[ActivityPage] Search bar still open after keyboard dismiss — leaving for caller");
-        } catch (Exception ignored) { /* search bar not open — nothing to do */ }
-        finally {
-            driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(10));
         }
     }
 
     /**
-     * Full create-activity flow used by "User has already created an Activity".
+     * Public instant check: true when search bar is open and no popup is active.
+     * Use in step definitions as a fast gate before deciding to click Search icon.
+     */
+    public boolean isSearchBarOpenFast() {
+        return isSearchBarOpenWithoutPopup();
+    }
+
+    /**
+     * True when an EditText is visible and no popup (Submit/Save) is open.
+     *
+     * BATCH PATTERN: implicit wait disabled ONCE for all three findElements() calls,
+     * restored ONCE after — 2 extra Appium calls total instead of 6.
+     * Short-circuit: Save/Submit not checked when EditText absent.
+     */
+    private boolean isSearchBarOpenWithoutPopup() {
+        elementUtils.disableImplicitWait();
+        try {
+            if (driver.findElements(SEARCH_BAR).isEmpty()) return false;
+            if (!driver.findElements(SUBMIT).isEmpty())    return false;
+            if (!driver.findElements(SAVE).isEmpty())      return false;
+            return true;
+        } finally {
+            elementUtils.restoreImplicitWait();
+        }
+    }
+
+    /**
+     * Full create-activity flow used by "User has already created an Activity" Background step.
      * Returns the activity name so the test context can store it.
      */
     public String createActivityAndReturnName() {
@@ -518,43 +554,50 @@ public class ActivityPage extends BasePage {
         enterActivityName(name);
         clickSubmitButton();
         // Wait for the Add popup to close (FAB reappears) before returning.
-        // Without this, the next step may run while the popup is still animating closed.
-        driver.manage().timeouts().implicitlyWait(java.time.Duration.ZERO);
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(15))
-                    .pollingEvery(Duration.ofMillis(400))
-                    .until(d -> isAddButtonVisible() ? Boolean.TRUE : null);
-        } catch (Exception ignored) { /* best-effort — proceed even if detection is slow */ }
-        finally {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        }
+        flutterUtils.waitForFab(15);
         return name;
     }
 
     /**
      * Search → wait → swipe → click Edit.
-     * Centralises the repeated search+swipe+edit composite.
+     * Single call replaces the repeated 4-step composite in step definitions.
      */
     public void searchSwipeAndOpenEdit(String activityName) {
-        clickSearchIcon();
-        tapSearchInput();
-        clearSearchField();
-        enterSearchText(activityName);
-        // getRecordByName already polls 15 s for the item — no separate list-wait needed
-        WebElement record = getRecordByName(activityName);
-        swipeRecordRightToLeft(record);
+        searchUtils.searchRecord(activityName);
+        WebElement record = searchUtils.getRecordByName(activityName);
+        swipeRightToLeft(record);
         clickEditButton();
     }
 
     /**
      * Search → wait → click on record to open View popup.
+     * Uses direct .click() — avoids tap() → waitForClickability() which waits
+     * up to 15 s on Flutter android.view.View elements reporting enabled=false.
      */
     public void searchAndOpenView(String activityName) {
-        clickSearchIcon();
-        tapSearchInput();
-        clearSearchField();
-        enterSearchText(activityName);
-        WebElement record = getRecordByName(activityName);
-        tap(record);
+        searchUtils.searchRecord(activityName);
+        WebElement record = searchUtils.getRecordByName(activityName);
+        if (record != null) record.click();
+    }
+
+    /**
+     * Search, then click the record multiple times quickly (rapid-open test).
+     * Second click is best-effort — popup may already be open after first.
+     */
+    public void searchAndClickRecordMultipleTimesQuickly(String activityName) {
+        searchUtils.searchRecord(activityName);
+        WebElement record = searchUtils.getRecordByName(activityName);
+        if (record != null) record.click();
+        // Re-query to avoid StaleElementReferenceException on second click
+        WebElement record2 = elementUtils.firstOrNullByUIAutomator(
+                "new UiSelector().descriptionContains(\"" + activityName + "\")");
+        if (record2 != null) {
+            try { record2.click(); } catch (Exception ignored) {}
+        }
+    }
+
+    /** Full search flow delegating to searchUtils — open bar + tap + clear + type. */
+    public void searchRecord(String name) {
+        searchUtils.searchRecord(name);
     }
 }

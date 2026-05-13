@@ -22,7 +22,7 @@ public class BaseClass {
             options.setCapability("adbExecTimeout", 60000);
             options.setNoReset(false);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
             System.out.println("✅ Driver initialized successfully");
         }
         return driver;

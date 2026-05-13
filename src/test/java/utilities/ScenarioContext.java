@@ -36,6 +36,7 @@ public class ScenarioContext {
     public static final String OPERATOR_NAME          = "OPERATOR_NAME";
     public static final String CURRENT_STATUS         = "CURRENT_STATUS";
     public static final String PENDING_ACTIVITY_NAME  = "PENDING_ACTIVITY_NAME";
+    public static final String VIEW_TOGGLE_STATE       = "VIEW_TOGGLE_STATE";
 
     // ── API ───────────────────────────────────────────────────────────────────
 

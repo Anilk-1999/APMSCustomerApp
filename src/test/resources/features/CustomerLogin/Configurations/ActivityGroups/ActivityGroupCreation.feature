@@ -1,5 +1,5 @@
 @regression @smoke @create @p1
-Feature: Create Activity Group (Form) with Activity Checklist Management
+Feature: Create Activity Group via Configuration Module
 
   Background:
     When User clicks on profile icon
@@ -10,187 +10,244 @@ Feature: Create Activity Group (Form) with Activity Checklist Management
     Then verify user navigates to "Activity Groups" list screen
 
   # =========================================================
-  # 🔁 NAVIGATION FLOW
+  # NAVIGATION FLOW
   # =========================================================
 
   @smoke @p1
   Scenario: Navigate to Activity Groups list screen
     Then Activity Groups list should be displayed
-    And Add "+" button should be visible
+    And Add "+" button should be visible in Activity Groups list
 
   # =========================================================
-  # ➕ OPEN ADD ACTIVITY GROUP POPUP
+  # OPEN ADD ACTIVITY GROUP POPUP
   # =========================================================
 
   @smoke @p1
-  Scenario: Open Add New Activity Group popup
+  Scenario: Open Add Activity Group popup
     When User clicks on "+ Add" button in Activity Groups list screen
-    Then "Add New Activity Group" popup should be displayed
-    And Form Name field should be visible
-    And Form Description field should be visible
-    And Activity Checklist label with "+" button should be visible
-    And Submit button should be visible
-    And Close "X" button should be visible
+    Then "Add Activity Group" popup should be displayed
+    And Form Name field should be visible in popup
+    And Form Description field should be visible in popup
+    And Activity Checklist section with "+" button should be visible
+    And Submit button should be visible in Activity Group popup
+    And Close "X" button should be visible in Activity Group popup
 
   # =========================================================
-  # 🧪 POSITIVE SCENARIOS
+  # POSITIVE SCENARIOS
   # =========================================================
 
   @smoke @regression @p1
-  Scenario: Create Activity Group with add, delete and re-add flow
+  Scenario: Create Activity Group with all fields
     When User clicks on "+ Add" button in Activity Groups list screen
-    And User enters valid Form Name
-    And User enters Form Description
-
-    # ➕ Add Activities
+    And User enters valid Form Name for Activity Group
+    And User enters Form Description for Activity Group
     And User clicks on "+" button in Activity Checklist
     Then "Select Activities" bottom sheet should be displayed
-    When User selects multiple activities
-    And User clicks Submit button in bottom sheet
-    Then selected activities should be added to checklist
-
-    # 🗑️ Delete Activity
-    When User clicks delete icon on one activity
-    Then that activity should be removed from checklist
-    And remaining activities should be displayed
-
-    # ➕ Re-add Activity
-    When User clicks "+" button again
-    And User selects additional activities
-    And User clicks Submit button
-    Then new activities should be appended to checklist
-
-    # ✔ Final Submit
-    When User clicks Submit button in popup
+    When User selects multiple activities from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then selected activities should be added to Activity Checklist
+    And each activity in checklist should have a delete icon
+    When User clicks Submit button in Activity Group popup
     Then Activity Group should be created successfully
-    And Activity Group should be visible in list
-
-  @regression @p1
-  Scenario: Create Activity Group without selecting activities
-    When User clicks on "+ Add" button
-    And User enters valid Form Name
-    And User clicks on "+" button in Activity Checklist
-    And User clicks Submit button without selection
-    Then checklist should remain empty
-    When User clicks Submit button in popup
-    Then Activity Group should be created successfully
+    And newly created Activity Group should be visible in Activity Groups list screen
 
   @regression @p1
   Scenario: Create Activity Group with mandatory fields only
-    When User clicks on "+ Add" button
-    And User enters valid Form Name
-    And User clicks Submit button
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User leaves Form Description empty
+    And User clicks on "+" button in Activity Checklist
+    Then "Select Activities" bottom sheet should be displayed
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then selected activity should be added to Activity Checklist
+    When User clicks Submit button in Activity Group popup
+    Then Activity Group should be created successfully
+
+  @regression @p2
+  Scenario: Create Activity Group with add, delete and re-add flow
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects multiple activities from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then selected activities should be added to Activity Checklist
+    When User clicks delete icon on one activity in checklist
+    Then that activity should be removed from checklist
+    And remaining activities should still be displayed in checklist
+    When User clicks on "+" button in Activity Checklist
+    And User selects additional activities from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then new activities should be appended to checklist
+    When User clicks Submit button in Activity Group popup
     Then Activity Group should be created successfully
 
   @regression @p2
   Scenario: Create Activity Group with trimmed Form Name
-    When User clicks on "+ Add" button
-    And User enters Form Name with leading and trailing spaces
-    And User clicks Submit button
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters Form Name with leading and trailing spaces for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    And User clicks Submit button in Activity Group popup
     Then system should trim spaces and create Activity Group successfully
 
   # =========================================================
-  # ❌ NEGATIVE SCENARIOS
+  # NEGATIVE SCENARIOS
   # =========================================================
 
   @negative @regression @p1
   Scenario: Create Activity Group without Form Name
-    When User clicks on "+ Add" button
+    When User clicks on "+ Add" button in Activity Groups list screen
     And User leaves Form Name empty
-    And User clicks Submit button
-    Then "Form Name is required" should be displayed
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Submit button in Activity Group popup
+    Then "This field is required" error should be displayed for Form Name
+    And User clicks Close "X" button in Activity Group popup
+
+  @negative @regression @p1
+  Scenario: Create Activity Group without selecting any activities
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks Submit button in Activity Group popup
+    Then "Invalid - Please add activity." toast should be displayed
+    And User clicks Close "X" button in Activity Group popup
 
   @negative @regression @p2
-  Scenario: Invalid Form Name input
-    When User clicks on "+ Add" button
-    And User enters only spaces or special characters
-    And User clicks Submit button
-    Then validation error should be displayed
+  Scenario: Submit bottom sheet without selecting any activity
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    Then "Select Activities" bottom sheet should be displayed
+    When User clicks Submit button in Activities bottom sheet without selecting
+    Then bottom sheet should close with no activities added
+    When User clicks Submit button in Activity Group popup
+    Then "Invalid - Please add activity." toast should be displayed
+    And User clicks Close "X" button in Activity Group popup
+
+  @negative @regression @p2
+  Scenario: Create Activity Group with only spaces in Form Name
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters only spaces in Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Submit button in Activity Group popup
+    Then "This field is required" error should be displayed for Form Name
+    And User clicks Close "X" button in Activity Group popup
+
+  @negative @regression @p2
+  Scenario: Delete all activities from checklist then submit
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects multiple activities from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then selected activities should be added to Activity Checklist
+    When User deletes all activities from checklist
+    Then checklist should be empty
+    When User clicks Submit button in Activity Group popup
+    Then "Invalid - Please add activity." toast should be displayed
+    And User clicks Close "X" button in Activity Group popup
 
   @negative @regression @p2
   Scenario: Duplicate Form Name
-    When User clicks on "+ Add" button
-    And User enters existing Form Name
-    And User clicks Submit button
-    Then duplicate validation error should be displayed
-
-  @regression @p3
-  Scenario: Skip Activity Checklist interaction
-    When User clicks on "+ Add" button
-    And User enters Form Name
-    And User does not open Activity Checklist
-    And User clicks Submit button
-    Then system should allow creation or enforce validation based on business rule
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters existing Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Submit button in Activity Group popup
+    Then duplicate validation error should be displayed for Activity Group
 
   # =========================================================
-  # ⚠️ EDGE CASE SCENARIOS
+  # EDGE CASE SCENARIOS
   # =========================================================
 
   @sanity @p2
-  Scenario: Delete all activities before submit
-    When User adds multiple activities
-    And User deletes all activities
-    Then checklist should be empty
-    When User clicks Submit button
-    Then Activity Group should be created successfully
+  Scenario: Rapid multiple Submit clicks
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Submit button in Activity Group popup multiple times quickly
+    Then system should prevent duplicate Activity Group creation
 
   @sanity @p3
-  Scenario: Rapid "+" clicks
-    When User clicks "+" multiple times quickly
-    Then only one bottom sheet should be displayed
-
-  @sanity @p3
-  Scenario: Rapid delete clicks
-    When User clicks delete icon multiple times
-    Then activity should be removed only once
-
-  @sanity @p3
-  Scenario: Rapid submit clicks
-    When User clicks Submit button multiple times
-    Then system should prevent duplicate creation
+  Scenario: Rapid "+" button clicks in Activity Checklist
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    When User clicks "+" button in Activity Checklist multiple times quickly
+    Then only one "Select Activities" bottom sheet should be displayed
+    And User clicks Close "X" button in Activity Group popup
 
   @negative @p3
-  Scenario: Network failure during creation
-    When User clicks Submit button without internet connection
-    Then system should display error message
+  Scenario: Network failure during Activity Group creation
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Submit button without internet connection in Activity Group popup
+    Then system should display network error message
 
   @negative @p3
-  Scenario: Session timeout during creation
-    When session expires during creation
+  Scenario: Session timeout during Activity Group creation
+    When session expires during Activity Group creation
     Then User should be redirected to login screen
 
   @regression @p2
   Scenario: Close popup without saving
-    When User enters data and closes popup
-    Then data should not be saved
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects one activity from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    When User clicks Close "X" button in Activity Group popup
+    Then popup should be closed without saving Activity Group data
+    And User should return to Activity Groups list screen
 
   # =========================================================
-  # 📱 UI VALIDATION SCENARIOS
+  # UI VALIDATION SCENARIOS
   # =========================================================
 
   @regression @p2
-  Scenario: Verify Add Activity Group popup UI
-    When User opens Add Activity Group popup
-    Then all fields should be properly aligned
-    And labels should be clearly visible
-    And "+" button should be visible
-    And Submit button should be enabled based on validation
+  Scenario: Verify Add Activity Group popup UI elements
+    When User clicks on "+ Add" button in Activity Groups list screen
+    Then "Add Activity Group" popup should be displayed
+    And Form Name field should be visible in popup
+    And Form Description field should be visible in popup
+    And Activity Checklist section with "+" button should be visible
+    And Submit button should be visible in Activity Group popup
+    And Close "X" button should be visible in Activity Group popup
+    And User clicks Close "X" button in Activity Group popup
 
   @regression @p2
-  Scenario: Verify checklist UI behavior
-    When activities are selected
-    Then they should be displayed in checklist
-    And each item should have delete icon
+  Scenario: Verify Activity Checklist item UI
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    And User clicks on "+" button in Activity Checklist
+    When User selects multiple activities from bottom sheet
+    And User clicks Submit button in Activities bottom sheet
+    Then each activity in checklist should have a delete icon
+    And User clicks Close "X" button in Activity Group popup
 
   @regression @p2
-  Scenario: Verify empty checklist state
-    When no activities are selected
-    Then checklist should display empty state
+  Scenario: Verify Activity Groups list screen UI
+    Then Activity Groups list should be displayed
+    And each Activity Group record should show Activity Group ID
+    And each Activity Group record should show Form Name
+    And each Activity Group record should show Description
+    And each Activity Group record should show Activity Count badge
+    And each Activity Group record should show Status
 
   @regression @p2
-  Scenario: Verify Close (X) button
-    When User clicks "X"
+  Scenario: Verify Close X button closes popup
+    When User clicks on "+ Add" button in Activity Groups list screen
+    And User enters valid Form Name for Activity Group
+    When User clicks Close "X" button in Activity Group popup
     Then popup should be closed
-    And User should return to list screen
-
-  
+    And User should return to Activity Groups list screen

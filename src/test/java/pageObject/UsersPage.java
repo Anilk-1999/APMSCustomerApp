@@ -226,26 +226,18 @@ public class UsersPage extends BasePage {
     }
 
     public void clickOnFeature(String expectedFeature) {
-        // Scroll until the feature icon is visible, then click.
-        // Wait 2 s between attempts — the Configurations section may still be rendering
-        // after a back-navigation, and UiScrollable cannot find items not yet in the tree.
-        WebElement feature = null;
-        Exception lastEx = null;
-        for (int attempt = 1; attempt <= 3; attempt++) {
-            try {
-                feature = driver.findElement(AppiumBy.androidUIAutomator(
-                        "new UiScrollable(new UiSelector().scrollable(true))" +
-                        ".scrollIntoView(new UiSelector().description(\"" + expectedFeature + "\"))"));
-                break;
-            } catch (Exception e) {
-                lastEx = e;
-                if (attempt < 3) {
-                    try { Thread.sleep(2000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
-                }
-            }
-        }
-        if (feature == null) throw new RuntimeException("Feature not found after retry: " + expectedFeature, lastEx);
-        waitForVisibility(feature);
+        // Poll every 2 s — UiScrollable scrolls on each attempt so a short poll
+        // would over-scroll before the section content finishes rendering.
+        WebElement feature = new WebDriverWait(driver, Duration.ofSeconds(20))
+                .pollingEvery(Duration.ofSeconds(2))
+                .until(d -> {
+                    try {
+                        return d.findElement(AppiumBy.androidUIAutomator(
+                                "new UiScrollable(new UiSelector().scrollable(true))" +
+                                ".scrollIntoView(new UiSelector().description(\"" + expectedFeature + "\"))"));
+                    } catch (Exception e) { return null; }
+                });
+        if (feature == null) throw new RuntimeException("Feature not found: " + expectedFeature);
         feature.click();
         System.out.println("Clicked on feature: " + expectedFeature);
     }
@@ -255,18 +247,9 @@ public class UsersPage extends BasePage {
     }
 
     public String getListPageTitle() {
-        // Brief pause lets the Flutter screen-transition animation begin before polling.
-        // Without this, rapid findElement calls start before the screen is rendered,
-        // stressing UiAutomator2 instrumentation and occasionally causing crashes.
-        try { Thread.sleep(1500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
-        // Poll at 1-second intervals (not the default 500 ms) to reduce load on UiAutomator2.
-        new WebDriverWait(driver, Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(1))
-                .until(d -> {
-                    try {
-                        return d.findElement(AppiumBy.accessibilityId("Search")).isDisplayed();
-                    } catch (Exception e) { return false; }
-                });
+        // Wait for the Search icon — its presence confirms the list screen has fully rendered.
+        // No Thread.sleep needed: waitForPresence polls at 300 ms and stops as soon as found.
+        waitForPresence(AppiumBy.accessibilityId("Search"), 30);
         String header = getFullListHeaderText();
         String firstLine = header.split("\\r?\\n")[0];
         return firstLine.replaceAll("\\d", "").trim();
