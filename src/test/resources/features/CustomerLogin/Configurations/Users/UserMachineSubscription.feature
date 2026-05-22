@@ -1,230 +1,577 @@
-Feature: Machine Subscription Management
-  As an admin
-  I want to manage machine subscriptions for a user
-  So that machines can be assigned or removed properly
+@regression @smoke @machine-subscription @p1
+Feature: User Machine Subscription via Action Menu
+
+  # Machine Subscription is accessed via long press on a User record in the list.
+  # User must be searched first, then long pressed to open Action Menus bottom sheet.
+  # Action Menus bottom sheet appears with "Machine Subscription" and "Unit Subscription" options.
+  # Machine Subscription popup: "+" to add machines, delete icon per machine, Submit button, Close X button.
 
   Background:
-    When click on profile icon
-    Then verify that the "Account Preferences" screen is displayed
-    When click on "configurations" section
-    Then verify the "User" section displayed
-    When click on "Users" feature
-    Then verify that the user navigate to the "Users" list screen
+    When User clicks on profile icon
+    When User clicks on "Configurations" section
+    When User clicks on "Users" feature
 
-  # ==================================================
-  # ✅ POSITIVE SCENARIOS (ADD FLOW)
-  # ==================================================
 
-  Scenario: Verify long press opens action menu
-    When user long presses on a user record
-    Then action menu bottom sheet should be displayed
-    And following options should be visible:
-      | Machine Subscription |
-      | Unit Subscription    |
+  # =========================================================
+  # NAVIGATION — SEARCH + LONG PRESS + ACTION MENU
+  # =========================================================
 
-  Scenario: Verify navigation to Machine Subscription popup
-    When user long presses on a user record
-    And click on "Machine Subscription"
+  @smoke @p1
+  Scenario: Search User and long press to open Action Menus bottom sheet
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    And Unit Subscription option should be visible in Action Menus
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
+
+  @smoke @p1
+  Scenario: Open Machine Subscription popup and verify UI elements
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
     Then Machine Subscription popup should be displayed
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Add machine subscription successfully
-    When user selects user "anil@example.com" from list
-    And opens machine subscription popup
-    And click on add machine button
-    And select machines:
-      | Machine1 |
-      | Machine2 |
-    And confirm machine selection
-    Then selected machines should be displayed in popup
-    When I click on the submit button
-    Then machine subscription should be saved successfully
+  @regression @p2
+  Scenario: Open Machine Subscription popup when user has no machines assigned
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And Machine Subscription list should show empty state
+    And "+" add machine button should be visible
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
+
+  # =========================================================
+  # POSITIVE SCENARIOS — ADD MACHINES
+  # =========================================================
+
+  @smoke @regression @p1
   Scenario: Add single machine subscription
-    When user opens machine subscription popup
-    And select machines:
-      | Machine1 |
-    And confirm machine selection
-    Then selected machine should be displayed
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    And each machine in list should have a delete icon
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
+  @regression @p1
   Scenario: Add multiple machine subscriptions
-    When user opens machine subscription popup
-    And select machines:
-      | Machine1 |
-      | Machine2 |
-      | Machine3 |
-    And confirm machine selection
-    Then all selected machines should be displayed
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machines should be added to Machine Subscription list
+    And each machine in list should have a delete icon
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify persistence after save
-    When user saves machine subscription
-    And reopens machine subscription popup
-    Then previously selected machines should be displayed
+  @regression @p2
+  Scenario: Add machine and then add more machines in same session
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects additional machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then additional machines should be appended to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  # ==================================================
-  # ❌ NEGATIVE SCENARIOS (ADD FLOW)
-  # ==================================================
+  @regression @p2
+  Scenario: Verify Machine Subscription list persists after save
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And previously subscribed machines should be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Submit without selecting machines
-    When user opens machine subscription popup
-    And click on add machine button
-    And confirm without selecting machines
-    Then validation message should be displayed
 
-  Scenario: Try adding duplicate machine
-    When user opens machine subscription popup
-    And select already subscribed machines
-    And confirm machine selection
-    Then system should prevent duplicate entry
+  # =========================================================
+  # POSITIVE SCENARIOS — DELETE MACHINES
+  # =========================================================
 
-  Scenario: Network failure during machine subscription
-    When user submits machine subscription without internet
-    Then error message should be displayed
+  @regression @p1
+  Scenario: Delete single machine from Machine Subscription
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    And remaining machines should still be displayed
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: API failure during machine subscription
-    When backend returns error during subscription
-    Then proper error message should be shown
+  @regression @p2
+  Scenario: Delete multiple machines from Machine Subscription
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes multiple machines from Machine Subscription list
+    Then all deleted machines should be removed from list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  # ==================================================
-  # ⚠️ EDGE CASE SCENARIOS (ADD FLOW)
-  # ==================================================
+  @regression @p2
+  Scenario: Delete all machines from Machine Subscription and submit
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes all machines from Machine Subscription list
+    Then Machine Subscription list should be empty
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Select maximum number of machines
-    When user selects maximum allowed machines
-    Then system should handle without issues
+  @regression @p2
+  Scenario: Delete machine and re-add in same session
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects that machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then machine should be re-added to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Rapid multiple selections
-    When user quickly selects and deselects machines
-    Then system should maintain correct selection state
+  @regression @p2
+  Scenario: Verify Machine Subscription list updated after deletion save
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    And User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And deleted machine should not be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Large machine list handling
-    When machine list is large
-    Then scrolling should work properly
 
-  Scenario: Special character machine names
-    When machine names contain special characters
-    Then they should display correctly
+  # =========================================================
+  # NEGATIVE SCENARIOS
+  # =========================================================
 
-  # ==================================================
-  # 📱 UI VALIDATION SCENARIOS (ADD FLOW)
-  # ==================================================
+  @negative @regression @p2
+  Scenario: Submit Select Machines bottom sheet without selecting any machine
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    Then bottom sheet should close with no machines added
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify Machine Subscription popup UI
-    When user opens machine subscription popup
-    Then popup should display:
-      | Machine List |
-      | Add Button   |
-      | Delete Icon  |
-      | Submit Button |
 
-  Scenario: Verify Select Machines bottom sheet UI
-    When user clicks add machine button
-    Then machine list with multi-selection should be displayed
+  # =========================================================
+  # EDGE CASE SCENARIOS
+  # =========================================================
 
-  Scenario: Verify multi-selection behavior
-    When user selects multiple machines
-    Then all selections should be highlighted
+  @sanity @p2
+  Scenario: Close Machine Subscription popup without saving discards changes
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed without saving
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify scroll functionality in bottom sheet
-    Then user should be able to scroll machine list
+  @sanity @p3
+  Scenario: Rapid "+" button clicks in Machine Subscription popup opens only one bottom sheet
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup multiple times quickly
+    Then only one "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify submit button behavior
-    Then submit button should validate selection
+  @sanity @p3
+  Scenario: Rapid Submit clicks in Machine Subscription popup should prevent duplicate save
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    When User clicks Submit button in Machine Subscription popup multiple times quickly
+    Then system should prevent duplicate Machine Subscription save
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  # ==================================================
-  # 🔎 FIELD VALIDATIONS (ADD FLOW)
-  # ==================================================
+  @sanity @p3
+  Scenario: Rapid delete icon clicks should remove machine only once
+    And User has already created a User with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon multiple times quickly on one machine
+    Then that machine should be removed only once from Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Validate machine selection is mandatory
-    When no machine is selected
-    Then error should be displayed
 
-  Scenario: Validate selected machines display
-    When machines are selected
-    Then they should appear correctly in popup
+  # =========================================================
+  # UI VALIDATION SCENARIOS
+  # =========================================================
 
-  # ==================================================
-  # 🗑️ DELETE MACHINE SUBSCRIPTION FLOW
-  # ==================================================
+  @regression @p2
+  Scenario: Verify Machine Subscription popup UI elements
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    And all Machine Subscription popup elements should be aligned properly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  # ==================================================
-  # ✅ POSITIVE SCENARIOS (DELETE FLOW)
-  # ==================================================
+  @regression @p2
+  Scenario: Verify Select Machines bottom sheet UI elements
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    And machines list should be displayed in bottom sheet
+    And multi-selection should be enabled in Select Machines bottom sheet
+    And Submit button should be visible in Select Machines bottom sheet
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Delete single machine subscription
-    When user opens machine subscription popup
-    And remove machine "Machine1"
-    Then machine should be removed from list
-    When I click on the submit button
-    Then deletion should be saved successfully
+  @regression @p2
+  Scenario: Verify each machine in Machine Subscription list has delete icon
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then each machine in list should have a delete icon
+    And all selected machines should be displayed correctly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Delete multiple machine subscriptions
-    When user opens machine subscription popup
-    And remove machines:
-      | Machine1 |
-      | Machine2 |
-    And I click on the submit button
-    Then all selected machines should be removed
-
-  Scenario: Verify persistence after deletion
-    When user deletes machines and saves
-    And reopens machine subscription popup
-    Then deleted machines should not be displayed
-
-  # ==================================================
-  # ❌ NEGATIVE SCENARIOS (DELETE FLOW)
-  # ==================================================
-
-  Scenario: Delete without saving
-    When user removes machine
-    And closes popup without submitting
-    Then deletion should not be saved
-
-  Scenario: Delete all machines and submit
-    When user removes all machines
-    And I click on the submit button
-    Then system should handle empty state correctly
-
-  Scenario: Network failure during deletion
-    When user deletes machine without internet
-    Then error message should be displayed
-
-  Scenario: API failure during deletion
-    When backend returns error during deletion
-    Then proper error message should be shown
-
-  # ==================================================
-  # ⚠️ EDGE CASE SCENARIOS (DELETE FLOW)
-  # ==================================================
-
-  Scenario: Rapid delete actions
-    When user quickly deletes multiple machines
-    Then system should handle correctly
-
-  Scenario: Delete last remaining machine
-    When only one machine exists
-    And user deletes it
-    Then list should become empty
-
-  # ==================================================
-  # 📱 UI VALIDATION SCENARIOS (DELETE FLOW)
-  # ==================================================
-
-  Scenario: Verify delete icon visibility
-    When user opens machine subscription popup
-    Then delete icon should be visible for each machine
-
-  Scenario: Verify UI after deletion
-    When machine is deleted
-    Then UI should update immediately
-
-  Scenario: Verify empty state UI
-    When no machines exist
-    Then proper empty message should be displayed
-
-  # ==================================================
-  # 🔎 FIELD VALIDATION (DELETE FLOW)
-  # ==================================================
-
-  Scenario: Validate machine removal
-    When machine is deleted
-    Then it should not appear in list
+  @regression @p2
+  Scenario: Verify Action Menus bottom sheet shows both subscription options
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    And User verifies User appears in list
+    When User long presses on User record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    And Unit Subscription option should be visible in Action Menus
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list

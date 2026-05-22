@@ -1,154 +1,325 @@
-Feature: View User Details
-  As an admin
-  I want to view user details
-  So that I can verify user information
+@regression @smoke @view @p1
+Feature: View User Details via Configuration Module
 
   Background:
-    When click on profile icon
-    Then verify that the "Account Preferences" screen is displayed
-    When click on "configurations" section
-    Then verify the "User" section displayed
-    When click on "Users" feature
-    Then verify that the user navigate to the "Users" list screen
+    When User clicks on profile icon
+    When User clicks on "Configurations" section
+    When User clicks on "Users" feature
 
-  # ==================================================
-  # ✅ POSITIVE SCENARIOS
-  # ==================================================
 
-  Scenario: Verify navigation to User View screen
-    When user selects a user from list
-    Then verify that the user should navigate to the "User View" screen
+  # =========================================================
+  # NAVIGATION — OPEN VIEW USER SCREEN
+  # =========================================================
 
-  Scenario: Verify all user details are displayed
-    When user selects a user from list
-    Then following fields should be displayed:
-      | User Name        |
-      | Email ID         |
-      | Phone Number     |
-      | Emergency Number |
-      | Emp Code         |
-      | Blood Group      |
-      | Date of Birth    |
-      | Date of Joining  |
-      | Address Line 1   |
-      | Address Line 2   |
-      | Pin Code         |
-      | City             |
-      | State            |
-      | Country          |
-      | Role             |
-      | Teams            |
+  @smoke @p1
+  Scenario: Open View User screen by clicking on User record
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify data accuracy in view screen
-    When user selects user "anil@example.com" from list
-    Then all displayed data should match saved user details
+  @regression @p2
+  Scenario: Back arrow on View User screen navigates back without Confirmation Alert
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    When User clicks back arrow in View User screen
+    Then no Confirmation Alert should appear
+    And User should be navigate into "Users" list
 
-  Scenario: Verify optional fields display
-    When user selects a user from list
-    Then optional fields should be displayed if available
-    And if not available, fields should be empty or hidden
 
-  Scenario: Verify multiple team display
-    When user selects a user from list
-    Then all assigned teams should be displayed correctly
+  # =========================================================
+  # MANDATORY FIELD VISIBILITY
+  # =========================================================
 
-  Scenario: Verify date formats
-    When user selects a user from list
-    Then DOB and DOJ should be displayed in correct format
+  @smoke @regression @p1
+  Scenario: Verify all mandatory fields are visible in View User screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And User ID should be visible in View User screen
+    And User Name should be visible in View User screen
+    And Email ID should be visible in View User screen
+    And Phone No should be visible in View User screen
+    And Blood Group should be visible in View User screen
+    And Roles should be visible in View User screen
+    And Status should be visible in View User screen
+    And Duplicate button should be visible in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  # ==================================================
-  # ❌ NEGATIVE SCENARIOS
-  # ==================================================
 
-  Scenario: Verify behavior when user data is missing
-    When backend returns partial data for user
-    Then system should handle gracefully without crash
+  # =========================================================
+  # OPTIONAL FIELD VISIBILITY
+  # =========================================================
 
-  Scenario: Verify invalid user selection
-    When user selects invalid or deleted user record
-    Then error message should be displayed
+  @regression @p2
+  Scenario: Verify optional fields are visible when filled
+    And User has already created a User with all fields
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And Emergency No should be visible in View User screen
+    And Emp Code should be visible in View User screen
+    And DOB should be visible in View User screen
+    And DOJ should be visible in View User screen
+    And Address Line I should be visible in View User screen
+    And Address Line II should be visible in View User screen
+    And Pin Code should be visible in View User screen
+    And City should be visible in View User screen
+    And State should be visible in View User screen
+    And Country should be visible in View User screen
+    And Teams should be visible in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify API failure on loading view screen
-    When backend API fails during user fetch
-    Then error message should be displayed
+  @regression @p2
+  Scenario: Verify View User screen with mandatory fields only user
+    And User has already created a User with mandatory fields only
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And User Name should be visible in View User screen
+    And Email ID should be visible in View User screen
+    And Phone No should be visible in View User screen
+    And Blood Group should be visible in View User screen
+    And Roles should be visible in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify network failure while loading screen
-    When user opens view screen without internet
-    Then proper error message should be shown
 
-  # ==================================================
-  # ⚠️ EDGE CASE SCENARIOS
-  # ==================================================
+  # =========================================================
+  # READ-ONLY ASSERTIONS
+  # =========================================================
 
-  Scenario: Verify long text handling
-    When user data contains long text
-    Then text should be properly wrapped or truncated
+  @regression @p1
+  Scenario: Verify all fields are non-editable in View User screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    Then all User View fields should be non-editable
+    And no input cursor should appear in any field in View User screen
+    And system should not allow modification in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify special characters display
-    When user data contains special characters
-    Then they should be displayed correctly
+  @regression @p2
+  Scenario: Verify User Name field is non-editable in View User screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    When User tries to edit User Name in View screen
+    Then system should not allow modification in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify empty optional fields
-    When optional fields are empty
-    Then UI should not break
+  @regression @p2
+  Scenario: Verify all User fields are read-only in View User screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And all User fields should be read-only in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify large number of teams
-    When user has many teams assigned
-    Then all should be displayed properly with scroll support
 
-  Scenario: Verify rapid navigation
-    When user quickly opens multiple user records
-    Then app should handle without crash
+  # =========================================================
+  # DATA ACCURACY
+  # =========================================================
 
-  # ==================================================
-  # 📱 UI VALIDATION SCENARIOS
-  # ==================================================
+  @regression @p1
+  Scenario: Verify displayed data matches created User
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And User Name should match created data
+    And Email ID should match created data
+    And Phone No should match created data
+    And Blood Group should match created data
+    And Roles should match created data
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify UI elements on View screen
-    When user selects a user from list
-    Then all labels and values should be visible
+  @regression @p2
+  Scenario: Verify View User screen shows updated data after User update
+    And User has updated User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly updated User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And User Name should match updated data
+    And Phone No should match updated data
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify fields are read-only
-    When user selects a user from list
-    Then all fields should be non-editable
 
-  Scenario: Verify scroll functionality
-    Then user should be able to scroll full page
+  # =========================================================
+  # DUPLICATE BUTTON
+  # =========================================================
 
-  Scenario: Verify layout alignment
-    Then all fields should be properly aligned
+  @regression @p1
+  Scenario: Verify Duplicate button is visible in View User screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And Duplicate button should be visible in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario: Verify navigation back to User List
-    When user clicks back button
-    Then verify that the user navigate to the "Users" list screen
 
-  Scenario: Verify loading indicator
-    When user selects a user from list
-    Then loading indicator should be displayed until data loads
+  # =========================================================
+  # EDGE CASE SCENARIOS
+  # =========================================================
 
-  # ==================================================
-  # 🔎 FIELD-LEVEL VALIDATION SCENARIOS
-  # ==================================================
+  @sanity @p2
+  Scenario: Rapid multiple clicks on User record should open only one View screen
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks User record multiple times quickly
+    Then only one View User screen should open
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-  Scenario Outline: Validate field values are displayed correctly
-    When user views "<field>"
-    Then "<value>" should be displayed correctly
+  @sanity @p3
+  Scenario: Verify View User screen can be scrolled to see all fields
+    And User has already created a User with all fields
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    Then user should be able to scroll and view all content in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list
 
-    Examples:
-      | field        | value           |
-      | User Name    | Valid Name      |
-      | Email ID     | valid@mail.com  |
-      | Phone Number | 9876543210      |
-      | Blood Group  | O+              |
 
-  Scenario: Verify Email field is read-only
-    When user tries to edit Email field
-    Then editing should not be allowed
+  # =========================================================
+  # UI VALIDATION SCENARIOS
+  # =========================================================
 
-  Scenario: Verify Phone field is read-only
-    When user tries to edit Phone field
-    Then editing should not be allowed
-
-  Scenario: Verify Role field is read-only
-    When user tries to edit Role field
-    Then editing should not be allowed
+  @regression @p2
+  Scenario: Verify View User screen UI elements and layout
+    And User has already created a User
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created User Name
+    And User waits for search results to load
+    Then system should display matching User results
+    When User clicks on the User record
+    Then "View User" screen should be displayed
+    And all User View fields should be aligned properly
+    And all User fields should be read-only in View User screen
+    And Duplicate button should be visible in View User screen
+    When User clicks back arrow in View User screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should be navigate into "Users" list

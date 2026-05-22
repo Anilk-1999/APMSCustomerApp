@@ -66,6 +66,16 @@ public abstract class BasePage {
         actionHelper.tap(element);
     }
 
+    /** W3C PointerInput tap at element center — use for Flutter widgets that ignore .click(). */
+    protected void tapCenter(WebElement element) {
+        actionHelper.tapCenter(element);
+    }
+
+    /** W3C PointerInput tap at absolute screen coordinates. */
+    protected void tapAt(int x, int y) {
+        actionHelper.tapAt(x, y);
+    }
+
     // ── Text input ────────────────────────────────────────────────────────────
 
     protected void clearAndType(WebElement element, String text) {
@@ -229,5 +239,38 @@ public abstract class BasePage {
 
     protected void hideKeyboard() {
         keyboardUtils.hideKeyboardSafely();
+    }
+
+    // ── Global search close (X button) — all modules except Activity ─────────
+
+    /** True when the search bar is open on a list screen (no popup). */
+    public boolean isSearchOpen() {
+        return searchUtils.isSearchOpen();
+    }
+
+    /** Clicks the X button on the right of the search field if currently open. */
+    public void clickSearchCloseXIfOpen() {
+        searchUtils.clickSearchCloseXIfOpen();
+    }
+
+    /**
+     * Clicks the X button and waits for the list to return to normal state.
+     * Does nothing if search is already closed.
+     */
+    public void ensureSearchClosed() {
+        searchUtils.ensureSearchClosed();
+    }
+
+    /**
+     * Polls up to 5 s for the list screen to be in normal state
+     * (FAB, Filter, or Search button visible).
+     */
+    public boolean verifyModuleListNormalState() {
+        return searchUtils.verifyModuleListNormalState();
+    }
+
+    /** Closes search (if open) then verifies the list is in normal state. */
+    public void ensureModuleListReady() {
+        searchUtils.ensureModuleListReady();
     }
 }

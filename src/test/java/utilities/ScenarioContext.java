@@ -33,10 +33,13 @@ public class ScenarioContext {
     public static final String REASON_NAME            = "REASON_NAME";
     public static final String REASON_GROUP_NAME      = "REASON_GROUP_NAME";
     public static final String USER_NAME              = "USER_NAME";
+    public static final String UPDATED_USER_NAME      = "UPDATED_USER_NAME";
     public static final String OPERATOR_NAME          = "OPERATOR_NAME";
+    public static final String UPDATED_OPERATOR_NAME  = "UPDATED_OPERATOR_NAME";
     public static final String CURRENT_STATUS         = "CURRENT_STATUS";
     public static final String PENDING_ACTIVITY_NAME  = "PENDING_ACTIVITY_NAME";
-    public static final String VIEW_TOGGLE_STATE       = "VIEW_TOGGLE_STATE";
+    public static final String VIEW_TOGGLE_STATE        = "VIEW_TOGGLE_STATE";
+    public static final String MACHINE_COUNT_BEFORE     = "MACHINE_COUNT_BEFORE";
 
     // ── API ───────────────────────────────────────────────────────────────────
 

@@ -206,11 +206,40 @@ public class LoginPage extends BasePage {
     }
 
     public void enterEmail(String email) {
-        clearAndType(emailField, email);
+        // clearAndType's clear() poll can time out on cold Flutter start because the
+        // text field is in the accessibility tree but not yet interactable. Use
+        // UIAutomator instance(0) (first EditText = email) with a direct click + sendKeys
+        // fallback so it works on both cold and warm app starts.
+        try {
+            org.openqa.selenium.By emailUIA = io.appium.java_client.AppiumBy.androidUIAutomator(
+                    "new UiSelector().className(\"android.widget.EditText\").instance(0)");
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(15))
+                    .pollingEvery(java.time.Duration.ofMillis(300))
+                    .until(d -> !d.findElements(emailUIA).isEmpty());
+            org.openqa.selenium.WebElement f = driver.findElement(emailUIA);
+            f.click();
+            try { f.clear(); } catch (Exception ignored) { }
+            f.sendKeys(email);
+        } catch (Exception e) {
+            clearAndType(emailField, email);
+        }
     }
 
     public void enterPassword(String password) {
-        clearAndType(passwordField, password);
+        // Same cold-start robustness for password field (second EditText on login screen).
+        try {
+            org.openqa.selenium.By pwdUIA = io.appium.java_client.AppiumBy.androidUIAutomator(
+                    "new UiSelector().className(\"android.widget.EditText\").instance(1)");
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(15))
+                    .pollingEvery(java.time.Duration.ofMillis(300))
+                    .until(d -> !d.findElements(pwdUIA).isEmpty());
+            org.openqa.selenium.WebElement f = driver.findElement(pwdUIA);
+            f.click();
+            try { f.clear(); } catch (Exception ignored) { }
+            f.sendKeys(password);
+        } catch (Exception e) {
+            clearAndType(passwordField, password);
+        }
     }
 
     public void clickLogin() {
@@ -223,8 +252,14 @@ public class LoginPage extends BasePage {
 
     public boolean isLoginSuccessful() {
         try {
-            waitForVisibility(dashBoardElement, 30);
-            return isDisplayed(dashBoardElement);
+            // PageFactory proxy has a 5s internal timeout per poll, so using it inside
+            // WebDriverWait effectively limits each attempt to 5s, not the full timeout.
+            // Use direct findElements (zero implicit wait) for a true 45s polling wait.
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(45))
+                    .pollingEvery(java.time.Duration.ofMillis(500))
+                    .until(d -> !d.findElements(io.appium.java_client.AppiumBy.androidUIAutomator(
+                            "new UiSelector().descriptionContains(\"Active Machines\")")).isEmpty());
+            return true;
         } catch (Exception e) {
             return false;
         }

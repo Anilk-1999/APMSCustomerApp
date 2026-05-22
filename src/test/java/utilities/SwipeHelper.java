@@ -105,7 +105,7 @@ public class SwipeHelper {
         Sequence     longPress = new Sequence(finger, 0);
         longPress.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), x, y));
         longPress.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        longPress.addAction(finger.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), x, y));
+        longPress.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), x, y));
         longPress.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(longPress));
     }

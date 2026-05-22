@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testRunner.OperatorTestRunner
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.272 s -- in testRunner.OperatorTestRunner
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.49 s -- in testRunner.OperatorTestRunner

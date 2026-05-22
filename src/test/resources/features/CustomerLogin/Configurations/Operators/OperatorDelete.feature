@@ -1,157 +1,308 @@
-@regression @delete @p1
-Feature: Delete Operator for Newly Created Operator
+@regression @smoke @delete @p1
+Feature: Delete Operator via Swipe Action
 
   Background:
     When User clicks on profile icon
-    Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
-    Then verify the "Users" section is displayed
     When User clicks on "Operators" feature
-    Then verify user navigates to "Operators" list screen
-    And User has created an operator with all mandatory fields
 
-  # ==================================================
-  # ✅ NAVIGATION SCENARIOS
-  # ==================================================
 
-  @smoke @p1
-  Scenario: Locate newly created operator via search
-    When User searches for newly created operator
-    Then operator record should be displayed in list
+  # =========================================================
+  # NAVIGATION & SWIPE — REVEAL DELETE OPTION
+  # =========================================================
 
   @smoke @p1
-  Scenario: Reveal delete option via swipe
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    Then delete icon should be clearly visible after swipe
+  Scenario: Search newly created Operator and verify in list
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  # ==================================================
-  # ✅ POSITIVE SCENARIOS
-  # ==================================================
+  @smoke @p1
+  Scenario: Swipe Operator record right-to-left reveals Edit, Delete and Duplicate options
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    Then Edit option should be visible
+    And delete icon should be clearly visible after swipe
+    And Duplicate option should be visible after swipe
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # DELETE CONFIRMATION POPUP — UI VALIDATION
+  # =========================================================
 
   @smoke @regression @p1
-  Scenario: Delete operator successfully
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
+  Scenario: Delete Confirmation popup appears after clicking Delete option
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    Then Edit option should be visible
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    And delete confirmation message should be displayed
+    And "Delete" button should be visible in Delete Confirmation popup
+    And X close button should be visible in Delete Confirmation popup
+    When User closes Delete Confirmation popup without deleting
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # POSITIVE SCENARIOS — CONFIRM DELETE
+  # =========================================================
+
+  @smoke @regression @p1
+  Scenario: Delete Operator successfully via Delete Confirmation popup
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    Then Edit option should be visible
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User confirms operator deletion
     Then operator should be deleted successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p1
-  Scenario: Verify operator removed from list after deletion
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
+  Scenario: Deleted Operator no longer appears in search results
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User confirms operator deletion
     Then operator should be deleted successfully
-    When User searches for newly created operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
     Then no results should be displayed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Verify list updates after deletion
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
-    Then operator should not appear in list
-
-  @regression @p2
-  Scenario: Verify deletion persistence after relaunch
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
-    Then deleted operator should not be present
-
-  # ==================================================
-  # ❌ NEGATIVE SCENARIOS
-  # ==================================================
-
-  @negative @regression @p1
-  Scenario: Cancel delete action
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user cancels confirmation
-    Then operator should not be deleted
-
-  @negative @regression @p1
-  Scenario: Confirm delete popup is shown before deletion
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    Then confirmation popup should be displayed
-
-  @negative @p3
-  Scenario: Network failure during delete
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
-    Then error message should be displayed
-
-  @negative @p3
-  Scenario: API failure during delete
-    When operator is deleted
-    And user performs delete action again
-    Then appropriate error should be handled
-
-  # ==================================================
-  # ⚠️ EDGE CASE SCENARIOS
-  # ==================================================
-
-  @sanity @p3
-  Scenario: Rapid multiple delete actions
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    Then confirmation popup should be displayed
-
-  @sanity @p3
-  Scenario: Delete last operator in list
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
+  Scenario: Operator list updates immediately after deletion
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User confirms operator deletion
     Then operator should be deleted successfully
+    And list UI should update immediately
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Verify deletion persistence — Operator absent after re-search
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User confirms operator deletion
+    Then operator should be deleted successfully
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then deleted operator should not be present
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # NEGATIVE SCENARIOS — CANCEL DELETE
+  # =========================================================
+
+  @negative @regression @p1
+  Scenario: Close Delete Confirmation popup with X button cancels deletion
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    Then Edit option should be visible
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User closes Delete Confirmation popup without deleting
+    Then operator should not be deleted
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @negative @regression @p2
+  Scenario: Operator still visible in list after cancelling deletion
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User closes Delete Confirmation popup without deleting
+    Then operator should not be deleted
+    And operator record should be displayed in list
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # EDGE CASE SCENARIOS
+  # =========================================================
 
   @sanity @p3
-  Scenario: Partial swipe sensitivity
-    When User searches for newly created operator
-    And user performs partial swipe
+  Scenario: Partial swipe should not reveal Delete option
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When user performs partial swipe
     Then delete option should not trigger incorrectly
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  # ==================================================
-  # 📱 UI VALIDATION SCENARIOS
-  # ==================================================
+  @sanity @p3
+  Scenario: Rapid swipe and Delete does not crash the app
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User closes Delete Confirmation popup without deleting
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @negative @p3
+  Scenario: Network failure during delete shows error message
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    And delete icon should be clearly visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    When User confirms operator deletion
+    Then error message should be displayed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # UI VALIDATION SCENARIOS
+  # =========================================================
 
   @regression @p2
-  Scenario: Verify confirmation popup UI
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    Then confirmation dialog should contain:
-      | Delete Message |
-      | Confirm Button |
-      | Cancel Button  |
-
-  @regression @p2
-  Scenario: Verify UI update after deletion
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
-    Then list UI should update immediately
-
-  # ==================================================
-  # 🔎 VALIDATION SCENARIOS
-  # ==================================================
-
-  @regression @p2
-  Scenario: Verify operator not found after deletion
-    When User searches for newly created operator
-    And User swipes operator record right to left
-    And User clicks on "Delete" option
-    And user confirms deletion
-    Then operator should not exist in list
-    And no matching records should be found
+  Scenario: Verify Delete Confirmation popup elements are correctly laid out
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    When User swipes Operator record from right to left
+    Then Edit option should be visible
+    And delete icon should be clearly visible after swipe
+    And Duplicate option should be visible after swipe
+    When User clicks on "Delete" option
+    Then Delete Confirmation popup should be displayed
+    And delete confirmation message should be displayed
+    And "Delete" button should be visible in Delete Confirmation popup
+    And X close button should be visible in Delete Confirmation popup
+    When User closes Delete Confirmation popup without deleting
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list

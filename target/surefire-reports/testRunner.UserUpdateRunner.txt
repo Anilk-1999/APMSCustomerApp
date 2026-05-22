@@ -1,0 +1,226 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.UserUpdateRunner
+-------------------------------------------------------------------------------
+Tests run: 32, Failures: 1, Errors: 31, Skipped: 0, Time elapsed: 92.46 s <<< FAILURE! -- in testRunner.UserUpdateRunner
+Login Functionality.Verify onboarding screens and navigate to login -- Time elapsed: 12.07 s <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [4330f7ca-89c2-4a5f-a671-d713bf8bcfb6, findElement {using=xpath, value=//android.widget.Button[@content-desc='Next']}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 4330f7ca-89c2-4a5f-a671-d713bf8bcfb6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$getSearchingFunction$0(ByChained.java:41)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:72)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$MQggUN6B.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at utilities.WaitHelper.waitForVisibility(WaitHelper.java:30)
+	at pageObject.BasePage.waitForVisibility(BasePage.java:167)
+	at pageObject.configurations.LoginPage.clickOnNextButton(LoginPage.java:108)
+	at StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next_again(LoginSteps.java:97)
+	at ✽.the user clicks on Next again(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/01_Login.feature:10)
+
+Login Functionality.Verify user is able to login successfully -- Time elapsed: 38.14 s <<< FAILURE!
+java.lang.AssertionError: Login screen should be visible expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.configurations.login.LoginSteps.the_user_is_on_the_login_screen(LoginSteps.java:67)
+	at ✽.the user is on the login screen(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/01_Login.feature:70)
+
+Update User via Swipe Action and Status Management.Search and open Edit User screen and verify all fields -- Time elapsed: 24.58 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$769/0x0000029643461808@a9e8da1 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 67afae65-df1a-48b7-b8c6-a4b306b68b67
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:296)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:72)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update User with all fields -- Time elapsed: 0.059 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only User Name -- Time elapsed: 0.042 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only Phone No -- Time elapsed: 0.032 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only Blood Group -- Time elapsed: 0.037 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only Role -- Time elapsed: 0.035 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only Teams -- Time elapsed: 0.027 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update DOB and DOJ with valid values -- Time elapsed: 0.030 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only DOB -- Time elapsed: 0.031 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only DOJ -- Time elapsed: 0.037 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update only Emergency No -- Time elapsed: 0.037 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Clear optional fields and save -- Time elapsed: 0.031 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Save Edit User without making any changes -- Time elapsed: 0.025 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update User Name with leading and trailing spaces -- Time elapsed: 0.033 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Verify Email ID is non-editable in Edit User screen -- Time elapsed: 0.020 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update without User Name -- Time elapsed: 0.032 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update without Phone No -- Time elapsed: 0.028 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update without Blood Group -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update without Role -- Time elapsed: 0.032 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with duplicate Phone No -- Time elapsed: 0.044 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with Phone No less than 10 digits -- Time elapsed: 0.028 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with non-numeric Phone No -- Time elapsed: 0.025 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with only spaces in User Name -- Time elapsed: 0.031 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with non-numeric Emergency No -- Time elapsed: 0.035 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Update with invalid Pin Code format -- Time elapsed: 0.021 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Close Edit User screen with unsaved changes shows Confirmation Alert -- Time elapsed: 0.021 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Rapid Save clicks should prevent duplicate User update -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Rapid swipe right-to-left on User record -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Verify Edit User screen UI elements and alignment -- Time elapsed: 0.020 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+
+Update User via Swipe Action and Status Management.Verify Edit User form can be scrolled -- Time elapsed: 0.017 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Users/UserUpdate.feature:5)
+

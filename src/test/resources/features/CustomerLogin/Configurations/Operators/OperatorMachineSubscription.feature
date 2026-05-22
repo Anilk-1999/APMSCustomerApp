@@ -1,282 +1,576 @@
-@regression @p2
-Feature: Operator Machine Subscription for Newly Created Operator
+@regression @smoke @machine-subscription @p1
+Feature: Operator Machine Subscription via Action Menu
+
+  # Machine Subscription is accessed via long press on an Operator record in the list.
+  # Operator must be searched first, then long pressed to open Action Menus bottom sheet.
+  # Action Menus bottom sheet appears with "Machine Subscription" option.
+  # Machine Subscription popup: "+" to add machines, delete icon per machine, Submit button, Close X button.
 
   Background:
     When User clicks on profile icon
-    Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
-    Then verify the "Users" section is displayed
     When User clicks on "Operators" feature
-    Then verify user navigates to "Operators" list screen
-    And User has created an operator with all mandatory fields
 
-  # ==================================================
-  # ✅ NAVIGATION SCENARIOS
-  # ==================================================
+
+  # =========================================================
+  # NAVIGATION — SEARCH + LONG PRESS + ACTION MENU
+  # =========================================================
 
   @smoke @p1
-  Scenario: Navigate to Machine Subscription via long press
-    When user long presses on operator record
-    Then action menu bottom sheet should be displayed
-    When User clicks on "Machine Subscription" option
-    Then Machine Subscription popup should be displayed
+  Scenario: Search Operator and long press to open Action Menus bottom sheet
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    When User closes Action Menus bottom sheet
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  # ==================================================
-  # ✅ POSITIVE SCENARIOS — ADD FLOW
-  # ==================================================
+  @smoke @p1
+  Scenario: Open Operator Machine Subscription popup and verify UI elements
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Open Operator Machine Subscription popup when operator has no machines assigned
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And Machine Subscription list should show empty state
+    And "+" add machine button should be visible
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # POSITIVE SCENARIOS — ADD MACHINES
+  # =========================================================
 
   @smoke @regression @p1
-  Scenario: Add machine subscription successfully
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    Then Select Machines bottom sheet should be displayed
-    When user selects multiple machines
-    And submits selection
-    Then selected machines should be displayed in Machine Subscription popup
-    When user clicks final Submit
-    Then machine subscription should be saved successfully
+  Scenario: Add single operator machine subscription
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    And each machine in list should have a delete icon
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p1
+  Scenario: Add multiple operator machine subscriptions
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machines should be added to Machine Subscription list
+    And each machine in list should have a delete icon
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Add single machine subscription
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user selects one machine
-    And submits selection
-    Then selected machines should be displayed
+  Scenario: Add machine and then add more machines in same session
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects additional machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then additional machines should be appended to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Verify persistence after saving machines
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user selects multiple machines
-    And submits selection
-    And user clicks final Submit
-    And user saves machine subscription
-    And reopens Machine Subscription popup
-    Then selected machines should be displayed
+  Scenario: Verify Operator Machine Subscription list persists after save
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And previously subscribed machines should be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  # ==================================================
-  # ❌ NEGATIVE SCENARIOS — ADD FLOW
-  # ==================================================
+
+  # =========================================================
+  # POSITIVE SCENARIOS — DELETE MACHINES
+  # =========================================================
+
+  @regression @p1
+  Scenario: Delete single machine from Operator Machine Subscription
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    And remaining machines should still be displayed
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Delete multiple machines from Operator Machine Subscription
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes multiple machines from Machine Subscription list
+    Then all deleted machines should be removed from list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Delete all machines from Operator Machine Subscription and submit
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes all machines from Machine Subscription list
+    Then Machine Subscription list should be empty
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Delete machine and re-add in same session
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects that machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then machine should be re-added to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+  @regression @p2
+  Scenario: Verify Operator Machine Subscription list updated after deletion save
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    And User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And deleted machine should not be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
+
+
+  # =========================================================
+  # NEGATIVE SCENARIOS
+  # =========================================================
 
   @negative @regression @p2
-  Scenario: Submit without selecting machines
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And clicks Submit without selecting machines
-    Then validation message should be displayed
+  Scenario: Submit Select Machines bottom sheet without selecting any machine
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    Then bottom sheet should close with no machines added
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  @negative @regression @p2
-  Scenario: Add duplicate machine
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user selects already subscribed machine
-    And submits selection
-    Then system should prevent duplicate machine addition
 
-  @negative @p3
-  Scenario: Network failure during machine subscription add
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user submits machine subscription without internet
-    Then error message should be displayed
+  # =========================================================
+  # EDGE CASE SCENARIOS
+  # =========================================================
 
-  @negative @p3
-  Scenario: API failure during machine subscription add
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And backend returns failure response during subscription
-    Then proper error message should be shown
-
-  # ==================================================
-  # ⚠️ EDGE CASE SCENARIOS — ADD FLOW
-  # ==================================================
-
-  @sanity @p3
-  Scenario: Select maximum machines
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user selects maximum number of machines
-    Then system should handle correctly
-
-  @sanity @p3
-  Scenario: Rapid selection and deselection
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user quickly selects and deselects machines
-    Then selection state should be maintained correctly
-
-  @sanity @p3
-  Scenario: Large machine list handling
-    When machine list is large
-    And user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    Then scrolling should work properly
+  @sanity @p2
+  Scenario: Close Operator Machine Subscription popup without saving discards changes
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed without saving
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @sanity @p3
-  Scenario: Special character machine names
-    When machine names contain special characters
-    And user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    Then they should display correctly
+  Scenario: Rapid "+" button clicks in Machine Subscription popup opens only one bottom sheet
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup multiple times quickly
+    Then only one "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  # ==================================================
-  # 📱 UI VALIDATION SCENARIOS — ADD FLOW
-  # ==================================================
+  @sanity @p3
+  Scenario: Rapid Submit clicks in Operator Machine Subscription popup should prevent duplicate save
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    When User clicks Submit button in Machine Subscription popup multiple times quickly
+    Then system should prevent duplicate Machine Subscription save
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  @regression @p2
-  Scenario: Verify Machine Subscription popup UI
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    Then popup should contain machine list, "+" icon, delete icon and Submit button
+  @sanity @p3
+  Scenario: Rapid delete icon clicks should remove machine only once
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon multiple times quickly on one machine
+    Then that machine should be removed only once from Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
-  @regression @p2
-  Scenario: Verify Select Machines bottom sheet UI
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    Then multi-selection machine list should be displayed
 
-  @regression @p2
-  Scenario: Verify selection highlighting
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And user selects machines
-    Then selected machines should be highlighted
-
-  @regression @p3
-  Scenario: Verify scroll in machine list
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    Then user should be able to scroll machine list
-
-  @regression @p2
-  Scenario: Verify submit validates selection
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    Then submit button should validate selection
-
-  # ==================================================
-  # 🗑️ DELETE FLOW — POSITIVE SCENARIOS
-  # ==================================================
-
-  @regression @p2
-  Scenario: Delete single machine subscription
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And clicks delete icon for a machine
-    Then machine should be removed from list
-    When user clicks final Submit
-    Then deletion should be saved successfully
-
-  @regression @p2
-  Scenario: Delete multiple machine subscriptions
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes multiple machines
-    And user clicks final Submit
-    Then all selected machines should be removed
-
-  @regression @p2
-  Scenario: Verify persistence after deletion
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes machines and saves
-    And reopens Machine Subscription popup
-    Then deleted machines should not be displayed
-
-  # ==================================================
-  # ❌ DELETE FLOW — NEGATIVE SCENARIOS
-  # ==================================================
-
-  @negative @regression @p2
-  Scenario: Delete machine without saving
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes machine
-    And closes popup without submitting
-    Then deletion should not be saved
-
-  @negative @regression @p2
-  Scenario: Delete all machines
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user removes all machines
-    And user clicks final Submit
-    Then system should handle empty state correctly
-
-  @negative @p3
-  Scenario: Network failure during machine deletion
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes machine without internet
-    Then error message should be displayed
-
-  @negative @p3
-  Scenario: API failure during machine deletion
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And backend returns failure response during deletion
-    Then proper error message should be shown
-
-  # ==================================================
-  # 📱 DELETE FLOW — UI VALIDATION
-  # ==================================================
+  # =========================================================
+  # UI VALIDATION SCENARIOS
+  # =========================================================
 
   @regression @p2
-  Scenario: Verify delete icon visibility
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    Then delete icon should be visible for each machine
+  Scenario: Verify Operator Machine Subscription popup UI elements
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    And all Machine Subscription popup elements should be aligned properly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Verify UI updates after deletion
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes machine
-    Then UI should update immediately
+  Scenario: Verify Select Machines bottom sheet UI elements
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    And machines list should be displayed in bottom sheet
+    And multi-selection should be enabled in Select Machines bottom sheet
+    And Submit button should be visible in Select Machines bottom sheet
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Verify empty state when no machines exist
-    When no machines exist
-    And user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    Then empty message should be displayed
-
-  # ==================================================
-  # 🔎 VALIDATION SCENARIOS
-  # ==================================================
+  Scenario: Verify each machine in Operator Machine Subscription list has delete icon
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then each machine in list should have a delete icon
+    And all selected machines should be displayed correctly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Validate machine selection is mandatory
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And no machine is selected
-    Then error should be displayed
-
-  @regression @p2
-  Scenario: Validate selected machines display correctly
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user clicks add icon in Machine Subscription popup
-    And machines are selected
-    Then they should appear correctly in popup
-
-  @regression @p2
-  Scenario: Validate machine removal from subscription
-    When user long presses on operator record
-    And User clicks on "Machine Subscription" option
-    And user deletes machine
-    Then it should not appear in list
+  Scenario: Verify Operator Action Menus bottom sheet shows Machine Subscription option
+    And User has already created an Operator
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list

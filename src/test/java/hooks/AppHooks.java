@@ -6,6 +6,7 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.appium.java_client.android.AndroidDriver;
 import testBase.BaseClass;
+import utilities.SearchUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -15,7 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.LockSupport;
 
 public class AppHooks {
 
@@ -48,37 +48,77 @@ public class AppHooks {
     @After
     public void returnToListScreen(Scenario scenario) {
         if (driver == null) return;
-        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        } catch (Exception e) {
+            // Session is completely dead — restart it so subsequent scenarios can run
+            System.out.println("[AppHooks] Driver session dead before cleanup — restarting: " + e.getMessage());
+            restartDriverSession();
+            return;
+        }
         try {
             hideKeyboardSilently();
 
+            // If the search bar is open, close it via the X button (never Back — Back navigates
+            // away from the list screen in Flutter apps).
+            if (isInSearchMode()) {
+                System.out.println("[AppHooks] Search bar open — closing via X button");
+                new SearchUtils(driver).ensureSearchClosed();
+            }
+
             // Fast path — zero back presses needed
-            if (isOnListScreen() || isOnDashboard()) return;
+            if (isOnListScreen() || isOnDashboard() || isOnLoginScreen()) return;
 
             // Dismiss any blocking confirmation dialog before navigating
             dismissDialog();
 
-            // If search bar is open, one back press closes it
-            if (isInSearchMode()) {
-                pressBack();
-                waitMs(300);
-                if (isOnListScreen() || isOnDashboard()) return;
-            }
-
             // Navigate back — at most 4 attempts
             for (int i = 1; i <= 4; i++) {
                 pressBack();
-                waitMs(300);
+                pollUntilOnKnownScreen(3);
                 dismissDialog();
                 if (isOnListScreen() || isOnDashboard()) return;
             }
 
+        } catch (Exception e) {
+            // UiAutomator2 crashed mid-cleanup — restart session to unblock subsequent scenarios
+            System.out.println("[AppHooks] Cleanup failed (UiAutomator2 crash) — restarting session: " + e.getMessage());
+            restartDriverSession();
         } finally {
-            // Keep implicit wait at ZERO — all checks use explicit waits or
-            // ElementUtils.waitForFirst(). A non-zero implicit wait makes every
-            // findElements() call slow when the element is absent.
-            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+            if (driver != null) {
+                try { driver.manage().timeouts().implicitlyWait(Duration.ZERO); } catch (Exception ignored) { /* session gone */ }
+            }
         }
+    }
+
+    /**
+     * Quits the dead Appium session and creates a fresh one.
+     * The next scenario will start from the app launch screen (login screen).
+     * Background steps that call clickOnProfileIcon will fail fast with a clear
+     * TimeoutException rather than cascading UiAutomator2 "instrumentation not running" errors.
+     */
+    private void restartDriverSession() {
+        System.out.println("[AppHooks] Restarting Appium session...");
+        try { driver.quit(); } catch (Exception ignored) { /* best-effort quit */ }
+        // quitDriver() nulls base.driver so the next initDriver() creates a truly fresh session
+        base.quitDriver();
+        try {
+            driver = base.initDriver();
+            System.out.println("[AppHooks] Appium session restarted successfully.");
+        } catch (Exception e) {
+            System.out.println("[AppHooks] Session restart failed: " + e.getMessage());
+            driver = null;
+        }
+    }
+
+    /** Polls every 300 ms up to {@code timeoutSecs} until list screen or Dashboard appears. */
+    private void pollUntilOnKnownScreen(int timeoutSecs) {
+        try {
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(timeoutSecs))
+                    .pollingEvery(Duration.ofMillis(300))
+                    .ignoring(Exception.class)
+                    .until(d -> isOnListScreen() || isOnDashboard());
+        } catch (Exception ignored) { /* timed out — caller will check state */ }
     }
 
     // ── Screen detection ──────────────────────────────────────────────────────────
@@ -87,10 +127,35 @@ public class AppHooks {
     //   • Never throws NoSuchElementException
     //   • Produces zero HTTP 404 responses in Appium logs
 
-    /** True when the Search icon is visible — indicates a list screen in normal mode. */
+    /**
+     * True when we are on any list screen.
+     * Covers two modes:
+     *  - Normal mode:  Search button is visible in the bottom bar.
+     *  - Search mode:  Search button is replaced by the search input, but Filter
+     *                  button remains visible in the bottom bar — still a list screen.
+     */
     private boolean isOnListScreen() {
-        boolean found = hasElement(AppiumBy.accessibilityId("Search"));
-        if (found) System.out.println("[AppHooks] On list screen");
+        if (hasElement(AppiumBy.accessibilityId("Search"))) {
+            System.out.println("[AppHooks] On list screen (Search button visible)");
+            return true;
+        }
+        if (hasElement(AppiumBy.accessibilityId("Filter"))) {
+            System.out.println("[AppHooks] On list screen in search mode (Filter button visible)");
+            return true;
+        }
+        // FAB ("+ Add") is always visible on list screens — catches the case where Flutter
+        // has closed the search bar but the Search button hasn't re-rendered yet.
+        if (hasElement(AppiumBy.androidUIAutomator("new UiSelector().description(\"+ Add\")"))) {
+            System.out.println("[AppHooks] On list screen (Add FAB visible)");
+            return true;
+        }
+        return false;
+    }
+
+    /** True when the login screen "Login to your account" label is visible. */
+    private boolean isOnLoginScreen() {
+        boolean found = hasElement(AppiumBy.accessibilityId("Login to your account"));
+        if (found) System.out.println("[AppHooks] On login screen — stopping");
         return found;
     }
 
@@ -103,28 +168,43 @@ public class AppHooks {
     }
 
     /**
-     * True when an EditText is visible on screen.
-     * Save/Submit checks removed — those elements only appear inside popups,
-     * never on the list screen. A single hasElement() call is sufficient.
-     * Pressing Back from either search mode or an open popup navigates back
-     * toward the list screen (confirmation dialogs are handled by dismissDialog).
+     * True ONLY when the search bar on a list screen is open.
+     * Detects by: EditText visible AND Sort/Filter button also visible.
+     * Sort/Filter appear on every list screen even when the search input is open,
+     * but NOT on the login form, popup forms, or the Dashboard — so this
+     * check is safe across all screens and won't match login/creation forms.
      */
     private boolean isInSearchMode() {
-        boolean found = hasElement(AppiumBy.className("android.widget.EditText"));
-        if (found) System.out.println("[AppHooks] EditText visible — pressing back to exit");
-        return found;
+        if (!hasElement(AppiumBy.className("android.widget.EditText"))) return false;
+        boolean onList = hasElement(AppiumBy.accessibilityId("Filter"))
+                      || hasElement(AppiumBy.accessibilityId("Sort"));
+        if (onList) System.out.println("[AppHooks] Search bar open on list screen — hiding keyboard");
+        return onList;
     }
 
     // ── Dialog handling ───────────────────────────────────────────────────────────
 
     /** Clicks the first visible blocking dialog button (Yes, Exit or Yes, Change), if any. */
     private void dismissDialog() {
-        if (clickFirst(AppiumBy.androidUIAutomator("new UiSelector().description(\"Yes, Exit\")"))) {
-            waitMs(300);
+        By exitBtn   = AppiumBy.androidUIAutomator("new UiSelector().description(\"Yes, Exit\")");
+        By changeBtn = AppiumBy.androidUIAutomator("new UiSelector().description(\"Yes, Change\")");
+        if (clickFirst(exitBtn)) {
+            // Poll until button is gone (dialog dismissed) — no fixed sleep
+            try {
+                new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(3))
+                        .pollingEvery(Duration.ofMillis(200))
+                        .ignoring(Exception.class)
+                        .until(d -> d.findElements(exitBtn).isEmpty());
+            } catch (Exception ignored) {}
             return;
         }
-        if (clickFirst(AppiumBy.androidUIAutomator("new UiSelector().description(\"Yes, Change\")"))) {
-            waitMs(300);
+        if (clickFirst(changeBtn)) {
+            try {
+                new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(3))
+                        .pollingEvery(Duration.ofMillis(200))
+                        .ignoring(Exception.class)
+                        .until(d -> d.findElements(changeBtn).isEmpty());
+            } catch (Exception ignored) {}
         }
     }
 
@@ -176,7 +256,4 @@ public class AppHooks {
         }
     }
 
-    private void waitMs(long ms) {
-        LockSupport.parkNanos(Duration.ofMillis(ms).toNanos());
-    }
 }

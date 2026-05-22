@@ -1,6 +1,7 @@
 package utilities;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,6 +26,22 @@ public class ActionHelper {
     public void tap(WebElement element) {
         waitHelper.waitForClickability(element);
         element.click();
+    }
+
+    /** W3C PointerInput tap at the center of the given element — works for Flutter ImageViews that ignore .click(). */
+    public void tapCenter(WebElement element) {
+        Point loc = element.getLocation();
+        int x = loc.getX() + element.getSize().getWidth() / 2;
+        int y = loc.getY() + element.getSize().getHeight() / 2;
+        tapAt(x, y);
+    }
+
+    /** Appium mobile: clickGesture tap at absolute screen coordinates — reliable on Flutter. */
+    public void tapAt(int x, int y) {
+        java.util.Map<String, Object> args = new java.util.HashMap<>();
+        args.put("x", x);
+        args.put("y", y);
+        driver.executeScript("mobile: clickGesture", args);
     }
 
     // ── Text input ────────────────────────────────────────────────────────────

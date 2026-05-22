@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.UserCreationRunner
+-------------------------------------------------------------------------------
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1050 s -- in testRunner.UserCreationRunner

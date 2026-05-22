@@ -79,24 +79,26 @@ public class PopupUtils {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutSecs))
                     .pollingEvery(Duration.ofMillis(500))
                     .until(d -> {
+                        // Only look inside Activity popups — NOT inside Confirmation Alert or
+                        // Status Update, because those views also contain unlabelled Buttons and
+                        // clicking them would silently dismiss the dialog before the test verifies it.
                         List<WebElement> btns = d.findElements(AppiumBy.xpath(
-                                "//android.view.View[contains(@content-desc,'Activity')" +
-                                " or @content-desc='Confirmation Alert'" +
-                                " or @content-desc='Status Update']" +
+                                "//android.view.View[@content-desc='Add Activity Group'" +
+                                " or @content-desc='Edit Activity Group'" +
+                                " or @content-desc='View Activity Group']" +
                                 "//android.widget.Button[not(@content-desc)]"));
                         if (!btns.isEmpty()) {
                             btns.get(0).click();
                             return Boolean.TRUE;
                         }
-                        // X not found yet — check if popup container itself is gone
+                        // X not found — check if the popup itself is already gone
                         List<WebElement> popups = d.findElements(AppiumBy.xpath(
-                                "//android.view.View[contains(@content-desc,'Activity')" +
-                                " or @content-desc='Confirmation Alert'" +
-                                " or @content-desc='Status Update']"));
+                                "//android.view.View[@content-desc='Add Activity Group'" +
+                                " or @content-desc='Edit Activity Group'" +
+                                " or @content-desc='View Activity Group']"));
                         return popups.isEmpty() ? Boolean.TRUE : null;
                     });
-        } catch (Exception ignored) {
-        } finally {
+        } catch (Exception ignored) { /* timeout — popup already gone or X not found */ } finally {
             elementUtils.restoreImplicitWait();
         }
     }
@@ -122,8 +124,7 @@ public class PopupUtils {
                         polls[0]++;
                         return polls[0] >= 2 ? Boolean.TRUE : null;
                     });
-        } catch (Exception ignored) {
-        } finally {
+        } catch (Exception ignored) { /* timeout — no exit alert shown within window */ } finally {
             elementUtils.restoreImplicitWait();
         }
     }
@@ -168,11 +169,77 @@ public class PopupUtils {
     }
 
     public boolean waitForCreateSuccess(int timeoutSecs) {
-        return waitForSuccessSignal("Record created successfully", timeoutSecs);
+        elementUtils.disableImplicitWait();
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(timeoutSecs))
+                    .pollingEvery(POLL)
+                    .until(d -> {
+                        // 1. FAB exact match "+" Add
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().description(\"+ Add\")")).isEmpty()) return Boolean.TRUE;
+
+                        // 2. Bottom toolbar "Add" button (no "+") — Flutter bottom nav
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().description(\"Add\")")).isEmpty()) return Boolean.TRUE;
+
+                        // 3. List screen Search / Filter toolbar icon
+                        if (!d.findElements(AppiumBy.accessibilityId("Search")).isEmpty()) return Boolean.TRUE;
+                        if (!d.findElements(AppiumBy.accessibilityId("Filter")).isEmpty()) return Boolean.TRUE;
+
+                        // 4. Actual success banner — "User Created Successfully"
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().descriptionContains(\"Created Successfully\")")).isEmpty())
+                            return Boolean.TRUE;
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().textContains(\"Created Successfully\")")).isEmpty())
+                            return Boolean.TRUE;
+
+                        return null;
+                    });
+            return true;
+        } catch (Exception e) {
+            return false;
+        } finally {
+            elementUtils.restoreImplicitWait();
+        }
     }
 
     public boolean waitForUpdateSuccess(int timeoutSecs) {
-        return waitForSuccessSignal("Record updated successfully", timeoutSecs);
+        elementUtils.disableImplicitWait();
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(timeoutSecs))
+                    .pollingEvery(POLL)
+                    .until(d -> {
+                        // 1. Bottom toolbar "Add" button (Users list)
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().description(\"Add\")")).isEmpty()) return Boolean.TRUE;
+
+                        // 2. FAB exact "+" Add
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().description(\"+ Add\")")).isEmpty()) return Boolean.TRUE;
+
+                        // 3. List screen Search / Filter toolbar icon
+                        if (!d.findElements(AppiumBy.accessibilityId("Search")).isEmpty()) return Boolean.TRUE;
+                        if (!d.findElements(AppiumBy.accessibilityId("Filter")).isEmpty()) return Boolean.TRUE;
+
+                        // 4. Success banner — content-desc (Flutter semantic label)
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().descriptionContains(\"Updated Successfully\")")).isEmpty())
+                            return Boolean.TRUE;
+
+                        // 5. Success banner — text attribute (some Flutter toast implementations)
+                        if (!d.findElements(AppiumBy.androidUIAutomator(
+                                "new UiSelector().textContains(\"Updated Successfully\")")).isEmpty())
+                            return Boolean.TRUE;
+
+                        return null;
+                    });
+            return true;
+        } catch (Exception e) {
+            return false;
+        } finally {
+            elementUtils.restoreImplicitWait();
+        }
     }
 
     // ═══════════════════════════════════════════════════════

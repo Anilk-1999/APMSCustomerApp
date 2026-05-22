@@ -34,7 +34,11 @@ public class GlobalTestData {
     public static final String SPARE_NAME            = "global_spare_name";
     public static final String REASON_NAME           = "global_reason_name";
     public static final String OPERATOR_NAME         = "global_operator_name";
+    public static final String UPDATED_OPERATOR_NAME = "global_updated_operator_name";
     public static final String USER_NAME             = "global_user_name";
+    public static final String UPDATED_USER_NAME     = "global_updated_user_name";
+    public static final String USER_EMAIL            = "global_user_email";
+    public static final String CONFIRMED_USER_EMAIL  = "global_confirmed_user_email";
 
     // ── API ───────────────────────────────────────────────────────────────────
     public static String  get(String key)              { return store.get(key); }

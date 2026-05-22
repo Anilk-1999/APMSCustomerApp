@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.OperatorUpdateRunner" time="711.438" tests="28" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\test-classes;C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\classes;C:\Users\Anil Kumar M\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Anil Kumar M\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\appium\java-client\9.2.2\java-client-9.2.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-picocontainer\7.16.1\cucumber-picocontainer-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\Anil Kumar M\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\Anil Kumar M\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.13.0\extentreports-cucumber7-adapter-1.13.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anil Kumar M\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-excel-report\1.3.0\extent-excel-report-1.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Anil Kumar M\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-pdf-report\2.12.0\extent-pdf-report-2.12.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.14.0\cucumber-pdf-report-2.14.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\Anil Kumar M\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\Anil Kumar M\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\Anil Kumar M\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.5.0\rest-assured-cucumber-pdf-report-1.5.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\Anil Kumar M\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin"/>
+    <property name="sun.java.command" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire12761910414201296105\surefirebooter-20260522173539105_3.jar C:\Users\Anil Kumar M\AppData\Local\Temp\surefire12761910414201296105 2026-05-22T17-35-38_926-jvmRun1 surefire-20260522173539105_1tmp surefire_0-20260522173539105_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="OperatorUpdateRunner"/>
+    <property name="surefire.test.class.path" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\test-classes;C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\classes;C:\Users\Anil Kumar M\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Anil Kumar M\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\appium\java-client\9.2.2\java-client-9.2.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-picocontainer\7.16.1\cucumber-picocontainer-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\Anil Kumar M\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\Anil Kumar M\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.13.0\extentreports-cucumber7-adapter-1.13.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anil Kumar M\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-excel-report\1.3.0\extent-excel-report-1.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Anil Kumar M\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-pdf-report\2.12.0\extent-pdf-report-2.12.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.14.0\cucumber-pdf-report-2.14.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\Anil Kumar M\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\Anil Kumar M\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\Anil Kumar M\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.5.0\rest-assured-cucumber-pdf-report-1.5.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\Anil Kumar M\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Anil Kumar M"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire12761910414201296105\surefirebooter-20260522173539105_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.16+12-LTS-247"/>
+    <property name="user.name" value="Anil Kumar M"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Anil Kumar M\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ANILKU~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Anil Kumar M\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Anil Kumar M\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\Revanth Mahesh\Downloads\platform-tools-latest-windows\platform-tools;C:\Program Files\nodejs;C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platform-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\build-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platforms;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\tools\bin;C:\Users\Anil Kumar M\Apache\Maven\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311;C:\Users\Anil Kumar M\AppData\Local\Microsoft\WindowsApps;C:\Users\Anil Kumar M\AppData\Roaming\npm;C:\Users\Anil Kumar M\Android\sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.16+12-LTS-247"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="Verify onboarding screens and navigate to login" classname="Login Functionality" time="8.927">
+    <system-out><![CDATA[✅ Driver initialized successfully
+
+Scenario: Verify onboarding screens and navigate to login          # src/test/resources/features/CustomerLogin/01_Login.feature:5
+  Given the app is launched                                        # StepDefinitions.configurations.login.LoginSteps.the_app_is_launched()
+  And Verify the "Digitization" screen is displayed                # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_is_displayed(java.lang.String)
+  When the user clicks on Next                                     # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next()
+  Then Verify the "World of Machines" screen should be displayed   # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_displayed(java.lang.String)
+  When the user clicks on Next again                               # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next_again()
+  Then Verify the "Accelerating Growth" screen should displayed    # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_displayed(java.lang.String)
+  When the user clicks on Finish                                   # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_finish()
+  Then Verify the "Login to Your Account" screen should be visible # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_visible(java.lang.String)
+  When the user double taps on the APMS AI footer if needed        # StepDefinitions.configurations.login.LoginSteps.the_user_double_taps_on_the_apms_ai_footer_if_needed()
+[AppHooks] On login screen — stopping
+]]></system-out>
+  </testcase>
+  <testcase name="Verify user is able to login successfully" classname="Login Functionality" time="11.883">
+    <system-out><![CDATA[
+Scenario: Verify user is able to login successfully     # src/test/resources/features/CustomerLogin/01_Login.feature:69
+  Given the user is on the login screen                 # StepDefinitions.configurations.login.LoginSteps.the_user_is_on_the_login_screen()
+  When the user enters email "anilkumar.m@apms.ai"      # StepDefinitions.configurations.login.LoginSteps.the_user_enters_email(java.lang.String)
+  And the user enters password "1234"                   # StepDefinitions.configurations.login.LoginSteps.the_user_enters_password(java.lang.String)
+  And the user clicks on Login                          # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_login()
+  Then Verify the user should be logged in successfully # StepDefinitions.configurations.login.LoginSteps.verify_the_user_should_be_logged_in_successfully()
+[AppHooks] On Dashboard — stopping
+]]></system-out>
+  </testcase>
+  <testcase name="Search and open Edit Operator screen and verify all fields" classname="Update Operator via Swipe Action and Status Management" time="30.941">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @smoke @p1
+Scenario: Search and open Edit Operator screen and verify all fields           # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:15
+  When User clicks on profile icon                                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+  When User clicks on "Configurations" section                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+  When User clicks on "Operators" feature                                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify that the "Account Preferences" screen is displayed               # StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify the "User" section is displayed                                  # StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify user navigates to "Operators" list screen                        # StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)
+  And User has already created an Operator                                     # StepDefinitions.configurations.operators.OperatorCreationSteps.userHasAlreadyCreatedAnOperator()
+  When User clicks on search icon                                              # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                          # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                                # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Operator Name                                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyCreatedOperatorName()
+  And User waits for search results to load                                    # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                           # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                              # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                              # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+[INFO] Operator ID (#OPA...) visible and non-editable in Edit Operator screen
+  And Operator ID should be visible and non-editable in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorIdShouldBeVisibleAndNonEditableInEditOperatorScreen()
+[INFO] Operator Name field pre-filled and editable confirmed
+  And Operator Name field should be pre-filled and editable                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorNameFieldShouldBePreFilledAndEditable()
+  And Email ID field should be pre-filled and editable in Edit Operator screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.emailIdFieldShouldBePreFilledAndEditableInEditOperatorScreen()
+[INFO] Operator Phone No field pre-filled and editable confirmed
+  And Operator Phone No field should be pre-filled and editable                # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorPhoneNoFieldShouldBePreFilledAndEditable()
+[INFO] Emergency No field pre-filled and editable confirmed
+  And Emergency No field should be pre-filled and editable                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.emergencyNoFieldShouldBePreFilledAndEditable()
+[INFO] Operator Code field pre-filled and editable confirmed
+  And Operator Code field should be pre-filled and editable                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorCodeFieldShouldBePreFilledAndEditable()
+  And Blood Group should be pre-filled and editable                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.bloodGroupShouldBePreFilledAndEditable()
+  And DOB field should be pre-filled and editable                              # StepDefinitions.configurations.operators.OperatorUpdateSteps.dobFieldShouldBePreFilledAndEditable()
+  And DOJ field should be pre-filled and editable                              # StepDefinitions.configurations.operators.OperatorUpdateSteps.dojFieldShouldBePreFilledAndEditable()
+[INFO] Address Line I field pre-filled and editable confirmed
+  And Address Line I field should be pre-filled and editable                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.addressLine1FieldShouldBePreFilledAndEditable()
+[INFO] Address Line II field pre-filled and editable confirmed
+  And Address Line II field should be pre-filled and editable                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.addressLine2FieldShouldBePreFilledAndEditable()
+[INFO] Pin Code field pre-filled and editable confirmed
+  And Pin Code field should be pre-filled and editable                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.pinCodeFieldShouldBePreFilledAndEditable()
+[INFO] City field pre-filled and editable confirmed
+  And City field should be pre-filled and editable                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.cityFieldShouldBePreFilledAndEditable()
+[INFO] State field pre-filled and editable confirmed
+  And State field should be pre-filled and editable                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.stateFieldShouldBePreFilledAndEditable()
+[INFO] Country field pre-filled and editable confirmed
+  And Country field should be pre-filled and editable                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.countryFieldShouldBePreFilledAndEditable()
+  And Save button should be visible in Edit Operator screen                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.saveButtonShouldBeVisibleInEditOperatorScreen()
+  When User clicks back arrow in Edit Operator screen                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  When User clicks search close X button                                       # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                           # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                    # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                        # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update Operator with all fields" classname="Update Operator via Swipe Action and Status Management" time="112.361">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @smoke @regression @p1
+Scenario: Update Operator with all fields               # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:62
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has already created an Operator             # StepDefinitions.configurations.operators.OperatorCreationSteps.userHasAlreadyCreatedAnOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyCreatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Name                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorName()
+  And User updates Operator Phone No                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorPhoneNo()
+  And User updates Operator Email ID                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorEmailId()
+  And User updates Operator Emergency No                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorEmergencyNo()
+  And User updates Operator Code                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorCode()
+  And User updates Operator Blood Group                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorBloodGroup()
+  And User updates Operator DOB                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOB()
+  And User updates Operator DOJ                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOJ()
+  And User updates Operator Address Line I              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorAddressLine1()
+  And User updates Operator Address Line II             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorAddressLine2()
+  And User updates Operator Pin Code                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorPinCode()
+  And User updates Operator City                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorCity()
+  And User updates Operator State                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorState()
+  And User updates Operator Country                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorCountry()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  And updated Operator should be reflected in list      # StepDefinitions.configurations.operators.OperatorUpdateSteps.updatedOperatorShouldBeReflectedInList()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator Name" classname="Update Operator via Swipe Action and Status Management" time="16.638">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator Name                     # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:98
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Name                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorName()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator Phone No" classname="Update Operator via Swipe Action and Status Management" time="16.328">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator Phone No                 # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:120
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Phone No                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorPhoneNo()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator Blood Group" classname="Update Operator via Swipe Action and Status Management" time="15.282">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator Blood Group              # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:142
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Blood Group                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorBloodGroup()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update Operator DOB and DOJ with valid values" classname="Update Operator via Swipe Action and Status Management" time="58.741">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update Operator DOB and DOJ with valid values           # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:164
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                         # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                 # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                             # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                   # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                       # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results            # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                              # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                 # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                 # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator DOB with valid value less than DOJ   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOBWithValidValueLessThanDOJ()
+  And User updates Operator DOJ with valid value greater than DOB # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOJWithValidValueGreaterThanDOB()
+  And User clicks Save button in Edit Operator screen             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                          # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                              # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                       # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list           # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator DOB" classname="Update Operator via Swipe Action and Status Management" time="30.432">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator DOB                      # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:187
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator DOB                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOB()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator DOJ" classname="Update Operator via Swipe Action and Status Management" time="47.355">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator DOJ                      # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:209
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator DOJ                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorDOJ()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update only Operator Emergency No" classname="Update Operator via Swipe Action and Status Management" time="16.704">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update only Operator Emergency No             # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:231
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Emergency No               # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorEmergencyNo()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Clear optional Operator fields and save" classname="Update Operator via Swipe Action and Status Management" time="42.082">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Clear optional Operator fields and save       # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:253
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature               # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                       # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                   # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field         # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load             # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results  # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                    # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                       # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed       # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User clears Operator Emergency No field          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorEmergencyNoField()
+  And User clears Operator Code field                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorCodeField()
+[INFO] DOB clear — date View fields are cleared by re-selecting; skipping in test flow
+  And User clears Operator DOB field                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorDOBField()
+[INFO] DOJ clear — date View fields are cleared by re-selecting; skipping in test flow
+  And User clears Operator DOJ field                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorDOJField()
+  And User clears Operator Address Line I field         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorAddressLine1Field()
+  And User clears Operator Address Line II field        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorAddressLine2Field()
+  And User clears Operator Pin Code field               # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorPinCodeField()
+  And User clears Operator City field                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorCityField()
+  And User clears Operator State field                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorStateField()
+  And User clears Operator Country field                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorCountryField()
+  And User clicks Save button in Edit Operator screen   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator should be updated successfully          # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Save Edit Operator without making any changes" classname="Update Operator via Swipe Action and Status Management" time="12.071">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Save Edit Operator without making any changes                       # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:284
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                            # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                             # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                         # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                               # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                   # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                          # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                             # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                             # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User clicks Save button in Edit Operator screen without making changes # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreenWithoutMakingChanges()
+  Then Operator should be updated successfully                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorShouldBeUpdatedSuccessfully()
+  When User clicks search close X button                                      # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                          # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                   # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                       # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update Operator Name with leading and trailing spaces" classname="Update Operator via Swipe Action and Status Management" time="17.36">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Update Operator Name with leading and trailing spaces                  # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:305
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                                # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                            # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                                  # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                      # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                           # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                             # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                                # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                                # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters Operator Name with leading and trailing spaces in Edit screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersOperatorNameWithLeadingAndTrailingSpacesInEditScreen()
+  And User clicks Save button in Edit Operator screen                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then system should trim spaces and update Operator successfully                # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldTrimSpacesAndUpdateOperatorSuccessfully()
+  When User clicks search close X button                                         # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                             # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                      # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                          # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify updated data matches in list after update" classname="Update Operator via Swipe Action and Status Management" time="6.724">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Verify updated data matches in list after update # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:327
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                         # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section             # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                  # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                          # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                      # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field            # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results     # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list               # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User clicks search close X button                   # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                       # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list    # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update without Operator Name" classname="Update Operator via Swipe Action and Status Management" time="23.983">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p1
+Scenario: Update without Operator Name                             # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:347
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                  # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                              # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                    # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                        # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results             # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                               # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                  # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                  # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User clears Operator Name field                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorNameField()
+  And User clicks Save button in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then "This field is required" should be displayed                # StepDefinitions.configurations.operators.OperatorCreationSteps.stringShouldBeDisplayed(java.lang.String)
+  When User clicks back arrow in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed               # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                           # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                               # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                        # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list            # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update without Operator Phone No" classname="Update Operator via Swipe Action and Status Management" time="24.128">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p1
+Scenario: Update without Operator Phone No                         # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:372
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                  # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                              # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                    # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                        # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results             # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                               # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                  # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                  # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User clears Operator Phone No field                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorPhoneNoField()
+  And User clicks Save button in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then "Phone No is required" should be displayed                  # StepDefinitions.configurations.operators.OperatorCreationSteps.stringShouldBeDisplayed(java.lang.String)
+  When User clicks back arrow in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed               # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                           # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                               # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                        # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list            # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update without Operator Blood Group" classname="Update Operator via Swipe Action and Status Management" time="12.02">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p1
+Scenario: Update without Operator Blood Group                                    # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:397
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                                # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                            # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                                  # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                      # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                           # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                             # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                                # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                                # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+[INFO] Blood Group clearing not supported in Flutter dropdown — no-op
+  When User clears Operator Blood Group selection                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClearsOperatorBloodGroupSelection()
+  And User clicks Save button in Edit Operator screen                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+[INFO] Blood Group dropdown in Edit mode requires selecting an option — clearing is not supported.
+  Then Blood Group required validation is not applicable in Edit Operator screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.bloodGroupRequiredValidationNotApplicableInEditOperatorScreen()
+  When User exits Edit Operator screen if still open                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userExitsEditOperatorScreenIfStillOpen()
+  When User clicks search close X button                                         # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                             # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                      # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                          # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update with duplicate Operator Phone No" classname="Update Operator via Swipe Action and Status Management" time="25.002">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p2
+Scenario: Update with duplicate Operator Phone No                     # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:425
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                     # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                 # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                       # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                           # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                  # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                     # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                     # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters existing Operator Phone No in Edit Operator screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersExistingOperatorPhoneNoInEditOperatorScreen()
+  And User clicks Save button in Edit Operator screen                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then "Phone Number Already Exits" alert should be displayed         # StepDefinitions.configurations.operators.OperatorCreationSteps.stringAlertShouldBeDisplayed(java.lang.String)
+  And User dismisses the toast message                                # StepDefinitions.common.CommonFormSteps.userDismissesToastMessage()
+  When User clicks back arrow in Edit Operator screen                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed                  # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup    # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                              # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                  # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                           # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list               # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update with Operator Phone No less than 10 digits" classname="Update Operator via Swipe Action and Status Management" time="17.483">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p2
+Scenario: Update with Operator Phone No less than 10 digits                  # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:451
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                           # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                            # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                        # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                              # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                  # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                         # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                            # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                            # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters Operator Phone No with less than 10 digits in Edit screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersOperatorPhoneNoWithLessThan10DigitsInEditScreen()
+  And User clicks Save button in Edit Operator screen                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator phone number format validation error should be displayed     # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorPhoneNumberFormatValidationErrorShouldBeDisplayed()
+  When User clicks back arrow in Edit Operator screen                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed                         # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup           # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                                     # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                         # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                  # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                      # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update with non-numeric Operator Phone No" classname="Update Operator via Swipe Action and Status Management" time="18.48">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p2
+Scenario: Update with non-numeric Operator Phone No                      # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:476
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                           # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                        # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                    # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                          # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                              # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                     # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                        # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                        # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters non-numeric value in Operator Phone No in Edit screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNonNumericValueInOperatorPhoneNoInEditScreen()
+  And User clicks Save button in Edit Operator screen                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then Operator phone number format validation error should be displayed # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorPhoneNumberFormatValidationErrorShouldBeDisplayed()
+  When User clicks back arrow in Edit Operator screen                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed                     # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup       # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                                 # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                     # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                              # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                  # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update with only spaces in Operator Name" classname="Update Operator via Swipe Action and Status Management" time="23.923">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p2
+Scenario: Update with only spaces in Operator Name                 # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:501
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                  # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                              # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                    # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                        # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results             # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                               # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                  # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                  # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters only spaces in Operator Name field              # StepDefinitions.configurations.operators.OperatorCreationSteps.userEntersOnlySpacesInOperatorNameField()
+  And User clicks Save button in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonInEditOperatorScreen()
+  Then "This field is required" should be displayed                # StepDefinitions.configurations.operators.OperatorCreationSteps.stringShouldBeDisplayed(java.lang.String)
+  When User clicks back arrow in Edit Operator screen              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  And "Confirmation Alert" popup should be displayed               # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  When User clicks search close X button                           # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                               # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                        # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list            # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Update with invalid Operator Pin Code format" classname="Update Operator via Swipe Action and Status Management" time="21.617">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @negative @regression @p2
+Scenario: Update with invalid Operator Pin Code format                               # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:531
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                            # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                                    # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                                # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                                      # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                          # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                               # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                                 # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                                    # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                                    # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User enters invalid Operator Pin Code in Edit screen                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersInvalidOperatorPinCodeInEditScreen()
+[INFO] Pin Code validation in Edit mode — entering too-short value does not trigger format validation.
+  Then Operator Pin Code format validation is not applicable in Edit Operator screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.operatorPinCodeFormatValidationNotApplicableInEditOperatorScreen()
+  When User exits Edit Operator screen if still open                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userExitsEditOperatorScreenIfStillOpen()
+  When User clicks search close X button                                             # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                                 # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                          # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                              # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Close Edit Operator screen with unsaved changes shows Confirmation Alert" classname="Update Operator via Swipe Action and Status Management" time="15.749">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @sanity @p2
+Scenario: Close Edit Operator screen with unsaved changes shows Confirmation Alert # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:558
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                                  # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                              # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                                    # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                      # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                        # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                               # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                                  # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                                  # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User updates Operator Name                                                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userUpdatesOperatorName()
+  And User clicks back arrow in Edit Operator screen                               # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  Then "Confirmation Alert" popup should be displayed                              # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  When User clicks on "Yes, Exit" button on the confirmation popup                 # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
+  Then changes should not be saved in Operator                                     # StepDefinitions.configurations.operators.OperatorUpdateSteps.changesShouldNotBeSavedInOperator()
+  When User clicks search close X button                                           # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                               # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                        # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                            # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Rapid Save clicks should prevent duplicate Operator update" classname="Update Operator via Swipe Action and Status Management" time="42.251">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @sanity @p3
+Scenario: Rapid Save clicks should prevent duplicate Operator update          # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:582
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                            # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                                # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                              # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                             # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                         # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                               # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                   # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                  # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                                          # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                                             # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed                             # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+  When User clicks Save button multiple times quickly in Edit Operator screen # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksSaveButtonMultipleTimesQuicklyInEditOperatorScreen()
+  Then system should prevent duplicate Operator update                        # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldPreventDuplicateOperatorUpdate()
+  When User clicks search close X button                                      # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                          # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                   # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                       # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Rapid swipe right-to-left on Operator record" classname="Update Operator via Swipe Action and Status Management" time="10.049">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @sanity @p3
+Scenario: Rapid swipe right-to-left on Operator record                       # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:603
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                           # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                             # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                                            # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                        # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                              # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                                  # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                       # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                                 # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left multiple times quickly # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeftMultipleTimesQuickly()
+  Then only one Edit option should be visible in Operator list               # StepDefinitions.configurations.operators.OperatorUpdateSteps.onlyOneEditOptionShouldBeVisibleInOperatorList()
+  When User clicks search close X button                                     # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                         # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                                  # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list                      # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Edit Operator screen UI elements and alignment" classname="Update Operator via Swipe Action and Status Management" time="10.837">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p2
+Scenario: Verify Edit Operator screen UI elements and alignment # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:625
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                              # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                  # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                               # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                           # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                 # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name                   # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                     # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results          # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                    # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                            # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                               # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed               # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+[INFO] Edit Operator field alignment verified visually
+  And all Edit Operator fields should be aligned properly       # StepDefinitions.configurations.operators.OperatorUpdateSteps.allEditOperatorFieldsShouldBeAlignedProperly()
+[INFO] Editable fields enabled in Edit Operator screen
+  And editable Operator fields should be enabled                # StepDefinitions.configurations.operators.OperatorUpdateSteps.editableOperatorFieldsShouldBeEnabled()
+  And Save button should be visible in Edit Operator screen     # StepDefinitions.configurations.operators.OperatorUpdateSteps.saveButtonShouldBeVisibleInEditOperatorScreen()
+  When User clicks back arrow in Edit Operator screen           # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  When User clicks search close X button                        # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                            # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                     # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list         # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Edit Operator form can be scrolled" classname="Update Operator via Swipe Action and Status Management" time="10.387">
+    <system-out><![CDATA[
+@regression @smoke @update @p1 @regression @p3
+Scenario: Verify Edit Operator form can be scrolled         # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorUpdate.feature:648
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section              # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  When User has updated Operator                            # StepDefinitions.configurations.operators.OperatorUpdateSteps.userHasUpdatedOperator()
+  When User clicks on search icon                           # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                       # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field             # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly updated Operator Name               # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyUpdatedOperatorName()
+  And User waits for search results to load                 # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results      # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User swipes Operator record from right to left       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userSwipesOperatorRecordFromRightToLeft()
+  Then Edit option should be visible                        # StepDefinitions.common.CommonFormSteps.editOptionShouldBeVisible()
+  When User clicks on Edit button                           # StepDefinitions.common.CommonFormSteps.userClicksOnEditButton()
+  Then "Edit Operator" screen should be displayed           # StepDefinitions.configurations.operators.OperatorCreationSteps.screenShouldBeDisplayed(java.lang.String)
+[INFO] Edit Operator form scroll capability confirmed
+  Then user should be able to scroll the Edit Operator form # StepDefinitions.configurations.operators.OperatorUpdateSteps.userShouldBeAbleToScrollTheEditOperatorForm()
+  When User clicks back arrow in Edit Operator screen       # StepDefinitions.configurations.operators.OperatorUpdateSteps.userClicksBackArrowInEditOperatorScreen()
+  When User clicks search close X button                    # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                        # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                 # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list     # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+</testsuite>

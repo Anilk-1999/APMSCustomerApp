@@ -57,7 +57,7 @@ public class DataGenerator {
     public static String randomOperatorCode()      { return "OPR"       + fourDigit(); }
     public static String randomEmpCode()           { return "EMP"       + fourDigit(); }
     public static String randomEmail()             { return "user"      + fourDigit() + "@example.com"; }
-    public static String randomPhone()             { return "9"         + eightDigit(); }
+    public static String randomPhone()             { return "9"         + nineDigit(); }
     public static String randomPinCode()           { return String.valueOf(100000 + RNG.nextInt(899999)); }
     public static String randomAddress()           { return "BTM Layout " + (1 + RNG.nextInt(9)) + " Stage"; }
 
@@ -87,5 +87,5 @@ public class DataGenerator {
     // ── Internals ─────────────────────────────────────────────────────────────
 
     private static String fourDigit()  { return String.format("%04d", RNG.nextInt(9999)); }
-    private static String eightDigit() { return String.format("%08d", RNG.nextInt(99999999)); }
+    private static String nineDigit()  { return String.format("%09d", RNG.nextInt(999999999)); }
 }

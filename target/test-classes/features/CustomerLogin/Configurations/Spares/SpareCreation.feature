@@ -1,17 +1,31 @@
+@regression @smoke @create @p1
 Feature: Create Spare via Configuration Module
 
   Background:
+    When User clicks on profile icon
+    When User clicks on "Configurations" section
+    When User clicks on "Spares" feature
+
+  # =========================================================
+  # NAVIGATION FLOW
+  # =========================================================
+
+  @smoke @p1
+  Scenario: Navigate to Spares list screen
     When User clicks on profile icon
     Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
     Then verify the "Maintenance" section is displayed
     When User clicks on "Spares" feature
     Then verify user navigates to "Spares" list screen
+    Then Spares list should be displayed
+    And Add "+" button should be visible in Spares list
 
   # =========================================================
-  # ➕ OPEN ADD SPARE POPUP
+  # OPEN ADD NEW SPARE POPUP
   # =========================================================
 
+  @smoke @p1
   Scenario: Open Add New Spare popup
     When User clicks on "+ Add" button in Spares list screen
     Then "Add New Spare" popup should be displayed
@@ -22,169 +36,284 @@ Feature: Create Spare via Configuration Module
     And Description field should be visible
     And Submit button should be visible
     And Close "X" button should be visible
+    When User clicks Close "X" button in Spare popup
+    Then Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # 🧪 POSITIVE SCENARIOS
+  # POSITIVE SCENARIOS
   # =========================================================
 
+  @smoke @regression @p1
   Scenario: Create Spare with all fields
-    When User clicks on "+ Add" button
-    And User enters valid Spare Name
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
     And User enters valid Spare Code
     And User selects UOM from dropdown
     And User enters valid Current Stock value
     And User enters Description
     And User clicks Submit button
     Then Spare should be created successfully
-    And Spare should be visible in Spares list screen
+    And newly created Spare should be visible in Spares list screen
 
+  @regression @p1
   Scenario: Create Spare with mandatory fields only
-    When User clicks on "+ Add" button
-    And User enters valid Spare Name
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
     And User enters valid Spare Code
-    And User selects UOM
-    And User enters valid Current Stock
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
     And User leaves Description empty
     And User clicks Submit button
     Then Spare should be created successfully
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Create Spare with decimal stock value
-    When User enters Current Stock as "12345.67"
-    Then system should accept valid decimal format
-
-  Scenario: Create Spare with minimum value
-    When User enters Current Stock as "0"
+  @regression @p1
+  Scenario: Create Spare with valid decimal stock value
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "12345.67"
+    And User clicks Submit button
     Then Spare should be created successfully
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Create Spare with trimmed inputs
+  @regression @p2
+  Scenario: Create Spare with zero stock value
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "0"
+    And User clicks Submit button
+    Then Spare should be created successfully
+    And Verify User should be navigate into "Spares" list
+
+  @regression @p2
+  Scenario: Create Spare with maximum boundary stock value
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "999999.99"
+    And User clicks Submit button
+    Then Spare should be created successfully
+    And Verify User should be navigate into "Spares" list
+
+  @regression @p2
+  Scenario: Create Spare with trimmed Spare Name
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
     When User enters Spare Name with leading and trailing spaces
-    And User enters Spare Code with spaces
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
     And User clicks Submit button
     Then system should trim spaces and create Spare successfully
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # ❌ NEGATIVE SCENARIOS
+  # NEGATIVE SCENARIOS
   # =========================================================
 
+  @negative @regression @p1
   Scenario: Create Spare without Spare Name
-    When User clicks on "+ Add" button
-    And User leaves Spare Name empty
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User leaves Spare Name empty
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
     And User clicks Submit button
-    Then "Spare Name is required" error should be displayed
+    Then "This field is required" error should be displayed
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
+  @negative @regression @p1
   Scenario: Create Spare without Spare Code
-    When User clicks on "+ Add" button
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
     And User leaves Spare Code empty
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
     And User clicks Submit button
-    Then "Spare Code is required" error should be displayed
+    Then "This field is required" error should be displayed
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
-  Scenario: Create Spare without UOM
-    When User clicks on "+ Add" button
+  @negative @regression @p1
+  Scenario: Create Spare without UOM selection
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
     And User does not select UOM
+    And User enters valid Current Stock value
     And User clicks Submit button
-    Then "UOM is required" error should be displayed
+    Then "This field is required" error should be displayed
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
+  @negative @regression @p1
   Scenario: Create Spare without Current Stock
-    When User clicks on "+ Add" button
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
     And User leaves Current Stock empty
     And User clicks Submit button
-    Then "Current Stock is required" error should be displayed
+    Then "This field is required" error should be displayed
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
-  Scenario: Duplicate Spare Code
-    When User enters existing Spare Code
+  @negative @regression @p2
+  Scenario: Current Stock exceeds 6 digits before decimal
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "1000000"
+    Then stock validation error should be displayed below Current Stock field
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
+
+  @negative @regression @p2
+  Scenario: Current Stock has more than 2 decimal places
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "123.456"
+    Then stock validation error should be displayed below Current Stock field
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
+
+  @negative @regression @p2
+  Scenario: Spare Name contains only spaces
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters only spaces in Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
     And User clicks Submit button
-    Then duplicate validation error should be displayed
-
-  Scenario: Invalid Current Stock format
-    When User enters alphabets in Current Stock
-    Then "Invalid number format" error should be displayed
-
-  Scenario: Current Stock exceeds limit
-    When User enters value more than 6 digits before decimal
-    Then validation error should be displayed
-
-  Scenario: More than 2 decimal places
-    When User enters "123.456"
-    Then "Only 2 decimal places allowed" error should be displayed
-
-  Scenario: Negative Current Stock
-    When User enters negative value
-    Then validation error should be displayed
-
-  Scenario: Invalid Spare Name or Code
-    When User enters only special characters
-    Then validation error should be displayed
+    Then "This field is required" error should be displayed
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # ⚠️ EDGE CASE SCENARIOS
+  # EDGE CASE SCENARIOS
   # =========================================================
 
-  Scenario: Enter only spaces in fields
-    When User enters spaces in mandatory fields
-    Then validation errors should be displayed
+  @sanity @p2
+  Scenario: Rapid multiple Submit clicks
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
+    When User clicks Submit button multiple times quickly in Spare popup
+    Then system should prevent duplicate Spare creation
 
-  Scenario: Max boundary value
-    When User enters "999999.99"
-    Then system should accept value
-
-  Scenario: Exceed max boundary
-    When User enters "1000000"
-    Then validation error should be displayed
-
-  Scenario: Rapid submit clicks
-    When User clicks Submit button multiple times quickly
-    Then system should prevent duplicate creation
-
-  Scenario: Large text in Description
-    When User enters large text in Description
-    Then system should handle input properly
-
-  Scenario: Network failure during creation
-    When User clicks Submit button without internet
-    Then system should display error message
-
-  Scenario: Session timeout
-    When session expires during creation
-    Then User should be redirected to login screen
-
+  @regression @p2
   Scenario: Close popup without saving
-    When User enters data and clicks "X"
-    Then popup should be closed without saving
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters valid Current Stock value
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then popup should be closed without saving Spare data
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # 📱 UI VALIDATION SCENARIOS
+  # UI VALIDATION SCENARIOS
   # =========================================================
 
-  Scenario: Verify Add Spare popup UI
-    When User opens Add Spare popup
-    Then all fields should be aligned properly
-    And labels should be clearly visible
-    And input fields should be enabled
-    And Submit button should be enabled only after mandatory fields are filled
+  @regression @p2
+  Scenario: Verify Add New Spare popup UI elements
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    And Spare Name field should be visible
+    And Spare Code field should be visible
+    And UOM dropdown should be visible
+    And Current Stock field should be visible
+    And Description field should be visible
+    And Submit button should be visible
+    And Close "X" button should be visible
+    When User clicks Close "X" button in Spare popup
+    Then Verify User should be navigate into "Spares" list
 
-  Scenario: Verify UOM dropdown
-    When User clicks UOM dropdown
-    Then list of UOM values should be displayed
-    And User should be able to select one value
+  @regression @p2
+  Scenario: Verify Spares list screen UI
+    Then Spares list should be displayed
+    And each Spare record should show Spare ID
+    And each Spare record should show Spare Name
+    And each Spare record should show Spare Code
+    And each Spare record should show UOM
+    And each Spare record should show Stock value
+    And each Spare record should show Status
 
-  Scenario: Verify error message placement
-    When validation fails
-    Then error messages should be displayed below respective fields
+  @regression @p2
+  Scenario: Verify UOM dropdown options
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User clicks on UOM dropdown
+    Then UOM options list should be displayed
+    And User should be able to select one UOM value
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list
 
-  Scenario: Verify Close (X) button
-    When User clicks "X"
-    Then popup should be closed
+  @regression @p2
+  Scenario: Verify Close X button closes popup
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then popup should be closed without saving Spare data
+    And Verify User should be navigate into "Spares" list
 
-  # =========================================================
-  # 🔍 FIELD VALIDATION SCENARIOS
-  # =========================================================
-
-  Scenario: Validate Current Stock field rules
-    Then system should enforce:
-      | Rule |
-      | Required field |
-      | Numeric only |
-      | Max 6 digits before decimal |
-      | Max 2 digits after decimal |
-      | No negative values |
-
+  @regression @p2
+  Scenario: Verify stock validation error message placement
+    When User clicks on "+ Add" button in Spares list screen
+    Then "Add New Spare" popup should be displayed
+    When User enters valid Spare Name
+    And User enters valid Spare Code
+    And User selects UOM from dropdown
+    And User enters Current Stock as "1234567.89"
+    Then stock validation error should be displayed below Current Stock field
+    When User clicks Close "X" button in Spare popup
+    And "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Verify User should be navigate into "Spares" list

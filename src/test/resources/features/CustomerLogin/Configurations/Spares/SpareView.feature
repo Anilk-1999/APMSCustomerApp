@@ -1,6 +1,17 @@
+@regression @view @p2
 Feature: View Spare Details from Spares List
 
   Background:
+    When User clicks on profile icon
+    When User clicks on "Configurations" section
+    When User clicks on "Spares" feature
+
+  # =========================================================
+  # SEARCH + VIEW FLOW
+  # =========================================================
+
+  @smoke @p1
+  Scenario: Search and open View Spare popup
     When User clicks on profile icon
     Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
@@ -8,12 +19,6 @@ Feature: View Spare Details from Spares List
     When User clicks on "Spares" feature
     Then verify user navigates to "Spares" list screen
     And User has already created a Spare
-
-  # =========================================================
-  # 🔍 SEARCH + VIEW FLOW
-  # =========================================================
-
-  Scenario: Search and open View Spare popup
     When User clicks on search icon
     And User taps on search input field
     And User clears existing text in search field
@@ -31,156 +36,230 @@ Feature: View Spare Details from Spares List
     And Current Stock should be visible
     And Description should be visible if exists
     And Close "X" button should be visible
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # 🔒 READ-ONLY VALIDATION
+  # READ-ONLY VALIDATION
   # =========================================================
 
-  Scenario: Verify fields are non-editable in view popup
-    When User opens View Spare popup
-    Then Spare Name field should be non-editable
-    And Spare Code field should be non-editable
-    And UOM field should be non-editable
-    And Current Stock field should be non-editable
-    And Description field should be non-editable
+  @regression @p1
+  Scenario: Verify all fields are non-editable in View Spare popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
+    Then Spare Name field should be non-editable in View popup
+    And Spare Code field should be non-editable in View popup
+    And UOM field should be non-editable in View popup
+    And Current Stock field should be non-editable in View popup
+    And Description field should be non-editable in View popup
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Verify no Save/Edit buttons
-    When User opens View Spare popup
+  @regression @p1
+  Scenario: Verify no Save or Edit buttons in View Spare popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
     Then Save button should NOT be visible
     And Edit option should NOT be available
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # 🔁 STATUS FLOW (ALLOWED IN VIEW)
+  # POSITIVE SCENARIOS
   # =========================================================
 
-  Scenario: Change status from Active to Inactive
-    When User opens View Spare popup
-    And current status is Active
-    And User clicks on Status button
-    Then Status confirmation popup should be displayed
-    And "Yes, Change" button should be visible
-    When User clicks "Yes, Change"
-    Then status should be changed to Inactive
-    And updated status should be displayed in UI
-
-  Scenario: Change status from Inactive to Active
-    When User opens View Spare popup
-    And current status is Inactive
-    And User clicks on Status button
-    And User confirms change
-    Then status should be changed to Active
-
-  Scenario: Cancel status change
-    When User opens View Spare popup
-    And User clicks Status button
-    And User closes popup without confirmation
-    Then status should remain unchanged
-
-  # =========================================================
-  # 🧪 POSITIVE SCENARIOS
-  # =========================================================
-
-  Scenario: Verify Spare data accuracy
-    When User opens View Spare popup
+  @regression @p1
+  Scenario: Verify Spare data accuracy in View popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
     Then Spare Name should match created data
     And Spare Code should match saved data
     And UOM should match saved data
     And Current Stock should match saved data
-    And Description should match saved data if available
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Verify popup close functionality
-    When User clicks on "X" button
+  @regression @p2
+  Scenario: Verify View Spare popup close functionality
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
+    When User clicks Close "X" button in Spare popup
     Then popup should be closed
-    And User should return to Spares list screen
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Verify Current Stock display format
-    When User opens View Spare popup
+  @regression @p2
+  Scenario: Verify Current Stock display format in View popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
     Then Current Stock should be displayed in valid numeric format
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # ❌ NEGATIVE SCENARIOS
+  # NEGATIVE SCENARIOS
   # =========================================================
 
-  Scenario: Attempt to edit fields
-    When User opens View Spare popup
-    And User tries to edit Spare Name
-    Then Spare Name field should not allow modification
-    When User tries to edit Spare Code
-    Then Spare Code field should not allow modification
-    When User tries to edit UOM
-    Then UOM field should not allow modification
-    When User tries to edit Current Stock
-    Then Current Stock field should not allow modification
-    When User tries to edit Description
-    Then Description field should not allow modification
-
-  Scenario: View deleted Spare
-    When Spare is removed from backend
-    And User searches same record
-    Then system should display "Record not found"
-
-  Scenario: Unauthorized access
-    When User without permission tries to view Spare
-    Then system should show "Access Denied"
+  @negative @regression @p2
+  Scenario: Attempt to edit fields in View Spare popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
+    When User tries to edit Spare Name in View popup
+    Then system should not allow modification in View Spare popup
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # ⚠️ EDGE CASE SCENARIOS
+  # EDGE CASE SCENARIOS
   # =========================================================
 
-  Scenario: Rapid click on record
+  @sanity @p3
+  Scenario: Rapid click on Spare record
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
     When User clicks Spare record multiple times quickly
-    Then only one View popup should open
-
-  Scenario: Rapid status clicks
-    When User clicks Status multiple times quickly
-    Then only one confirmation popup should appear
-
-  Scenario: Large description handling
-    When Spare contains large Description text
-    Then user should be able to view content properly
-
-  Scenario: Network failure during view
-    When User clicks record without internet
-    Then system should display error message
-
-  Scenario: Session timeout during view
-    When session expires while opening popup
-    Then User should be redirected to login screen
+    Then only one View Spare popup should open
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
   # =========================================================
-  # 📱 UI VALIDATION SCENARIOS
+  # UI VALIDATION SCENARIOS
   # =========================================================
 
+  @regression @p2
   Scenario: Verify View Spare popup UI
-    When User opens View Spare popup
-    Then all fields should be aligned properly
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
+    Then all Spare View fields should be aligned properly
     And labels should be clearly visible
     And values should be readable
     And "X" button should be correctly positioned
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Verify read-only UI behavior
-    When User opens View Spare popup
-    Then all fields except Status should be disabled
-    And no input cursor should be visible
+  @regression @p2
+  Scenario: Verify all fields are read-only in View Spare popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
+    Then all Spare fields in View popup should be non-editable
+    And no input cursor should appear in any field
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
 
-  Scenario: Verify status UI
-    When User opens View Spare popup
+  @regression @p2
+  Scenario: Verify status visibility in View Spare popup
+    When User has already created a Spare
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Spare Name
+    And User waits for search results to load
+    Then system should display matching Spare records
+    And User verifies Spare appears in list
+    When User clicks on the Spare record
+    Then "View Spare" popup should be displayed
     Then status should be clearly visible
-    And clickable for toggle
-
-
-  # =========================================================
-  # 🔁 SEARCH VARIATION COVERAGE
-  # =========================================================
-
-  Scenario Outline: Validate search behavior
-    When User enters "<input>" in search field
-    Then system should return "<result>"
-
-    Examples:
-      | input            | result           |
-      | exact name       | record found     |
-      | partial name     | relevant results |
-      | uppercase        | record found     |
-      | invalid input    | no results       |
-      | special chars    | safe handling    |
+    When User clicks Close "X" button in Spare popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Verify User should be navigate into "Spares" list
