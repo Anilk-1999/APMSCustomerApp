@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.ProductGroupViewRunner" time="285.281" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\test-classes;C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\classes;C:\Users\Anil Kumar M\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Anil Kumar M\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\appium\java-client\9.2.2\java-client-9.2.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-picocontainer\7.16.1\cucumber-picocontainer-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\Anil Kumar M\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\Anil Kumar M\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.13.0\extentreports-cucumber7-adapter-1.13.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anil Kumar M\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-excel-report\1.3.0\extent-excel-report-1.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Anil Kumar M\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-pdf-report\2.12.0\extent-pdf-report-2.12.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.14.0\cucumber-pdf-report-2.14.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\Anil Kumar M\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\Anil Kumar M\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\Anil Kumar M\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.5.0\rest-assured-cucumber-pdf-report-1.5.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\Anil Kumar M\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin"/>
+    <property name="sun.java.command" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire6004448302620242388\surefirebooter-20260523192956585_3.jar C:\Users\Anil Kumar M\AppData\Local\Temp\surefire6004448302620242388 2026-05-23T19-29-56_398-jvmRun1 surefire-20260523192956585_1tmp surefire_0-20260523192956585_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="testRunner.ProductGroupViewRunner"/>
+    <property name="surefire.test.class.path" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\test-classes;C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\classes;C:\Users\Anil Kumar M\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Anil Kumar M\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\appium\java-client\9.2.2\java-client-9.2.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-picocontainer\7.16.1\cucumber-picocontainer-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\Anil Kumar M\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\Anil Kumar M\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.13.0\extentreports-cucumber7-adapter-1.13.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anil Kumar M\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-excel-report\1.3.0\extent-excel-report-1.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Anil Kumar M\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-pdf-report\2.12.0\extent-pdf-report-2.12.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.14.0\cucumber-pdf-report-2.14.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\Anil Kumar M\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\Anil Kumar M\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\Anil Kumar M\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.5.0\rest-assured-cucumber-pdf-report-1.5.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\Anil Kumar M\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Anil Kumar M"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire6004448302620242388\surefirebooter-20260523192956585_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.16+12-LTS-247"/>
+    <property name="user.name" value="Anil Kumar M"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Anil Kumar M\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ANILKU~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Anil Kumar M\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Anil Kumar M\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\Revanth Mahesh\Downloads\platform-tools-latest-windows\platform-tools;C:\Program Files\nodejs;C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platform-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\build-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platforms;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\tools\bin;C:\Users\Anil Kumar M\Apache\Maven\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311;C:\Users\Anil Kumar M\AppData\Local\Microsoft\WindowsApps;C:\Users\Anil Kumar M\AppData\Roaming\npm;C:\Users\Anil Kumar M\Android\sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.16+12-LTS-247"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="Verify onboarding screens and navigate to login" classname="Login Functionality" time="13.039">
+    <system-out><![CDATA[✅ Driver initialized successfully
+
+Scenario: Verify onboarding screens and navigate to login          # src/test/resources/features/CustomerLogin/01_Login.feature:5
+  Given the app is launched                                        # StepDefinitions.configurations.login.LoginSteps.the_app_is_launched()
+  And Verify the "Digitization" screen is displayed                # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_is_displayed(java.lang.String)
+  When the user clicks on Next                                     # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next()
+  Then Verify the "World of Machines" screen should be displayed   # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_displayed(java.lang.String)
+  When the user clicks on Next again                               # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_next_again()
+  Then Verify the "Accelerating Growth" screen should displayed    # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_displayed(java.lang.String)
+  When the user clicks on Finish                                   # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_finish()
+  Then Verify the "Login to Your Account" screen should be visible # StepDefinitions.configurations.login.LoginSteps.verify_the_screen_should_be_visible(java.lang.String)
+  When the user double taps on the APMS AI footer if needed        # StepDefinitions.configurations.login.LoginSteps.the_user_double_taps_on_the_apms_ai_footer_if_needed()
+[AppHooks] On login screen — stopping
+]]></system-out>
+  </testcase>
+  <testcase name="Verify user is able to login successfully" classname="Login Functionality" time="12.424">
+    <system-out><![CDATA[
+Scenario: Verify user is able to login successfully     # src/test/resources/features/CustomerLogin/01_Login.feature:69
+  Given the user is on the login screen                 # StepDefinitions.configurations.login.LoginSteps.the_user_is_on_the_login_screen()
+  When the user enters email "anilkumar.m@apms.ai"      # StepDefinitions.configurations.login.LoginSteps.the_user_enters_email(java.lang.String)
+  And the user enters password "1234"                   # StepDefinitions.configurations.login.LoginSteps.the_user_enters_password(java.lang.String)
+  And the user clicks on Login                          # StepDefinitions.configurations.login.LoginSteps.the_user_clicks_on_login()
+  Then Verify the user should be logged in successfully # StepDefinitions.configurations.login.LoginSteps.verify_the_user_should_be_logged_in_successfully()
+[AppHooks] On Dashboard — stopping
+]]></system-out>
+  </testcase>
+  <testcase name="Search and open View Product Group popup" classname="View Product Group Details from Product Groups List" time="35.433">
+    <system-out><![CDATA[
+@regression @view @p2 @smoke @p1
+Scenario: Search and open View Product Group popup               # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:15
+  When User clicks on profile icon                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+  When User clicks on "Configurations" section                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+  When User clicks on "Product Groups" feature                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify that the "Account Preferences" screen is displayed # StepDefinitions.common.CommonNavigationSteps.verifyScreenIsDisplayed(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify the "Product" section is displayed                 # StepDefinitions.common.CommonNavigationSteps.verifySectionIsDisplayed(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  Then verify user navigates to "Product Groups" list screen     # StepDefinitions.common.CommonNavigationSteps.verifyUserNavigatesToListScreen(java.lang.String)
+  And User has already created a Product Group                   # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User clicks on search icon                                # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                            # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                  # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Product Group Name               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userEntersNewlyCreatedProductGroupName()
+  And User waits for search results to load                      # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+  Then system should display matching product group results      # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.systemShouldDisplayMatchingProductGroupResults()
+  And User verifies product group appears in list                # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userVerifiesProductGroupAppearsInList()
+  When User clicks on the product group record                   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userClicksOnTheProductGroupRecord()
+  Then "View Product Group" popup should be displayed            # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  And Product Group ID should be visible                         # StepDefinitions.configurations.productgroups.ProductGroupUpdateSteps.productGroupIdShouldBeVisible()
+  And Product Group Name should be visible                       # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupNameShouldBeVisible()
+  And Product Group Code should be visible                       # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupCodeShouldBeVisible()
+  And Description should be visible                              # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionShouldBeVisible()
+  And Close "X" button should be visible                         # StepDefinitions.common.CommonFormSteps.closeButtonShouldBeVisible(java.lang.String)
+  And all fields should be displayed in read-only mode           # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.allFieldsShouldBeDisplayedInReadOnlyMode()
+  When User clicks Close "X" button                              # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                         # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                             # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                      # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen           # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify fields are non-editable in View Product Group popup" classname="View Product Group Details from Product Groups List" time="10.015">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p1
+Scenario: Verify fields are non-editable in View Product Group popup # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:52
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User clicks on search icon                                    # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                      # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Product Group Name                   # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userEntersNewlyCreatedProductGroupName()
+  And User waits for search results to load                          # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+  Then system should display matching product group results          # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.systemShouldDisplayMatchingProductGroupResults()
+  And User verifies product group appears in list                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userVerifiesProductGroupAppearsInList()
+  When User clicks on the product group record                       # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userClicksOnTheProductGroupRecord()
+  Then "View Product Group" popup should be displayed                # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  Then Product Group Name field should not be editable               # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupNameFieldShouldNotBeEditable()
+  And Product Group Code should not be editable                      # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupCodeShouldNotBeEditable()
+  And Description should not be editable                             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionShouldNotBeEditable()
+  And no editable input cursor should be visible                     # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.noEditableInputCursorShouldBeVisible()
+  When User clicks Close "X" button                                  # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                             # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                 # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                          # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify no Save or Edit buttons in View Product Group popup" classname="View Product Group Details from Product Groups List" time="8.785">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p1
+Scenario: Verify no Save or Edit buttons in View Product Group popup # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:74
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User clicks on search icon                                    # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                      # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Product Group Name                   # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userEntersNewlyCreatedProductGroupName()
+  And User waits for search results to load                          # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+  Then system should display matching product group results          # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.systemShouldDisplayMatchingProductGroupResults()
+  And User verifies product group appears in list                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userVerifiesProductGroupAppearsInList()
+  When User clicks on the product group record                       # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userClicksOnTheProductGroupRecord()
+  Then "View Product Group" popup should be displayed                # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  Then Save button should not be visible                             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.saveButtonShouldNotBeVisible()
+  And Edit button should not be visible                              # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.editButtonShouldNotBeVisible()
+  When User clicks Close "X" button                                  # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                             # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                 # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                          # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Product Group view data accuracy" classname="View Product Group Details from Product Groups List" time="12.784">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p1
+Scenario: Verify Product Group view data accuracy                # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:99
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                               # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                   # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User clicks on search icon                                # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                            # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                  # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Product Group Name               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userEntersNewlyCreatedProductGroupName()
+  And User waits for search results to load                      # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+  Then system should display matching product group results      # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.systemShouldDisplayMatchingProductGroupResults()
+  And User verifies product group appears in list                # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userVerifiesProductGroupAppearsInList()
+  When User clicks on the product group record                   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userClicksOnTheProductGroupRecord()
+  Then "View Product Group" popup should be displayed            # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  Then system should display the following fields:               # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.systemShouldDisplayTheFollowingFields(io.cucumber.datatable.DataTable)
+    | Field              |
+    | Product Group ID   |
+    | Product Group Name |
+    | Product Group Code |
+    | Description        |
+  And all displayed values should match saved Product Group data # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.allDisplayedValuesShouldMatchSavedProductGroupData()
+  When User clicks Close "X" button                              # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                         # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                             # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                      # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen           # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Product Group Code display in View popup" classname="View Product Group Details from Product Groups List" time="8.586">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify Product Group Code display in View popup # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:124
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section            # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature            # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group            # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup                # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then Product Group Code should be displayed correctly   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupCodeShouldBeDisplayedCorrectly()
+  And Product Group Code should not be editable           # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupCodeShouldNotBeEditable()
+  When User clicks Close "X" button                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                  # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                      # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state               # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Product Group Name display in View popup" classname="View Product Group Details from Product Groups List" time="7.871">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify Product Group Name display in View popup # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:136
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section            # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature            # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group            # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup                # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then Product Group Name should be displayed correctly   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupNameShouldBeDisplayedCorrectly()
+  And Product Group Name should not be editable           # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupNameShouldNotBeEditable()
+  When User clicks Close "X" button                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                  # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                      # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state               # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Description display in View popup" classname="View Product Group Details from Product Groups List" time="12.651">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify Description display in View popup     # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:148
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section         # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature         # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group         # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then Description should be displayed correctly       # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionShouldBeDisplayedCorrectly()
+  And Description should not be editable               # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionShouldNotBeEditable()
+  When User clicks Close "X" button                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button               # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                   # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state            # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify popup close functionality" classname="View Product Group Details from Product Groups List" time="7.919">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify popup close functionality             # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:160
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section         # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature         # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group         # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  And User clicks Close "X" button                     # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button               # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                   # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state            # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Attempt to edit Product Group fields from View popup" classname="View Product Group Details from Product Groups List" time="9.562">
+    <system-out><![CDATA[
+@regression @view @p2 @negative @regression @p2
+Scenario: Attempt to edit Product Group fields from View popup # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:175
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                 # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup                     # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+[INFO] Attempting to edit Product Group Name in read-only View popup
+  And User tries to edit Product Group Name                    # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userTriesToEditProductGroupName()
+[INFO] Keyboard input attempted on read-only View fields
+  And User tries to modify field values using keyboard input   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userTriesToModifyFieldValuesUsingKeyboardInput()
+  Then field values should remain unchanged                    # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.fieldValuesShouldRemainUnchanged()
+  And all fields should appear disabled or read-only           # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.allFieldsShouldAppearDisabledOrReadOnly()
+  When User clicks Close "X" button                            # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                       # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                           # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                    # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen         # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="View deleted Product Group" classname="View Product Group Details from Product Groups List" time="10.563">
+    <system-out><![CDATA[
+@regression @view @p2 @negative @regression @p3
+Scenario: View deleted Product Group                   # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:189
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section         # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature         # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group         # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+[INFO] Backend deletion simulated for Product Group
+  When Product Group is deleted from backend           # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupIsDeletedFromBackend()
+  And User searches same Product Group                 # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userSearchesSameProductGroup()
+[INFO] Expecting system display message: Product Group not found
+  Then system should display "Product Group not found" # StepDefinitions.common.CommonFormSteps.systemShouldDisplay(java.lang.String)
+[AppHooks] On Dashboard — stopping
+[AppHooks] On Dashboard — stopping
+]]></system-out>
+  </testcase>
+  <testcase name="Unauthorized access to view Product Group" classname="View Product Group Details from Product Groups List" time="11.144">
+    <system-out><![CDATA[
+@regression @view @p2 @negative @regression @p3
+Scenario: Unauthorized access to view Product Group        # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:196
+  When User clicks on profile icon                         # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+  When User clicks on "Configurations" section             # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+  When User clicks on "Product Groups" feature             # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+[INFO] Unauthorized Product Group view scenario
+  When User without permission tries to view Product Group # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userWithoutPermissionTriesToViewProductGroup()
+[INFO] Expecting system display message: Access Denied
+  Then system should display "Access Denied"               # StepDefinitions.common.CommonFormSteps.systemShouldDisplay(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Rapid click on Product Group record" classname="View Product Group Details from Product Groups List" time="38.621">
+    <system-out><![CDATA[
+@regression @view @p2 @sanity @p3
+Scenario: Rapid click on Product Group record                     # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:206
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User clicks on search icon                                 # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                             # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                   # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Product Group Name                # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userEntersNewlyCreatedProductGroupName()
+  And User waits for search results to load                       # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+  Then system should display matching product group results       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.systemShouldDisplayMatchingProductGroupResults()
+  And User verifies product group appears in list                 # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userVerifiesProductGroupAppearsInList()
+[INFO] Rapid click attempt skipped
+[INFO] Rapid click attempt skipped
+  When User clicks multiple times quickly on Product Group record # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userClicksMultipleTimesQuicklyOnProductGroupRecord()
+  Then only one View Product Group popup should open              # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.onlyOneViewProductGroupPopupShouldOpen()
+  When User clicks Close "X" button                               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                          # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                              # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                       # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen            # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Long description handling in View popup" classname="View Product Group Details from Product Groups List" time="11.418">
+    <system-out><![CDATA[
+@regression @view @p2 @sanity @p3
+Scenario: Long description handling in View popup       # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:224
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                      # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section          # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group          # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+[INFO] Product Group with large description available
+  When Product Group contains large Description         # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupContainsLargeDescription()
+  And User opens Product Group View popup               # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then Description content should be displayed properly # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionContentShouldBeDisplayedProperly()
+  And User should be able to scroll if required         # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userShouldBeAbleToScrollIfRequired()
+  When User clicks Close "X" button                     # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                    # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state             # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen  # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Reopen View Product Group popup multiple times" classname="View Product Group Details from Product Groups List" time="31.024">
+    <system-out><![CDATA[
+@regression @view @p2 @sanity @p3
+Scenario: Reopen View Product Group popup multiple times             # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:237
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+[INFO] View popup cycle skipped on iteration 1
+[INFO] View popup cycle skipped on iteration 2
+  When User opens and closes Product Group View popup multiple times # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensAndClosesProductGroupViewPopupMultipleTimes()
+  Then Product Group details should load correctly each time         # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupDetailsShouldLoadCorrectlyEachTime()
+  And User should return to Product Groups list screen               # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify View Product Group popup UI elements" classname="View Product Group Details from Product Groups List" time="12.862">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify View Product Group popup UI elements  # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:249
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section         # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature         # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group         # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then "View Product Group" popup should be displayed  # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
+  And Product Group ID should be visible               # StepDefinitions.configurations.productgroups.ProductGroupUpdateSteps.productGroupIdShouldBeVisible()
+  And Product Group Name should be visible             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupNameShouldBeVisible()
+  And Product Group Code should be visible             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.productGroupCodeShouldBeVisible()
+  And Description should be visible                    # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.descriptionShouldBeVisible()
+  And Close "X" button should be visible               # StepDefinitions.common.CommonFormSteps.closeButtonShouldBeVisible(java.lang.String)
+  And all fields should appear disabled or read-only   # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.allFieldsShouldAppearDisabledOrReadOnly()
+  When User clicks Close "X" button                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button               # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                   # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state            # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify View popup layout matches Edit popup structure" classname="View Product Group Details from Product Groups List" time="8.165">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p2
+Scenario: Verify View popup layout matches Edit popup structure # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:266
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                              # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                  # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                  # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                  # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup                      # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then View popup layout should match Edit popup structure      # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.viewPopupLayoutShouldMatchEditPopupStructure()
+  And all fields should be disabled                             # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.allFieldsShouldBeDisabled()
+  When User clicks Close "X" button                             # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                        # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                            # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                     # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen          # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Verify popup overlay behavior" classname="View Product Group Details from Product Groups List" time="7.556">
+    <system-out><![CDATA[
+@regression @view @p2 @regression @p3
+Scenario: Verify popup overlay behavior                                   # src/test/resources/features/CustomerLogin/Configurations/ProductGroups/ProductGroupView.feature:278
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                            # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Product Groups" feature                            # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created a Product Group                            # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userHasAlreadyCreatedAProductGroup()
+  When User opens Product Group View popup                                # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.userOpensProductGroupViewPopup()
+  Then background screen should remain inaccessible until popup is closed # StepDefinitions.configurations.productgroups.ProductGroupViewSteps.backgroundScreenShouldRemainInaccessibleUntilPopupIsClosed()
+  When User clicks Close "X" button                                       # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userClicksCloseXButton()
+  When User clicks search close X button                                  # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                      # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                               # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And User should return to Product Groups list screen                    # StepDefinitions.configurations.productgroups.ProductGroupCreationSteps.userShouldReturnToProductGroupsListScreen()
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+</testsuite>

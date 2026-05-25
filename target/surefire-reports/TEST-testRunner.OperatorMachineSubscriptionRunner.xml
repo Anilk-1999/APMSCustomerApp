@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.OperatorMachineSubscriptionRunner" time="507.536" tests="23" errors="0" skipped="0" failures="5">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.OperatorMachineSubscriptionRunner" time="628.819" tests="23" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin"/>
-    <property name="sun.java.command" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire14021150937451325204\surefirebooter-20260522180650084_3.jar C:\Users\Anil Kumar M\AppData\Local\Temp\surefire14021150937451325204 2026-05-22T18-06-49_680-jvmRun1 surefire-20260522180650084_1tmp surefire_0-20260522180650084_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire217130840355952973\surefirebooter-20260523110627938_3.jar C:\Users\Anil Kumar M\AppData\Local\Temp\surefire217130840355952973 2026-05-23T11-06-27_786-jvmRun1 surefire-20260523110627938_1tmp surefire_0-20260523110627938_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="OperatorMachineSubscriptionRunner"/>
+    <property name="test" value="testRunner.OperatorMachineSubscriptionRunner"/>
     <property name="surefire.test.class.path" value="C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\test-classes;C:\Users\Anil Kumar M\VSCode projects\APMSCustomerApp\target\classes;C:\Users\Anil Kumar M\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Anil Kumar M\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-java\4.20.0\selenium-java-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-api\4.20.0\selenium-api-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.20.0\selenium-chrome-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.20.0\selenium-chromium-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-json\4.20.0\selenium-json-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.20.0\selenium-manager-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.20.0\selenium-devtools-v122-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.20.0\selenium-devtools-v123-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.20.0\selenium-devtools-v124-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.20.0\selenium-devtools-v85-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.20.0\selenium-edge-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.20.0\selenium-firefox-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-http\4.20.0\selenium-http-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.20.0\selenium-ie-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.20.0\selenium-remote-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\guava\33.1.0-jre\guava-33.1.0-jre.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api\1.37.0\opentelemetry-api-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-context\1.37.0\opentelemetry-context-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.37.0\opentelemetry-exporter-logging-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.37.0\opentelemetry-sdk-common-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.37.0\opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.37.0\opentelemetry-sdk-extension-autoconfigure-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.37.0-alpha\opentelemetry-api-incubator-1.37.0-alpha.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.37.0\opentelemetry-sdk-trace-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.37.0\opentelemetry-sdk-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.37.0\opentelemetry-sdk-metrics-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.37.0\opentelemetry-sdk-logs-1.37.0.jar;C:\Users\Anil Kumar M\.m2\repository\net\bytebuddy\byte-buddy\1.14.14\byte-buddy-1.14.14.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-os\4.20.0\selenium-os-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.20.0\selenium-safari-driver-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\seleniumhq\selenium\selenium-support\4.20.0\selenium-support-4.20.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\appium\java-client\9.2.2\java-client-9.2.2.jar;C:\Users\Anil Kumar M\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\cucumber\cucumber-picocontainer\7.16.1\cucumber-picocontainer-7.16.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\org\slf4j\slf4j-simple\2.0.7\slf4j-simple-2.0.7.jar;C:\Users\Anil Kumar M\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\extentreports\5.1.1\extentreports-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\Anil Kumar M\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\Anil Kumar M\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.13.0\extentreports-cucumber7-adapter-1.13.0.jar;C:\Users\Anil Kumar M\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anil Kumar M\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-excel-report\1.3.0\extent-excel-report-1.3.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Anil Kumar M\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Anil Kumar M\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\extent-pdf-report\2.12.0\extent-pdf-report-2.12.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.14.0\cucumber-pdf-report-2.14.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\Anil Kumar M\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\Anil Kumar M\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\Anil Kumar M\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\Anil Kumar M\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\Anil Kumar M\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\Anil Kumar M\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.5.0\rest-assured-cucumber-pdf-report-1.5.0.jar;C:\Users\Anil Kumar M\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\Anil Kumar M\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Anil Kumar M"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire14021150937451325204\surefirebooter-20260522180650084_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Anil Kumar M\AppData\Local\Temp\surefire217130840355952973\surefirebooter-20260523110627938_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.16+12-LTS-247"/>
@@ -40,6 +40,7 @@
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="Cp1252"/>
+    <property name="surefire.failIfNoSpecifiedTests" value="false"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="localRepository" value="C:\Users\Anil Kumar M\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
@@ -50,7 +51,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Anil Kumar M\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Anil Kumar M\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\Revanth Mahesh\Downloads\platform-tools-latest-windows\platform-tools;C:\Program Files\nodejs;C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platform-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\build-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platforms;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\tools\bin;C:\Users\Anil Kumar M\Apache\Maven\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311;C:\Users\Anil Kumar M\AppData\Local\Microsoft\WindowsApps;C:\Users\Anil Kumar M\AppData\Roaming\npm;C:\Users\Anil Kumar M\Android\sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Anil Kumar M\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Anil Kumar M\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\Revanth Mahesh\Downloads\platform-tools-latest-windows\platform-tools;C:\Program Files\nodejs;C:\Users\Anil Kumar M\Downloads\jdk-17.0.16_windows-x64_bin\jdk-17.0.16\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platform-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\build-tools;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\platforms;C:\Users\Anil Kumar M\AppData\Local\Android\Sdk\tools\bin;C:\Users\Anil Kumar M\Apache\Maven\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python312;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\Anil Kumar M\AppData\Local\Programs\Python\Python311;C:\Users\Anil Kumar M\AppData\Local\Microsoft\WindowsApps;C:\Users\Anil Kumar M\AppData\Roaming\npm;C:\Users\Anil Kumar M\Android\sdk\cmdline-tools\latest\bin;C:\Users\Anil Kumar M\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.16+12-LTS-247"/>
@@ -58,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Verify onboarding screens and navigate to login" classname="Login Functionality" time="9.064">
+  <testcase name="Verify onboarding screens and navigate to login" classname="Login Functionality" time="9.562">
     <system-out><![CDATA[✅ Driver initialized successfully
 
 Scenario: Verify onboarding screens and navigate to login          # src/test/resources/features/CustomerLogin/01_Login.feature:5
@@ -74,7 +75,7 @@ Scenario: Verify onboarding screens and navigate to login          # src/test/re
 [AppHooks] On login screen — stopping
 ]]></system-out>
   </testcase>
-  <testcase name="Verify user is able to login successfully" classname="Login Functionality" time="10.968">
+  <testcase name="Verify user is able to login successfully" classname="Login Functionality" time="12.438">
     <system-out><![CDATA[
 Scenario: Verify user is able to login successfully     # src/test/resources/features/CustomerLogin/01_Login.feature:69
   Given the user is on the login screen                 # StepDefinitions.configurations.login.LoginSteps.the_user_is_on_the_login_screen()
@@ -85,7 +86,7 @@ Scenario: Verify user is able to login successfully     # src/test/resources/fea
 [AppHooks] On Dashboard — stopping
 ]]></system-out>
   </testcase>
-  <testcase name="Search Operator and long press to open Action Menus bottom sheet" classname="Operator Machine Subscription via Action Menu" time="33.429">
+  <testcase name="Search Operator and long press to open Action Menus bottom sheet" classname="Operator Machine Subscription via Action Menu" time="29.95">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @smoke @p1
 Scenario: Search Operator and long press to open Action Menus bottom sheet # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:20
@@ -112,7 +113,7 @@ Scenario: Search Operator and long press to open Action Menus bottom sheet # src
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Open Operator Machine Subscription popup and verify UI elements" classname="Operator Machine Subscription via Action Menu" time="11.999">
+  <testcase name="Open Operator Machine Subscription popup and verify UI elements" classname="Operator Machine Subscription via Action Menu" time="12.358">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @smoke @p1
 Scenario: Open Operator Machine Subscription popup and verify UI elements # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:39
@@ -148,7 +149,7 @@ Scenario: Open Operator Machine Subscription popup and verify UI elements # src/
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Open Operator Machine Subscription popup when operator has no machines assigned" classname="Operator Machine Subscription via Action Menu" time="15.951">
+  <testcase name="Open Operator Machine Subscription popup when operator has no machines assigned" classname="Operator Machine Subscription via Action Menu" time="16.541">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Open Operator Machine Subscription popup when operator has no machines assigned # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:63
@@ -182,7 +183,7 @@ Scenario: Open Operator Machine Subscription popup when operator has no machines
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Add single operator machine subscription" classname="Operator Machine Subscription via Action Menu" time="17.954">
+  <testcase name="Add single operator machine subscription" classname="Operator Machine Subscription via Action Menu" time="19.279">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @smoke @regression @p1
 Scenario: Add single operator machine subscription                   # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:91
@@ -220,7 +221,7 @@ Scenario: Add single operator machine subscription                   # src/test/
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Add multiple operator machine subscriptions" classname="Operator Machine Subscription via Action Menu" time="18.852">
+  <testcase name="Add multiple operator machine subscriptions" classname="Operator Machine Subscription via Action Menu" time="19.31">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p1
 Scenario: Add multiple operator machine subscriptions                 # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:118
@@ -258,7 +259,7 @@ Scenario: Add multiple operator machine subscriptions                 # src/test
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Add machine and then add more machines in same session" classname="Operator Machine Subscription via Action Menu" time="20.078">
+  <testcase name="Add machine and then add more machines in same session" classname="Operator Machine Subscription via Action Menu" time="20.126">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Add machine and then add more machines in same session           # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:145
@@ -298,7 +299,7 @@ Scenario: Add machine and then add more machines in same session           # src
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Verify Operator Machine Subscription list persists after save" classname="Operator Machine Subscription via Action Menu" time="29.539">
+  <testcase name="Verify Operator Machine Subscription list persists after save" classname="Operator Machine Subscription via Action Menu" time="32.898">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify Operator Machine Subscription list persists after save               # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:174
@@ -331,14 +332,7 @@ Scenario: Verify Operator Machine Subscription list persists after save         
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Delete single machine from Operator Machine Subscription" classname="Operator Machine Subscription via Action Menu" time="20.797">
-    <failure message="Machine was NOT removed: count before=0, after=0 expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Machine was NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:326)
-	at ✽.that machine should be removed from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:215)
-]]></failure>
+  <testcase name="Delete single machine from Operator Machine Subscription" classname="Operator Machine Subscription via Action Menu" time="29.062">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p1
 Scenario: Delete single machine from Operator Machine Subscription    # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:201
@@ -363,13 +357,6 @@ Scenario: Delete single machine from Operator Machine Subscription    # src/test
   Then Machine Subscription popup should be displayed                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
   When User clicks delete icon on one machine in list                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksDeleteIconOnOneMachineInList()
   Then that machine should be removed from Machine Subscription list  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList()
-      java.lang.AssertionError: Machine was NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:326)
-	at âœ½.that machine should be removed from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:215)
-
   And remaining machines should still be displayed                    # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.remainingMachinesShouldStillBeDisplayed()
   When User clicks Submit button in Machine Subscription popup        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInMachineSubscriptionPopup()
   Then Machine Subscription should be saved successfully              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionShouldBeSavedSuccessfully()
@@ -377,26 +364,18 @@ Scenario: Delete single machine from Operator Machine Subscription    # src/test
   Then search field should be closed                                  # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
   And module list should be in normal state                           # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
   And Operator should be navigate into "Operators" list               # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
-
-    Embedding Delete single machine from Operator Machine Subscription [image/png 35408 bytes]
-
-[AppHooks] On Dashboard — stopping
-[AppHooks] On Dashboard — stopping
+[AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Delete multiple machines from Operator Machine Subscription" classname="Operator Machine Subscription via Action Menu" time="26.472">
-    <failure message="Deleted machines NOT removed: count before=0, after=0 expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Deleted machines NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.allDeletedMachinesShouldBeRemovedFromList(OperatorMachineSubscriptionSteps.java:348)
-	at ✽.all deleted machines should be removed from list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:239)
-]]></failure>
+  <testcase name="Delete multiple machines from Operator Machine Subscription" classname="Operator Machine Subscription via Action Menu" time="30.676">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Delete multiple machines from Operator Machine Subscription # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:225
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on profile icon                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Configurations" section                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Operators" feature                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
   And User has already created an Operator with machine subscriptions # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userHasAlreadyCreatedAnOperatorWithMachineSubscriptions()
   When User clicks on search icon                                     # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
@@ -413,32 +392,62 @@ Scenario: Delete multiple machines from Operator Machine Subscription # src/test
   Then Machine Subscription popup should be displayed                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
   When User deletes multiple machines from Machine Subscription list  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userDeletesMultipleMachinesFromMachineSubscriptionList()
   Then all deleted machines should be removed from list               # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.allDeletedMachinesShouldBeRemovedFromList()
-      java.lang.AssertionError: Deleted machines NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.allDeletedMachinesShouldBeRemovedFromList(OperatorMachineSubscriptionSteps.java:348)
-	at âœ½.all deleted machines should be removed from list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:239)
-
   When User clicks Submit button in Machine Subscription popup        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInMachineSubscriptionPopup()
   Then Machine Subscription should be saved successfully              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionShouldBeSavedSuccessfully()
   When User clicks search close X button                              # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
   Then search field should be closed                                  # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
   And module list should be in normal state                           # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
   And Operator should be navigate into "Operators" list               # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
-
-    Embedding Delete multiple machines from Operator Machine Subscription [image/png 35474 bytes]
-
-[AppHooks] On Dashboard — stopping
-[AppHooks] On Dashboard — stopping
+[AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Delete all machines from Operator Machine Subscription and submit" classname="Operator Machine Subscription via Action Menu" time="19.848">
+  <testcase name="Delete machine and re-add in same session" classname="Operator Machine Subscription via Action Menu" time="30.862">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
-Scenario: Delete all machines from Operator Machine Subscription and submit # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:248
+Scenario: Delete machine and re-add in same session                   # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:248
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on profile icon                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Configurations" section                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
+  When User clicks on "Operators" feature                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
+  And User has already created an Operator with machine subscriptions # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userHasAlreadyCreatedAnOperatorWithMachineSubscriptions()
+  When User clicks on search icon                                     # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
+  And User taps on search input field                                 # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
+  And User clears existing text in search field                       # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
+  And User enters newly created Operator Name                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyCreatedOperatorName()
+  And User waits for search results to load                           # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
+[INFO] Search results displayed for Operator query
+  Then system should display matching Operator results                # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
+  And User verifies Operator appears in list                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
+  When User long presses on Operator record                           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userLongPressesOnOperatorRecord()
+  Then Action Menus bottom sheet should be displayed                  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.actionMenusBottomSheetShouldBeDisplayed()
+  When User clicks on Machine Subscription option                     # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksOnMachineSubscriptionOption()
+  Then Machine Subscription popup should be displayed                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
+  When User clicks delete icon on one machine in list                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksDeleteIconOnOneMachineInList()
+  Then that machine should be removed from Machine Subscription list  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList()
+  When User clicks "+" button in Machine Subscription popup           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksAddButtonInMachineSubscriptionPopup()
+  And User selects that machine from bottom sheet                     # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userSelectsThatMachineFromBottomSheet()
+  And User clicks Submit button in Select Machines bottom sheet       # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInSelectMachinesBottomSheet()
+  Then machine should be re-added to Machine Subscription list        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineShouldBeReAddedToMachineSubscriptionList()
+  When User clicks Submit button in Machine Subscription popup        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInMachineSubscriptionPopup()
+  Then Machine Subscription should be saved successfully              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionShouldBeSavedSuccessfully()
+  When User clicks search close X button                              # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
+  Then search field should be closed                                  # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
+  And module list should be in normal state                           # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
+  And Operator should be navigate into "Operators" list               # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
+[AppHooks] On list screen (Search button visible)
+]]></system-out>
+  </testcase>
+  <testcase name="Delete all machines from Operator Machine Subscription and submit" classname="Operator Machine Subscription via Action Menu" time="34.486">
+    <system-out><![CDATA[
+@regression @smoke @machine-subscription @p1 @regression @p2
+Scenario: Delete all machines from Operator Machine Subscription and submit # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:275
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on profile icon                                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Configurations" section                              # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Operators" feature                                   # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
   And User has already created an Operator with machine subscriptions       # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userHasAlreadyCreatedAnOperatorWithMachineSubscriptions()
   When User clicks on search icon                                           # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
@@ -464,75 +473,15 @@ Scenario: Delete all machines from Operator Machine Subscription and submit # sr
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Delete machine and re-add in same session" classname="Operator Machine Subscription via Action Menu" time="20.519">
-    <failure message="Machine was NOT removed: count before=0, after=0 expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Machine was NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:326)
-	at ✽.that machine should be removed from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:285)
-]]></failure>
-    <system-out><![CDATA[
-@regression @smoke @machine-subscription @p1 @regression @p2
-Scenario: Delete machine and re-add in same session                   # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:271
-[CommonNav] Already on list screen — skipping Background navigation
-  When User clicks on profile icon                                    # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
-[CommonNav] Already on list screen — skipping Background navigation
-  When User clicks on "Configurations" section                        # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
-[CommonNav] Already on list screen — skipping Background navigation
-  When User clicks on "Operators" feature                             # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
-  And User has already created an Operator with machine subscriptions # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userHasAlreadyCreatedAnOperatorWithMachineSubscriptions()
-  When User clicks on search icon                                     # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
-  And User taps on search input field                                 # StepDefinitions.common.CommonFormSteps.userTapsOnSearchInputField()
-  And User clears existing text in search field                       # StepDefinitions.common.CommonFormSteps.userClearsExistingTextInSearchField()
-  And User enters newly created Operator Name                         # StepDefinitions.configurations.operators.OperatorUpdateSteps.userEntersNewlyCreatedOperatorName()
-  And User waits for search results to load                           # StepDefinitions.common.CommonFormSteps.userWaitsForSearchResultsToLoad()
-[INFO] Search results displayed for Operator query
-  Then system should display matching Operator results                # StepDefinitions.configurations.operators.OperatorUpdateSteps.systemShouldDisplayMatchingOperatorResults()
-  And User verifies Operator appears in list                          # StepDefinitions.configurations.operators.OperatorUpdateSteps.userVerifiesOperatorAppearsInList()
-  When User long presses on Operator record                           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userLongPressesOnOperatorRecord()
-  Then Action Menus bottom sheet should be displayed                  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.actionMenusBottomSheetShouldBeDisplayed()
-  When User clicks on Machine Subscription option                     # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksOnMachineSubscriptionOption()
-  Then Machine Subscription popup should be displayed                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
-  When User clicks delete icon on one machine in list                 # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksDeleteIconOnOneMachineInList()
-  Then that machine should be removed from Machine Subscription list  # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList()
-      java.lang.AssertionError: Machine was NOT removed: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:326)
-	at âœ½.that machine should be removed from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:285)
-
-  When User clicks "+" button in Machine Subscription popup           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksAddButtonInMachineSubscriptionPopup()
-  And User selects that machine from bottom sheet                     # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userSelectsThatMachineFromBottomSheet()
-  And User clicks Submit button in Select Machines bottom sheet       # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInSelectMachinesBottomSheet()
-  Then machine should be re-added to Machine Subscription list        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineShouldBeReAddedToMachineSubscriptionList()
-  When User clicks Submit button in Machine Subscription popup        # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksSubmitButtonInMachineSubscriptionPopup()
-  Then Machine Subscription should be saved successfully              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionShouldBeSavedSuccessfully()
-  When User clicks search close X button                              # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
-  Then search field should be closed                                  # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
-  And module list should be in normal state                           # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
-  And Operator should be navigate into "Operators" list               # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
-
-    Embedding Delete machine and re-add in same session [image/png 35461 bytes]
-
-[AppHooks] On Dashboard — stopping
-[AppHooks] On Dashboard — stopping
-]]></system-out>
-  </testcase>
-  <testcase name="Verify Operator Machine Subscription list updated after deletion save" classname="Operator Machine Subscription via Action Menu" time="39.357">
-    <failure message="Deleted machine still visible: count before=0, after=0 expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Deleted machine still visible: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.deletedMachineShouldNotBeDisplayedInMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:370)
-	at ✽.deleted machine should not be displayed in Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:328)
-]]></failure>
+  <testcase name="Verify Operator Machine Subscription list updated after deletion save" classname="Operator Machine Subscription via Action Menu" time="54.718">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify Operator Machine Subscription list updated after deletion save # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:298
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on profile icon                                              # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Configurations" section                                  # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Operators" feature                                       # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
   And User has already created an Operator with machine subscriptions           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userHasAlreadyCreatedAnOperatorWithMachineSubscriptions()
   When User clicks on search icon                                               # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
@@ -566,32 +515,24 @@ Scenario: Verify Operator Machine Subscription list updated after deletion save 
   When User clicks on Machine Subscription option                               # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksOnMachineSubscriptionOption()
   Then Machine Subscription popup should be displayed                           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
   And deleted machine should not be displayed in Machine Subscription list      # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.deletedMachineShouldNotBeDisplayedInMachineSubscriptionList()
-      java.lang.AssertionError: Deleted machine still visible: count before=0, after=0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.deletedMachineShouldNotBeDisplayedInMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:370)
-	at âœ½.deleted machine should not be displayed in Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:328)
-
   When User clicks Close "X" button in Machine Subscription popup               # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksCloseButtonInMachineSubscriptionPopup(java.lang.String)
   Then Machine Subscription popup should be closed                              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeClosed()
   When User clicks search close X button                                        # StepDefinitions.common.CommonFormSteps.userClicksSearchCloseXButton()
   Then search field should be closed                                            # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
   And module list should be in normal state                                     # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
   And Operator should be navigate into "Operators" list                         # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
-
-    Embedding Verify Operator Machine Subscription list updated after deletion save [image/png 35154 bytes]
-
-[AppHooks] On Dashboard — stopping
-[AppHooks] On Dashboard — stopping
+[AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Submit Select Machines bottom sheet without selecting any machine" classname="Operator Machine Subscription via Action Menu" time="22.763">
+  <testcase name="Submit Select Machines bottom sheet without selecting any machine" classname="Operator Machine Subscription via Action Menu" time="16.774">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @negative @regression @p2
 Scenario: Submit Select Machines bottom sheet without selecting any machine        # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:342
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on profile icon                                                 # StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon()
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Configurations" section                                     # StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(java.lang.String)
+[CommonNav] Already on list screen — skipping Background navigation
   When User clicks on "Operators" feature                                          # StepDefinitions.common.CommonNavigationSteps.userClicksOnFeature(java.lang.String)
   And User has already created an Operator                                         # StepDefinitions.configurations.operators.OperatorCreationSteps.userHasAlreadyCreatedAnOperator()
   When User clicks on search icon                                                  # StepDefinitions.common.CommonFormSteps.userClicksOnSearchIcon()
@@ -619,7 +560,7 @@ Scenario: Submit Select Machines bottom sheet without selecting any machine     
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Close Operator Machine Subscription popup without saving discards changes" classname="Operator Machine Subscription via Action Menu" time="31.496">
+  <testcase name="Close Operator Machine Subscription popup without saving discards changes" classname="Operator Machine Subscription via Action Menu" time="37.736">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @sanity @p2
 Scenario: Close Operator Machine Subscription popup without saving discards changes # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:372
@@ -657,7 +598,7 @@ Scenario: Close Operator Machine Subscription popup without saving discards chan
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Rapid &quot;+&quot; button clicks in Machine Subscription popup opens only one bottom sheet" classname="Operator Machine Subscription via Action Menu" time="45.531">
+  <testcase name="Rapid &quot;+&quot; button clicks in Machine Subscription popup opens only one bottom sheet" classname="Operator Machine Subscription via Action Menu" time="49.334">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @sanity @p3
 Scenario: Rapid "+" button clicks in Machine Subscription popup opens only one bottom sheet # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:399
@@ -692,7 +633,7 @@ Scenario: Rapid "+" button clicks in Machine Subscription popup opens only one b
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Rapid Submit clicks in Operator Machine Subscription popup should prevent duplicate save" classname="Operator Machine Subscription via Action Menu" time="25.936">
+  <testcase name="Rapid Submit clicks in Operator Machine Subscription popup should prevent duplicate save" classname="Operator Machine Subscription via Action Menu" time="34.009">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @sanity @p3
 Scenario: Rapid Submit clicks in Operator Machine Subscription popup should prevent duplicate save # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:423
@@ -727,17 +668,7 @@ Scenario: Rapid Submit clicks in Operator Machine Subscription popup should prev
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Rapid delete icon clicks should remove machine only once" classname="Operator Machine Subscription via Action Menu" time="13.924">
-    <failure message="Expected exactly 1 machine removed, but count changed from 0 to 0 expected [-1] but found [0]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected exactly 1 machine removed, but count changed from 0 to 0 expected [-1] but found [0]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedOnlyOnceFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:379)
-	at ✽.that machine should be removed only once from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:461)
-]]></failure>
+  <testcase name="Rapid delete icon clicks should remove machine only once" classname="Operator Machine Subscription via Action Menu" time="56.996">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @sanity @p3
 Scenario: Rapid delete icon clicks should remove machine only once             # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:447
@@ -762,16 +693,6 @@ Scenario: Rapid delete icon clicks should remove machine only once             #
   Then Machine Subscription popup should be displayed                          # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.machineSubscriptionPopupShouldBeDisplayed()
   When User clicks delete icon multiple times quickly on one machine           # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksDeleteIconMultipleTimesQuicklyOnOneMachine()
   Then that machine should be removed only once from Machine Subscription list # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedOnlyOnceFromMachineSubscriptionList()
-      java.lang.AssertionError: Expected exactly 1 machine removed, but count changed from 0 to 0 expected [-1] but found [0]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.thatMachineShouldBeRemovedOnlyOnceFromMachineSubscriptionList(OperatorMachineSubscriptionSteps.java:379)
-	at âœ½.that machine should be removed only once from Machine Subscription list(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:461)
-
   When User clicks Close "X" button in Machine Subscription popup              # StepDefinitions.configurations.operators.OperatorMachineSubscriptionSteps.userClicksCloseButtonInMachineSubscriptionPopup(java.lang.String)
   Then "Confirmation Alert" popup should be displayed                          # StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(java.lang.String)
   When User clicks on "Yes, Exit" button on the confirmation popup             # StepDefinitions.configurations.operators.OperatorCreationSteps.userClicksOnYesExitButtonOnTheConfirmationPopup()
@@ -780,14 +701,10 @@ Scenario: Rapid delete icon clicks should remove machine only once             #
   Then search field should be closed                                           # StepDefinitions.common.CommonFormSteps.searchFieldShouldBeClosed()
   And module list should be in normal state                                    # StepDefinitions.common.CommonFormSteps.moduleListShouldBeInNormalState()
   And Operator should be navigate into "Operators" list                        # StepDefinitions.configurations.operators.OperatorCreationSteps.operatorShouldBeNavigateIntoList(java.lang.String)
-
-    Embedding Rapid delete icon clicks should remove machine only once [image/png 35168 bytes]
-
-[AppHooks] On list screen (Search button visible)
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Verify Operator Machine Subscription popup UI elements" classname="Operator Machine Subscription via Action Menu" time="11.978">
+  <testcase name="Verify Operator Machine Subscription popup UI elements" classname="Operator Machine Subscription via Action Menu" time="12.414">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify Operator Machine Subscription popup UI elements         # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:477
@@ -825,7 +742,7 @@ Scenario: Verify Operator Machine Subscription popup UI elements         # src/t
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Verify Select Machines bottom sheet UI elements" classname="Operator Machine Subscription via Action Menu" time="15.769">
+  <testcase name="Verify Select Machines bottom sheet UI elements" classname="Operator Machine Subscription via Action Menu" time="21.78">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify Select Machines bottom sheet UI elements                          # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:502
@@ -864,7 +781,7 @@ Scenario: Verify Select Machines bottom sheet UI elements                       
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Verify each machine in Operator Machine Subscription list has delete icon" classname="Operator Machine Subscription via Action Menu" time="18.086">
+  <testcase name="Verify each machine in Operator Machine Subscription list has delete icon" classname="Operator Machine Subscription via Action Menu" time="23.975">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify each machine in Operator Machine Subscription list has delete icon # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:529
@@ -903,7 +820,7 @@ Scenario: Verify each machine in Operator Machine Subscription list has delete i
 [AppHooks] On list screen (Search button visible)
 ]]></system-out>
   </testcase>
-  <testcase name="Verify Operator Action Menus bottom sheet shows Machine Subscription option" classname="Operator Machine Subscription via Action Menu" time="11.759">
+  <testcase name="Verify Operator Action Menus bottom sheet shows Machine Subscription option" classname="Operator Machine Subscription via Action Menu" time="12.045">
     <system-out><![CDATA[
 @regression @smoke @machine-subscription @p1 @regression @p2
 Scenario: Verify Operator Action Menus bottom sheet shows Machine Subscription option # src/test/resources/features/CustomerLogin/Configurations/Operators/OperatorMachineSubscription.feature:557

@@ -126,6 +126,11 @@ Feature: View Product Group Details from Product Groups List
     When User opens Product Group View popup
     Then Product Group Code should be displayed correctly
     And Product Group Code should not be editable
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify Product Group Name display in View popup
@@ -133,6 +138,11 @@ Feature: View Product Group Details from Product Groups List
     When User opens Product Group View popup
     Then Product Group Name should be displayed correctly
     And Product Group Name should not be editable
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify Description display in View popup
@@ -140,13 +150,20 @@ Feature: View Product Group Details from Product Groups List
     When User opens Product Group View popup
     Then Description should be displayed correctly
     And Description should not be editable
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify popup close functionality
     And User has already created a Product Group
     When User opens Product Group View popup
     And User clicks Close "X" button
-    Then popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
 
@@ -162,6 +179,11 @@ Feature: View Product Group Details from Product Groups List
     And User tries to modify field values using keyboard input
     Then field values should remain unchanged
     And all fields should appear disabled or read-only
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @negative @regression @p3
   Scenario: View deleted Product Group
@@ -205,12 +227,18 @@ Feature: View Product Group Details from Product Groups List
     And User opens Product Group View popup
     Then Description content should be displayed properly
     And User should be able to scroll if required
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @sanity @p3
   Scenario: Reopen View Product Group popup multiple times
     And User has already created a Product Group
     When User opens and closes Product Group View popup multiple times
     Then Product Group details should load correctly each time
+    And User should return to Product Groups list screen
 
 
   # =========================================================
@@ -228,6 +256,11 @@ Feature: View Product Group Details from Product Groups List
     And Description should be visible
     And Close "X" button should be visible
     And all fields should appear disabled or read-only
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify View popup layout matches Edit popup structure
@@ -235,9 +268,19 @@ Feature: View Product Group Details from Product Groups List
     When User opens Product Group View popup
     Then View popup layout should match Edit popup structure
     And all fields should be disabled
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p3
   Scenario: Verify popup overlay behavior
     And User has already created a Product Group
     When User opens Product Group View popup
     Then background screen should remain inaccessible until popup is closed
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen

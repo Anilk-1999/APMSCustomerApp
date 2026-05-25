@@ -1,0 +1,265 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.ProductSetupTypeCreationRunner
+-------------------------------------------------------------------------------
+Tests run: 29, Failures: 22, Errors: 3, Skipped: 0, Time elapsed: 758.1 s <<< FAILURE! -- in testRunner.ProductSetupTypeCreationRunner
+Create Product Setup Type via Configuration Module.Create Product Setup Type with mandatory fields only -- Time elapsed: 18.56 s <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [69ca5895-8921-4413-85ff-22bf0901f6dc, actions {actions=[org.openqa.selenium.interactions.Sequence@65809b7e]}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 69ca5895-8921-4413-85ff-22bf0901f6dc
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at pageObject.configurations.ProductSetupTypePage.swipeColumn(ProductSetupTypePage.java:377)
+	at pageObject.configurations.ProductSetupTypePage.setDurationSeekBar(ProductSetupTypePage.java:359)
+	at pageObject.configurations.ProductSetupTypePage.setMachineOutputTimer(ProductSetupTypePage.java:292)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.userSetsMachineOutputTimer(ProductSetupTypeCreationSteps.java:211)
+	at ✽.User sets Machine Output Timer to 0 hours 30 minutes 0 seconds(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:55)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with all fields -- Time elapsed: 33.18 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [b9607aab-64cf-4042-a520-2b83784b4ad6, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: b9607aab-64cf-4042-a520-2b83784b4ad6
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:8)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with trimmed Product Setup Name -- Time elapsed: 32.39 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [b9607aab-64cf-4042-a520-2b83784b4ad6, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: b9607aab-64cf-4042-a520-2b83784b4ad6
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:8)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with maximum allowed characters in name -- Time elapsed: 40.70 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:87)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with special characters in name -- Time elapsed: 27.73 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:98)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with long description -- Time elapsed: 27.59 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:109)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with duplicate name -- Time elapsed: 28.00 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:122)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type without Product Setup Name -- Time elapsed: 28.26 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:138)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with only spaces in Product Setup Name -- Time elapsed: 28.41 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:153)
+
+Create Product Setup Type via Configuration Module.Submit without filling any fields -- Time elapsed: 28.25 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:168)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type without Machine Output Timer -- Time elapsed: 27.84 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:181)
+
+Create Product Setup Type via Configuration Module.Save duration picker at 0 hours 0 minutes 0 seconds — minimum duration alert shown -- Time elapsed: 27.76 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:195)
+
+Create Product Setup Type via Configuration Module.Close Machine Output Timer duration picker without saving — required error shown -- Time elapsed: 27.51 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:209)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type without Product Setup Timer -- Time elapsed: 27.65 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:227)
+
+Create Product Setup Type via Configuration Module.Close Product Setup Timer duration picker without saving — required error shown -- Time elapsed: 27.85 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:241)
+
+Create Product Setup Type via Configuration Module.Rapid multiple Submit clicks -- Time elapsed: 27.97 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:264)
+
+Create Product Setup Type via Configuration Module.Create Product Setup Type with very large text in name -- Time elapsed: 27.32 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:275)
+
+Create Product Setup Type via Configuration Module.Close popup without saving -- Time elapsed: 27.64 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:286)
+
+Create Product Setup Type via Configuration Module.Close empty popup without confirmation dialog -- Time elapsed: 27.90 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:298)
+
+Create Product Setup Type via Configuration Module.Reopen popup after close — fields should be reset -- Time elapsed: 27.39 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:306)
+
+Create Product Setup Type via Configuration Module.Verify Select Duration popup opens for Machine Output Timer -- Time elapsed: 27.68 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:319)
+
+Create Product Setup Type via Configuration Module.Verify Select Duration popup opens for Product Setup Timer -- Time elapsed: 27.65 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:337)
+
+Create Product Setup Type via Configuration Module.Verify Add Product Setup Type popup UI elements -- Time elapsed: 27.60 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:360)
+
+Create Product Setup Type via Configuration Module.Verify Product Setup Types list screen UI elements -- Time elapsed: 21.92 s <<< FAILURE!
+java.lang.AssertionError: Add "+" button not visible on list screen expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.addButtonShouldBeVisible(CommonFormSteps.java:115)
+	at ✽.Add "+" button should be visible(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:374)
+
+Create Product Setup Type via Configuration Module.Validate Description optional field behavior -- Time elapsed: 27.64 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:379)
+

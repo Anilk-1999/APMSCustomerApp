@@ -10,7 +10,10 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageObject.OperatorPage;
+import utilities.GlobalEntityStore;
+import utilities.GlobalTestData;
 import utilities.ScenarioContext;
+
 
 import java.util.List;
 
@@ -33,6 +36,21 @@ public class OperatorDeleteSteps {
 
     private String storedName() {
         return context.getString(ScenarioContext.OPERATOR_NAME);
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    //  BACKGROUND SETUP — DELETE FLOW
+    // ═══════════════════════════════════════════════════════════
+
+    @And("User has already created an Operator for delete")
+    public void userHasAlreadyCreatedAnOperatorForDelete() {
+        String name = GlobalEntityStore.getLatestName(GlobalEntityStore.OPERATOR);
+        if (name == null) {
+            name = page().createOperatorAndConfirmSearchable();
+            GlobalEntityStore.setLatestName(GlobalEntityStore.OPERATOR, name);
+            GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
+        }
+        context.set(ScenarioContext.OPERATOR_NAME, name);
     }
 
     private boolean isPresent(String xpath) {
@@ -168,6 +186,8 @@ public class OperatorDeleteSteps {
     public void operatorShouldBeDeletedSuccessfully() {
         Assert.assertTrue(page().waitForReturnToList(15),
                 "Operator delete failed — did not return to Operators list after deletion");
+        // Force subsequent scenarios to create a fresh operator — the deleted one no longer exists.
+        GlobalEntityStore.clear(GlobalEntityStore.OPERATOR);
     }
 
     @Then("no results should be displayed")

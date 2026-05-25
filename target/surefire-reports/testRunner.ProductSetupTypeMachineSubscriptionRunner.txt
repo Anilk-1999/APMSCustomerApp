@@ -1,0 +1,252 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.ProductSetupTypeMachineSubscriptionRunner
+-------------------------------------------------------------------------------
+Tests run: 23, Failures: 6, Errors: 14, Skipped: 0, Time elapsed: 542.6 s <<< FAILURE! -- in testRunner.ProductSetupTypeMachineSubscriptionRunner
+Product Setup Type Machine Subscription via Action Menu.Open Product Setup Type Machine Subscription popup and verify UI elements -- Time elapsed: 14.20 s <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [c64d14b0-33c4-4161-90d7-88c893927304, actions {actions=[org.openqa.selenium.interactions.Sequence@14c3c4b9]}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: c64d14b0-33c4-4161-90d7-88c893927304
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
+	at utilities.SwipeHelper.longPress(SwipeHelper.java:110)
+	at pageObject.BasePage.longPress(BasePage.java:171)
+	at pageObject.configurations.ProductSetupTypePage.longPressRecord(ProductSetupTypePage.java:175)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeMachineSubscriptionSteps.userLongPressesOnProductSetupTypeRecord(ProductSetupTypeMachineSubscriptionSteps.java:66)
+	at ✽.User long presses on Product Setup Type record(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:48)
+
+Product Setup Type Machine Subscription via Action Menu.Open Product Setup Type Machine Subscription popup when no machines assigned -- Time elapsed: 32.45 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [561ecdab-bc0c-454e-887d-aa1f6cd309c8, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 561ecdab-bc0c-454e-887d-aa1f6cd309c8
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:11)
+
+Product Setup Type Machine Subscription via Action Menu.Add single Product Setup Type machine subscription -- Time elapsed: 32.22 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [561ecdab-bc0c-454e-887d-aa1f6cd309c8, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 561ecdab-bc0c-454e-887d-aa1f6cd309c8
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:11)
+
+Product Setup Type Machine Subscription via Action Menu.Add multiple Product Setup Type machine subscriptions -- Time elapsed: 39.28 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:125)
+
+Product Setup Type Machine Subscription via Action Menu.Add machine and then add more machines in same session -- Time elapsed: 27.28 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:152)
+
+Product Setup Type Machine Subscription via Action Menu.Verify Product Setup Type Machine Subscription list persists after save -- Time elapsed: 47.65 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:181)
+
+Product Setup Type Machine Subscription via Action Menu.Delete single machine from Product Setup Type Machine Subscription -- Time elapsed: 47.52 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:208)
+
+Product Setup Type Machine Subscription via Action Menu.Delete multiple machines from Product Setup Type Machine Subscription -- Time elapsed: 47.85 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:232)
+
+Product Setup Type Machine Subscription via Action Menu.Delete machine and re-add in same session -- Time elapsed: 47.47 s <<< FAILURE!
+java.lang.AssertionError: No matching Product Setup Type result for: PSType_9243 expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at StepDefinitions.configurations.productsetuptypes.ProductSetupTypeCreationSteps.systemShouldDisplayMatchingProductSetupTypeResults(ProductSetupTypeCreationSteps.java:90)
+	at ✽.system should display matching Product Setup Type results(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:255)
+
+Product Setup Type Machine Subscription via Action Menu.Delete all machines from Product Setup Type Machine Subscription and submit -- Time elapsed: 35.89 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$964/0x0000015b2f605d58@152a6648 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 561ecdab-bc0c-454e-887d-aa1f6cd309c8
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:295)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:72)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Verify Product Setup Type Machine Subscription list updated after deletion save -- Time elapsed: 32.59 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [63449635-f862-4af5-809b-202dc85ded1a, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 63449635-f862-4af5-809b-202dc85ded1a
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:11)
+
+Product Setup Type Machine Subscription via Action Menu.Submit Select Machines bottom sheet without selecting any machine -- Time elapsed: 31.91 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$964/0x0000015b2f605d58@152a6648 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 63449635-f862-4af5-809b-202dc85ded1a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:295)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:72)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Close Product Setup Type Machine Subscription popup without saving discards changes -- Time elapsed: 53.28 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [0f8543fa-e6b5-4f89-9ee9-acaefa0a7700, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 0f8543fa-e6b5-4f89-9ee9-acaefa0a7700
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:11)
+
+Product Setup Type Machine Subscription via Action Menu.Rapid "+" button clicks in Machine Subscription popup opens only one bottom sheet -- Time elapsed: 0.020 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Rapid Submit clicks in Product Setup Type Machine Subscription popup should prevent duplicate save -- Time elapsed: 0.020 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Rapid delete icon clicks should remove machine only once -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Verify Product Setup Type Machine Subscription popup UI elements -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Verify Select Machines bottom sheet UI elements -- Time elapsed: 0.029 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Verify each machine in Product Setup Type Machine Subscription list has delete icon -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+
+Product Setup Type Machine Subscription via Action Menu.Verify Product Setup Type Action Menus bottom sheet shows Machine Subscription option -- Time elapsed: 0.013 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupMachineSubscription.feature:10)
+

@@ -1,6 +1,7 @@
 package StepDefinitions.configurations.operators;
 
 import hooks.AppHooks;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pageObject.OperatorPage;
 import utilities.DataGenerator;
+import utilities.ElementUtils;
 import utilities.GlobalEntityStore;
 import utilities.GlobalTestData;
 import utilities.ScenarioContext;
@@ -16,12 +18,14 @@ public class OperatorCreationSteps {
 
     private final AndroidDriver   driver;
     private final ScenarioContext context;
+    private final ElementUtils    elementUtils;
     private OperatorPage          operatorPage;
 
     @SuppressWarnings("unused")
     public OperatorCreationSteps(AppHooks hooks, ScenarioContext context) {
-        this.driver  = AppHooks.getDriver();
-        this.context = context;
+        this.driver       = AppHooks.getDriver();
+        this.context      = context;
+        this.elementUtils = new ElementUtils(driver);
     }
 
     private OperatorPage page() {
@@ -38,6 +42,10 @@ public class OperatorCreationSteps {
         String name = GlobalEntityStore.getLatestName(GlobalEntityStore.OPERATOR);
         if (name == null) {
             name = page().createOperatorAndReturnName();
+            // Wait for the list screen's Search button — createOperatorAndReturnName() returns
+            // as soon as the success banner fires, before the app navigates back to the list.
+            // Without this wait, the next scenario step may run while the form is still visible.
+            elementUtils.waitForPresence(AppiumBy.accessibilityId("Search"), 15);
             GlobalEntityStore.setLatestName(GlobalEntityStore.OPERATOR, name);
             GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
         }
@@ -46,28 +54,12 @@ public class OperatorCreationSteps {
 
     @And("User has already created an Operator with mandatory fields only")
     public void userHasAlreadyCreatedAnOperatorWithMandatoryFieldsOnly() {
-        String key  = "global_operator_mandatory_only_name";
-        String name = GlobalTestData.get(key);
-        if (name == null) {
-            name = page().createOperatorAndReturnName();
-            GlobalEntityStore.setLatestName(GlobalEntityStore.OPERATOR, name);
-            GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
-            GlobalTestData.set(key, name);
-        }
-        context.set(ScenarioContext.OPERATOR_NAME, name);
+        userHasAlreadyCreatedAnOperator();
     }
 
     @And("User has already created an Operator with all fields")
     public void userHasAlreadyCreatedAnOperatorWithAllFields() {
-        String key  = "global_operator_all_fields_name";
-        String name = GlobalTestData.get(key);
-        if (name == null) {
-            name = page().createOperatorAndReturnName();
-            GlobalEntityStore.setLatestName(GlobalEntityStore.OPERATOR, name);
-            GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
-            GlobalTestData.set(key, name);
-        }
-        context.set(ScenarioContext.OPERATOR_NAME, name);
+        userHasAlreadyCreatedAnOperator();
     }
 
     // ═══════════════════════════════════════════════════

@@ -1,0 +1,177 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.ProductSetupTypeViewRunner
+-------------------------------------------------------------------------------
+Tests run: 19, Failures: 0, Errors: 18, Skipped: 0, Time elapsed: 94.33 s <<< FAILURE! -- in testRunner.ProductSetupTypeViewRunner
+Login Functionality.Verify user is able to login successfully -- Time elapsed: 19.31 s <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [1d5af982-5fc5-42cd-8878-74aee60c2725, findElement {value=new UiSelector().className("android.widget.EditText").instance(0), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 1d5af982-5fc5-42cd-8878-74aee60c2725
+	at jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$getSearchingFunction$0(ByChained.java:41)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:72)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$nb9MFoaJ.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at utilities.WaitHelper.waitForVisibility(WaitHelper.java:30)
+	at utilities.ActionHelper.clearAndType(ActionHelper.java:50)
+	at pageObject.BasePage.clearAndType(BasePage.java:82)
+	at pageObject.configurations.LoginPage.enterEmail(LoginPage.java:224)
+	at StepDefinitions.configurations.login.LoginSteps.the_user_enters_email(LoginSteps.java:129)
+	at ✽.the user enters email "anilkumar.m@apms.ai"(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/01_Login.feature:71)
+
+View Product Setup Type Details from Product Setup Types List.Open View Product Setup Type popup by clicking on record -- Time elapsed: 31.16 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for pageObject.UsersPage$$Lambda$964/0x0000015b2f605d58@152a6648 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 17d2e29f-cf1d-4158-b91e-7fa56cc9e25a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pageObject.UsersPage.clickOnProfileIcon(UsersPage.java:295)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:72)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Close View popup navigates back without Confirmation Alert -- Time elapsed: 22.41 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [1ab86ee8-20be-4788-85d7-8fe5fa7c5af7, findElement {value=new UiSelector().descriptionStartsWith("Configurations"), using=-android uiautomator}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, app: C:\Users\Anil Kumar M\ApkFi..., appActivity: com.apms.ai.MainActivity, appPackage: com.apms.ai, automationName: UiAutomator2, deviceName: Galaxy A21s, noReset: false, platformName: ANDROID, platformVersion: 12.0}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A217F, appium:deviceName: RZ8NC0AXMDW, appium:deviceScreenDensity: 280, appium:deviceScreenSize: 720x1600, appium:deviceUDID: RZ8NC0AXMDW, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 1.75, appium:platformVersion: 12, appium:statBarHeight: 68, appium:takesScreenshot: true, appium:viewportRect: {height: 1532, left: 0, top: 68, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 1ab86ee8-20be-4788-85d7-8fe5fa7c5af7
+	at jdk.internal.reflect.GeneratedConstructorAccessor19.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObject.UsersPage.findSectionHeader(UsersPage.java:330)
+	at pageObject.UsersPage.clickOnSectionHeader(UsersPage.java:306)
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnSection(CommonNavigationSteps.java:89)
+	at ✽.User clicks on "Configurations" section(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:6)
+
+View Product Setup Type Details from Product Setup Types List.Verify all fields are visible in View Product Setup Type popup -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify fields are non-editable in View Product Setup Type popup -- Time elapsed: 0.010 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify no Save button in View Product Setup Type popup -- Time elapsed: 0 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Product Setup Type view data accuracy -- Time elapsed: 0.016 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Product Setup Name display in View popup -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Machine Output Timer display in View popup -- Time elapsed: 0.017 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Product Setup Timer display in View popup -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Description display in View popup -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify popup close functionality -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Attempt to edit Product Setup Type fields from View popup -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Rapid click on Product Setup Type record -- Time elapsed: 0.021 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Reopen View Product Setup Type popup multiple times -- Time elapsed: 0.016 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify View Product Setup Type popup UI elements -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify popup overlay behavior -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+
+View Product Setup Type Details from Product Setup Types List.Verify Product Setup Type ID format in View popup -- Time elapsed: 0.015 s <<< ERROR!
+java.lang.IllegalStateException: Driver is null — Appium session restart failed (ADB unauthorized). Reconnect device and re-run.
+	at StepDefinitions.common.CommonNavigationSteps.userClicksOnProfileIcon(CommonNavigationSteps.java:69)
+	at ✽.User clicks on profile icon(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeView.feature:5)
+

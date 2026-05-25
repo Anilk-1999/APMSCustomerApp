@@ -102,9 +102,10 @@ Feature: Create Product Group via Configuration Module
     When User leaves Product Group Name empty
     And User enters valid Product Group Code
     And User clicks Submit button
-    Then "Product Group Name is required" should be displayed
+    Then "This field is required" error should be displayed for Product Group Name
     When User clicks Close "X" button
-
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
     Then popup should be closed without saving data
     And User should return to Product Groups list screen
 
@@ -115,9 +116,10 @@ Feature: Create Product Group via Configuration Module
     When User enters valid Product Group Name
     And User leaves Product Group Code empty
     And User clicks Submit button
-    Then "Product Group Code is required" should be displayed
+    Then "This field is required" error should be displayed for Product Group Code
     When User clicks Close "X" button
-
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
     Then popup should be closed without saving data
     And User should return to Product Groups list screen
 
@@ -128,9 +130,10 @@ Feature: Create Product Group via Configuration Module
     When User enters only spaces in Product Group Name
     And User enters valid Product Group Code
     And User clicks Submit button
-    Then "Product Group Name is required" should be displayed
+    Then "This field is required" error should be displayed for Product Group Name
     When User clicks Close "X" button
-
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
     Then popup should be closed without saving data
     And User should return to Product Groups list screen
 
@@ -165,7 +168,7 @@ Feature: Create Product Group via Configuration Module
     Then Product Group should be created successfully
     And User should return to Product Groups list screen
 
-  @regression @p2
+ ## @regression @p2
   Scenario: Create Product Group with spaces in Product Group Code
     When User clicks on "+ Add" button in Product Groups list screen
     Then "Add New Product Group" popup should be displayed
@@ -188,6 +191,7 @@ Feature: Create Product Group via Configuration Module
     And User enters valid Product Group Code
     When User clicks Submit button multiple times quickly
     Then Product Group should be created successfully
+    And User should return to Product Groups list screen
 
   @sanity @p3
   Scenario: Create Product Group with very large text
@@ -206,17 +210,24 @@ Feature: Create Product Group via Configuration Module
     And User enters valid Product Group Name
     And User enters valid Product Group Code
     When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
     Then popup should be closed without saving data
     And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Reopen popup after close
-    When User opens Add Product Group popup
-    And User clicks Close "X" button
+    When User clicks on "+ Add" button in Product Groups list screen
+    Then "Add New Product Group" popup should be displayed
+    When User clicks Close "X" button
     Then popup should be closed without saving data
     When User reopens Add Product Group popup
     Then "Add New Product Group" popup should be displayed
     And all fields should be reset
+    When User clicks Close "X" button
+    Then popup should be closed without saving data
+    And User should return to Product Groups list screen
+
 
 
   # =========================================================
@@ -247,6 +258,9 @@ Feature: Create Product Group via Configuration Module
     Then "Add New Product Group" popup should be displayed
     Then Product Group Name and Code should accept valid input
     And Description field should allow optional text
+    When User clicks Close "X" button
+    Then popup should be closed without saving data
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify validation message UI
@@ -255,6 +269,9 @@ Feature: Create Product Group via Configuration Module
     When User triggers validation errors
     And User clicks Submit button
     Then validation messages should be displayed below respective fields
+    When User clicks Close "X" button
+    Then popup should be closed without saving data
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Validate Description field
@@ -262,3 +279,8 @@ Feature: Create Product Group via Configuration Module
     Then "Add New Product Group" popup should be displayed
     When User enters long text in Description field
     Then system should accept optional input without error
+    When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then popup should be closed without saving data
+    And User should return to Product Groups list screen

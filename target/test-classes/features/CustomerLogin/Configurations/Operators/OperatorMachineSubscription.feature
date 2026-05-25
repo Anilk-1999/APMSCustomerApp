@@ -245,29 +245,6 @@ Feature: Operator Machine Subscription via Action Menu
     And Operator should be navigate into "Operators" list
 
   @regression @p2
-  Scenario: Delete all machines from Operator Machine Subscription and submit
-    And User has already created an Operator with machine subscriptions
-    When User clicks on search icon
-    And User taps on search input field
-    And User clears existing text in search field
-    And User enters newly created Operator Name
-    And User waits for search results to load
-    Then system should display matching Operator results
-    And User verifies Operator appears in list
-    When User long presses on Operator record
-    Then Action Menus bottom sheet should be displayed
-    When User clicks on Machine Subscription option
-    Then Machine Subscription popup should be displayed
-    When User deletes all machines from Machine Subscription list
-    Then Machine Subscription list should be empty
-    When User clicks Submit button in Machine Subscription popup
-    Then Machine Subscription should be saved successfully
-    When User clicks search close X button
-    Then search field should be closed
-    And module list should be in normal state
-    And Operator should be navigate into "Operators" list
-
-  @regression @p2
   Scenario: Delete machine and re-add in same session
     And User has already created an Operator with machine subscriptions
     When User clicks on search icon
@@ -287,6 +264,29 @@ Feature: Operator Machine Subscription via Action Menu
     And User selects that machine from bottom sheet
     And User clicks Submit button in Select Machines bottom sheet
     Then machine should be re-added to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And Operator should be navigate into "Operators" list  
+
+  @regression @p2
+  Scenario: Delete all machines from Operator Machine Subscription and submit
+    And User has already created an Operator with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Operator Name
+    And User waits for search results to load
+    Then system should display matching Operator results
+    And User verifies Operator appears in list
+    When User long presses on Operator record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes all machines from Machine Subscription list
+    Then Machine Subscription list should be empty
     When User clicks Submit button in Machine Subscription popup
     Then Machine Subscription should be saved successfully
     When User clicks search close X button

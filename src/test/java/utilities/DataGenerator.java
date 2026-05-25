@@ -29,8 +29,8 @@ public class DataGenerator {
 
     // ── Products / Product Groups ─────────────────────────────────────────────
 
-    public static String randomProductGroupName()  { return "PrdGrp_"   + fourDigit(); }
-    public static String randomProductGroupCode()  { return "PGRP"      + fourDigit(); }
+    public static String randomProductGroupName()  { return "PG_"  + uniqueSuffix(); }
+    public static String randomProductGroupCode()  { return "PGC" + uniqueSuffix(); }
     public static String randomProductName()       { return "Product_"  + fourDigit(); }
     public static String randomProductCode()       { return "PRD"       + fourDigit(); }
     public static String randomProductSetupName()  { return "PSType_"   + fourDigit(); }
@@ -86,6 +86,8 @@ public class DataGenerator {
 
     // ── Internals ─────────────────────────────────────────────────────────────
 
-    private static String fourDigit()  { return String.format("%04d", RNG.nextInt(9999)); }
-    private static String nineDigit()  { return String.format("%09d", RNG.nextInt(999999999)); }
+    private static String fourDigit()   { return String.format("%04d", RNG.nextInt(9999)); }
+    private static String nineDigit()   { return String.format("%09d", RNG.nextInt(999999999)); }
+    // Combines last 4 digits of timestamp with 2 random digits — ~1M combinations, collision-safe across flows
+    private static String uniqueSuffix() { return String.format("%04d%02d", System.currentTimeMillis() % 10000, RNG.nextInt(100)); }
 }

@@ -34,8 +34,9 @@ public class GlobalEntityStore {
     public static final String SCRAP          = "SCRAP";
     public static final String SPARE          = "SPARE";
     public static final String REASON         = "REASON";
-    public static final String OPERATOR       = "OPERATOR";
-    public static final String USER           = "USER";
+    public static final String OPERATOR            = "OPERATOR";
+    public static final String USER                = "USER";
+    public static final String PRODUCT_SETUP_TYPE  = "PRODUCT_SETUP_TYPE";
 
     // ── API ──────────────────────────────────────────────────────────────────
 

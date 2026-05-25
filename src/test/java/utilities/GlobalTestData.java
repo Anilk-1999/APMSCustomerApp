@@ -28,7 +28,8 @@ public class GlobalTestData {
     public static final String PRODUCT_GROUP_NAME  = "global_product_group_name";
     public static final String PRODUCT_GROUP_CODE  = "global_product_group_code";
     public static final String PRODUCT_NAME         = "global_product_name";
-    public static final String PRODUCT_SETUP_NAME   = "global_product_setup_name";
+    public static final String PRODUCT_SETUP_NAME        = "global_product_setup_name";
+    public static final String PRODUCT_SETUP_TYPE_NAME   = "global_product_setup_type_name";
     public static final String RAW_MATERIAL_NAME     = "global_raw_material_name";
     public static final String SCRAP_NAME            = "global_scrap_name";
     public static final String SPARE_NAME            = "global_spare_name";

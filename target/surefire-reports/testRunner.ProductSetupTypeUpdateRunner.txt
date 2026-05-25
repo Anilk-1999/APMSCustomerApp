@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.ProductSetupTypeUpdateRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 18.44 s <<< FAILURE! -- in testRunner.ProductSetupTypeUpdateRunner
+testRunner.ProductSetupTypeUpdateRunner -- Time elapsed: 18.44 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
+Host info: host: 'ANIL-KUMAR-APMS', ip: '192.168.31.113'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.16'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:adbExecTimeout=60000, appium:appPackage=com.apms.ai, platformName=ANDROID, appium:noReset=false, appium:app=C:\Users\Anil Kumar M\ApkFiles\ApmsCustomer.apk, appium:platformVersion=12.0, appium:appActivity=com.apms.ai.MainActivity, appium:deviceName=Galaxy A21s}], desiredCapabilities=Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:deviceName: Galaxy A21s, appium:noReset: false, appium:platformVersion: 12.0, platformName: ANDROID}}]
+Capabilities {appium:adbExecTimeout: 60000, appium:app: C:\Users\Anil Kumar M\ApkFi..., appium:appActivity: com.apms.ai.MainActivity, appium:appPackage: com.apms.ai, appium:automationName: UiAutomator2, appium:deviceName: Galaxy A21s, appium:noReset: false, appium:platformVersion: 12.0, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:116)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:96)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:176)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:268)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:90)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:102)
+	at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:109)
+	at testBase.BaseClass.initDriver(BaseClass.java:24)
+	at hooks.AppHooks.setUp(AppHooks.java:28)
+

@@ -1,19 +1,24 @@
-Feature: Manage Machine Subscription in Product Setup Type
+@regression @smoke @machine-subscription @p1
+Feature: Product Setup Type Machine Subscription via Action Menu
+
+  # Machine Subscription is accessed via long press on a Product Setup Type record in the list.
+  # Product Setup Type must be searched first, then long pressed to open Action Menus bottom sheet.
+  # Action Menus bottom sheet appears with "Machine Subscription" option.
+  # Machine Subscription popup: "+" to add machines, delete icon per machine, Submit button, Close X button.
 
   Background:
     When User clicks on profile icon
-    Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
-    Then verify the "Product" section is displayed
     When User clicks on "Product Setup Types" feature
-    Then verify user navigates to "Product Setup Types" list screen
+
+
+  # =========================================================
+  # NAVIGATION — SEARCH + LONG PRESS + ACTION MENU
+  # =========================================================
+
+  @smoke @p1
+  Scenario: Search Product Setup Type and long press to open Action Menus bottom sheet
     And User has already created a Product Setup Type
-
-  # =========================================================
-  # 🔍 SEARCH + LONG PRESS + ACTION MENU FLOW
-  # =========================================================
-
-  Scenario: Open Machine Subscription popup via Action Menu
     When User clicks on search icon
     And User taps on search input field
     And User clears existing text in search field
@@ -21,209 +26,551 @@ Feature: Manage Machine Subscription in Product Setup Type
     And User waits for search results to load
     Then system should display matching Product Setup Type results
     And User verifies Product Setup Type appears in list
-    When User performs long press on Product Setup Type record
-    Then Action Menu bottom sheet should be displayed
-    And Machine Subscription option should be visible
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    When User closes Action Menus bottom sheet
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @smoke @p1
+  Scenario: Open Product Setup Type Machine Subscription popup and verify UI elements
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
     When User clicks on Machine Subscription option
     Then Machine Subscription popup should be displayed
-    And "Add Machine" label should be visible
-    And "+" button should be visible
-    And machine subscription list should be displayed if machines exist
-    And Submit button should be visible
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Open Product Setup Type Machine Subscription popup when no machines assigned
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And Machine Subscription list should show empty state
+    And "+" add machine button should be visible
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
 
   # =========================================================
-  # 🧪 POSITIVE SCENARIOS
+  # POSITIVE SCENARIOS — ADD MACHINES
   # =========================================================
 
-  Scenario: Add machines to Product Setup Type
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks on "+" button under Add Machine
+  @smoke @regression @p1
+  Scenario: Add single Product Setup Type machine subscription
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
     Then "Select Machines" bottom sheet should be displayed
-    When User selects multiple machines
-    And User clicks Submit button in machine selection bottom sheet
-    Then selected machines should be added to Machine Subscription list
-    When User clicks Submit button in Machine Subscription popup
-    Then machines should be saved successfully
-
-  Scenario: Add single machine to Product Setup Type
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks on "+" button under Add Machine
-    And User selects only one machine
-    And User clicks Submit button in machine selection bottom sheet
+    When User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
     Then selected machine should be added to Machine Subscription list
+    And each machine in list should have a delete icon
     When User clicks Submit button in Machine Subscription popup
-    Then machine subscription should be saved successfully
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Open and close Machine Subscription popup without selecting machines
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks Submit button without selecting machines
-    Then system should allow submission successfully
-
-  Scenario: Add machines and verify list in popup before saving
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks on "+" button under Add Machine
-    And User selects multiple machines
-    And User clicks Submit button in machine selection bottom sheet
-    Then selected machines should be displayed correctly in Machine Subscription popup
-
-  # =========================================================
-  # ❌ NEGATIVE SCENARIOS
-  # =========================================================
-
-  Scenario: Duplicate machine selection
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User selects already added machine again
-    Then system should prevent duplicate machine entry
-
-  Scenario: Invalid machine selection state
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And machine is inactive or unavailable in selection list
-    Then system should restrict machine selection
-
-  Scenario: Submit without changes
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks Submit button without modification
-    Then system should show "No changes detected" or allow safe submission
-
-  Scenario: Select machines and close bottom sheet without submit
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks on "+" button under Add Machine
-    And User selects machines in bottom sheet
-    And User closes machine selection bottom sheet without submitting
-    Then selected machines should not be added to Machine Subscription list
-
-  # =========================================================
-  # 🔁 DELETE FLOW
-  # =========================================================
-
-  Scenario: Delete machine from subscription list
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And machines are already added in subscription list
-    And User clicks delete button on a machine
-    Then machine should be removed from Machine Subscription list
+  @regression @p1
+  Scenario: Add multiple Product Setup Type machine subscriptions
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machines should be added to Machine Subscription list
+    And each machine in list should have a delete icon
     When User clicks Submit button in Machine Subscription popup
-    Then updated machine subscription list should be saved successfully
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Delete all machines from subscription list
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User removes all machines from subscription list
+  @regression @p2
+  Scenario: Add machine and then add more machines in same session
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects additional machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then additional machines should be appended to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Product Setup Type Machine Subscription list persists after save
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And previously subscribed machines should be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+
+  # =========================================================
+  # POSITIVE SCENARIOS — DELETE MACHINES
+  # =========================================================
+
+  @regression @p1
+  Scenario: Delete single machine from Product Setup Type Machine Subscription
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    And remaining machines should still be displayed
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Delete multiple machines from Product Setup Type Machine Subscription
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes multiple machines from Machine Subscription list
+    Then all deleted machines should be removed from list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Delete machine and re-add in same session
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
+    Then that machine should be removed from Machine Subscription list
+    When User clicks "+" button in Machine Subscription popup
+    And User selects that machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then machine should be re-added to Machine Subscription list
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Delete all machines from Product Setup Type Machine Subscription and submit
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User deletes all machines from Machine Subscription list
+    Then Machine Subscription list should be empty
+    When User clicks Submit button in Machine Subscription popup
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Product Setup Type Machine Subscription list updated after deletion save
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon on one machine in list
     And User clicks Submit button in Machine Subscription popup
-    Then system should allow empty machine subscription list
+    Then Machine Subscription should be saved successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And deleted machine should not be displayed in Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
 
   # =========================================================
-  # ⚠️ EDGE CASE SCENARIOS
+  # NEGATIVE SCENARIOS
   # =========================================================
 
-  Scenario: Rapid long press action
-    When User searches for newly created Product Setup Type Name
-    And User performs long press multiple times quickly on Product Setup Type record
-    Then only one Action Menu should appear
+  @negative @regression @p2
+  Scenario: Submit Select Machines bottom sheet without selecting any machine
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    Then bottom sheet should close with no machines added
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Rapid multiple Submit clicks
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks Submit button multiple times quickly
-    Then system should prevent duplicate requests
-
-  Scenario: Large machine list handling
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And machine list contains many records
-    Then list should support scrolling and multi-selection
-
-  Scenario: Network failure during submission
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User clicks Submit button without internet connection
-    Then system should display network error message
-
-  Scenario: Session timeout during Machine Subscription operation
-    When session expires during Machine Subscription operation
-    Then User should be redirected to login screen
-
-  Scenario: Reopen Machine Subscription popup after close
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User closes Machine Subscription popup
-    And User reopens Machine Subscription popup
-    Then previously saved machine subscription data should be displayed correctly
 
   # =========================================================
-  # 📱 UI VALIDATION SCENARIOS
+  # EDGE CASE SCENARIOS
   # =========================================================
 
-  Scenario: Verify Machine Subscription popup UI
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    Then Add Machine label should be visible
-    And "+" button should be visible
-    And machine subscription list section should be visible
-    And Submit button should be visible
+  @sanity @p2
+  Scenario: Close Product Setup Type Machine Subscription popup without saving discards changes
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then selected machine should be added to Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed without saving
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Verify Select Machines bottom sheet UI
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User opens machine selection
-    Then machine selection bottom sheet should display machine list
-    And multi-selection should be enabled
-    And Submit button should be visible
+  @sanity @p3
+  Scenario: Rapid "+" button clicks in Machine Subscription popup opens only one bottom sheet
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup multiple times quickly
+    Then only one "Select Machines" bottom sheet should be displayed
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Verify delete button visibility
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    Then each added machine should have delete option
+  @sanity @p3
+  Scenario: Rapid Submit clicks in Product Setup Type Machine Subscription popup should prevent duplicate save
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects one machine from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    When User clicks Submit button in Machine Subscription popup multiple times quickly
+    Then system should prevent duplicate Machine Subscription save
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-  Scenario: Verify popup close behavior
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User closes popup using back or outside click
-    Then Machine Subscription popup should be dismissed successfully
+  @sanity @p3
+  Scenario: Rapid delete icon clicks should remove machine only once
+    And User has already created a Product Setup Type with machine subscriptions
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks delete icon multiple times quickly on one machine
+    Then that machine should be removed only once from Machine Subscription list
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
 
   # =========================================================
-  # 🔍 MACHINE SELECTION SCENARIOS
+  # UI VALIDATION SCENARIOS
   # =========================================================
 
-  Scenario Outline: Validate machine selection behavior
-    When User searches for newly created Product Setup Type Name
-    And User performs long press on Product Setup Type record
-    And User clicks on Machine Subscription option
-    And User opens Select Machines bottom sheet
-    And User selects "<selectionType>" machines
-    Then system should handle machine selection correctly
+  @regression @p2
+  Scenario: Verify Product Setup Type Machine Subscription popup UI elements
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    And "+" add machine button should be visible
+    And Submit button should be visible in Machine Subscription popup
+    And Close "X" button should be visible in Machine Subscription popup
+    And all Machine Subscription popup elements should be aligned properly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
-    Examples:
-      | selectionType |
-      | single        |
-      | multiple      |
-      | duplicate     |
-      | none          |
+  @regression @p2
+  Scenario: Verify Select Machines bottom sheet UI elements
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    Then "Select Machines" bottom sheet should be displayed
+    And machines list should be displayed in bottom sheet
+    And multi-selection should be enabled in Select Machines bottom sheet
+    And Submit button should be visible in Select Machines bottom sheet
+    When User clicks Submit button in Select Machines bottom sheet without selecting
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
 
- 
+  @regression @p2
+  Scenario: Verify each machine in Product Setup Type Machine Subscription list has delete icon
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks "+" button in Machine Subscription popup
+    And User selects multiple machines from bottom sheet
+    And User clicks Submit button in Select Machines bottom sheet
+    Then each machine in list should have a delete icon
+    And all selected machines should be displayed correctly
+    When User clicks Close "X" button in Machine Subscription popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Product Setup Type Action Menus bottom sheet shows Machine Subscription option
+    And User has already created a Product Setup Type
+    When User clicks on search icon
+    And User taps on search input field
+    And User clears existing text in search field
+    And User enters newly created Product Setup Type Name
+    And User waits for search results to load
+    Then system should display matching Product Setup Type results
+    And User verifies Product Setup Type appears in list
+    When User long presses on Product Setup Type record
+    Then Action Menus bottom sheet should be displayed
+    And Machine Subscription option should be visible in Action Menus
+    When User clicks on Machine Subscription option
+    Then Machine Subscription popup should be displayed
+    When User clicks Close "X" button in Machine Subscription popup
+    Then Machine Subscription popup should be closed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Setup Types list screen

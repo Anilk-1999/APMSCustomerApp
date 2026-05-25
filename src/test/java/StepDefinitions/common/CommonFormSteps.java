@@ -381,19 +381,41 @@ public class CommonFormSteps {
 
     @And("User taps on search input field")
     public void userTapsOnSearchInputField() {
-        if (cachedSearchInput == null) cachedSearchInput = find("//android.widget.EditText");
-        try { cachedSearchInput.click(); } catch (Exception e) {
-            cachedSearchInput = find("//android.widget.EditText");
+        // Click to focus the EditText so sendKeys are accepted by the Flutter SearchAnchor.
+        // Wait up to 20 s for the field to appear — Flutter may take time to rebuild after
+        // a fresh operator creation in the same scenario's background step.
+        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        try {
+            cachedSearchInput = new WebDriverWait(driver, Duration.ofSeconds(20))
+                    .pollingEvery(Duration.ofMillis(300))
+                    .until(d -> {
+                        List<WebElement> els = d.findElements(AppiumBy.xpath("//android.widget.EditText"));
+                        return els.isEmpty() ? null : els.get(0);
+                    });
             cachedSearchInput.click();
+        } catch (Exception e) {
+            if (cachedSearchInput != null) try { cachedSearchInput.click(); } catch (Exception ignored) {}
+        } finally {
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
         }
     }
 
     @And("User clears existing text in search field")
     public void userClearsExistingTextInSearchField() {
-        if (cachedSearchInput == null) cachedSearchInput = find("//android.widget.EditText");
-        try { cachedSearchInput.clear(); } catch (Exception e) {
-            cachedSearchInput = find("//android.widget.EditText");
+        // Always refresh the reference — Flutter may have rebuilt the field after the click.
+        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        try {
+            cachedSearchInput = new WebDriverWait(driver, Duration.ofSeconds(20))
+                    .pollingEvery(Duration.ofMillis(300))
+                    .until(d -> {
+                        List<WebElement> els = d.findElements(AppiumBy.xpath("//android.widget.EditText"));
+                        return els.isEmpty() ? null : els.get(0);
+                    });
             cachedSearchInput.clear();
+        } catch (Exception e) {
+            if (cachedSearchInput != null) try { cachedSearchInput.clear(); } catch (Exception ignored) {}
+        } finally {
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
         }
     }
 
@@ -702,6 +724,19 @@ public class CommonFormSteps {
      */
     @When("User clicks search close X button")
     public void userClicksSearchCloseXButton() {
+        // After navigating back from a detail screen (e.g. View Operator), Flutter's animation
+        // takes a moment before the search bar EditText reappears on the list screen.
+        // Poll briefly (max 3 s) so clickSearchCloseXIfOpen() finds the bar on the first attempt
+        // rather than bailing out immediately and forcing a redundant second pass in the
+        // "search field should be closed" step.
+        driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(3))
+                    .pollingEvery(Duration.ofMillis(200))
+                    .until(d -> !d.findElements(AppiumBy.xpath("//android.widget.EditText")).isEmpty()
+                            ? Boolean.TRUE : null);
+        } catch (Exception ignored) { /* search bar genuinely absent — clickSearchCloseXIfOpen will skip */ }
+        finally { driver.manage().timeouts().implicitlyWait(Duration.ZERO); }
         new utilities.SearchUtils(driver).clickSearchCloseXIfOpen();
         cachedSearchInput = null;
     }

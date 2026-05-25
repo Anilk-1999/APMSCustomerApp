@@ -145,9 +145,10 @@ public class SearchUtils {
     public void clickSearchCloseXIfOpen() {
         if (!isSearchBarOpen()) return;
         clickSearchCloseX();
-        // If bar still open (text was cleared on first click), click X once more to close
+        // Flutter's X button clears text on the first click, then closes on the second.
         if (isSearchBarOpen()) clickSearchCloseX();
-        elementUtils.waitForAbsence(SEARCH_BAR, 5);
+        // Bar should close within one Flutter frame; 3 s is a generous upper bound.
+        elementUtils.waitForAbsence(SEARCH_BAR, 3);
     }
 
     /**
@@ -248,6 +249,7 @@ public class SearchUtils {
     public void typeSearchText(String text) {
         WebElement input = elementUtils.waitForFirst(SEARCH_BAR, 10);
         if (input != null) { try { input.sendKeys(text); } catch (Exception ignored) {} }
+        try { driver.hideKeyboard(); } catch (Exception ignored) { /* keyboard already hidden */ }
     }
 
     // ═══════════════════════════════════════════════════════

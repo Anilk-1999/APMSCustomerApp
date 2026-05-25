@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageObject.configurations.ProductGroupPage;
 import utilities.DataGenerator;
+import utilities.GlobalEntityStore;
 import utilities.GlobalTestData;
 import utilities.ScenarioContext;
 
@@ -181,14 +182,28 @@ public class ProductGroupUpdateSteps {
 
     @Then("Product Group should be updated successfully")
     public void productGroupShouldBeUpdatedSuccessfully() {
-        Assert.assertTrue(page().isAddButtonVisible(),
-                "Product Group update failed - Add button not visible");
+        Assert.assertTrue(page().waitForEditPopupToClose(25),
+                "Product Group update failed — Edit popup did not close within 25s");
+        String newName = context.getString(ScenarioContext.PRODUCT_GROUP_NAME);
+        if (newName != null) {
+            if (newName.trim().length() <= 100) {
+                GlobalEntityStore.setLatestName(GlobalEntityStore.PRODUCT_GROUP, newName);
+                GlobalTestData.set(GlobalTestData.PRODUCT_GROUP_NAME, newName);
+            } else {
+                // Name is too long to be found by getRecordByName — force fresh creation next scenario
+                GlobalEntityStore.setLatestName(GlobalEntityStore.PRODUCT_GROUP, null);
+                GlobalTestData.set(GlobalTestData.PRODUCT_GROUP_NAME, null);
+            }
+        }
     }
 
     @Then("updated data should be reflected in Product Groups list screen")
     public void updatedDataShouldBeReflectedInProductGroupsListScreen() {
         String name = storedName();
         if (name != null) {
+            // Close the old search (which still shows old-name results) then re-search with updated name
+            page().exitSearch();
+            page().searchRecord(name);
             Assert.assertNotNull(page().getRecordByName(name),
                     "Updated Product Group not found in list: " + name);
         }
@@ -208,7 +223,8 @@ public class ProductGroupUpdateSteps {
 
     @Then("system should prevent duplicate update requests")
     public void systemShouldPreventDuplicateUpdateRequests() {
-        System.out.println("[INFO] Rapid save handled for Product Group update");
+        Assert.assertTrue(page().waitForReturnToList(15),
+                "Rapid Save did not return to list — duplicate update may have hung the popup");
     }
 
     @Then("system should allow optional input")
@@ -219,8 +235,8 @@ public class ProductGroupUpdateSteps {
 
     @Then("popup should be closed without saving updated changes")
     public void popupShouldBeClosedWithoutSavingUpdatedChanges() {
-        Assert.assertTrue(page().isAddButtonVisible(),
-                "Edit popup did not close - Add button not visible");
+        Assert.assertTrue(page().waitForReturnToList(10),
+                "Edit popup did not close — list screen not visible");
     }
 
     @When("User reopens Edit Product Group popup")

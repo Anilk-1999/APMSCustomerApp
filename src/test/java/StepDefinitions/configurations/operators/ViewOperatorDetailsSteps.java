@@ -60,7 +60,6 @@ public class ViewOperatorDetailsSteps {
     //  VIEW OPERATOR SCREEN — STATE CHECKS
     // ═══════════════════════════════════════════════════
 
-    @Then("\"View Operator\" screen should be displayed")
     public void viewOperatorScreenShouldBeDisplayed() {
         Assert.assertTrue(page().isViewOperatorScreenDisplayed(),
                 "View Operator screen not displayed");

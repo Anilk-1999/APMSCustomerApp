@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.RawMaterialCreationRunner
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 226.5 s -- in testRunner.RawMaterialCreationRunner

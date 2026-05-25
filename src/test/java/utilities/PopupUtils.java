@@ -174,26 +174,24 @@ public class PopupUtils {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutSecs))
                     .pollingEvery(POLL)
                     .until(d -> {
-                        // 1. FAB exact match "+" Add
+                        // Submit present = Add popup still open — Flutter overlays expose list
+                        // elements even while a popup is open, so we must gate on Submit being
+                        // absent before trusting any list-screen signal.
+                        if (!d.findElements(AppiumBy.accessibilityId("Submit")).isEmpty()) return null;
+
+                        // Submit gone = popup closed. Now confirm list screen is ready.
                         if (!d.findElements(AppiumBy.androidUIAutomator(
                                 "new UiSelector().description(\"+ Add\")")).isEmpty()) return Boolean.TRUE;
-
-                        // 2. Bottom toolbar "Add" button (no "+") — Flutter bottom nav
                         if (!d.findElements(AppiumBy.androidUIAutomator(
                                 "new UiSelector().description(\"Add\")")).isEmpty()) return Boolean.TRUE;
-
-                        // 3. List screen Search / Filter toolbar icon
                         if (!d.findElements(AppiumBy.accessibilityId("Search")).isEmpty()) return Boolean.TRUE;
                         if (!d.findElements(AppiumBy.accessibilityId("Filter")).isEmpty()) return Boolean.TRUE;
-
-                        // 4. Actual success banner — "User Created Successfully"
                         if (!d.findElements(AppiumBy.androidUIAutomator(
                                 "new UiSelector().descriptionContains(\"Created Successfully\")")).isEmpty())
                             return Boolean.TRUE;
                         if (!d.findElements(AppiumBy.androidUIAutomator(
                                 "new UiSelector().textContains(\"Created Successfully\")")).isEmpty())
                             return Boolean.TRUE;
-
                         return null;
                     });
             return true;

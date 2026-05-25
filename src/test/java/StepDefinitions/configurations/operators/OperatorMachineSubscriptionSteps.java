@@ -43,24 +43,14 @@ public class OperatorMachineSubscriptionSteps {
                 GlobalEntityStore.setLatestName(GlobalEntityStore.OPERATOR, name);
                 GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
             }
-
-            page().searchRecord(name);
-            page().longPressRecord(name);
-            page().clickMachineSubscriptionOption();
-
-            if (page().isMachineSubscriptionPopupDisplayed()) {
-                page().clickMachineAddButton();
-                if (page().isMachineSelectBottomSheetDisplayed()) {
-                    page().selectOneMachine();
-                    page().clickMachineSelectSheetSubmit();
-                }
-                page().clickMachineSubscriptionSubmit();
-                page().waitForMachineSubscriptionPopupClosed(15);
-            }
-
-            new SearchUtils(driver).clickSearchCloseXIfOpen();
             GlobalTestData.set("global_operator_with_machine_sub_name", name);
         }
+
+        // Always ensure at least one machine is subscribed —
+        // previous scenarios may have deleted all machines and saved.
+        page().ensureOperatorHasMachineSubscription(name);
+        new SearchUtils(driver).clickSearchCloseXIfOpen();
+
         GlobalTestData.set(GlobalTestData.OPERATOR_NAME, name);
         context.set(ScenarioContext.OPERATOR_NAME, name);
     }

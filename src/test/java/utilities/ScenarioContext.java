@@ -25,7 +25,8 @@ public class ScenarioContext {
     public static final String PRODUCT_GROUP_NAME     = "PRODUCT_GROUP_NAME";
     public static final String PRODUCT_GROUP_CODE     = "PRODUCT_GROUP_CODE";
     public static final String PRODUCT_NAME           = "PRODUCT_NAME";
-    public static final String PRODUCT_SETUP_NAME     = "PRODUCT_SETUP_NAME";
+    public static final String PRODUCT_SETUP_NAME          = "PRODUCT_SETUP_NAME";
+    public static final String PRODUCT_SETUP_TYPE_NAME     = "PRODUCT_SETUP_TYPE_NAME";
     public static final String RAW_MATERIAL_NAME      = "RAW_MATERIAL_NAME";
     public static final String SCRAP_NAME             = "SCRAP_NAME";
     public static final String SPARE_NAME             = "SPARE_NAME";

@@ -1,246 +1,386 @@
+@regression @smoke @create @p1
 Feature: Create Product Setup Type via Configuration Module
 
+  # Background navigates to Product Setup Types list before every scenario.
+
   Background:
+    When User clicks on profile icon
+    When User clicks on "Configurations" section
+    When User clicks on "Product Setup Types" feature
+
+
+  # =========================================================
+  # NAVIGATION FLOW
+  # =========================================================
+
+  @smoke @p1
+  Scenario: Navigate to Product Setup Types list screen
     When User clicks on profile icon
     Then verify that the "Account Preferences" screen is displayed
     When User clicks on "Configurations" section
     Then verify the "Product" section is displayed
     When User clicks on "Product Setup Types" feature
     Then verify user navigates to "Product Setup Types" list screen
-
-  # =========================================================
-  # 🔁 NAVIGATION FLOW
-  # =========================================================
-
-  Scenario: Navigate to Product Setup Type list screen
-    Then Product Setup Type list should be displayed
     And Add "+" button should be visible
 
+
   # =========================================================
-  # ➕ OPEN ADD POPUP
+  # OPEN ADD PRODUCT SETUP TYPE POPUP
   # =========================================================
 
-  Scenario: Open Add Product Setup Type popup
-    When User clicks on "+ Add" button in Product Setup Type list screen
+  @smoke @p1
+  Scenario: Open Add Product Setup Type popup and verify all fields
+    When User clicks on "+ Add" button in Product Setup Types list screen
     Then "Add Product Setup Type" popup should be displayed
     And Product Setup Name field should be visible
     And Description field should be visible
     And Machine Output Timer field should be visible
     And Product Setup Timer field should be visible
     And Submit button should be visible
-    And Close "X" button should be visible in popup header
-
-  # =========================================================
-  # 🧪 POSITIVE SCENARIOS
-  # =========================================================
-
-  Scenario: Create Product Setup Type with valid data
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User enters Description
-    And User clicks on Machine Output Timer field
-    Then Duration selection popup should be displayed
-    When User selects Hour, Minute and Second by scrolling for Machine Output Timer
-    And User clicks Save button in duration popup
-    Then selected duration should be displayed in Machine Output Timer field
-    When User clicks on Product Setup Timer field
-    Then Duration selection popup should be displayed
-    When User selects Hour, Minute and Second by scrolling for Product Setup Timer
-    And User clicks Save button in duration popup
-    Then selected duration should be displayed in Product Setup Timer field
-    When User clicks Submit button
-    Then Product Setup Type should be created successfully
-    And newly created Product Setup Type should be visible in Product Setup Types list screen
-
-  Scenario: Create Product Setup Type with mandatory fields only
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User sets Machine Output Timer duration
-    And User sets Product Setup Timer duration
-    And User clicks Submit button
-    Then Product Setup Type should be created successfully
-
-  Scenario: Create Product Setup Type with maximum allowed duration
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User selects maximum allowed duration for Machine Output Timer
-    And User selects maximum allowed duration for Product Setup Timer
-    And User clicks Submit button
-    Then Product Setup Type should be created successfully
-
-  Scenario: Create Product Setup Type with trimmed Product Setup Name
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters Product Setup Name with leading and trailing spaces
-    And User sets Machine Output Timer duration
-    And User sets Product Setup Timer duration
-    And User clicks Submit button
-    Then system should trim spaces and create Product Setup Type successfully
-
-  # =========================================================
-  # ❌ NEGATIVE SCENARIOS
-  # =========================================================
-
-  Scenario: Create without Product Setup Name
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User leaves Product Setup Name empty
-    And User clicks Submit button
-    Then "Product Setup Name is required" should be displayed
-
-  Scenario: Create without Machine Output Timer
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User does not select Machine Output Timer
-    And User clicks Submit button
-    Then "Machine Output Timer is required" should be displayed
-
-  Scenario: Create without Product Setup Timer
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User sets Machine Output Timer duration
-    And User does not select Product Setup Timer
-    And User clicks Submit button
-    Then "Product Setup Timer is required" should be displayed
-
-  Scenario: Close duration popup without selecting value
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User opens duration popup for Machine Output Timer
-    And User clicks Close "X" button in duration popup without selecting duration
-    Then timer value should not be set
-    When User clicks Submit button
-    Then validation error should be displayed for Machine Output Timer
-
-  Scenario: Invalid zero duration selection for Machine Output Timer
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User selects "00:00:00" duration for Machine Output Timer
-    Then system should display validation error
-
-  Scenario: Invalid zero duration selection for Product Setup Timer
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User sets Machine Output Timer duration
-    And User selects "00:00:00" duration for Product Setup Timer
-    Then system should display validation error
-
-  Scenario: Create Product Setup Type with only spaces in Product Setup Name
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters only spaces in Product Setup Name field
-    And User clicks Submit button
-    Then "Product Setup Name is required" should be displayed
-
-  Scenario: Create Product Setup Type with only special characters in Product Setup Name
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters only special characters in Product Setup Name field
-    And User clicks Submit button
-    Then validation error should be displayed for Product Setup Name field
-
-  # =========================================================
-  # ⚠️ EDGE CASE SCENARIOS
-  # =========================================================
-
-  Scenario: Rapid multiple clicks on duration field
-    When User clicks timer field multiple times quickly
-    Then only one duration popup should open
-
-  Scenario: Rapid multiple submit clicks
-    When User creates Product Setup Type with valid data
-    And User clicks Submit button multiple times quickly
-    Then system should prevent duplicate Product Setup Type creation
-
-  Scenario: Large duration values
-    When User selects maximum allowed duration
-    Then system should accept valid duration limit
-
-  Scenario: Network failure during creation
-    When User clicks Submit button without internet connection
-    Then system should display network error message
-
-  Scenario: Session timeout during creation
-    When session expires while creating Product Setup Type
-    Then User should be redirected to login screen
-
-  Scenario: Close main popup without saving
-    When User opens Add Product Setup Type popup
-    And User clicks on Close "X" button
-    Then popup should be closed without saving data
-
-  Scenario: Reopen popup after closing
-    When User closes Add Product Setup Type popup
-    And User reopens Add Product Setup Type popup
-    Then all fields should be reset
-
-  # =========================================================
-  # 📱 UI VALIDATION SCENARIOS
-  # =========================================================
-
-  Scenario: Verify Add Product Setup Type popup UI
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    Then all fields should be properly aligned
-    And labels should be clearly visible
-    And Submit button should be enabled only after mandatory fields are filled
-
-  Scenario: Verify duration popup UI
-    When User opens duration popup
-    Then Hour selector should be visible
-    And Minute selector should be visible
-    And Second selector should be visible
-    And vertical scrolling should work
-    And Save button should be visible
     And Close "X" button should be visible
-
-  Scenario: Verify duration value display
-    When User sets timer duration
-    Then selected duration should be shown in proper "HH:MM:SS" format
-
-  Scenario: Verify Close button in main popup
-    When User clicks on Close "X" button
-    Then popup should be dismissed successfully
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
     And User should return to Product Setup Types list screen
 
+
   # =========================================================
-  # 🔍 FIELD VALIDATION SCENARIOS
+  # POSITIVE SCENARIOS
   # =========================================================
 
-  Scenario Outline: Validate Product Setup Name field
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User sets Machine Output Timer duration
-    And User sets Product Setup Timer duration
-    And User clicks Submit button
-    Then "<error>" should be displayed
+  @smoke @regression @p1
+  Scenario: Create Product Setup Type with mandatory fields only
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And newly created Product Setup Type should be displayed in Product Setup Types list screen
 
-    Examples:
-      | input | error                               |
-      |       | Product Setup Name is required      |
-      
+  @regression @p1
+  Scenario: Create Product Setup Type with all fields
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User enters Description for Product Setup Type
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And newly created Product Setup Type should be displayed in Product Setup Types list screen
 
-  Scenario Outline: Validate Machine Output Timer field
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User sets Product Setup Timer duration
-    And User enters "<input>" for Machine Output Timer
-    And User clicks Submit button
-    Then "<error>" should be displayed
+  @regression @p2
+  Scenario: Create Product Setup Type with trimmed Product Setup Name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters Product Setup Name with leading and trailing spaces
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then system should trim spaces and create Product Setup Type successfully
+    And User should return to Product Setup Types list screen
 
-    Examples:
-      | input    | error                                  |
-      |          | Machine Output Timer is required       |
-      | 00:00:00 | Invalid Machine Output Timer           |
+  @regression @p2
+  Scenario: Create Product Setup Type with maximum allowed characters in name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters maximum allowed characters in Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
 
-  Scenario Outline: Validate Product Setup Timer field
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters valid Product Setup Name
-    And User sets Machine Output Timer duration
-    And User enters "<input>" for Product Setup Timer
-    And User clicks Submit button
-    Then "<error>" should be displayed
+  @regression @p2
+  Scenario: Create Product Setup Type with special characters in name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters only special characters in Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
 
-    Examples:
-      | input    | error                                  |
-      |          | Product Setup Timer is required        |
-      | 00:00:00 | Invalid Product Setup Timer            |
+  @regression @p2
+  Scenario: Create Product Setup Type with long description
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User enters long text in Product Setup Type Description field
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
 
-  Scenario: Validate Description field
-    When User clicks on "+ Add" button in Product Setup Type list screen
-    And User enters long text in Description field
-    Then system should allow optional Description input without error
+  @regression @p2
+  Scenario: Create Product Setup Type with duplicate name
+    And User has already created a Product Setup Type
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters existing Product Setup Type Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
+
+
+  # =========================================================
+  # NEGATIVE SCENARIOS
+  # =========================================================
+
+  @negative @regression @p1
+  Scenario: Create Product Setup Type without Product Setup Name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User leaves Product Setup Name empty
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Product Setup Name
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Create Product Setup Type with only spaces in Product Setup Name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters only spaces in Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Product Setup Name
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p1
+  Scenario: Submit without filling any fields
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Submit button on Product Setup Type popup
+    Then validation messages should be displayed for Product Setup Type fields
+    And "This field is required" error should be displayed for Product Setup Name
+    And "This field is required" error should be displayed for Machine Output Timer
+    And "This field is required" error should be displayed for Product Setup Timer
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Create Product Setup Type without Machine Output Timer
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Machine Output Timer
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Save duration picker at 0 hours 0 minutes 0 seconds — minimum duration alert shown
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User taps Machine Output Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Save button on duration picker
+    Then "Duration should be at least 1 minute" alert should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Close Machine Output Timer duration picker without saving — required error shown
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    When User taps Machine Output Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Machine Output Timer
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Create Product Setup Type without Product Setup Timer
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Product Setup Timer
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @negative @regression @p2
+  Scenario: Close Product Setup Timer duration picker without saving — required error shown
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    When User taps Product Setup Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Submit button on Product Setup Type popup
+    Then "This field is required" error should be displayed for Product Setup Timer
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+
+  # =========================================================
+  # EDGE CASE SCENARIOS
+  # =========================================================
+
+  @sanity @p2
+  Scenario: Rapid multiple Submit clicks
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    When User clicks Submit button multiple times quickly on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
+
+  @sanity @p3
+  Scenario: Create Product Setup Type with very large text in name
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters very large text in Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    And User sets Product Setup Timer to 1 hours 0 minutes 0 seconds
+    And User clicks Submit button on Product Setup Type popup
+    Then Product Setup Type should be created successfully
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Close popup without saving
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters valid Product Setup Name
+    And User sets Machine Output Timer to 0 hours 30 minutes 0 seconds
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Close empty popup without confirmation dialog
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Reopen popup after close — fields should be reset
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    When User reopens Add Product Setup Type popup
+    Then "Add Product Setup Type" popup should be displayed
+    And Product Setup Type name field should be empty
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Select Duration popup opens for Machine Output Timer
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User taps Machine Output Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Save button on duration picker
+    Then "Duration should be at least 1 minute" alert should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User taps Machine Output Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Select Duration popup opens for Product Setup Timer
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User taps Product Setup Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Save button on duration picker
+    Then "Duration should be at least 1 minute" alert should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User taps Product Setup Timer field
+    Then "Select Duration" popup should be displayed
+    When User clicks Close "X" button on duration picker
+    Then "Add Product Setup Type" popup should be displayed
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+
+  # =========================================================
+  # UI VALIDATION SCENARIOS
+  # =========================================================
+
+  @regression @p2
+  Scenario: Verify Add Product Setup Type popup UI elements
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    And Product Setup Name field should be visible
+    And Description field should be visible
+    And Machine Output Timer field should be visible
+    And Product Setup Timer field should be visible
+    And Submit button should be visible
+    And Close "X" button should be visible
+    When User clicks Close "X" button on Product Setup Type popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen
+
+  @regression @p2
+  Scenario: Verify Product Setup Types list screen UI elements
+    Then verify user navigates to "Product Setup Types" list screen
+    And Add "+" button should be visible
+
+  @regression @p2
+  Scenario: Validate Description optional field behavior
+    When User clicks on "+ Add" button in Product Setup Types list screen
+    Then "Add Product Setup Type" popup should be displayed
+    When User enters long text in Product Setup Type Description field
+    Then system should accept optional Product Setup Type input without error
+    When User clicks Close "X" button on Product Setup Type popup
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    Then Product Setup Type popup should be closed without saving data
+    And User should return to Product Setup Types list screen

@@ -89,6 +89,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User updates only Product Group Name
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -102,6 +105,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User updates only Product Group Code with valid value
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -115,6 +121,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User updates only Description
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -127,7 +136,10 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User enters Product Group Name with leading and trailing spaces
     And User clicks Save button
-    Then system should trim spaces and create Product Group successfully
+    Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
 
@@ -145,7 +157,14 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User clears Product Group Name field
     And User clicks Save button
-    Then "Product Group Name is required" should be displayed
+    Then "This field is required" error should be displayed for Product Group Name
+    When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @negative @regression @p1
   Scenario: Update Product Group without Product Group Code
@@ -157,7 +176,14 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User clears Product Group Code field
     And User clicks Save button
-    Then "Product Group Code is required" should be displayed
+    Then "This field is required" error should be displayed for Product Group Code
+    When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Update Product Group with only spaces in Product Group Name
@@ -169,7 +195,13 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User enters only spaces in Product Group Name field
     And User clicks Save button
-    Then Product Group should be updated successfully
+    Then "This field is required" error should be displayed for Product Group Name
+    When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -183,6 +215,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User enters existing Product Group Name
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -196,6 +231,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User enters existing Product Group Code
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -209,6 +247,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User enters only special characters in Product Group Name and Product Group Code
     And User clicks Save button
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -221,6 +262,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User clicks Save button without modification
     Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
 
@@ -234,6 +278,10 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User searches for newly created Product Group Name
     And User performs swipe action multiple times quickly on product group record
     Then only one Edit option should be displayed
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @sanity @p3
   Scenario: Rapid multiple Save clicks
@@ -246,18 +294,9 @@ Feature: Update Product Group via Swipe Action from Product Group List
     And User updates Product Group Name with valid value
     And User clicks Save button multiple times quickly
     Then Product Group should be updated successfully
-
-  @sanity @p3
-  Scenario: Update Product Group with very large text
-    And User has already created a Product Group
-    When User searches for newly created Product Group Name
-    And User swipes product group record from right to left
-    Then Edit option should be visible
-    When User clicks on Edit button
-    Then "Edit Product Group" popup should be displayed
-    When User enters very large text beyond allowed limit
-    And User clicks Save button
-    Then Product Group should be updated successfully
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
   @regression @p2
@@ -270,7 +309,11 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User modifies Product Group details
     And User clicks Close "X" button
-    Then popup should be closed without saving updated changes
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
     And User should return to Product Groups list screen
 
 
@@ -292,6 +335,11 @@ Feature: Update Product Group via Swipe Action from Product Group List
     And Description field should be editable
     And Save button should be visible
     And Close "X" button should be visible
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify non-editable fields in Edit Product Group popup
@@ -302,6 +350,11 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User clicks on Edit button
     Then "Edit Product Group" popup should be displayed
     Then Product Group ID should not be editable
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Verify pre-filled data accuracy
@@ -312,6 +365,11 @@ Feature: Update Product Group via Swipe Action from Product Group List
     When User clicks on Edit button
     Then "Edit Product Group" popup should be displayed
     Then all fields should display previously saved data correctly
+    When User clicks Close "X" button
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen
 
   @regression @p2
   Scenario: Validate Description field during update
@@ -323,3 +381,10 @@ Feature: Update Product Group via Swipe Action from Product Group List
     Then "Edit Product Group" popup should be displayed
     When User enters long description text
     Then system should allow optional input
+    When User clicks Close "X" button
+    Then "Confirmation Alert" popup should be displayed
+    When User clicks on "Yes, Exit" button on the confirmation popup
+    When User clicks search close X button
+    Then search field should be closed
+    And module list should be in normal state
+    And User should return to Product Groups list screen

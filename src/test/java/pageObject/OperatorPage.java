@@ -744,6 +744,7 @@ public class OperatorPage extends BasePage {
     }
 
     public int getMachineCount() {
+        elementUtils.waitForPresence(MACHINE_ITEMS_IN_POPUP, 5);
         elementUtils.disableImplicitWait();
         try {
             return driver.findElements(MACHINE_ITEMS_IN_POPUP).size();
@@ -755,6 +756,31 @@ public class OperatorPage extends BasePage {
     /** Waits up to timeoutSecs for all machine rows to disappear — use after deleteAll. */
     public boolean waitForAllMachinesGone(int timeoutSecs) {
         return elementUtils.waitForAbsence(MACHINE_ITEMS_IN_POPUP, timeoutSecs);
+    }
+
+    /**
+     * Searches for the operator, opens Machine Subscription popup, and adds one machine
+     * if none are currently subscribed. Leaves the popup closed and search bar closed.
+     * Call this in Background steps so each scenario starts with at least one machine.
+     */
+    public void ensureOperatorHasMachineSubscription(String name) {
+        searchRecord(name);
+        longPressRecord(name);
+        clickMachineSubscriptionOption();
+        if (!isMachineSubscriptionPopupDisplayed()) return;
+
+        if (!hasMachinesInSubscription()) {
+            clickMachineAddButton();
+            if (isMachineSelectBottomSheetDisplayed()) {
+                selectOneMachine();
+                clickMachineSelectSheetSubmit();
+            }
+            clickMachineSubscriptionSubmit();
+            waitForMachineSubscriptionPopupClosed(15);
+        } else {
+            clickMachineSubscriptionCloseButton();
+            waitForMachineSubscriptionPopupClosed(5);
+        }
     }
 
     public boolean isMachineSubscriptionEmpty() {
@@ -845,6 +871,20 @@ public class OperatorPage extends BasePage {
             throw new RuntimeException(
                     "Background setup failed: Operator '" + name + "' was not created within 30s");
         }
+        return name;
+    }
+
+    /**
+     * Delete-flow variant: creates an operator and immediately confirms it is
+     * searchable before returning. Uses a live search query so the record is
+     * guaranteed visible when the delete scenario's own search steps run.
+     */
+    public String createOperatorAndConfirmSearchable() {
+        String name = createOperatorAndReturnName();
+        // Wait for the "Search" button — only present on the list screen, never on the
+        // create form. This ensures we are truly on the list before returning. The
+        // scenario's own search steps (with up to 15s waits) handle finding the record.
+        elementUtils.waitForPresence(AppiumBy.accessibilityId("Search"), 15);
         return name;
     }
 

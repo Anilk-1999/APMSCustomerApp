@@ -1,0 +1,292 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.ProductSetupTypeAllFlowsRunner
+-------------------------------------------------------------------------------
+Tests run: 89, Failures: 3, Errors: 22, Skipped: 0, Time elapsed: 1787 s <<< FAILURE! -- in testRunner.ProductSetupTypeAllFlowsRunner
+Create Product Setup Type via Configuration Module.Save duration picker at 0 hours 0 minutes 0 seconds — minimum duration alert shown -- Time elapsed: 25.28 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:201)
+
+Create Product Setup Type via Configuration Module.Verify Select Duration popup opens for Machine Output Timer -- Time elapsed: 26.06 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:325)
+
+Create Product Setup Type via Configuration Module.Verify Select Duration popup opens for Product Setup Timer -- Time elapsed: 25.12 s <<< FAILURE!
+java.lang.AssertionError: "Add Product Setup Type" popup is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at StepDefinitions.common.CommonFormSteps.popupShouldBeDisplayed(CommonFormSteps.java:158)
+	at ✽."Add Product Setup Type" popup should be displayed(file:///C:/Users/Anil%20Kumar%20M/VSCode%20projects/APMSCustomerApp/src/test/resources/features/CustomerLogin/Configurations/ProductSetupTypes/ProductSetupTypeCreation.feature:343)
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Search and open Edit Product Setup Type popup and verify all fields -- Time elapsed: 12.59 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Type with all fields -- Time elapsed: 20.54 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update only Product Setup Name -- Time elapsed: 20.50 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update only Description -- Time elapsed: 20.24 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update only Machine Output Timer -- Time elapsed: 20.49 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update only Product Setup Timer -- Time elapsed: 20.95 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Name with trimmed value -- Time elapsed: 20.30 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Save without any changes -- Time elapsed: 20.24 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Type without Product Setup Name -- Time elapsed: 20.64 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Open Machine Output Timer duration picker and close with X — existing value preserved -- Time elapsed: 20.21 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Type with only spaces in Product Setup Name -- Time elapsed: 20.05 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Type with special characters in name -- Time elapsed: 20.29 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Rapid multiple Save clicks -- Time elapsed: 20.88 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Close edit popup without saving updated changes -- Time elapsed: 20.85 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Reopen Edit popup after closing — data should be preserved -- Time elapsed: 20.55 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Verify Edit Product Setup Type popup UI elements -- Time elapsed: 21.25 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Verify non-editable fields in Edit Product Setup Type popup -- Time elapsed: 20.07 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Verify pre-filled data accuracy in Edit popup -- Time elapsed: 21.03 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Validate Description field during update -- Time elapsed: 19.68 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Machine Output Timer via Select Duration popup -- Time elapsed: 19.95 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Update Product Setup Timer via Select Duration popup -- Time elapsed: 20.00 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Update Product Setup Type via Swipe Action from Product Setup Types List.Open Product Setup Timer duration picker and close with X — existing value preserved -- Time elapsed: 20.35 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User swipes Product Setup Type record from right to left' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User swipes Product Setup Type record from right to left")
+public void user_swipes_product_setup_type_record_from_right_to_left() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
